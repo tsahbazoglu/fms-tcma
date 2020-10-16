@@ -10,6 +10,9 @@ db.getSisterDB('configdb').graph2.update({key: "department"}, {$set: {
         "forms": "graphForm",
         "dimension": 1,
         "loginFkField": "_id",
+        "userConstantNote": "",
+        "type": "website",
+        "defaultSortField": "order",
         "filter": {
             "forms": "department"
         },
@@ -18,79 +21,27 @@ db.getSisterDB('configdb').graph2.update({key: "department"}, {$set: {
             "architect"
         ],
         "defaultCurrentQuery": function (searchObject) {
-            if (!searchObject.hasOwnProperty("member")) {
-                throw "member is resolved to null";
-            }
-            var uysdatabase = db.getSisterDB("uysdb");
-            var periods = [];
-            uysdatabase.dataBankOrganizationStatus.find({
-                //"myFormGroups": {"$in": [v.group, v.form]},
-                "status": {"$in": ["000", "001", "002"]},
-                "workflowStatus": {"$in": ["000", "001", "002", "003", "006"]},
-                "member": searchObject.member
-            }, {period: 1}).forEach(function (org) {
-                periods.push(org.period);
-            });
-            var periodID = "no result";
-            uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {
-                periodID = v._id;
-            });
-            return {"member": searchObject.member, period: periodID};
+            return {};
         },
         "defaultHistoryQuery": function (searchObject) {
-            var uysdatabase = db.getSisterDB("uysdb");
-            if (!searchObject.hasOwnProperty("member")) {
-                throw "member is resolved to null";
-            }
-            var periods = [];
-            uysdatabase.dataBankOrganizationStatus.find({
-                //"myFormGroups": {"$in": [v.group, v.form]},
-                "status": {"$in": ["000", "001", "002"]},
-                "workflowStatus": {"$in": ["000", "001", "002", "003", "006"]},
-                "member": searchObject.member
-            }, {period: 1}).forEach(function (org) {
-                periods.push(org.period);
-            });
-            var periodID = "no result";
-            uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (p) {
-                var period = db.getSisterDB("uysdb").common.findOne({forms: "period", order: p.order - 10});
-                periodID = (period == null) ? p._id : period._id;
-            });
-            return {"member": searchObject.member, period: periodID};
+            return {};
         },
-        "userConstantNote": "",
         "actions": {
-            "new": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "new": {
+                "role-architect": true,
+                "none": false
             },
-            "save": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "save": {
+                "role-architect": true,
+                "none": false
             },
-            "delete": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "delete": {
+                "role-architect": true,
+                "none": false
             },
             "download": true
         },
-        "type": "website",
-        "defaultSortField": "order",
+
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
         },
