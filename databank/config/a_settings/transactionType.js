@@ -30,32 +30,17 @@ db.getSisterDB('configdb').graph2.update({key: "transactionType"}, {$set: {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
         },
         "actions": {
-            "new": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "new": {
+                "role-architect": true,
+                "none": false
             },
-            "save": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "save": {
+                "role-architect": true,
+                "none": false
             },
-            "delete": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("architect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "delete": {
+                "role-architect": true,
+                "none": false
             },
             "download": true
         },
