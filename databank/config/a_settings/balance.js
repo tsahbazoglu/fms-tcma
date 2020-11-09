@@ -2,6 +2,7 @@
 db.getSisterDB('configdb').graph2.findOne({key: "balance"});
 
 db.getSisterDB('configdb').graph2.update({key: "balance"}, {$set: {
+        "schemaVersion": "1.0.0",
         "db": "uysdb",
         "collection": "dataBankBalance",
         "versionCollection": "versionBalance",
