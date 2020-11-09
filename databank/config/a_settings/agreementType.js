@@ -2,6 +2,7 @@
 db.getSisterDB('configdb').graph2.findOne({key: "agreementType"});
 
 db.getSisterDB('configdb').graph2.update({key: "agreementType"}, {$set: {
+        "schemaVersion": "1.0.0",
         "db": "uysdb",
         "collection": "dataBankSetting",
         "menuOrder": 80,
@@ -51,7 +52,6 @@ db.getSisterDB('configdb').graph2.update({key: "agreementType"}, {$set: {
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
         },
-
         "fields": {
             "name": {
                 "reportOrder": NumberLong(2000),
