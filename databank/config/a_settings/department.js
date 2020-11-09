@@ -48,7 +48,6 @@ db.getSisterDB('configdb').graph2.update({key: "department"}, {$set: {
                 "shoot": null
             }
         },
-
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
         },
