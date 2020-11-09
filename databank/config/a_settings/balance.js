@@ -29,10 +29,26 @@ db.getSisterDB('configdb').graph2.update({key: "balance"}, {$set: {
             return {};
         },
         "actions": {
-            "new": false,
-            "save": false,
-            "delete": false,
-            "download": true
+            "new": {
+                "permit": null,
+                "func": null,
+                "shoot": null
+            },
+            "save": {
+                "permit": null,
+                "func": null,
+                "shoot": null
+            },
+            "delete": {
+                "permit": null,
+                "func": null,
+                "shoot": null
+            },
+            "download": {
+                "permit": null,
+                "func": null,
+                "shoot": true
+            }
         },
         "oneToMany": {
             "balanceAbstract": "balance._id",
