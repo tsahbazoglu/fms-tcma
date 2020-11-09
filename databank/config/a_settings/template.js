@@ -23,18 +23,25 @@ db.getSisterDB('configdb').graph2.update({key: "template"}, {$set: {
         },
         "actions": {
             "new": {
-                "role-architect": true,
-                "none": false
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
             "save": {
-                "role-architect": true,
-                "none": false
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
             "delete": {
-                "role-architect": true,
-                "none": false
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
-            "download": true
+            "download": {
+                "permit": null,
+                "func": null,
+                "shoot": null
+            }
         },
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
