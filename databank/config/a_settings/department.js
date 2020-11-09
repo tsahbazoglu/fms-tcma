@@ -2,6 +2,7 @@
 db.getSisterDB('configdb').graph2.findOne({key: "department"});
 
 db.getSisterDB('configdb').graph2.update({key: "department"}, {$set: {
+        "schemaVersion": "1.0.0",
         "db": "uysdb",
         "collection": "dataBankSetting",
         "menuOrder": 20,
