@@ -2,6 +2,7 @@
 db.getSisterDB('configdb').graph2.findOne({key: "agePeriod"});
 
 db.getSisterDB('configdb').graph2.update({key: "agePeriod"}, {$set: {
+        "schemaVersion": "1.0.0",
         "db": "uysdb",
         "collection": "dataBankSetting",
         "userConstantNote": "",
