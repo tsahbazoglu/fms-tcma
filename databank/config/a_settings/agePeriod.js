@@ -21,22 +21,22 @@ db.getSisterDB('configdb').graph2.update({key: "agePeriod"}, {$set: {
             "new": {
                 "permit": ["architect"],
                 "func": null,
-                "shoot": false
+                "shoot": null
             },
             "save": {
                 "permit": ["architect"],
                 "func": null,
-                "shoot": false
+                "shoot": null
             },
             "delete": {
                 "permit": ["architect"],
                 "func": null,
-                "shoot": false
+                "shoot": null
             },
             "download": {
-                "permit": [],
+                "permit": null,
                 "func": null,
-                "shoot": false
+                "shoot": null
             }
         },
         "upperNodes": {
