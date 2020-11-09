@@ -42,8 +42,12 @@ db.getSisterDB('configdb').graph2.update({key: "agePeriod"}, {$set: {
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
         },
-        "defaultCurrentQuery": {},
-        "defaultHistoryQuery": {},
+        "defaultCurrentQuery": function (searchObject) {
+            return {};
+        },
+        "defaultHistoryQuery": function (searchObject) {
+            return {};
+        },
         "filter": {"forms": "agePeriod"},
         "fields": {
             "name": {
