@@ -15,8 +15,12 @@ db.getSisterDB('configdb').graph2.update({key: "agreementStatus"}, {$set: {
         "loginFkField": "_id",
         "accesscontrol": ["uysadmin", "architect"],
         "filter": {"forms": "agreementStatus"},
-        "defaultCurrentQuery": {},
-        "defaultHistoryQuery": {},
+        "defaultCurrentQuery": function (searchObject) {
+            return {};
+        },
+        "defaultHistoryQuery": function (searchObject) {
+            return {};
+        },
         "upperNodes": {"node_dataBankSetting": "Bilgi Bankası Ayarlar"},
         "actions": {
             "new": {
