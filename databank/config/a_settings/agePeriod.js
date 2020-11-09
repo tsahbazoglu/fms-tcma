@@ -18,10 +18,26 @@ db.getSisterDB('configdb').graph2.update({key: "agePeriod"}, {$set: {
             "architect"
         ],
         "actions": {
-            "new": false,
-            "save": false,
-            "delete": false,
-            "download": true
+            "new": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": false
+            },
+            "save": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": false
+            },
+            "delete": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": false
+            },
+            "download": {
+                "permit": [],
+                "func": null,
+                "shoot": false
+            }
         },
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
