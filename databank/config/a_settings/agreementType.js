@@ -27,34 +27,26 @@ db.getSisterDB('configdb').graph2.update({key: "agreementType"}, {$set: {
             return {};
         },
         "actions": {
-            "new": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("databankarchitect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "new": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
-            "save": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("databankarchitect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "save": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
-            "delete": function (searchObject, roles) {
-                if (roles == null) {
-                    throw "roles must be defined for member :".concat(searchObject.member);
-                } else if (roles.indexOf("databankarchitect") >= 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+            "delete": {
+                "permit": ["architect"],
+                "func": null,
+                "shoot": null
             },
-            "download": true
+            "download": {
+                "permit": null,
+                "func": null,
+                "shoot": null
+            }
         },
         "upperNodes": {
             "node_dataBankSetting": "Bilgi Bankası Ayarlar"
