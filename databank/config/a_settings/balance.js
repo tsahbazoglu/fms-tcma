@@ -89,7 +89,7 @@ db.getSisterDB('configdb').graph2.update({key: "balance"}, {$set: {
                 "roleCheck": true,
                 "name": "Detay Sıralama",
                 "money": false,
-                "valueType": "java.lang.String",
+                "valueType": "java.lang.Integer",
                 "shortName": "Detay Sıralama",
                 "readonly": false,
                 "accesscontrol": "uysuser,uysadmin,architect",
