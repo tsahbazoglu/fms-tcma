@@ -102,7 +102,7 @@ db.getSisterDB('configdb').graph2.update({key: "incomeRelations"}, {$set: {
                 "readonly": false,
                 "order": 90,
                 "reportOrder": 90,
-                "valueType": "java.lang.String",
+                "valueType": "java.lang.Integer",
                 "style": "text-align:right;",
                 "quickFilter": false
             },
