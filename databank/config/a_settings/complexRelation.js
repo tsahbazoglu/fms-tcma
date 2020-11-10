@@ -100,7 +100,7 @@ db.getSisterDB('configdb').graph2.update({key: "complexRelation"}, {$set: {
                 "readonly": false,
                 "order": 90,
                 "reportOrder": 90,
-                "valueType": "java.lang.String",
+                "valueType": "java.lang.Integer",
                 "style": "text-align:right;",
                 "quickFilter": false
             },
