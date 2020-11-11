@@ -55,7 +55,7 @@
             "valueType": "java.lang.String",
             "shortName": "Ad",
             "readonly": false,
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "observable": false,
             "key": "name",
             "quickFilter": false
@@ -74,7 +74,7 @@
             "money": false,
             "valueType": "java.lang.String",
             "readonly": false,
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "observable": false,
             "quickFilter": false
         },
@@ -93,7 +93,7 @@
             "observable": false,
             "componentType": "inputText",
             "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
         "order": {
@@ -111,7 +111,7 @@
             "name": "Sıralama",
             "valueType": "java.lang.String",
             "shortName": "Sıralama",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
         "code": {
@@ -129,7 +129,7 @@
             "name": "Kod",
             "shortName": "Kod",
             "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
         "web_faaliyet_report_name": {
@@ -146,7 +146,7 @@
             "money": false,
             "valueType": "java.lang.String",
             "readonly": false,
-            "accesscontrol": "uysadmin,databankarchitect",
+            "accesscontrol": ["uysadmin", "architect"],
             "observable": false,
             "quickFilter": false
         }
