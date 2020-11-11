@@ -44,9 +44,7 @@
             "shoot": null
         }
     },
-    "upperNodes": {
-        "node_dataBankSetting": "Bilgi Bankası Ayarlar"
-    },
+    "upperNodes": ["node_dataBankSetting"],
     "postSave": {
         "type": "application",
         "action": "refreshCache",
