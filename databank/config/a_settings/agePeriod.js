@@ -52,12 +52,12 @@ db.getSisterDB('configdb').graph2.update({key: "agePeriod"}, {$set: {
         "filter": {"forms": "agePeriod"},
         "fields": {
             "name": {
-                "reportOrder": NumberLong(2000),
+                "reportOrder": 2000,
                 "reportRendered": true,
                 "rendered": true,
                 "componentType": "inputText",
                 "field": "name",
-                "order": NumberLong(2000),
+                "order": 2000,
                 "roleCheck": true,
                 "name": "Ad",
                 "money": false,
