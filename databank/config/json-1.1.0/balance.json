@@ -52,8 +52,8 @@
         "balanceDetailMB": "balance._id"
     },
     "upperNodes": ["node_dataBankSetting"], 
-    "fields": {
-        "abstractOrder": {
+    "fields": [
+        {
             "reportOrder": 12000,
             "reportRendered": true,
             "rendered": true,
@@ -71,7 +71,7 @@
             "observable": false,
             "quickFilter": false
         },
-        "detailOrder": {
+        {
             "reportOrder": 12000,
             "reportRendered": true,
             "rendered": true,
@@ -89,7 +89,7 @@
             "observable": false,
             "quickFilter": false
         },
-        "code": {
+        {
             "key": "code",
             "field": "code",
             "name": "Kod",
@@ -107,7 +107,7 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
-        "name": {
+        {
             "key": "name",
             "field": "name",
             "name": "Bilanço Adı",
@@ -126,7 +126,7 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
-        "en_US": {
+        {
             "key": "en_US",
             "field": "en_US",
             "name": "İngilizce",
@@ -144,5 +144,5 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         }
-    }
+    ]
 } 
