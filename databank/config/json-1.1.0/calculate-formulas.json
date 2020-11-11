@@ -59,8 +59,8 @@
     "myNamedQueries": {
         "chooseByDate": "function (searchObject) {year = db.common.findOne({_id: searchObject.period }).year; if (year == null) { throw \"month could not be found on search object period\"; }return {validPeriods: year, active: true }}"
     },
-    "fields": {
-        "active": {
+    "fields": [
+        {
             "field": "active",
             "key": "active",
             "reportOrder": 10,
@@ -74,7 +74,7 @@
             "valueType": "java.lang.Boolean",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "validPeriods": {
+        {
             "field": "validPeriods",
             "key": "validPeriods",
             "reportOrder": 20,
@@ -88,7 +88,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "template": {
+        {
             "field": "template",
             "key": "template",
             "reportOrder": 30,
@@ -102,7 +102,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "name": {
+        {
             "field": "name",
             "key": "name",
             "reportOrder": 40,
@@ -116,7 +116,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "relations": {
+        {
             "reportOrder": 50,
             "order": 50,
             "reportRendered": true,
@@ -133,7 +133,7 @@
             "observable": false,
             "key": "relations"
         },
-        "droolsVertical": {
+        {
             "field": "droolsVertical",
             "key": "droolsVertical",
             "reportOrder": 60,
@@ -151,7 +151,7 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "text-align:left;"
         },
-        "droolsRuleCoordinate": {
+        {
             "field": "droolsRuleCoordinate",
             "key": "droolsRuleCoordinate",
             "reportOrder": 70,
@@ -168,7 +168,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "droolsMeasureKey": {
+        {
             "field": "droolsMeasureKey",
             "key": "droolsMeasureKey",
             "reportOrder": 80,
@@ -185,7 +185,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
         },
-        "style": {
+        {
             "field": "style",
             "key": "style",
             "reportOrder": 90,
@@ -202,7 +202,7 @@
             "accesscontrol": ["uysadmin", "architect"],
             "observable": false
         },
-        "converter": {
+        {
             "key": "converter",
             "field": "converter",
             "name": "Dönüştürücü",
@@ -224,5 +224,5 @@
                 "NumberConverter"
             ]
         }
-    }
+    ]
 } 
