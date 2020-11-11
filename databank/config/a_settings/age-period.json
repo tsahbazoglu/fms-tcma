@@ -1,5 +1,6 @@
 {
     "schemaVersion": "1.1.0",
+    "key": "agePeriod"
     "db": "uysdb",
     "collection": "dataBankSetting",
     "userConstantNote": "",
