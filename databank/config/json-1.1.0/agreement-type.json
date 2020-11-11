@@ -44,9 +44,7 @@
             "shoot": null
         }
     },
-    "upperNodes": {
-        "node_dataBankSetting": "Bilgi Bankası Ayarlar"
-    },
+    "upperNodes": ["node_dataBankSetting"],
     "fields": {
         "name": {
             "reportOrder": 20,
@@ -61,7 +59,7 @@
             "valueType": "java.lang.String",
             "shortName": "Ad",
             "readonly": false,
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "observable": false,
             "key": "name",
             "quickFilter": false
@@ -80,7 +78,7 @@
             "money": false,
             "valueType": "java.lang.String",
             "readonly": false,
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "observable": false,
             "quickFilter": false
         },
@@ -98,7 +96,7 @@
             "money": false,
             "valueType": "java.lang.String",
             "readonly": false,
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "observable": false,
             "quickFilter": false
         },
@@ -117,7 +115,7 @@
             "observable": false,
             "componentType": "inputText",
             "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         },
         "order": {
@@ -135,7 +133,7 @@
             "name": "Sıralama",
             "valueType": "java.lang.String",
             "shortName": "Sıralama",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         },
         "code": {
@@ -153,7 +151,7 @@
             "name": "Kod",
             "shortName": "Kod",
             "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         }
     }
