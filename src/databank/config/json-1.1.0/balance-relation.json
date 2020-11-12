@@ -72,12 +72,18 @@
                 "query": {
                     "forms": "balance"
                 },
-                "v": {
-                    "code": 1
-                },
-                "sort": {
-                    "code": 1
-                },
+                "v": [
+                    {
+                        "key": "code",
+                        "value": 1
+                    }                    
+                ],
+                "sort": [
+                    {
+                        "key": "code",
+                        "value": 1
+                    }  
+                ],
                 "labelStringFormat": "%s"
             }
         },
@@ -157,12 +163,18 @@
                 "query": {
                     "forms": "template"
                 },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "order": 1
-                }
+                "v": [
+                    {
+                        "key": "name",
+                        "value": 1
+                    }                    
+                ],
+                "sort": [
+                    {
+                        "key": "order",
+                        "value": 1
+                    }  
+                ]
             }
         },
         {
@@ -190,12 +202,18 @@
                 "query": {
                     "forms": "period"
                 },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "value": -1
-                }
+                "v": [
+                    {
+                        "key": "name",
+                        "value": 1
+                    }                    
+                ],
+                "sort": [
+                    {
+                        "key": "value",
+                        "value": -1
+                    }  
+                ]
             }
         },
         {
