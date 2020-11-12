@@ -45,8 +45,8 @@
         }
     },
     "upperNodes": ["node_dataBankSetting"],
-    "fields": {
-        "code": {
+    "fields": [
+        {
             "key": "code",
             "field": "code",
             "name": "Kod",
@@ -62,7 +62,7 @@
             "style": "white-space:nowrap",
             "accesscontrol": "uysadmin,architect"
         },
-        "name": {
+        {
             "key": "name",
             "field": "name",
             "name": "Ad",
@@ -78,5 +78,5 @@
             "style": "white-space:nowrap",
             "accesscontrol": "uysadmin,architect"
         }
-    }
+    ]
 } 
