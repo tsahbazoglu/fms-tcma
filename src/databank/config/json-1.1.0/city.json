@@ -60,7 +60,7 @@
             "reportOrder": 900,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
-            "accesscontrol": "uysadmin,architect"
+            "accesscontrol": ["uysadmin", "architect"]
         },
         {
             "key": "name",
@@ -76,7 +76,7 @@
             "reportOrder": 900,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
-            "accesscontrol": "uysadmin,architect"
+            "accesscontrol": ["uysadmin", "architect"]
         }
     ]
 } 
