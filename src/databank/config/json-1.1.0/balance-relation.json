@@ -69,15 +69,13 @@
             "items-ref": {
                 "db": "uysdb",
                 "itemTable": "dataBankBalance",
-                "query": {
-                    "forms": "balance"
-                },
-                "v": [
+                "query": [
                     {
-                        "key": "code",
-                        "value": 1
-                    }                    
+                        "key": "forms",
+                        "value": "balance"
+                    }
                 ],
+                "v": ["name"],
                 "sort": [
                     {
                         "key": "code",
@@ -160,15 +158,13 @@
             "items-ref": {
                 "db": "uysdb",
                 "itemTable": "dataBankTemplate",
-                "query": {
-                    "forms": "template"
-                },
-                "v": [
+                "query": [
                     {
-                        "key": "name",
-                        "value": 1
-                    }                    
+                        "key": "forms",
+                        "value": "template"
+                    }
                 ],
+                "v": ["name"],
                 "sort": [
                     {
                         "key": "order",
@@ -199,15 +195,13 @@
             "items-ref": {
                 "db": "uysdb",
                 "itemTable": "common",
-                "query": {
-                    "forms": "period"
-                },
-                "v": [
+                "query": [
                     {
-                        "key": "name",
-                        "value": 1
-                    }                    
+                        "key": "forms",
+                        "value": "period"
+                    }
                 ],
+                "v": ["name"],
                 "sort": [
                     {
                         "key": "value",
