@@ -45,13 +45,14 @@
         }
     },
     "upperNodes": ["node_dataBankSetting"],
-    "fields": {
-        "name": {
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
             "reportOrder": 20,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "name",
             "order": 20,
             "roleCheck": true,
             "name": "Ad",
@@ -61,16 +62,15 @@
             "readonly": false,
             "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "observable": false,
-            "key": "name",
             "quickFilter": false
         },
-        "dataTransfer": {
+        {
+            "key": "dataTransfer",
+            "field": "dataTransfer",
             "reportOrder": 20,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "key": "dataTransfer",
-            "field": "dataTransfer",
             "order": 20,
             "roleCheck": true,
             "name": "2011 Veri Aktarımı",
@@ -82,13 +82,13 @@
             "observable": false,
             "quickFilter": false
         },
-        "description": {
+        {
+            "key": "description",
+            "field": "description",
             "reportOrder": 10,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "key": "description",
-            "field": "description",
             "order": 10,
             "roleCheck": true,
             "name": "Açıklama",
@@ -100,7 +100,7 @@
             "observable": false,
             "quickFilter": false
         },
-        "en_US": {
+        {
             "key": "en_US",
             "field": "en_US",
             "name": "İngilizce",
@@ -118,14 +118,14 @@
             "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         },
-        "order": {
+        {
+            "key": "order",  
+            "field": "order",
             "order": 50000,
             "reportOrder": 50000,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "order",
-            "key": "order",
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -136,14 +136,14 @@
             "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         },
-        "code": {
+        {
+            "key": "code",
+            "field": "code",
             "order": 45000,
             "reportOrder": 45000,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "code",
-            "key": "code",
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -154,5 +154,5 @@
             "accesscontrol": ["uysuser", "uysadmin", "architect"],
             "quickFilter": false
         }
-    }
+    ]
 } 

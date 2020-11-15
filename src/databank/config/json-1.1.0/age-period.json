@@ -1,5 +1,7 @@
+
 {
     "schemaVersion": "1.1.0",
+    "key": "agePeriod",
     "db": "uysdb",
     "collection": "dataBankSetting",
     "userConstantNote": "",
@@ -38,8 +40,8 @@
         }
     },
     "upperNodes": ["node_dataBankSetting"],    
-    "defaultCurrentQuery": "function (searchObject) {            return {};        }",
-    "defaultHistoryQuery": "function (searchObject) {            return {};        }",
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
     "filter": {
         "forms": "agePeriod"
     },
@@ -63,13 +65,13 @@
             "accesscontrol": ["uysadmin", "architect"]
         }, 
         {
+            "key": "order",
+            "field": "order",
             "order": 50000,
             "reportOrder": 50000,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "order",
-            "key": "order",
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -81,13 +83,13 @@
             "quickFilter": false
         }, 
         {
+            "key": "code",
+            "field": "code",
             "order": 45000,
             "reportOrder": 45000,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "code",
-            "key": "code",
             "roleCheck": true,
             "money": false,
             "readonly": false,

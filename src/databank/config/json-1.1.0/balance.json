@@ -54,12 +54,12 @@
     "upperNodes": ["node_dataBankSetting"], 
     "fields": [
         {
+            "key": "abstractOrder",
+            "field": "abstractOrder",
             "reportOrder": 10,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "abstractOrder",
-            "key": "abstractOrder",
             "order": 10,
             "roleCheck": true,
             "name": "Özet Sıralama",
@@ -72,12 +72,12 @@
             "quickFilter": false
         },
         {
+            "key": "detailOrder",
+            "field": "detailOrder",
             "reportOrder": 20,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "detailOrder",
-            "key": "detailOrder",
             "order": 20,
             "roleCheck": true,
             "name": "Detay Sıralama",

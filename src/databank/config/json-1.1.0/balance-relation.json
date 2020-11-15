@@ -64,25 +64,39 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
             "converter": "SelectOneObjectIdConverter",
-            "items-list": null,
-            "items-func": null,
-            "items-ref": {
-                "db": "uysdb",
-                "itemTable": "dataBankBalance",
-                "query": [
-                    {
-                        "key": "forms",
-                        "value": "balance"
-                    }
-                ],
-                "v": ["name"],
-                "sort": [
-                    {
-                        "key": "code",
-                        "value": 1
-                    }  
-                ],
-                "labelStringFormat": "%s"
+            "items": { 
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankBalance",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "balance"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "permit": null,
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "code",
+                                "value": 1                        
+                            }  
+                        ]
+                    },
+                    "labelStringFormat": "%s"
+                },
+                "func": null,
+                "list": null
             }
         },
         {
@@ -153,24 +167,38 @@
             "valueType": "java.lang.String",
             "style": "text-align:left;",
             "converter": "SelectOneObjectIdConverter",
-            "items-list": null,
-            "items-func": null,
-            "items-ref": {
-                "db": "uysdb",
-                "itemTable": "dataBankTemplate",
-                "query": [
-                    {
-                        "key": "forms",
-                        "value": "template"
+            "items": { 
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankTemplate",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "template"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "permit": null,
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "order",
+                                "value": 1                        
+                            }  
+                        ]
                     }
-                ],
-                "v": ["name"],
-                "sort": [
-                    {
-                        "key": "order",
-                        "value": 1
-                    }  
-                ]
+                },
+                "func": null,
+                "list": null
             }
         },
         {
@@ -190,24 +218,38 @@
             "valueType": "java.lang.String",
             "style": "text-align:left;",
             "converter": "SelectOneObjectIdConverter",
-            "items-list": null,
-            "items-func": null,
-            "items-ref": {
-                "db": "uysdb",
-                "itemTable": "common",
-                "query": [
-                    {
-                        "key": "forms",
-                        "value": "period"
+            "items": { 
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "permit": null,
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "value",
+                                "value": -1                        
+                            }  
+                        ]
                     }
-                ],
-                "v": ["name"],
-                "sort": [
-                    {
-                        "key": "value",
-                        "value": -1
-                    }  
-                ]
+                },
+                "func": null,
+                "list": null
             }
         },
         {

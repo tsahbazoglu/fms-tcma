@@ -59,8 +59,8 @@
     },
     "fields": [
         {
-            "field": "active",
             "key": "active",
+            "field": "active",
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
@@ -73,8 +73,8 @@
             "accesscontrol": ["uysadmin", "architect"]
         },
         {
-            "field": "validPeriods",
             "key": "validPeriods",
+            "field": "validPeriods",
             "reportOrder": 20,
             "order": 20,
             "reportRendered": true,
@@ -87,8 +87,8 @@
             "accesscontrol": ["uysadmin", "architect"]
         },
         {
-            "field": "template",
             "key": "template",
+            "field": "template",
             "reportOrder": 30,
             "order": 30,
             "reportRendered": true,
@@ -101,8 +101,8 @@
             "accesscontrol": ["uysadmin", "architect"]
         },
         {
-            "field": "name",
             "key": "name",
+            "field": "name",
             "reportOrder": 40,
             "order": 40,
             "reportRendered": true,
@@ -115,12 +115,13 @@
             "accesscontrol": ["uysadmin", "architect"]
         },
         {
+            "key": "relations",
+            "field": "relations",
             "reportOrder": 50,
             "order": 50,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "relations",
             "roleCheck": true,
             "name": "Yer Alacağı Formlar",
             "money": false,
@@ -128,12 +129,11 @@
             "shortName": "Yer Alacağı Formlar",
             "readonly": false,
             "accesscontrol": ["uysadmin", "architect"],
-            "observable": false,
-            "key": "relations"
+            "observable": false
         },
         {
-            "field": "droolsVertical",
             "key": "droolsVertical",
+            "field": "droolsVertical",
             "reportOrder": 60,
             "order": 60,
             "roleCheck": true,

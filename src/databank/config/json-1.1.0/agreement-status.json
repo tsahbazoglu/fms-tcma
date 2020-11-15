@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "agreementStatus",
@@ -41,14 +42,15 @@
             "shoot": null
         }
     },
-    "fields": {
-        "name": {
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
             "order": 10,
             "reportOrder": 10,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "name",
             "roleCheck": true,
             "name": "Ad",
             "money": false,
@@ -57,17 +59,16 @@
             "readonly": false,
             "accesscontrol": ["uysadmin", "architect"],
             "observable": false,
-            "key": "name",
             "quickFilter": false
         },
-        "dataTransfer": {
+        {
+            "key": "dataTransfer",
+            "field": "dataTransfer",
             "order": 20,
             "reportOrder": 20,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "key": "dataTransfer",
-            "field": "dataTransfer",
             "roleCheck": true,
             "name": "2011 Veri Aktarımı",
             "shortName": "2011 Veri Aktarımı",
@@ -78,11 +79,11 @@
             "observable": false,
             "quickFilter": false
         },
-        "en_US": {
-            "reportOrder": 30,
-            "order": 30,
+        {
             "key": "en_US",
             "field": "en_US",
+            "order": 30,
+            "reportOrder": 30,
             "name": "İngilizce",
             "shortName": "İngilizce",
             "reportRendered": true,
@@ -96,14 +97,14 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
-        "order": {
+        {
+            "key": "order",
+            "field": "order",
             "order": 40,
             "reportOrder": 40,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "order",
-            "key": "order",
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -114,14 +115,14 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
-        "code": {
+        {
+            "key": "code",
+            "field": "code",
             "order": 50,
             "reportOrder": 50,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
-            "field": "code",
-            "key": "code",
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -132,11 +133,11 @@
             "accesscontrol": ["uysadmin", "architect"],
             "quickFilter": false
         },
-        "web_faaliyet_report_name": {
-            "order": 60,
-            "reportOrder": 60,
+        {
             "key": "web_faaliyet_report_name",
             "field": "web_faaliyet_report_name",
+            "order": 60,
+            "reportOrder": 60,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
@@ -150,5 +151,5 @@
             "observable": false,
             "quickFilter": false
         }
-    }
+    ]
 } 

@@ -1,0 +1,41 @@
+docker cp . fms-mongodb:/home/fms
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agePeriod'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agreementStatus'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agreementType'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'complexRelation'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'balance'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'calculateFormulas'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'city'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'constraint'})"
+
+mongoimport --db configdb --collection graph2 --type json --file age-period.json
+mongoimport --db configdb --collection graph2 --type json --file agreement-status.json
+mongoimport --db configdb --collection graph2 --type json --file agreement-type.json
+mongoimport --db configdb --collection graph2 --type json --file balance-relation.json
+mongoimport --db configdb --collection graph2 --type json --file balance.json
+mongoimport --db configdb --collection graph2 --type json --file calculate-formulas.json
+mongoimport --db configdb --collection graph2 --type json --file city.json
+mongoimport --db configdb --collection graph2 --type json --file constraint.json
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
