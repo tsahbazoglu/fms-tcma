@@ -1,0 +1,300 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "constraintRelation",
+    "db": "uysdb",
+    "collection": "dataBankControlPeriodTemplate",
+    "menuOrder": 195,
+    "userConstantNote": "",
+    "form": "Z62",
+    "name": "Z62 - Kontrol Formülleri Bağlantıları",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "historyRendered": false,
+    "type": "website",
+    "defaultSortField": "transferOrder",
+    "filter": {
+        "forms": "constraintRelation"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "myNamedQueries": {
+        "overAllCheck": "function (searchObject) { month = db.common.findOne({_id: searchObject.period}).month; if (month == null) {throw 'month could not be found on search object period';} return {'validPeriods': month,'enabled': true}}"
+    },
+    "fields": [
+        {
+            "order": 10,
+            "reportOrder": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "quickFilter": false,
+            "componentType": "selectOneMenu",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "key": "period",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": -1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "key": "template",
+            "field": "template",
+            "name": "Şablon",
+            "shortName": "Şablon",
+            "order": 20,
+            "reportOrder": 20,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "quickFilter": false,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankTemplate",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "template"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "template"
+                            }
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "template"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "key": "control",
+            "field": "control",
+            "name": "Kontrol",
+            "shortName": "Kontrol",
+            "order": 30,
+            "reportOrder": 30,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "quickFilter": false,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "accesscontrol": ["uysadmin", "architect"],
+            "items": {
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankConstraintFormulas",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "constraint"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "constraint"
+                            }
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "constraint"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "transferOrder",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "transferOrder",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "key": "member_type",
+            "field": "member_type",
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "reportOrder": 40,
+            "order": 40,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "readonly": true,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "quickFilter": false
+        },
+        {
+            "field": "criterias",
+            "key": "criterias",
+            "name": "Kıstaslar",
+            "shortName": "Kıstaslar",
+            "reportOrder": 50,
+            "order": 50,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneStringConverter",
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "accesscontrol": ["uysadmin", "architect"],
+            "items": {
+                "func": null,
+                "list": [
+                    "kurumun_istiraki_olmali"
+                ],
+                "ref": null
+            }
+        }
+    ]
+} 
