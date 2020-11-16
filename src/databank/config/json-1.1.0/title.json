@@ -1,0 +1,165 @@
+
+{
+    "schemaVersion": "1.0.0",
+    "key": "title",
+    "db": "uysdb",
+    "collection": "dataBankTitles",
+    "menuOrder": 166,
+    "form": "Z33",
+    "forms": "graphForm",
+    "name": "Z33 - Görevler",
+    "shortName": "Z33 - Görevler",
+    "loginFkField": "_id",
+    "dimension": 1,
+    "type": "website",
+    "userNote": "",
+    "defaultSortField": "order",
+    "filter": {
+        "forms": "title"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "upperNodes": ["node_dataBankSetting"],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "download": {
+            "permit": [],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "fields": [
+        {
+            "key": "order",
+            "field": "order",
+            "order": 10,
+            "reportOrder": 10,
+            "name": "Sıralama",
+            "shortName": "Sıralama",
+            "style": "white-space:nowrap",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "order": 20,
+            "reportOrder": 20,
+            "name": "Kod",
+            "shortName": "Kod",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "name",
+            "field": "name",
+            "order": 30,
+            "reportOrder": 30,
+            "name": "Adı",
+            "shortName": "Adı",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "relations",
+            "field": "relations",
+            "order": 40,
+            "reportOrder": 40,
+            "name": "Bağlantılar",
+            "shortName": "Bağlantılar",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "note",
+            "field": "note",
+            "order": 50,
+            "reportOrder": 50,
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "name_tbb",
+            "field": "name_tbb",
+            "name": "TBB Adı",
+            "shortName": "TBB Adı",
+            "order": 60,
+            "reportOrder": 60,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        }
+    ]
+} 
