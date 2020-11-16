@@ -1,0 +1,139 @@
+{
+    "schemaVersion": "1.1.0",
+    "key": "educationLevel",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "userConstantNote": "",
+    "menuOrder": 100,
+    "form": "Z17",
+    "name": "Z17 - Eğitim Seviyesi",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "type": "website",
+    "defaultSortField": "order",
+    "filter": {
+        "forms": "educationLevel"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "reportOrder": 2000,
+            "order": 2000,
+            "reportRendered": true,
+            "rendered": true,
+            "componentType": "inputText",
+            "roleCheck": true,
+            "name": "Ad",
+            "money": false,
+            "valueType": "java.lang.String",
+            "shortName": "Ad",
+            "readonly": false,
+            "accesscontrol": ["uysadmin", "architect"],
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "reportOrder": 500,
+            "order": 500,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "quickFilter": false
+        },
+        {       
+            "key": "order",
+            "field": "order",
+            "order": 50000,
+            "reportOrder": 50000,
+            "reportRendered": true,
+            "rendered": true,
+            "componentType": "inputText",
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "name": "Sıralama",
+            "valueType": "java.lang.String",
+            "shortName": "Sıralama",
+            "accesscontrol": ["uysadmin", "architect"],
+            "quickFilter": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "order": 45000,
+            "reportOrder": 45000,
+            "reportRendered": true,
+            "rendered": true,
+            "componentType": "inputText",
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "quickFilter": false
+        },
+        {
+            "key": "web_faaliyet_report_name",
+            "field": "web_faaliyet_report_name",
+            "reportRendered": true,
+            "rendered": true,
+            "componentType": "inputText",
+            "order": 2100,
+            "reportOrder": 2100,
+            "roleCheck": true,
+            "name": "Web Faaliyet Rapor Adı",
+            "shortName": "Web Faaliyet Rapor Adı",
+            "money": false,
+            "valueType": "java.lang.String",
+            "readonly": false,
+            "accesscontrol": ["uysadmin", "architect"],
+            "observable": false,
+            "quickFilter": false
+        }
+    ]
+} 

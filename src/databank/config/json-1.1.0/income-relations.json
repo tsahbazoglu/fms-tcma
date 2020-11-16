@@ -1,0 +1,273 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "incomeRelations",
+    "db": "uysdb",
+    "collection": "dataBankIncomeRelations",
+    "form": "formIncomeRelations",
+    "forms": "graphForm",
+    "dimension": 1,
+    "name": "Gelir Şablonları",
+    "loginFkField": "_id",
+    "defaultSortField": "orderno",
+    "userConstantNote": "",
+    "userNote": " ",
+    "type": "website",
+    "menuOrder": 10000,
+    "filter": {
+        "forms": "incomeRelations"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "download": {
+            "permit": [],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "fields": [
+        {
+            "key": "parentValue",
+            "field": "parentValue",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 10,
+            "reportOrder": 10,
+            "name": "Referans - Değer",
+            "shortName": "Referans - Değer",
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "list": null,
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankIncome",
+                    "collection": "dataBankIncome",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "income"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "code",
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "code",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%s"
+                }
+            },
+            "quickFilter": false
+        },
+        {
+            "key": "orderno",
+            "field": "orderno",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Yer Alacağı Formda Sırası",
+            "shortName": "Yer Alacağı Formda Sırası",
+            "order": 20,
+            "reportOrder": 20,
+            "componentType": "inputText",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "valueType": "java.lang.Integer",
+            "style": "text-align:right;",
+            "quickFilter": false
+        },
+        {
+            "key": "name",
+            "field": "name",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Yer Alacağı Formda Adi",
+            "shortName": "Yer Alacağı Formda Adi",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 30,
+            "reportOrder": 30,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "quickFilter": false
+        },
+        {
+            "key": "form",
+            "field": "form",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Yer Alacağı Form",
+            "shortName": "Yer Alacağı Form",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 40,
+            "reportOrder": 40,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "quickFilter": false
+        },
+        {
+            "key": "template",
+            "field": "template",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Şablon(lar)",
+            "shortName": "Şablon(lar)",
+            "componentType": "selectOneMenu",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 50,
+            "reportOrder": 50,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "list": null,
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankTemplate",
+                    "collection": "dataBankTemplate",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "template"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "order",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            "quickFilter": false
+        },
+        {
+            "key": "period",
+            "field": "period",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "componentType": "selectOneMenu",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 60,
+            "reportOrder": 60,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "list": null,
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "collection": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 1
+                        }
+                    ],
+                    "sort": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "value",
+                                "value": -1
+                            }
+                        ]
+                    }
+                }
+            },
+            "quickFilter": false
+        },
+        {
+            "key": "member_type",
+            "field": "member_type",
+            "accesscontrol": ["uysadmin", "architect"],
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "componentType": "inputText",
+            "order": 70,
+            "reportOrder": 70,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "quickFilter": false
+        }
+    ]
+} 

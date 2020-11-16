@@ -1,0 +1,158 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "investorType",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 70,
+    "userConstantNote": "",
+    "form": "Z14",
+    "name": "Z14 - Yatırımcı Türleri",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "type": "website",
+    "defaultSortField": "order",
+    "filter": {
+        "forms": "investorType"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "download": {
+            "permit": [],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 10,
+            "reportOrder": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "relations",
+            "field": "relations",
+            "name": "Yer Alacağı Formlar",
+            "shortName": "Yer Alacağı Formlar",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 20,
+            "reportOrder": 20,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportOrder": 30,
+            "order": 30,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "order",
+            "field": "order",
+            "name": "Sıralama",
+            "shortName": "Sıralama",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"], 
+            "order": 40,
+            "reportOrder": 40,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 50,
+            "reportOrder": 50,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "note",
+            "field": "note",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "reportOrder": 60,
+            "order": 60,
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputTextarea",
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        }
+    ]
+} 

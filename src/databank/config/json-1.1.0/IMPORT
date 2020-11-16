@@ -8,6 +8,13 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'balance'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'calculateFormulas'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'city'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'constraint'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'department'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'educationLevel'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'gender'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'income'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'incomeRelations'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'investorType'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExperiencePeriod'})"
 
 mongoimport --db configdb --collection graph2 --type json --file age-period.json
 mongoimport --db configdb --collection graph2 --type json --file agreement-status.json
@@ -17,25 +24,10 @@ mongoimport --db configdb --collection graph2 --type json --file balance.json
 mongoimport --db configdb --collection graph2 --type json --file calculate-formulas.json
 mongoimport --db configdb --collection graph2 --type json --file city.json
 mongoimport --db configdb --collection graph2 --type json --file constraint.json
+mongoimport --db configdb --collection graph2 --type json --file department.json
+mongoimport --db configdb --collection graph2 --type json --file gender.json
+mongoimport --db configdb --collection graph2 --type json --file income.json
+mongoimport --db configdb --collection graph2 --type json --file income-relations.json
+mongoimport --db configdb --collection graph2 --type json --file investor-type.json
+mongoimport --db configdb --collection graph2 --type json --file job-experience-period.json
 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

@@ -1,0 +1,151 @@
+{
+    "schemaVersion": "1.1.0",
+    "key": "jobExperiencePeriod",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 120,
+    "userConstantNote": "",
+    "form": "Z19",
+    "name": "Z19 - İş Tecrübesi Aralıkları",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "type": "website",
+    "defaultSortField": "order",
+    "filter": {
+        "forms": "investorType"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "valueType": "java.lang.String",
+            "componentType": "inputText",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 2000,
+            "reportOrder": 2000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "relations",
+            "field": "relations",
+            "name": "Yer Alacağı Formlar",
+            "shortName": "Yer Alacağı Formlar",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 1000,
+            "reportOrder": 1000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "description",
+            "field": "description",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportOrder": 1000,
+            "order": 1000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "readonly": false,
+            "observable": false,
+            "money": false
+        },
+        {
+            "key": "order",
+            "field": "order",
+            "name": "Sıralama",
+            "shortName": "Sıralama",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputText",
+            "order": 50000,
+            "reportOrder": 50000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputText",
+            "order": 45000,
+            "reportOrder": 45000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "web_faaliyet_report_name",
+            "field": "web_faaliyet_report_name",
+            "name": "Web Faaliyet Rapor Adı",
+            "shortName": "Web Faaliyet Rapor Adı",
+            "valueType": "java.lang.String",
+            "componentType": "inputText",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 2100,
+            "reportOrder": 2100,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        }
+    ]
+} 
