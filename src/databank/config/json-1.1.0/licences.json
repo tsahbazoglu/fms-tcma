@@ -1,0 +1,158 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "licences",
+    "db": "uysdb",
+    "collection": "dataBankLicences",
+    "menuOrder": 165,
+    "form": "Z32",
+    "forms": "graphForm",
+    "name": "Z32 - Yetki Belgeleri",
+    "shortName": "Z32 - Yetki Belgeleri",
+    "dimension": 1,
+    "type": "website",
+    "userNote": "",
+    "loginFkField": "_id",
+    "upperNodes": ["node_dataBankSetting"],
+    "filter": {
+        "forms": "licences"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "fields": [
+        {
+            "field": "order",
+            "key": "order",
+            "name": "Sıra",
+            "shortName": "Sıra",
+            "valueType": "java.lang.Integer",
+            "accesscontrol": "uysadmin,architect",
+            "componentType": "inputText",
+            "order": 8000,
+            "reportOrder": 8000,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "rendered": true
+        },
+        {
+            "componentType": "inputText",
+            "field": "orderWebOzet",
+            "key": "orderWebOzet",
+            "name": "Dikey Sıralama (Web Özet)",
+            "shortName": "Dikey Sıralama (Web Özet)",
+            "valueType": "java.lang.Integer",
+            "accesscontrol": "uysadmin,architect",
+            "order": 7500,
+            "reportOrder": 7500,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "rendered": true
+        },
+        {
+            "componentType": "inputText",
+            "field": "orderWebOzetHorizontal",
+            "key": "orderWebOzetHorizontal",
+            "order": 7250,
+            "reportOrder": 7250,
+            "name": "Yatay Sıralama (Web Özet)",
+            "shortName": "Yatay Sıralama (Web Özet)",
+            "valueType": "java.lang.Integer",
+            "accesscontrol": "uysadmin,architect",
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "rendered": true
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "order": 7000,
+            "reportOrder": 7000,
+            "name": "Kod",
+            "shortName": "Kod",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "name",
+            "field": "name",
+            "order": 7000,
+            "reportOrder": 7000,
+            "name": "Adı",
+            "shortName": "Adı",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "name_english",
+            "field": "name_english",
+            "order": 7000,
+            "reportOrder": 7000,
+            "name": "İngilizce Adı",
+            "shortName": "İngilizce Adı",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "style": "white-space:nowrap",
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        }
+    ]
+} 

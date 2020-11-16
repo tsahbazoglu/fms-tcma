@@ -15,6 +15,12 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'income'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'incomeRelations'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'investorType'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExperiencePeriod'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'licences'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'periodicalTradingVolumeType'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolioManagementInvestorType'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolio_management_investor_type_pys'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'template'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'transactionType'})"
 
 mongoimport --db configdb --collection graph2 --type json --file age-period.json
 mongoimport --db configdb --collection graph2 --type json --file agreement-status.json
@@ -30,4 +36,9 @@ mongoimport --db configdb --collection graph2 --type json --file income.json
 mongoimport --db configdb --collection graph2 --type json --file income-relations.json
 mongoimport --db configdb --collection graph2 --type json --file investor-type.json
 mongoimport --db configdb --collection graph2 --type json --file job-experience-period.json
-
+mongoimport --db configdb --collection graph2 --type json --file licences.json
+mongoimport --db configdb --collection graph2 --type json --file periodical-trading-volume-type.json
+mongoimport --db configdb --collection graph2 --type json --file porfolio-management-investor-type.json
+mongoimport --db configdb --collection graph2 --type json --file porfolio-management-investor-type-pys.json
+mongoimport --db configdb --collection graph2 --type json --file template.json
+mongoimport --db configdb --collection graph2 --type json --file transaction-type.json

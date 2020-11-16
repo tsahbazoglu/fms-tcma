@@ -1,0 +1,140 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "transactionType",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 30,
+    "form": "Z10",
+    "name": "Z10 - Transaction Type",
+    "forms": "graphForm",
+    "userConstantNote": "",
+    "loginFkField": "_id",
+    "dimension": 1,
+    "type": "website",
+    "defaultSortField": "order",
+    "filter": {
+        "forms": "transactionType"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "upperNodes": ["node_dataBankSetting"],
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "reportOrder": 8000,
+            "order": 8000,
+            "name": "Ad",
+            "shortName": "Ad",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "relations",
+            "field": "relations",
+            "name": "Yer Alacağı Formlar",
+            "shortName": "Yer Alacağı Formlar",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "order": 7000,
+            "reportOrder": 7000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportOrder": 500,
+            "order": 500,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {
+            "key": "order",
+            "field": "order",
+            "order": 50000,
+            "reportOrder": 50000,
+            "name": "Sıralama",
+            "shortName": "Sıralama",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputText",
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        },
+        {        
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "inputText",
+            "order": 45000,
+            "reportOrder": 45000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false
+        }
+    ]
+} 

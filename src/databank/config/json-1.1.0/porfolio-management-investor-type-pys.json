@@ -1,0 +1,116 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "porfolio_management_investor_type_pys",
+    "userConstantNote": "",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 60,
+    "form": "Z13_PYS",
+    "name": "Z13_PYS - Varlık Yönetimi Yatırımcı Türü (PYS)",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "type": "website",
+    "upperNodes": ["node_dataBankSetting"],
+    "filter": {
+        "forms": "porfolio_management_investor_type_pys"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "reportOrder": 10,
+            "order": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "componentType": "inputText",
+            "roleCheck": true,
+            "money": false,
+            "valueType": "java.lang.String",
+            "readonly": false,
+            "accesscontrol": ["uysadmin", "architect"],
+            "observable": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "reportOrder": 20,
+            "order": 20,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"]
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "reportOrder": 30,
+            "order": 30,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"]
+        },
+        {
+            "key": "validSince",
+            "field": "validSince",
+            "name": "Geçerli Olduğu Dönemden (İtibaren)",
+            "shortName": "Geçerli Olduğu Dönemden (İtibaren)",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 40,
+            "reportOrder": 40,
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": ["uysadmin", "architect"]
+        }
+    ]
+} 

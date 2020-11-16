@@ -1,0 +1,160 @@
+{
+    "schemaVersion": "1.1.0",
+    "key": "periodicalTradingVolumeType",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 50,
+    "userConstantNote": "",
+    "form": "Z12",
+    "name": "Z12 - Piyasa İşlem Hacmi Tipi",
+    "forms": "graphForm",
+    "loginFkField": "_id",
+    "type": "website",
+    "dimension": 1,
+    "defaultSortField": "order",
+    "upperNodes": ["node_dataBankSetting"],
+    "filter": {
+        "forms": "periodicalTradingVolumeType"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "reportOrder": 10,
+            "order": 10,
+            "name": "Ad",
+            "shortName": "Ad",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "readonly": false,
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"]
+        },
+        {
+            "key": "converter",
+            "field": "converter",
+            "name": "Dönüştürücü",
+            "shortName": "Dönüştürücü",
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportOrder": 20,
+            "order": 20,
+            "converter": "SelectOneStringConverter",
+            "items": [
+                "MoneyConverter",
+                "NumberConverter",
+                "NumberConverter : #.###.###",
+                "NumberConverter : #.###.###,#",
+                "NumberConverter : #.###.###,##",
+                "NumberConverter : #.###.###,###",
+                "NumberConverter : #.###.###,####",
+                "NumberConverter : #.###.###,#####"
+            ],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "relations",
+            "field": "relations",
+            "reportOrder": 5000,
+            "order": 5000,
+            "componentType": "inputText",
+            "name": "Yer Alacağı Formüller",
+            "shortName": "Yer Alacağı Formüller",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "roleCheck": true,
+            "readonly": false,
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "observable": false
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "reportOrder": 500,
+            "order": 500,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "order",
+            "field": "order",
+            "componentType": "inputText",
+            "name": "Sıralama",
+            "valueType": "java.lang.String",
+            "shortName": "Sıralama",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 50000,
+            "reportOrder": 50000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "componentType": "inputText",
+            "accesscontrol": ["uysadmin", "architect"],
+            "order": 45000,
+            "reportOrder": 45000,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        }
+    ]
+} 

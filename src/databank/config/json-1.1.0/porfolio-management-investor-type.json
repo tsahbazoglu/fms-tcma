@@ -1,0 +1,152 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "porfolioManagementInvestorType",
+    "userConstantNote": "",
+    "db": "uysdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 60,
+    "form": "Z13",
+    "name": "Z13 - Varlık Yönetimi Yatırımcı Türü",
+    "forms": "graphForm",
+    "dimension": 1,
+    "loginFkField": "_id",
+    "defaultSortField": "order",
+    "type": "website",
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "filter": {
+        "forms": "porfolioManagementInvestorType"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": null
+        },
+        "download": {
+            "permit": null,
+            "func": null,
+            "shoot": null
+        }
+    },
+    "upperNodes": ["node_dataBankSetting"],
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "name": "Ad",
+            "shortName": "Ad",
+            "order": 9000,
+            "reportOrder": 9000,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "dataTransferCount",
+            "field": "dataTransferCount",
+            "name": "2011 Veri Aktarımı - Sayi",
+            "shortName": "2011 Veri Aktarımı - Sayi",    
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "order": 8000,
+            "reportOrder": 8000,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "dataTransferAmount",
+            "field": "dataTransferAmount",
+            "name": "2011 Veri Aktarımı - Portföy Büyüklüğü",
+            "shortName": "2011 Veri Aktarımı - Portföy Büyüklüğü",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "order": 7000,
+            "reportOrder": 7000,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "en_US",
+            "field": "en_US",
+            "name": "İngilizce",
+            "shortName": "İngilizce",
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "reportOrder": 500,
+            "order": 500,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "order",
+            "field": "order",
+            "name": "Sıralama",
+            "shortName": "Sıralama",
+            "valueType": "java.lang.String",
+            "componentType": "inputText",  
+            "order": 50000,
+            "reportOrder": 50000,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        },
+        {
+            "key": "code",
+            "field": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "componentType": "inputText",
+            "order": 45000,
+            "reportOrder": 45000,
+            "accesscontrol": ["uysadmin", "architect"],
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false
+        }
+    ]
+} 
