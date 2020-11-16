@@ -217,10 +217,13 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
             "converter": "SelectOneStringConverter",
-            "items": [
-                "MoneyConverter",
-                "NumberConverter"
-            ]
+            "items": {
+                "func": null,
+                "list": [
+                    "MoneyConverter",
+                    "NumberConverter"
+                ]
+            }
         }
     ]
 } 

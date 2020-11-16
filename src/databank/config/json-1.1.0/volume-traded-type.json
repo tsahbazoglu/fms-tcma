@@ -136,16 +136,19 @@
             "readonly": false,
             "observable": false,
             "quickFilter": false,
-            "items": [
-                "MoneyConverter",
-                "NumberConverter",
-                "NumberConverter : #.###.###",
-                "NumberConverter : #.###.###,#",
-                "NumberConverter : #.###.###,##",
-                "NumberConverter : #.###.###,###",
-                "NumberConverter : #.###.###,####",
-                "NumberConverter : #.###.###,#####"
-            ]
+            "items": {
+                "func": null,
+                "list": [
+                    "MoneyConverter",
+                    "NumberConverter",
+                    "NumberConverter : #.###.###",
+                    "NumberConverter : #.###.###,#",
+                    "NumberConverter : #.###.###,##",
+                    "NumberConverter : #.###.###,###",
+                    "NumberConverter : #.###.###,####",
+                    "NumberConverter : #.###.###,#####"
+                ]
+            }
         },
         {
             "key": "relations",

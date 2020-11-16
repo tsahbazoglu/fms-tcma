@@ -21,6 +21,7 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolioManag
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolio_management_investor_type_pys'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'template'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'transactionType'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'volumeTradedType'})"
 
 mongoimport --db configdb --collection graph2 --type json --file age-period.json
 mongoimport --db configdb --collection graph2 --type json --file agreement-status.json
@@ -42,3 +43,4 @@ mongoimport --db configdb --collection graph2 --type json --file porfolio-manage
 mongoimport --db configdb --collection graph2 --type json --file porfolio-management-investor-type-pys.json
 mongoimport --db configdb --collection graph2 --type json --file template.json
 mongoimport --db configdb --collection graph2 --type json --file transaction-type.json
+mongoimport --db configdb --collection graph2 --type json --file volume-traded-type.json

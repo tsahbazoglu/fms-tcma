@@ -71,16 +71,19 @@
             "reportOrder": 20,
             "order": 20,
             "converter": "SelectOneStringConverter",
-            "items": [
-                "MoneyConverter",
-                "NumberConverter",
-                "NumberConverter : #.###.###",
-                "NumberConverter : #.###.###,#",
-                "NumberConverter : #.###.###,##",
-                "NumberConverter : #.###.###,###",
-                "NumberConverter : #.###.###,####",
-                "NumberConverter : #.###.###,#####"
-            ],
+            "items": {
+                "func": null,
+                "list": [
+                    "MoneyConverter",
+                    "NumberConverter",
+                    "NumberConverter : #.###.###",
+                    "NumberConverter : #.###.###,#",
+                    "NumberConverter : #.###.###,##",
+                    "NumberConverter : #.###.###,###",
+                    "NumberConverter : #.###.###,####",
+                    "NumberConverter : #.###.###,#####"
+                ]
+            },
             "reportRendered": true,
             "rendered": true,
             "roleCheck": true,
