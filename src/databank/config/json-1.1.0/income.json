@@ -47,13 +47,13 @@
     "upperNodes": ["node_dataBankSetting"],
     "fields": [
         {
-            "reportOrder": 12000,
+            "reportOrder": 10,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
             "field": "detailOrder",
             "key": "detailOrder",
-            "order": 12000,
+            "order": 10,
             "roleCheck": true,
             "name": "Detay Sıralama",
             "shortName": "Detay Sıralama",
@@ -64,8 +64,8 @@
             "observable": false
         },
         {
-            "reportOrder": 11000,
-            "order": 11000,
+            "reportOrder": 20,
+            "order": 20,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
@@ -81,12 +81,12 @@
             "observable": false
         },
         {
-            "reportOrder": 5000,
+            "reportOrder": 30,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
             "field": "code",
-            "order": 5000,
+            "order": 30,
             "roleCheck": true,
             "name": "Kod",
             "money": false,
@@ -98,8 +98,8 @@
             "key": "code"
         },
         {
-            "reportOrder": 4000,
-            "order": 4000,
+            "reportOrder": 40,
+            "order": 40,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
@@ -115,8 +115,8 @@
             "key": "name"
         },
         {
-            "reportOrder": 2000,
-            "order": 2000,
+            "reportOrder": 50,
+            "order": 50,
             "reportRendered": true,
             "rendered": true,
             "componentType": "inputText",
@@ -136,8 +136,8 @@
             "field": "en_US",
             "name": "İngilizce",
             "shortName": "İngilizce",
-            "reportOrder": 500,
-            "order": 500,
+            "reportOrder": 60,
+            "order": 60,
             "reportRendered": true,
             "rendered": true,
             "roleCheck": true,

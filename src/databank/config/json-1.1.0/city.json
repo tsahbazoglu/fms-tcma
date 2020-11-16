@@ -56,8 +56,8 @@
             "reportRendered": true,
             "rendered": true,
             "readonly": false,
-            "order": 900,
-            "reportOrder": 900,
+            "order": 10,
+            "reportOrder": 10,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
             "accesscontrol": ["uysadmin", "architect"]
@@ -72,8 +72,8 @@
             "reportRendered": true,
             "rendered": true,
             "readonly": false,
-            "order": 900,
-            "reportOrder": 900,
+            "order": 20,
+            "reportOrder": 20,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
             "accesscontrol": ["uysadmin", "architect"]
