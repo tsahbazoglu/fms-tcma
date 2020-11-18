@@ -8,7 +8,15 @@
     "form": "Z17",
     "name": "Z17 - Eğitim Seviyesi",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "type": "website",
     "defaultSortField": "order",

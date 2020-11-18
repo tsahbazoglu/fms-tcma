@@ -8,7 +8,15 @@
     "form": "Z30",
     "name": "Z30 - Gelir",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "type": "website",
     "defaultSortField": "detailOrder",

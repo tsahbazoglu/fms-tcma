@@ -6,7 +6,15 @@
     "collection": "dataBankIncomeRelations",
     "form": "formIncomeRelations",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "name": "Gelir Şablonları",
     "loginFkField": "_id",
     "defaultSortField": "orderno",

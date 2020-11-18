@@ -9,7 +9,15 @@
     "form": "Z62",
     "name": "Z62 - Kontrol Formülleri Bağlantıları",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value":"table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "historyRendered": false,
     "type": "website",

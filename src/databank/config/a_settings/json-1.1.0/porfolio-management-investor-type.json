@@ -9,7 +9,15 @@
     "form": "Z13",
     "name": "Z13 - Varlık Yönetimi Yatırımcı Türü",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "defaultSortField": "order",
     "type": "website",
@@ -25,21 +33,25 @@
     "actions": {
         "new": {
             "permit": ["architect"],
+            "block": null,
             "func": null,
             "shoot": null
         },
         "save": {
             "permit": ["architect"],
+            "block": null,
             "func": null,
             "shoot": null
         },
         "delete": {
             "permit": ["architect"],
+            "block": null,
             "func": null,
             "shoot": null
         },
         "download": {
             "permit": null,
+            "block": null,
             "func": null,
             "shoot": null
         }

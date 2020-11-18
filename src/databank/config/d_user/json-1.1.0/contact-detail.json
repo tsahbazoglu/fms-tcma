@@ -1,0 +1,256 @@
+{
+    "schemaVersion": "1.1.0",
+    "key": "contactDetail",
+    "db": "uysdb",
+    "collection": "dataBankContactDetail",
+    "menuOrder": 220,
+    "form": "Z40",
+    "forms": "graphForm",
+    "name": "İrtibat Bilgileri",
+    "shortName": "İrtibat Bilgileri",
+    "accesscontrol": [
+        "uysadmin",
+        "architect",
+        "uysuser",
+        "pyuser",
+        "ybuser"
+    ],
+    "type": "website",
+    "historyRendered": false,
+    "userConstantNote": "",
+    "userConstantNoteList": [
+        "Bu sayfa, formun yüklendiği tarih itibariyle en güncel bilgilerle doldurulacaktır.",
+        "Bu sayfaya Bilgi Bankası Formunun sorumlu kişilerin irtibat bilgilerini giriniz."
+    ],
+    "dimension": {
+        "value": null,
+        "list": [
+            {
+                "roles": [
+                    "architect",
+                    "uysadmin"
+                ],
+                "value": "table"
+            },
+            {
+                "roles": null,
+                "value": "page"
+            }
+        ]
+    },
+    "upperNodes": ["node_dataBank"],
+    "actions": {
+        "new": {
+            "permit": ["uysuser"]
+        },
+        "save": {
+            "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"]
+        },
+        "download": {
+            "permit": ["uysadmin"]
+        }
+    },
+    "loginFkField": "member",
+    "filter": {
+        "forms": "contactDetail"
+    },
+    "defaultCurrentQuery": "function (searchObject) {        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var uysdatabase = db.getSisterDB('uysdb');        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {            periodID = v._id;        });        return {'member': searchObject.member, period: periodID};    }",
+    "defaultHistoryQuery": "function (searchObject) {        var uysdatabase = db.getSisterDB('uysdb');        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (p) {            var period = db.getSisterDB('uysdb').common.findOne({forms: 'period', order: p.order - 10});            periodID = (period == null) ? p._id : period._id;        });        return {'member': searchObject.member, period: periodID};    }",
+    "myNamedQueries": {
+        "include": {
+            "uysarchitect": {
+                "query": {
+
+                },
+                "priority": 7
+            },
+            "uysadmin": {
+                "query": {
+
+                },
+                "priority": 6
+            },
+            "uysuser": {
+                "query": {
+
+                },
+                "priority": 0
+            },
+            "pyuser": {
+                "query": {
+
+                },
+                "priority": 0
+            },
+            "ybsuser": {
+                "query": "function (searchObject) {if (!searchObject.hasOwnProperty('member')) {throw 'member field could not be detected. call js function : uysdb.userDetail.myNamedQueries.include.uysuser.query()}'} return {'member': searchObject.member};}",
+                "priority": 0
+            },
+            "ybuser": {
+                "query": "function (searchObject) { if (!searchObject.hasOwnProperty('member')) { throw 'member field could not be detected. call js function : uysdb.userDetail.myNamedQueries.include.uysuser.query()}' } return {'member': searchObject.member};}",
+                "priority": 0
+            }
+        }
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 10,
+            "order": 10,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "quickFilter": true,
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": "fms_code{{login_member_id}}",
+            "items": {
+                "list": null,
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
+                                "type": "in"
+                            }
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
+                                "type": "in"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
+                                "type": "in"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": ["uysadmin,architect"],
+                            "order": 10
+                        },
+
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    },
+
+                    "labelStringFormat": "%6s | %s"
+                }
+            }
+        },
+        {
+            "key": "contactPerson",
+            "field": "contactPerson",
+            "order": 20,
+            "reportOrder": 20,
+            "componentType": "inputText",
+            "name": "İrtibat Kişisi",
+            "shortName": "İrtibat Kişisi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "contactPhone",
+            "field": "contactPhone",
+            "order": 30,
+            "reportOrder": 30,
+            "componentType": "inputText",
+            "name": "İrtibat Kişi Telefon Numarası",
+            "shortName": "İrtibat Kişi Telefon Numarası",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "contactEmail",
+            "field": "contactEmail",
+            "order": 40,
+            "reportOrder": 40,
+            "componentType": "inputText",
+            "name": "İrtibat Kişi Eposta Adresi",
+            "shortName": "İrtibat Kişi Eposta Adresi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        }
+    ]
+}

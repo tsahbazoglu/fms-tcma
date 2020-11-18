@@ -7,7 +7,15 @@
     "form": "Z63",
     "name": "Z63 - Şablonlar",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "userConstantNote": "",
     "loginFkField": "_id",
     "type": "website",

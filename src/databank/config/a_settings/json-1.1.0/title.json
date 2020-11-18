@@ -10,7 +10,15 @@
     "name": "Z33 - Görevler",
     "shortName": "Z33 - Görevler",
     "loginFkField": "_id",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "type": "website",
     "userNote": "",
     "defaultSortField": "order",

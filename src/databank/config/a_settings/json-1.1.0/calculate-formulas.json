@@ -9,7 +9,15 @@
     "form": "Z60",
     "forms": "graphForm",
     "name": "Z60 - Hesaplama Formülleri",
-    "dimension": 1,
+   "dimension": {
+        "value":"table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "type": "website",
     "defaultSortField": "name",

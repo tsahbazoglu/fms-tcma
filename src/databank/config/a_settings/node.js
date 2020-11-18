@@ -1,4 +1,3 @@
-db.getSisterDB('configdb').graph2.findOne({key: "agePeriod"});
 
 db.getSisterDB('configdb').graph2.update({key: "node_dataBankSetting"}, {$set: {
         "key": "node_dataBankSetting",

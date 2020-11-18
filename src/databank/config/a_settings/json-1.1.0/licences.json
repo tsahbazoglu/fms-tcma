@@ -9,7 +9,15 @@
     "forms": "graphForm",
     "name": "Z32 - Yetki Belgeleri",
     "shortName": "Z32 - Yetki Belgeleri",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "type": "website",
     "userNote": "",
     "loginFkField": "_id",

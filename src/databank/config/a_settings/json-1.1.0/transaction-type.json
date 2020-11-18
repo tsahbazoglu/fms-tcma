@@ -10,7 +10,15 @@
     "forms": "graphForm",
     "userConstantNote": "",
     "loginFkField": "_id",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "type": "website",
     "defaultSortField": "order",
     "filter": {

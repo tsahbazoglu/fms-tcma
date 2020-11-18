@@ -9,7 +9,15 @@
     "form": "Z16",
     "name": "Z16 - Sözleşme Durumları",
     "forms": "graphForm",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "type": "website",
     "defaultSortField": "order",
     "loginFkField": "_id",

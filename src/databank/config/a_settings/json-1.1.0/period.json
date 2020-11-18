@@ -7,7 +7,15 @@
     "form": "Z01",
     "name": "Z01 - Dönem",
     "forms": "graphForm",
-    "dimension": 1,
+     "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "userConstantNote": "",
     "loginFkField": "_id",
     "type": "website",

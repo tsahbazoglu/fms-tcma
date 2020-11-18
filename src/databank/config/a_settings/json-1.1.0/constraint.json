@@ -9,7 +9,15 @@
     "form": "Z61",
     "forms": "graphForm",
     "name": "Z61 - Kontrol Formülleri",
-    "dimension": 1,
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "loginFkField": "_id",
     "historyRendered": false,
     "type": "website",
