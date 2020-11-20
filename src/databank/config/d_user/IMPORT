@@ -1,8 +1,14 @@
 docker cp . fms-mongodb:/home/fms
 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'contactDetail'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'alternativeChannels'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'volumeTradedInvestor'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'departmentBasedVolumeTraded'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByDepartments'})" 
 
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
-
-
+mongoimport --db configdb --collection graph2 --type json --file alternative-channels.json
+mongoimport --db configdb --collection graph2 --type json --file volume-traded-investor.json
+mongoimport --db configdb --collection graph2 --type json --file volume-traded-department.json
+mongoimport --db configdb --collection graph2 --type json --file employees-department.json
 
