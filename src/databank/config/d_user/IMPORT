@@ -8,6 +8,8 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByDe
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'educationBasedPersonelCounts'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByAgeGroups'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExpirenceBasesPersonelCounts'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'corporateFinanceActivities'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'portfolio_management_pys'})" 
 
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
 mongoimport --db configdb --collection graph2 --type json --file alternative-channels.json
@@ -17,4 +19,6 @@ mongoimport --db configdb --collection graph2 --type json --file employees-depar
 mongoimport --db configdb --collection graph2 --type json --file employees-education.json
 mongoimport --db configdb --collection graph2 --type json --file employees-age.json
 mongoimport --db configdb --collection graph2 --type json --file employees-expirence.json
+mongoimport --db configdb --collection graph2 --type json --file corporate-finance-activities.json
+mongoimport --db configdb --collection graph2 --type json --file portfolio-management-pys.json
 
