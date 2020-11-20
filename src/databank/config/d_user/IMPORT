@@ -5,10 +5,16 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'alternativeCh
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'volumeTradedInvestor'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'departmentBasedVolumeTraded'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByDepartments'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'educationBasedPersonelCounts'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByAgeGroups'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExpirenceBasesPersonelCounts'})" 
 
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
 mongoimport --db configdb --collection graph2 --type json --file alternative-channels.json
 mongoimport --db configdb --collection graph2 --type json --file volume-traded-investor.json
 mongoimport --db configdb --collection graph2 --type json --file volume-traded-department.json
 mongoimport --db configdb --collection graph2 --type json --file employees-department.json
+mongoimport --db configdb --collection graph2 --type json --file employees-education.json
+mongoimport --db configdb --collection graph2 --type json --file employees-age.json
+mongoimport --db configdb --collection graph2 --type json --file employees-expirence.json
 
