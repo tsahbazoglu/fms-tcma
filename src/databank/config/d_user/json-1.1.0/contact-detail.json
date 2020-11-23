@@ -8,19 +8,22 @@
     "forms": "graphForm",
     "name": "İrtibat Bilgileri",
     "shortName": "İrtibat Bilgileri",
-    "accesscontrol": [
-        "uysadmin",
-        "architect",
-        "uysuser",
-        "pyuser",
-        "ybuser"
-    ],
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function (searchObject) {        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var uysdatabase = db.getSisterDB('uysdb');        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {            periodID = v._id;        });        return {'member': searchObject.member, period: periodID};    }",
+    "defaultHistoryQuery": "function (searchObject) {        var uysdatabase = db.getSisterDB('uysdb');        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (p) {            var period = db.getSisterDB('uysdb').common.findOne({forms: 'period', order: p.order - 10});            periodID = (period == null) ? p._id : period._id;        });        return {'member': searchObject.member, period: periodID};    }",
     "type": "website",
     "historyRendered": false,
     "userConstantNote": "",
     "userConstantNoteList": [
         "Bu sayfa, formun yüklendiği tarih itibariyle en güncel bilgilerle doldurulacaktır.",
         "Bu sayfaya Bilgi Bankası Formunun sorumlu kişilerin irtibat bilgilerini giriniz."
+    ],
+    "accesscontrol": [
+        "uysadmin",
+        "architect",
+        "uysuser",
+        "pyuser",
+        "ybuser"
     ],
     "dimension": {
         "value": null,
@@ -50,12 +53,9 @@
             "permit": ["uysadmin"]
         }
     },
-    "loginFkField": "member",
     "filter": {
         "forms": "contactDetail"
     },
-    "defaultCurrentQuery": "function (searchObject) {        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var uysdatabase = db.getSisterDB('uysdb');        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {            periodID = v._id;        });        return {'member': searchObject.member, period: periodID};    }",
-    "defaultHistoryQuery": "function (searchObject) {        var uysdatabase = db.getSisterDB('uysdb');        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (p) {            var period = db.getSisterDB('uysdb').common.findOne({forms: 'period', order: p.order - 10});            periodID = (period == null) ? p._id : period._id;        });        return {'member': searchObject.member, period: periodID};    }",
     "myNamedQueries": {
         "include": {
             "uysarchitect": {
@@ -112,7 +112,19 @@
             "shortName": "Üye Kurum",
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
-            "autoset": "fms_code{{login_member_id}}",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
             "items": {
                 "list": null,
                 "func": null,
@@ -181,7 +193,6 @@
                             }
                         ]
                     },
-
                     "labelStringFormat": "%6s | %s"
                 }
             }

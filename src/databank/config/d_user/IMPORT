@@ -1,3 +1,4 @@
+
 docker cp . fms-mongodb:/home/fms
 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'contactDetail'})"
