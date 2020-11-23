@@ -1,32 +1,43 @@
 
 {
     "schemaVersion": "1.1.0",
-    "key": "balanceDetail",
+    "key": "balanceDetailMB",
     "db": "uysdb",
-    "collection": "dataBankBalanceDetail",
-    "snapshotCollection": "snapshotBalanceDetail",
-    "form": "H3",
+    "collection": "dataBankBalanceDetailMB",
+    "snapshotCollection": "snapshotBalanceDetailMB",
+    "form": "H5",
     "group": "finance",
     "forms": "graphForm",
-    "name": "Bilanço Detay",
+    "disabled": false,
+    "name": "Bilanço TCMB Bildirimi",
     "loginFkField": "member",
-    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne(e.template),period=db.common.findOne(e.period),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12’yi seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
+    "handsonRowHeaderWidth": 350,
+    "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
+    "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
     "readOnlyNote": null,
-    "userConstantNote": "",
-    "userNote": "<ul><li>Bilanço Detay verilerini doldurmadan önce iştirak sayfasını doldurmanız gerekmektedir.<br/><li>Bu sayfaya solo finansal tablolara ilişkin bilanço detaylarının TL/YP cinsinden dağılımı girilecektir.<li>Solo toplam rakamları \"Kontrol Et ve Kaydet\" tuşuna basıldıktan sonra hesaplanacaktır.<li>Bu sayfadaki solo finansal tablo verileri TCMB'ye iletilecektir.</ul>",
+    "userConstantNote": "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir.",
+    "userNote": "<ul>\n<li>Bu sayfayı doldurmadan önce \"İştirakler\" sayfasını doldurup kaydetmeniz gerekmektedir.<br/>\n<li>Bu sayfadaki verilerin TL/YP cinsinden dağılımı girilecektir.\n<li>Toplam rakamları \"Kontrol Et ve Kaydet\" tuşuna basıldıktan sonra hesaplanacaktır.\n<li>Bu sayfadaki veriler TCMB'ye iletilecektir.\n        </ul>",
     "historyRendered": true,
     "historyPosition": 2,
     "type": "website",
-    "menuOrder": 390,
-    "calculateQuery": "function x(l){var a=db.common.findOne({_id:l.period}),e=db.dataBankTemplate.findOne({_id:l.template});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'H3',validPeriods:null===a?null:a.value,template:null===e?null:e.value}}",
+    "menuOrder": 400,
+    "calculateCollection": "dataBankCalculateFormulas",
     "controlCollection": "dataBankControl",
-    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';var t=db.getSisterDB('uysdb'),r=[];t.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:e.member},{period:1}).forEach(function(e){r.push(e.period)});var n='no result';t.common.find({_id:{$in:r}}).sort({value:-1}).limit(1).forEach(function(e){n=e._id});var a=t.dataBankOrganizationStatus.findOne({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:e.member,period:n},{template:1}),i=null==a?null:a.template;return{member:e.member,period:n,template:i}}",
-    "defaultHistoryQuery": "function x(e){var r=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'member is resolved to null';var t=[];r.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:e.member},{period:1}).forEach(function(e){t.push(e.period)});var n='no result';r.common.find({_id:{$in:t}}).sort({value:-1}).limit(1).forEach(function(e){var r=db.getSisterDB('uysdb').common.findOne({forms:'period',order:e.order-10});n=null==r?e._id:r._id});var i=r.dataBankOrganizationStatus.findOne({member:e.member,period:n},{template:1}),o=null==i?null:i.template;return{member:e.member,period:n,template:o}}",
-    "handsonRowHeaderWidth": 650,
-    "disabled": false,
+    "eventPostSave": {
+        "db": "uysdb",
+        "op": "function x(e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
+    },
+    "filter": {
+        "forms": "balanceDetailMB"
+    },
+    "zetDimension": [
+        "member",
+        "period",
+        "template"
+    ],
     "accesscontrol": [
         "uysadmin",
-        "architect",
+        "databankarchitect",
         "uysviewer",
         "uysuser",
         "ybuser"
@@ -52,11 +63,11 @@
                 "priority": 5
             },
             "uysuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.balanceAbstract.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
+                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.balanceDetailMB.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
                 "priority": 0
             },
             "ybuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.ybuser.query()}';return{member:e.member}}",
+                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.balanceDetailMB.myNamedQueries.include.ybuser.query()}';return{member:e.member}}",
                 "priority": 0
             }
         }
@@ -64,7 +75,7 @@
     "accessControlLevelTwo": {
         "db": "uysdb",
         "onUserRole": "uysuser",
-        "func": "function x(i){if(print('uys-databank-log : call balance.detail.accessControlLevelTwo.func()'),!i.hasOwnProperty('period'))return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};if(null==db.common.findOne({_id:i.period}))return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};var e=db.dataBankNotifications.findOne({member:i.member,period:i.period,form:'A'});return null==e?{result:1,message:'Bilanço Detay verilerini doldurmadan önce 'İştirak' sayfasını doldurmanız gerekmektedir.<br/>'}:'HAYIR'==e.exist?{result:2,message:''İştirak' sayfasında konsolidasyona dahil iştirakiniz bulunmamaktadır.<br/>Bu nedenle konsolide veri girişine ait sütun kaldırılmıştır.<br/>Konsolide veri girişi yapmak için konsolidasyona dahil iştirakınızın belirtilmesi gerekmektedir.'}:{result:0,message:'it is ok'}}"
+        "func": "function x(i){if(null==i.period)return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};if(null==db.common.findOne({_id:i.period}))return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};var e=db.dataBankNotifications.findOne({member:i.member,period:i.period,form:'A'});return null==e?{result:1,message:'Bilanço Detay verilerini doldurmadan önce 'İştirak' sayfasını doldurmanız gerekmektedir.<br/>'}:'HAYIR'==e.exist?{result:2,message:''İştirak' sayfasında konsolidasyona dahil iştirakiniz bulunmamaktadır.<br/>Bu nedenle konsolide veri girişine ait sütun kaldırılmıştır.<br/>Konsolide veri girişi yapmak için konsolidasyona dahil iştirakınızın belirtilmesi gerekmektedir.'}:{result:0,message:'it is ok'}}"
     },
     "dimension": {
         "value": "grid",
@@ -210,30 +221,12 @@
             "shoot": true
         }
     },
-        "upperNodes": ["node_dataBank"],
+    "upperNodes": ["node_dataBank"],
 
-    
-    "eventPostSave": {
-        "db": "uysdb",
-        "op": "function x(e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
-    },
-    "filter": {
-        "forms": "balanceDetail"
-    },
-    "zetDimension": [
-        "member",
-        "period",
-        "template"
-    ],
-    "userConstantNoteList": [
-        "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir.",
-        "'Excele Aktar' butonu ile bu sayfayı Excel dosyası olarak görüntüleyebilirsiniz. Excel dosyasında, bu sayfadaki yeşil alanlarda yer alan hesaplama formülü etkindir.",
-        "Formu Excel olarak indirip üzerinde çalışmayı tamamladıktan sonra bu sayfaya kopyalayıp/yapıştırarak verilerinizi kaydedebilirsiniz."
-    ],
     "constraintItems": {
         "db": "uysdb",
         "collection": "dataBankConstraintFormulas",
-        "query": "function x(o){return periodRecord=db.common.findOne(o.period),myquery={period:o.period,template:o.template},controlIds=[],db.dataBankControlPeriodTemplate.find(myquery).forEach(function(o){controlIds.push(o.control)}),query={_id:{$in:controlIds},forms:'constraint',relations:'H3','#where':'this.relations.length==1',validPeriods:periodRecord.month},query}"
+        "query": "function x(o){return periodRecord=db.common.findOne(o.period),myquery={period:o.period,template:o.template},controlIds=[],db.dataBankControlPeriodTemplate.find(myquery).forEach(function(o){controlIds.push(o.control)}),query={_id:{$in:controlIds},forms:'constraint',relations:'H5','#where':'this.relations.length==1',validPeriods:periodRecord.month},query}"
     },
     "fields": [
         {
@@ -439,8 +432,8 @@
             }
         }, 
         {
-            "field": "template",
             "key": "template",
+            "field": "template",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
             "reportOrder": 8000,
@@ -548,7 +541,7 @@
                             },
                             {
                                 "key": "form",
-                                "string-value": "H3"
+                                "string-value": "H5"
                             },
                             {
                                 "key": "member_type",
@@ -625,38 +618,18 @@
             "quickFilter": false
         },
         {
-            "key": "consolidated",
-            "field": "consolidated",
-            "name": "Konsolide",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "componentType": "inputText",
-            "roleCheck": true,
-            "readonly": false,
-            "db": "uysdb",
-            "rendered": "function x(e,r){if(print('uys-databank-log : call graph2.balanceDetail.fields.consolidated.rendered()'),!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;if(null==r)return!1;if(0<=r.indexOf('architect'))return!0;if(0<=r.indexOf('uysadmin'))return!0;var n=db.getSisterDB('uysdb').dataBankNotifications.findOne({member:e.member,period:e.period,form:'A'});return null!==n&&n.hasOwnProperty('exist')&&'EVET'===n.exist}",
-            "order": 10,
-            "reportOrder": 6000,
-            "valueType": "java.lang.String",
-            "converter": "MoneyConverter",
-            "style": "text-align:right;",
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
             "key": "soloTL",
             "field": "soloTL",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "name": "Solo (TL)",
+            "accesscontrol": "ybuser,uysuser,uysadmin,databankarchitect,uysviewer",
             "ndType": "MEASURE",
             "ndAxis": "Y-IGREK",
-            "name": "Solo (TL)",
             "componentType": "inputText",
             "roleCheck": true,
             "rendered": true,
             "readonly": false,
-            "order": 20,
-            "reportOrder": 5000,
+            "order": 70,
+            "reportOrder": 80,
             "valueType": "java.lang.String",
             "converter": "MoneyConverter",
             "style": "text-align:right;",
@@ -666,16 +639,16 @@
         {
             "key": "soloFX",
             "field": "soloFX",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "name": "Solo (YP)",
+            "accesscontrol": "ybuser,uysuser,uysadmin,databankarchitect,uysviewer",
             "ndType": "MEASURE",
             "ndAxis": "Y-IGREK",
-            "name": "Solo (YP)",
             "componentType": "inputText",
             "roleCheck": true,
             "rendered": true,
             "readonly": false,
-            "order": 30,
-            "reportOrder": 4000,
+            "order": 80,
+            "reportOrder": 75,
             "valueType": "java.lang.String",
             "converter": "MoneyConverter",
             "style": "text-align:right;",
@@ -685,41 +658,21 @@
         {
             "key": "solo",
             "field": "solo",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "name": "Solo (Toplam)",
+            "order": 90,
+            "reportOrder": 70,
+            "accesscontrol": "ybuser,uysuser,uysadmin,databankarchitect,uysviewer",
             "ndType": "MEASURE",
             "ndAxis": "Y-IGREK",
-            "name": "Solo (Toplam)",
             "componentType": "inputText",
             "roleCheck": true,
             "rendered": true,
             "readonly": false,
-            "order": 40,
-            "reportOrder": 3500,
             "valueType": "java.lang.String",
             "converter": "MoneyConverter",
             "style": "text-align:right;",
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "field": "amount",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "name": "Tutar",
-            "componentType": "inputText",
-            "roleCheck": true,
-            "db": "uysdb",
-            "rendered": "function x(r){if(print('uys-databank-log : call graph2.balanceDetail.fields.amount.rendered()'),!r.hasOwnProperty('member'))return!1;if(!r.hasOwnProperty('period'))return!1;var e=db.common.findOne({_id:r.period});return null!=e&&e.year<2008}",
-            "readonly": false,
-            "order": 3000,
-            "reportOrder": 3000,
-            "valueType": "java.lang.String",
-            "converter": "MoneyConverter",
-            "style": "text-align:right;",
-            "key": "amount",
             "reportRendered": true,
             "quickFilter": false
         }
     ]
-} 
+}
