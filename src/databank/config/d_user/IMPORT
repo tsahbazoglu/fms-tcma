@@ -1,15 +1,19 @@
 docker cp . fms-mongodb:/home/fms
 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'contactDetail'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'alternativeChannels'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'volumeTradedInvestor'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'departmentBasedVolumeTraded'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByDepartments'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'educationBasedPersonelCounts'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'employeesByAgeGroups'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExpirenceBasesPersonelCounts'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'corporateFinanceActivities'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'portfolio_management_pys'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'contactDetail'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'alternativeChannels'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'volumeTradedInvestor'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'departmentBasedVolumeTraded'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'employeesByDepartments'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'educationBasedPersonelCounts'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'employeesByAgeGroups'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'jobExpirenceBasesPersonelCounts'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'corporateFinanceActivities'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'portfolio_management_pys'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'portfolioManagement'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'marginTrading'})" 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'balanceAbstract'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'incomeAbstract'})"
 
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
 mongoimport --db configdb --collection graph2 --type json --file alternative-channels.json
@@ -21,4 +25,8 @@ mongoimport --db configdb --collection graph2 --type json --file employees-age.j
 mongoimport --db configdb --collection graph2 --type json --file employees-expirence.json
 mongoimport --db configdb --collection graph2 --type json --file corporate-finance-activities.json
 mongoimport --db configdb --collection graph2 --type json --file portfolio-management-pys.json
+mongoimport --db configdb --collection graph2 --type json --file portfolio-management.json
+mongoimport --db configdb --collection graph2 --type json --file margin-trading.json
+mongoimport --db configdb --collection graph2 --type json --file balance-abstract.json
+mongoimport --db configdb --collection graph2 --type json --file income-abstract.json
 
