@@ -17,7 +17,9 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'balanceDetail'
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'balanceDetailMB'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'incomeAbstract'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'incomeDetail'})"
- 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'subsidiries'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'control'})"
+
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
 mongoimport --db configdb --collection graph2 --type json --file alternative-channels.json
 mongoimport --db configdb --collection graph2 --type json --file volume-traded-investor.json
@@ -35,4 +37,6 @@ mongoimport --db configdb --collection graph2 --type json --file balance-detail.
 mongoimport --db configdb --collection graph2 --type json --file balance-detail-mb.json
 mongoimport --db configdb --collection graph2 --type json --file income-abstract.json
 mongoimport --db configdb --collection graph2 --type json --file income-detail.json
+mongoimport --db configdb --collection graph2 --type json --file subsidiries.json
+mongoimport --db configdb --collection graph2 --type json --file control.json
 
