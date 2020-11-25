@@ -117,11 +117,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -156,11 +156,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -195,11 +195,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },

@@ -69,11 +69,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -108,11 +108,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -147,11 +147,11 @@
                         },
                         {
                             "key": "period",
-                            "value": "fms_code{{filter_period}}"
+                            "fms-value": "fms_code{{filter_period}}"
                         },
                         {
                             "key": "member",
-                            "value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -426,8 +426,8 @@
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
-            "defaultCurrentValue": "function (member) {                    period = null;                    periods = [];                    db.dataBankOrganizationStatus.find({                        'myFormGroups': {$in: ['activity', 'B1']},                        'status.code': {                            '$in': ['000', '001', '002']                        },                        'workflowStatus.code': {                            '$in': ['000', '001', '002', '003', '006' ]                        },                        'member': member                    }, {period: 1}).forEach(function (v) {                        periods.push(v.period);                    });                    db.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {                        period = v;                    });                    return period;                }",
-            "defaultHistoryValue": "function (currentSearchObject) {                    periodID = currentSearchObject.period;                    period = db.common.findOne(periodID);                    prevPeriod = db.common.findOne({forms: 'period', value: period.order - 10});                    return prevPeriod == null ? period : {_id: prevPeriod._id};                }",		
+            "defaultCurrentValue": "function x(i){return period=null,periods=[],db.dataBankOrganizationStatus.find({myFormGroups:{$in:['activity','B1']},'status.code':{$in:['000','001','002']},'workflowStatus.code':{$in:['000','001','002','003','006']},member:i},{period:1}).forEach(function(i){periods.push(i.period)}),db.common.find({_id:{$in:periods}}).sort({value:-1}).limit(1).forEach(function(i){period=i}),period}",
+            "defaultHistoryValue": "function x(e){return periodID=e.period,period=db.common.findOne(periodID),prevPeriod=db.common.findOne({forms:'period',value:period.order-10}),null==prevPeriod?period:{_id:prevPeriod._id}}",		
             "autoset": {
                 "value": true,
                 "list": [
@@ -439,7 +439,6 @@
                         "roles": ["uysadmin", "architect"],
                         "value": true
                     }
-
                 ]
             },
             "observer": {
@@ -457,7 +456,7 @@
                         "list": [
                             {
                                 "key": "_id",
-                                "value": "fms_code{{filter_period}}"
+                                "fms-value": "fms_code{{filter_period}}"
                             }
                         ]
                     },
