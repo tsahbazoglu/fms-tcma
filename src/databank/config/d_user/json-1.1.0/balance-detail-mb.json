@@ -21,8 +21,15 @@
     "historyPosition": 2,
     "type": "website",
     "menuOrder": 400,
-    "calculateCollection": "dataBankCalculateFormulas",
     "controlCollection": "dataBankControl",
+    "calculate-ref": {
+        "func": null,
+        "doc": {
+            "db": "uysdb",
+            "collection": "dataBankCalculateFormulas",
+            "relations": "H5"
+        }
+    },
     "eventPostSave": {
         "db": "uysdb",
         "op": "function x(e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
@@ -75,7 +82,7 @@
     "accessControlLevelTwo": {
         "db": "uysdb",
         "onUserRole": "uysuser",
-        "func": "function x(i){if(null==i.period)return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};if(null==db.common.findOne({_id:i.period}))return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};var e=db.dataBankNotifications.findOne({member:i.member,period:i.period,form:'A'});return null==e?{result:1,message:'Bilanço Detay verilerini doldurmadan önce 'İştirak' sayfasını doldurmanız gerekmektedir.<br/>'}:'HAYIR'==e.exist?{result:2,message:''İştirak' sayfasında konsolidasyona dahil iştirakiniz bulunmamaktadır.<br/>Bu nedenle konsolide veri girişine ait sütun kaldırılmıştır.<br/>Konsolide veri girişi yapmak için konsolidasyona dahil iştirakınızın belirtilmesi gerekmektedir.'}:{result:0,message:'it is ok'}}"
+        "func": "function x(i){if(null==i.period)return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};if(null==db.common.findOne({_id:i.period}))return{result:1,message:'<b><u>Veri Girişi Bölümü</u></b><br/><br/>Veri arama kriterlerinde <b>Dönem</b> alanı tespit edilemedi.<br/>Veri girişi  için tanımlı dönem-şablon yok.<br/>'};var e=db.dataBankNotifications.findOne({member:i.member,period:i.period,form:'A'});return null==e?{result:1,message:'Bilanço Detay verilerini doldurmadan önce İştirak sayfasını doldurmanız gerekmektedir.<br/>'}:'HAYIR'==e.exist?{result:2,message:'İştirak sayfasında konsolidasyona dahil iştirakiniz bulunmamaktadır.<br/>Bu nedenle konsolide veri girişine ait sütun kaldırılmıştır.<br/>Konsolide veri girişi yapmak için konsolidasyona dahil iştirakınızın belirtilmesi gerekmektedir.'}:{result:0,message:'it is ok'}}"
     },
     "dimension": {
         "value": "grid",
