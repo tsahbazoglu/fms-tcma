@@ -171,7 +171,9 @@
         "download": {
             "shoot": true
         },
-        "checkAll": "function x(e,r){if(print('configdb.graph2.key.control.actions.checkAll() : tüm sayfaları kontrol et'),null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!1;if(!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;var t={status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','002','003']},period:e.period,member:e.member,template:e.template};return 0<db.dataBankOrganizationStatus.count(t)}"
+        "checkAll": {
+            "func": "function x(e,r){if(print('configdb.graph2.key.control.actions.checkAll() : tüm sayfaları kontrol et'),null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!1;if(!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;var t={status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','002','003']},period:e.period,member:e.member,template:e.template};return 0<db.dataBankOrganizationStatus.count(t)}"
+        }
     },
     "upperNodes": ["node_dataBank"],
     "events": {
@@ -198,32 +200,34 @@
     "menuOrder": 420,
     "type": "website",
     "myNamedQueries": {
-        "include": {
-            "uysarchitect": {
+        "include": [
+            {
+                "roles": ["uysarchitect", "uysadmin", "uysviewer"],
                 "query": {
-
+                    "func": null,
+                    "list": null
                 },
                 "priority": 7
             },
-            "uysadmin": {
+            {
+                "roles": ["uysuser", "pyuser", "ybuser"],
                 "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        },
+                        {
+                            "key": "result",
+                            "string-value": "HATA VAR"
+                        }
 
+                    ]
                 },
-                "priority": 6
-            },
-            "uysuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.control.myNamedQueries.include.uysuser.query()}';return{result:'HATA VAR',member:e.member}}",
-                "priority": 0
-            },
-            "pyuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.pyuser.query()}';return{result:'HATA VAR',member:e.member}}",
-                "priority": 0
-            },
-            "ybuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.control.myNamedQueries.include.ybuser.query()}';return{result:'HATA VAR',member:e.member}}",
                 "priority": 0
             }
-        }
+        ]
     },
     "funcNote": "function x(e){if(!e.hasOwnProperty('template'))return null;if(!e.hasOwnProperty('period'))return null;var n=db.dataBankTemplate.findOne({_id:e.template}),i=db.common.findOne({_id:e.period});if(null==n||null==i)return null;var r=n.value,l=i.value;return'UFRS-201306'!=r||201303!=l&&201303!=l?null:'Lütfen Dönem sekmesinden 2013/03 dönemini de seçerek, bu döneme ilişkin kontrol formüllerini inceleyiniz. 2013/03 ve 2014/03 dönemlerindeki Hata ve Uyarı mesajları giderilmeden bu sayfada Gönder butonu belirmeyecektir.'}",
     "readOnlyNote": null,
@@ -545,8 +549,8 @@
             "quickFilter": false
         },
         {
-            "field": "result",
             "key": "result",
+            "field": "result",
             "reportOrder": 60,
             "order": 60,
             "readonly": true,
@@ -560,10 +564,14 @@
             "accesscontrol": "uysadmin,architect",
             "componentType": "selectOneMenu",
             "converter": "SelectOneStringConverter",
-            "items": [
-                "HATA VAR",
-                "TAMAM"
-            ],
+            "items": {
+                "func": null,
+                "items":
+                        [
+                            "HATA VAR",
+                            "TAMAM"
+                        ]
+            },
             "search-access": false,
             "reportRendered": true,
             "quickFilter": true
@@ -584,16 +592,19 @@
             "valueType": "java.lang.String",
             "accesscontrol": "uysuser,pyuser,uysadmin,architect,ybuser",
             "converter": "BsonConverter",
-            "items": [
-                {
-                    "code": "000",
-                    "name": "Hata"
-                },
-                {
-                    "code": "001",
-                    "name": "Uyarı"
-                }
-            ],
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Hata"
+                    },
+                    {
+                        "code": "001",
+                        "name": "Uyarı"
+                    }
+                ]
+            },
             "search-access": true,
             "reportRendered": true,
             "quickFilter": true
