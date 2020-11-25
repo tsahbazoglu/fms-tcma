@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "corporateFinanceActivities",
@@ -13,20 +14,23 @@
     "historyRendered": true,
     "historyPosition": 1,
     "type": "website",
-    "loginFkField": "member",
+    "loginFkField": "member", 
+    "handsonRowHeaderWidth": 300,
+    "handsonColWidths": 220,
+    "controlCollection": "dataBankControl",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "calculateQuery": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'E1',validPeriods:null===a?null:a.value}}",
-    "controlCollection": "dataBankControl",
+    "calculate-ref": {
+        "func": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'E1',validPeriods:null===a?null:a.value}}",
+        "doc": null
+    },
     "accesscontrol": [
         "uysadmin",
         "architect",
         "uysviewer",
         "uysuser",
         "ybuser"
-    ],
-    "handsonRowHeaderWidth": 300,
-    "handsonColWidths": 220,
+    ],   
     "myNamedQueries": {
         "include": {
             "uysarchitect": {
