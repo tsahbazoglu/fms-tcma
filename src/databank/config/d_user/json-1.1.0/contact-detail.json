@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "contactDetail",
@@ -57,40 +58,29 @@
         "forms": "contactDetail"
     },
     "myNamedQueries": {
-        "include": {
-            "uysarchitect": {
+        "include": [
+            {
+                "roles": ["uysarchitect", "uysadmin"],
                 "query": {
-
+                    "func": null,
+                    "list": null
                 },
                 "priority": 7
             },
-            "uysadmin": {
+            {
+                "roles": null,
                 "query": {
-
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
                 },
-                "priority": 6
-            },
-            "uysuser": {
-                "query": {
-
-                },
-                "priority": 0
-            },
-            "pyuser": {
-                "query": {
-
-                },
-                "priority": 0
-            },
-            "ybsuser": {
-                "query": "function (searchObject) {if (!searchObject.hasOwnProperty('member')) {throw 'member field could not be detected. call js function : uysdb.userDetail.myNamedQueries.include.uysuser.query()}'} return {'member': searchObject.member};}",
-                "priority": 0
-            },
-            "ybuser": {
-                "query": "function (searchObject) { if (!searchObject.hasOwnProperty('member')) { throw 'member field could not be detected. call js function : uysdb.userDetail.myNamedQueries.include.uysuser.query()}' } return {'member': searchObject.member};}",
                 "priority": 0
             }
-        }
+        ]
     },
     "fields": [
         {
