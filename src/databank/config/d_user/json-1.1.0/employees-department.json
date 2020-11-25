@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "employeesByDepartments",
@@ -17,9 +18,16 @@
     "type": "website",
     "handsonRowHeaderWidth": 200,
     "handsonColWidths": 50,
-    "calculateCollection": "dataBankCalculateFormulas",
     "controlCollection": "dataBankControl",
     "loginFkField": "member",
+    "calculate-ref": {
+        "func": null,
+        "doc": {
+            "db": "uysdb",
+            "collection": "dataBankCalculateFormulas",
+            "relations": "D1"
+        }
+    },
     "accesscontrol": [
         "uysadmin",
         "architect",
