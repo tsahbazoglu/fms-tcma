@@ -10,7 +10,26 @@
     "form": "D3",
     "forms": "graphForm",
     "name": "Personel Sayısı - Eğitim",
+    "readOnlyNote": null,
+    "userNote": "<ul>\n<li>Çalışanların son mezuniyetine göre dağılımları girilmelidir.\n<li>Lisans, 4 yıllık üniversite mezunlarını ifade etmektedir. \n<li>Yüksekokul, 2 yıllık ön lisans mezunlarını ifade etmektedir\n        </ul>",
+    "historyRendered": true,
+    "historyPosition": 2,
+    "type": "website",
+    "handsonRowHeaderWidth": 150,
+    "handsonColWidths": 50,
+    "loginFkField": "member",
+    "controlCollection": "dataBankControl",
     "userConstantNote": "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir.",
+    "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
+    "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "calculate-ref": {
+        "func": null,
+        "doc": {
+            "db": "uysdb",
+            "collection": "dataBankCalculateFormulas",
+            "relations": "D3"
+        }
+    }, 
     "accesscontrol": [
         "uysadmin",
         "architect",
@@ -19,8 +38,6 @@
         "pyuser",
         "ybuser"
     ],
-    "handsonRowHeaderWidth": 150,
-    "handsonColWidths": 50,
     "myNamedQueries": {
         "include": {
             "uysarchitect": {
@@ -187,39 +204,17 @@
         }
     },
     "upperNodes": ["node_dataBank"],
-
     "eventPostSave": {
         "db": "uysdb",
         "op": "function x(e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
     },
-    "autosetFields": {
-        "member": 1,
-        "period": {
-            "db": "uysdb",
-            "adminFunc": "function () {return null;}",
-            "defaultCurrentValue": "function x(n){if(!n.hasOwnProperty('member'))throw'no member field on searchObject';var o=null,i=[];return db.dataBankOrganizationStatus.find({myFormGroups:{$in:['activity','D3']},'status.code':{$in:['000','001','002']},'workflowStatus.code':{$in:['000','001','002','003','006']},member:n.member},{period:1}).forEach(function(n){i.push(n.period)}),db.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(n){o=n}),o}",
-            "defaultHistoryValue": "function x(r){print('uys-databank-log : balanceAbstract.fields.period.defaultHistoryValue');var d=r.period,n=db.common.findOne(d),o=0;null!=n&&(o=n.order-10);var e=db.common.findOne({forms:'period',order:o});return null==e?n:{_id:e._id}}"
-        }
-    },
-    "loginFkField": "member",
     "filter": {
         "forms": "educationBasedPersonelCounts"
     },
-    "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
-    "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
     "zetDimension": [
         "member",
         "period"
-    ],
-
-    "readOnlyNote": null,
-    "userNote": "<ul>\n<li>Çalışanların son mezuniyetine göre dağılımları girilmelidir.\n<li>Lisans, 4 yıllık üniversite mezunlarını ifade etmektedir. \n<li>Yüksekokul, 2 yıllık ön lisans mezunlarını ifade etmektedir\n        </ul>",
-    "historyRendered": true,
-    "historyPosition": 2,
-    "type": "website",
-
-    "calculateCollection": "dataBankCalculateFormulas",
-    "controlCollection": "dataBankControl",
+    ],   
     "constraintItems": {
         "db": "uysdb",
         "collection": "dataBankConstraintFormulas",
