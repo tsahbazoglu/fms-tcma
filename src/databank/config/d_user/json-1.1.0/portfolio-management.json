@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "portfolioManagement",
@@ -201,7 +202,6 @@
             "shoot": true
         }
     }, 
-
     "constraintItems": {
         "db": "uysdb",
         "collection": "dataBankConstraintFormulas",
