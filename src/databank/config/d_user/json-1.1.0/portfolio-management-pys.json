@@ -18,8 +18,6 @@
     "historyPosition": 1,
     "type": "website",
     "controlCollection": "dataBankControl",
-    "calculateCollection": "dataBankCalculateFormulas",
-    "calculateQuery": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'F11',validPeriods:null===a?null:a.value}}",
     "loginFkField": "member",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
@@ -28,7 +26,11 @@
         "Bireysel portföy yönetimi verilerine, gerçek ve tüzel kişilere ait yönetilen 'kolektif yatırım araçları'(yatırım fonları vb.) ile 'diğer yatırım araçları'(pay senedi, tahvil vb.) büyüklükleri ayrıştırılarak girilecektir.",
         "Hücrelere veri girişi yaptıktan sonra klavyedeki 'Enter' tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar 'Kaydet' tuşuna basılarak etkinleşecektir. ",
         "Özel fonlara ilişkin bilgiler ayrıca girilmelidir."
-    ],
+    ], 
+    "calculate-ref": {
+        "func": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'F11',validPeriods:null===a?null:a.value}}",
+        "doc": null
+    },
     "accesscontrol": [
         "uysadmin",
         "architect",
