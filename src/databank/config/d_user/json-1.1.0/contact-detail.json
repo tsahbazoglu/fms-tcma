@@ -121,20 +121,6 @@
                 "ref": {
                     "db": "uysdb",
                     "itemTable": "common",
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
-                                "type": "in"
-                            }
-                        ]
-                    },
                     "adminQuery": {
                         "func": null,
                         "list": [
@@ -144,8 +130,26 @@
                             },
                             {
                                 "key": "memberType",
-                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
+                                "value": "AK,VİAŞ,YB",
                                 "type": "in"
+                            },
+                            {
+                                "key": "ldapUID",
+                                "value": "empty",
+                                "type": "ne"
+                            }
+                        ]
+                    },
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
                             }
                         ]
                     },
@@ -157,9 +161,8 @@
                                 "value": "member"
                             },
                             {
-                                "key": "memberType",
-                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO, PYŞ, YB",
-                                "type": "in"
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
                             }
                         ]
                     },

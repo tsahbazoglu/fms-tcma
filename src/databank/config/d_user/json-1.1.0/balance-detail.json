@@ -277,25 +277,6 @@
                 "ref": {
                     "db": "uysdb",
                     "itemTable": "common",
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
-                            },
-                            {
-                                "key": "ldapUID",
-                                "value": "empty",
-                                "type": "ne"
-                            }
-                        ]
-                    },
                     "adminQuery": {
                         "func": null,
                         "list": [
@@ -315,6 +296,19 @@
                             }
                         ]
                     },
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
                     "historyQuery": {
                         "func": null,
                         "list": [
@@ -323,14 +317,8 @@
                                 "value": "member"
                             },
                             {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
-                            },
-                            {
-                                "key": "ldapUID",
-                                "value": "empty",
-                                "type": "ne"
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
                             }
                         ]
                     },
