@@ -1,0 +1,570 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "organizationStatus",
+    "db": "uysdb",
+    "collection": "dataBankOrganizationStatus",
+    "versionCollection": "versionOrganizationStatus",
+    "menuOrder": 210,
+    "form": "N01",
+    "forms": "graphForm",
+    "name": "N01 - Kurumun Durumu",
+    "shortName": "N01 - Kurum Durumu",
+    "historyRendered": false,
+    "type": "website",
+    "userConstantNote": "",
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
+    "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "userNote": "<ul>\n<li>\nForm Grupları</br></br>\nBu alan SALT OKUNUR konusunda \"Görülebilir/Yazılabilir Karar Matrisi\" tablosunda belirtilen durumlara göre önceliklidir.</br>\nÖrneğin : eğer bu alanda aktivity(faaliyet grubuna ait formları temsil eden group) belirtlmediyse</br>\n\"Görülebilir/Yazılabilir Karar Matrisi\" tablosunda durum kombinasyonları ne olursa olsun</br>\nfark etmez, faaliyet grubuna ait formlar salt okunur olur.</br></br>\n<li>\nDÜZELTMEYE AÇILDI</br></br> \nBu state, yalnız ve yalnız, geçmiş dönemlere ait düzeltme durumlarında kullanılmalı.</br>\nBu state bağlı email bilgilendirmesinde, kurumdan belge istenilmektedir.</br>\nGüncel döeneme ait veri düzenleme durumlarında RED EDİLDİ state kullanılmalı.</br></br> \n<li><style>\n.mytable{border:0px solid grey;border-collapse: separate;border-spacing: 2px;background:grey}\n.mytable td {border: 0px solid #000;white-space:nowrap;background: #fff;color: #000;}\n.mytable td.mygreen  {color:green;font-weight:bolder;}\n.mytable td.myreddd   {color:red;font-weight:bolder;}\n\n</style>\nKullanıcı Bildirimleri ile ilgili Döneme ait </br>\n\"Görülebilir/Yazılabilir Karar Matrisi\" </br></br>\n<table class=\"mytable\">\n<tr><td>Kurumun Durumu</td><td>Kurumun Veri Durumu</td><td>Veri Görünümü</td><td>Veri Girişi</td><td>Kurumun durumunun belirlenmesi</td></tr>\n<tr><td>FAALİYETTDE</td><td>GÖNDERIİLMEDİ        </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>RED EDİLDİ           </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>DÜZELTMEYE AÇILDI    </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>BEKLEMEDE            </td><td class=\"mygreen\">görülebilir</td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>İNCELENİYOR          </td><td class=\"mygreen\">görülebilir</td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>ONAYLANDI            </td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>BİLDİRİM YAPILMAYACAK</td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>BİLDİRİM YAPILMADI   </td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n</table>\n</ul>",
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "upperNodes": ["node_databank_manager"],   
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
+    "filter": {
+        "forms": "organizationStatus"
+    },
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "download": {
+            "permit": [],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "eventPostSave": {
+        "db": "uysdb",
+        "op": "function x(a){var e=db.common.findOne({_id:a.period});printjson({operatedObjectPeriod:e});var t=[];if(db.common.ensureIndex({value:1}),db.common.find({value:{$gt:e.value},year:e.year}).forEach(function(a){t.push(a._id)}),printjson({greaterPeriods:t}),db.dataBankOrganizationStatus.update({member:a.member,template:a.template,period:{$in:t}},{$set:{workflowStatus:{code:'006',name:'BEKLEMEDE'}}},{multi:!0}),'002'==a.workflowStatus.code||'003'==a.workflowStatus.code)for(var n in sourceTargetMap={dataBankSubsidiries:'snapshotSubsidiries',dataBankAlternativeChannels:'snapshotAlternativeChannels',dataBankCallCenterTransactions:'snapshotCallCenterTransactions',dataBankInternetTransactions:'snapshotInternetTransactions',dataBankVolumeTradedInvestor:'snapshotVolumeTradedInvestor',dataBankDepartmentBasedVolumeTraded:'snapshotDepartmentBasedVolumeTraded',dataBankEmployeesByDepartments:'snapshotEmployeesByDepartments',dataBankEmployeesByAgeGroups:'snapshotEmployeesByAgeGroups',dataBankEducationBasedPersonelCounts:'snapshotEducationBasedPersonelCounts',dataBankJobExpirenceBasesPersonelCounts:'snapshotJobExpirenceBasesPersonelCounts',dataBankCorporateFinanceActivities:'snapshotCorporateFinanceActivities',dataBankPortfolioManagement:'snapshotPortfolioManagement',dataBankMarginTrading:'snapshotMarginTrading',dataBankBalanceDetail:'snapshotBalanceDetail',dataBankBalanceDetailMB:'snapshotBalanceDetailMB',dataBankBalanceAbstract:'snapshotBalanceAbstract',dataBankIncomeDetail:'snapshotIncomeDetail',dataBankIncomeAbstract:'snapshotIncomeAbstract'},myQuery={member:a.member,period:a.period},db.snapshotNullHandler.update(myQuery,{$set:{value:null}},{upsert:!0}),printjson({myQuery:myQuery}),sourceTargetMap)sourceCollection=db.getCollection(n),targetCollection=db.getCollection(sourceTargetMap[n]),printjson({sourceCollection:sourceCollection,targetCollection:targetCollection}),sourceCollection.ensureIndex({member:1,period:1}),sourceCollection.find(myQuery).forEach(function(a){targetCollection.update({_id:a._id},a,{upsert:!0})})}"
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 10,
+            "order": 10,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "quickFilter": true,
+            "accesscontrol": ["uysadmin", "architect"],
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
+            "items": {
+                "list": null,
+                "func": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "AK,VİAŞ,YB",
+                                "type": "in"
+                            },
+                            {
+                                "key": "ldapUID",
+                                "value": "empty",
+                                "type": "ne"
+                            }
+                        ]
+                    },
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": ["uysadmin,architect"],
+                            "order": 10
+                        },
+
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%6s | %s"
+                }
+            }
+        },
+        {
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "reportOrder": 20,
+            "order": 20,
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "reportRendered": true,
+            "quickFilter": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "converter": "SelectOneObjectIdConverter",
+            "defaultCurrentValue": "function x(i){return period=null,periods=[],db.dataBankOrganizationStatus.find({myFormGroups:{$in:['activity','C1']},'status.code':{$in:['000','001','002']},'workflowStatus.code':{$in:['000','001','002','003','006']},member:i},{period:1}).forEach(function(i){periods.push(i.period)}),db.common.find({_id:{$in:periods}}).sort({value:-1}).limit(1).forEach(function(i){period=i}),period}",
+            "defaultHistoryValue": "function x(e){return printjson(e),periodID=e.period,period=db.common.findOne(periodID),printjson(period),null==period?null:(prevPeriodValue=period.value,0==(x=prevPeriodValue%100-3)?prevPeriodValue=100*(parseInt(prevPeriodValue/100)-1)+12:prevPeriodValue-=3,period=db.common.findOne({forms:'period',value:prevPeriodValue}),null==period?null:{_id:period._id})}",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {             
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "query": {
+                        "func": "function x(e){if(member=e.member,null==member)throw'searchObject.member is resolved to null';return periods=[],db.dataBankOrganizationStatus.find({status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','001','002','003','006']},member:member},{period:1}).forEach(function(e){periods.push(e.period)}),{_id:{'#in':periods}}}",
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            }
+                        ]
+                    },
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": -1
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "field": "template",
+            "key": "template",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 8000,
+            "order": 8000,
+            "name": "Şablon",
+            "shortName": "Şablon", 
+            "valueType": "java.lang.String",
+            "accesscontrol": "ybuser,uysuser,pyuser,uysadmin,databankarchitect,uysviewer",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneObjectIdConverter",
+            "defaultHistoryValue": "function x(t){return print('uys-databank-log : balanceAbstract.fields.template.defaultHistoryValue'),printjson(t),periodID=t.period,memberID=t.member,dborgstatus=db.dataBankOrganizationStatus.findOne({member:memberID,period:periodID},{template:1}),null!=dborgstatus?{_id:dborgstatus.template}:null}",
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "reportRendered": true,
+            "quickFilter": true,
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankTemplate",
+                    "labelStringFormat": "%s",
+                    "query": {
+                        "func": "function x(e){if(member=e.member,null==member)throw'member could not be found';return templates=[],db.dataBankOrganizationStatus.find({status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','001','002','003','006']},member:member},{template:1}).forEach(function(e){templates.push(e.template)}),{_id:{'#in':templates}}}",
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": "function x(a){print('uys-databank-log : call balance.abstract.template.items.adminQuery()');var n=db.common.findOne({_id:a.period});if(null===n)return print('uys-databank-log : call balance.abstract.template.items.adminQuery.warn : period is a null'),{};for(i in idsMap={},db.dataBankBalanceRelation.ensureIndex({period:1,form:1}),db.dataBankBalanceRelation.find({period:n._id,form:'H1'}).forEach(function(a){idsMap[a.template.str]=1}),idsArray=[],idsMap)idsArray.push(ObjectId(i));return query={_id:{$in:idsArray}},printjson(query),query}",
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": "function x(a){if(print('uys-databank-log : call balance.abstract.template.items.historyQuery()'),null==a.period)return print('uys-databank-log : call balance.abstract.template.items.historyQuery.warn : period is a null'),{};var r=db.common.findOne({_id:a.period});if(null===r)return print('uys-databank-log : call balance.abstract.template.items.historyQuery.warn : period is a null'),{};for(i in idsMap={},db.dataBankBalanceRelation.ensureIndex({period:1,form:1}),db.dataBankBalanceRelation.find({period:r._id,form:'H1'}).forEach(function(a){idsMap[a.template.str]=1}),idsArray=[],idsMap)idsArray.push(ObjectId(i));return query={_id:{$in:idsArray}},printjson(query),query}",
+                        "list": null
+                    },
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "order",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "v": [
+
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "version": true,
+            "field": "status",
+            "key": "status",
+            "reportOrder": 7000,
+            "order": 7000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kurumun Durumu",
+            "shortName": "Kurumun Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "YENİ KURUM"
+                    },
+                    {
+                        "code": "001",
+                        "name": "FAALİYETTE"
+                    },
+                    {
+                        "code": "002",
+                        "name": "GEÇİCİ KAPALI"
+                    },
+                    {
+                        "code": "003",
+                        "name": "ÜYELİKTEN ÇIKTI"
+                    }
+                ]
+            },
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "version": true,
+            "field": "workflowStatus",
+            "key": "workflowStatus",
+            "reportOrder": 6000,
+            "order": 6000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": true,
+            "name": "Kuruma ait veri durumu",
+            "shortName": "Kuruma ait veri durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "GÖNDERİLMEDİ"
+                    },
+                    {
+                        "code": "001",
+                        "name": "İNCELENİYOR"
+                    },
+                    {
+                        "code": "002",
+                        "name": "RED EDİLDİ"
+                    },
+                    {
+                        "code": "003",
+                        "name": "DÜZELTMEYE AÇILDI"
+                    },
+                    {
+                        "code": "004",
+                        "name": "ONAYLANDI"
+                    },
+                    {
+                        "code": "005",
+                        "name": "BİLDİRİM YAPILMAYACAK"
+                    },
+                    {
+                        "code": "006",
+                        "name": "BEKLEMEDE"
+                    },
+                    {
+                        "code": "007",
+                        "name": "BİLDİRİM YAPMADI"
+                    }
+                ]
+            }
+        },
+        {
+            "field": "controlResult",
+            "key": "controlResult",
+            "reportOrder": 5500,
+            "order": 5500,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kontrol Durumu",
+            "shortName": "Kontrol Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "TAMAM"
+                    },
+                    {
+                        "code": "001",
+                        "name": "HATA VAR"
+                    },
+                    {
+                        "code": "002",
+                        "name": "VERI DEGISTIRILDI"
+                    }
+                ]
+            },
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "myFormGroups",
+            "key": "myFormGroups",
+            "reportOrder": 5250,
+            "order": 5250,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Form Grupları [\"activity\",\"finance\"]",
+            "shortName": "Form Grupları",
+            "defaultValue": [
+                "activity",
+                "finance"
+            ],
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "note",
+            "key": "note",
+            "reportOrder": 5000,
+            "order": 5000,
+            "componentType": "inputTextarea",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "deadline",
+            "key": "deadline",
+            "name": "Son Bildirim Tarihi",
+            "shortName": "Son Bildirim Tarihi",
+            "reportOrder": 4000,
+            "order": 4000,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "consolidate",
+            "field": "consolidate",
+            "version": true,
+            "reportOrder": 7250,
+            "order": 7250,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Konsolide Durumu",
+            "shortName": "Konsolide Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "VAR"
+                    },
+                    {
+                        "code": "001",
+                        "name": "YOK"
+                    }
+                ]
+            },
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "member_type",
+            "key": "member_type",
+            "reportOrder": 10000,
+            "order": 10000,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        }
+    ]
+}

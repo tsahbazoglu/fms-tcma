@@ -1,0 +1,425 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "member",
+    "db": "uysdb",
+    "collection": "common",
+    "form": "Z50",
+    "name": "Z50 - Üyeler",
+    "menuOrder": 15,
+    "versionCollection": "versionMember",
+    "shouldAskForVersion": true,
+    "userConstantNote": "",
+    "forms": "graphForm",
+    "type": "website",
+    "defaultSortField": "name",
+    "defaultCurrentQuery": "function (searchObject) { return {}; }",
+    "defaultHistoryQuery": "function (searchObject) { return {}; }",
+    "loginFkField": "_id",
+    "eventPostSave": {
+        "type": "obfuscateLdapPassword"
+    },
+    "filter": {
+        "forms": "member"
+    },
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "upperNodes": ["node_databank_manager"],   
+    "actions": {
+        "new": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "delete": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        },
+        "download": {
+            "permit": [],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
+    "fields": [
+        {
+            "key": "ldapUID",
+            "field": "ldapUID",
+            "name": "Üye Giriş Kodu",
+            "shortName": "Üye Giriş Kodu",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": true,
+            "order": 99,
+            "reportOrder": 99,
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": true
+        },
+        {
+            "key": "eimzaTC",
+            "field": "eimzaTC",
+            "name": "Eimza Yetkili TC NO",
+            "shortName": "Eimza Yetkili TC NO",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 98,
+            "reportOrder": 98,
+            "valueType": "java.lang.String",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "memberCode",
+            "field": "memberCode",
+            "name": "Üye Kodu",
+            "shortName": "Üye Kodu",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 97,
+            "reportOrder": 97,
+            "valueType": "java.lang.String",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "memberType",
+            "field": "memberType",
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "componentType": "selectOneMenu",
+            "roleCheck": true,
+            "rendered": true,
+            "db": "uysdb",
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 96,
+            "reportOrder": 96,
+            "valueType": "java.lang.String",
+            "ajax_action": "uys_member_generate_ldapUID",
+            "ajax": true,
+            "items": {
+                "func": null,
+                "list": [
+                    "AK",
+                    "B",
+                    "MB",
+                    "KTB",
+                    "YB",
+                    "KB",
+                    "PYŞ",
+                    "MKYO",
+                    "GYO",
+                    "GSYO"
+                ]
+            },
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "converter": "SelectOneStringConverter",
+            "reportRendered": true,
+            "quickFilter": true
+        },
+        {
+            "key": "source",
+            "field": "source",
+            "name": "Kaynak",
+            "shortName": "Kaynak",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 95,
+            "reportOrder": 95,
+            "valueType": "java.lang.String",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 94,
+            "reportOrder": 94,
+            "valueType": "java.lang.String",
+            "version": true,
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": true
+        },
+        {
+            "key": "status",
+            "field": "status",
+            "version": true,
+            "reportOrder": 93,
+            "order": 93,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kurumun Durumu",
+            "shortName": "Kurumun Durumu",
+            "valueType": "java.lang.String",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "YENİ KURUM"
+                    },
+                    {
+                        "code": "001",
+                        "name": "FAALİYETTE"
+                    },
+                    {
+                        "code": "002",
+                        "name": "GEÇİCİ KAPALI"
+                    },
+                    {
+                        "code": "003",
+                        "name": "ÜYELİKTEN ÇIKTI"
+                    }
+                ]
+            },
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "nameSetDate",
+            "field": "nameSetDate",
+            "name": "Tescil Tarihi (Ad Verilen/Değiştirilen Tarih)",
+            "shortName": "Tescil Tarihi (Ad Verilen/Değiştirilen Tarih)",
+            "componentType": "inputDate",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 92,
+            "reportOrder": 92,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "version": true,
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "email",
+            "field": "email",
+            "name": "Eposta",
+            "shortName": "Eposta",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 91,
+            "reportOrder": 91,
+            "valueType": "java.lang.String",
+            "version": true,
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "memberCreatedDate",
+            "field": "memberCreatedDate",
+            "name": "Kuruluş Tarihi",
+            "shortName": "Kuruluş Tarihi",
+            "componentType": "inputDate",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 90,
+            "reportOrder": 90,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "memberStartDate",
+            "field": "memberStartDate",
+            "name": "Üyelik Giriş Tarihi",
+            "shortName": "Üyelik Giriş Tarihi",
+            "componentType": "inputDate",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 89,
+            "reportOrder": 89,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "memberEndDate",
+            "field": "memberEndDate",
+            "name": "Üyelik Çıkış Tarihi",
+            "shortName": "Üyelik Çıkış Tarihi",
+            "componentType": "inputDate",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 88,
+            "reportOrder": 88,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "eventDate",
+            "field": "eventDate",
+            "name": "Olay Tarihi",
+            "shortName": "Olay Tarihi",
+            "componentType": "inputDate",
+            "version": true,
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": true,
+            "order": 87,
+            "reportOrder": 87,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "eventType",
+            "field": "eventType",
+            "version": true,
+            "reportOrder": 86,
+            "order": 86,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "observable": false,
+            "roleCheck": true,
+            "name": "Olay Tipi",
+            "shortName": "Olay Tipi",
+            "valueType": "java.lang.String",
+            "converter": "BsonConverter",
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "ÜNVAN DEĞİŞİKLİĞİ"
+                    },
+                    {
+                        "code": "001",
+                        "name": "BİRLEŞME"
+                    },
+                    {
+                        "code": "002",
+                        "name": "DİSİPLİN CEZASI"
+                    }
+                ]
+            },
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "note",
+            "field": "note",
+            "name": "Olay - Açıklama",
+            "shortName": "Olay - Açıklama",
+            "componentType": "inputTextarea",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
+            "order": 85,
+            "reportOrder": 85,
+            "valueType": "java.lang.String",
+            "style": "white-space:nowrap",
+            "version": true,
+            "db": "uysdb",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "lastLoginTime",
+            "field": "lastLoginTime",
+            "name": "Sisteme Son Giriş Tarihi",
+            "shortName": "Sisteme Son Giriş Tarihi",
+            "componentType": "inputDate",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": true,
+            "order": 84,
+            "reportOrder": 84,
+            "valueType": "java.util.Date",
+            "style": "white-space:nowrap",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "lastLoginIP",
+            "field": "lastLoginIP",
+            "name": "Sisteme Son Giriş IP",
+            "shortName": "Sisteme Son Giriş IP",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": true,
+            "order": 83,
+            "reportOrder": 83,
+            "valueType": "java.lang.String",
+            "style": "white-space:nowrap",
+            "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        }
+    ]
+}

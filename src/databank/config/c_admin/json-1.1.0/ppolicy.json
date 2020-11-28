@@ -1,0 +1,95 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "ppolicy",
+    "db": "configdb",
+    "collection": "ppolicy",
+    "menuOrder": 170,
+    "shouldAskForVersion": true,
+    "userConstantNote": "",
+    "form": "Z51",
+    "name": "Z51 - Password Policy",
+    "forms": "graphForm",
+    "type": "website",
+    "defaultSortField": "name",
+    "filter": {
+        "forms": "ppolicy"
+    },
+    "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
+    "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "accesscontrol": [
+        "architect"
+    ],
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
+    "actions": {
+        "save": {
+            "permit": ["architect"],
+            "func": null,
+            "shoot": false
+        }
+    },
+    "upperNodes": {
+        "node_tspb": "Üye Bilgileri"
+    },
+    "fields": [
+        {
+            "key": "uid",
+            "field": "uid",
+            "name": "Üye Giriş Kodu",
+            "shortName": "Üye Giriş Kodu",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": true,
+            "order": 99,
+            "reportOrder": 99,
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "tryCount",
+            "field": "tryCount",
+            "name": "Giriş Deneme Sayısı",
+            "shortName": "Giriş Deneme Sayısı",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 99,
+            "reportOrder": 99,
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "key": "note",
+            "field": "note",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "componentType": "inputTextarea",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 85,
+            "reportOrder": 85,
+            "valueType": "java.lang.String",
+            "style": "white-space:nowrap",
+            "db": "uysdb",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false
+        }
+    ]
+}

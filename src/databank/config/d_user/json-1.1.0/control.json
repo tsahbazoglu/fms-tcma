@@ -53,42 +53,10 @@
     "actions": {
         "new": {
             "permit": null,
-            "block": ["uysadmin"],
+            "block": null,
             "func": null,
-            "shoot": null,
-            "ref": {
-                "db": "uysdb",
-                "table": "dataBankOrganizationStatus",
-                "query": {
-                    "func": null,
-                    "list": [
-                        {
-                            "key": "myFormGroups",
-                            "value": "activity",
-                            "type": "in"
-                        },
-                        {
-                            "key": "status",
-                            "value": "000,001,002",
-                            "type": "in"
-                        },
-                        {
-                            "key": "workflowStatus",
-                            "value": "000,002,003",
-                            "type": "in"
-                        },
-                        {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
-                        },
-                        {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
-                        }
-                    ]
-                },
-                "check": "result>0"
-            }
+            "shoot": false,
+            "ref": null
         },
         "save": {
             "permit": null,
@@ -133,43 +101,11 @@
             "permit": null,
             "block": ["uysadmin"],
             "func": null,
-            "shoot": null,
-            "ref": {
-                "db": "uysdb",
-                "table": "dataBankOrganizationStatus",
-                "query": {
-                    "func": null,
-                    "list": [
-                        {
-                            "key": "myFormGroups",
-                            "value": "activity",
-                            "type": "in"
-                        },
-                        {
-                            "key": "status",
-                            "value": "000,001,002",
-                            "type": "in"
-                        },
-                        {
-                            "key": "workflowStatus",
-                            "value": "000,002,003",
-                            "type": "in"
-                        },
-                        {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
-                        }, 
-                        {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
-                        }
-                    ]
-                },
-                "check": "result>0"
-            }
+            "shoot": false,
+            "ref": null
         },
         "download": {
-            "shoot": true
+            "shoot": false
         },
         "checkAll": {
             "func": "function x(e,r){if(print('configdb.graph2.key.control.actions.checkAll() : tüm sayfaları kontrol et'),null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!1;if(!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;var t={status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','002','003']},period:e.period,member:e.member,template:e.template};return 0<db.dataBankOrganizationStatus.count(t)}"

@@ -132,7 +132,7 @@
                             "fms-value": "fms_code{{filter_period}}"
                         },
                         {
-                            "key": "member",
+                            "key": "template",
                             "fms-value": "fms_code{{filter_template}}"
                         }
                     ]
@@ -174,9 +174,8 @@
                             "key": "period",
                             "fms-value": "fms_code{{filter_period}}"
                         },
-
                         {
-                            "key": "member",
+                            "key": "template",
                             "fms-value": "fms_code{{filter_template}}"
                         }
                     ]
@@ -219,7 +218,7 @@
                             "fms-value": "fms_code{{filter_period}}"
                         },
                         {
-                            "key": "member",
+                            "key": "template",
                             "fms-value": "fms_code{{filter_template}}"
                         }
                     ]
