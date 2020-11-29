@@ -18,6 +18,7 @@
     "historyPosition": 1,
     "type": "website",
     "readOnlyNote": null,
+    "user-constant-note": null,
     "userNote": "<ul>\n<li>\"İştirakler\" sayfasında, bir önceki döneme ilişkin kurumunuz tarafından Birliğimize <br/>\ngönderilen veriler otomatik olarak yansıtılmış durumdadır.<br/> \n<li>\"Yeni Kayıt\" butonuna basarak ortaya çıkan ekranda yeni iştirak girişi yapınız.<br/>\n<li>İştirakiniz yoksa  \"Bu döneme ait iştirakimiz yoktur\" butonunu tıklayınız.<br/>\n<li>Her bir iştirakinize ilişkin \"Konsolidasyon\" sütununun doldurulduğundan emin olunuz.<br/>\n<li>İştirakiniz, kurumunuz tarafından açıklanan finansal tablolarda konsolidasyona dahil ise,<br/> \nilgili satırı tıklayarak çıkan ekranda \"Dahil\" seçeneğini, değilse \"Dahil Değil\" seçeneğini işaretleyiniz.<br/>\n<li>Bu sayfayı doldurarak kaydetmediğiniz sürece finansal tablolara ilişkin sayfalara giriş yapılamamaktadır.<br/>\n<li>Güncelleme ve Silme işlemleri için ilgili satır üzerine tıklayınız.<br/>\n<li>Kurumunuzun sahip olduğu iştirak ve bağlı ortaklıkların ödenmiş sermayesi (TL), <br/>\nkurumunuzun iştirak tutarı (TL) ve iştirakteki payını (%) ilgili tarih itibariyle güncelleyiniz.\n<li>Borsa İstanbul ve Takasbank hisseleri bu sayfada belirtilmelidir.\n        </ul>",
     "userConstantNoteList": [
         "Pay (%) bilgilerinde ondalık kısıma en fazla iki basamak yazılabilir.",

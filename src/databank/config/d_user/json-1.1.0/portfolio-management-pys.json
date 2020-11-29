@@ -13,7 +13,7 @@
     "handsonRowHeaderWidth": 350,
     "handsonColWidths": 210,
     "readOnlyNote": "Bu sayfada TSPB’ye daha önce iletilen faaliyet verileri bilgi için gösterilmekte olup, sayfaya veri girişi yapılamamaktadır.Bu sayfadaki verileri değiştirmek için Birliğimize resmi bir yazı ile başvurmanız gereklidir.",
-    "userConstantNote": "",
+    "user-constant-note": null,
     "historyRendered": true,
     "historyPosition": 1,
     "type": "website",

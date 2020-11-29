@@ -14,7 +14,7 @@
     "defaultHistoryQuery": "function (searchObject) {        var uysdatabase = db.getSisterDB('uysdb');        if (!searchObject.hasOwnProperty('member')) {            throw 'member is resolved to null';        }        var periods = [];        uysdatabase.dataBankOrganizationStatus.find({'status': {'$in': ['000', '001', '002']},'workflowStatus': {'$in': ['000', '001', '002', '003', '006']},'member': searchObject.member}, {period: 1}).forEach(function (org) { periods.push(org.period);        });        var periodID = 'no result';        uysdatabase.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (p) {            var period = db.getSisterDB('uysdb').common.findOne({forms: 'period', order: p.order - 10});            periodID = (period == null) ? p._id : period._id;        });        return {'member': searchObject.member, period: periodID};    }",
     "type": "website",
     "historyRendered": false,
-    "userConstantNote": "",
+    "user-constant-note": null,
     "userConstantNoteList": [
         "Bu sayfa, formun yüklendiği tarih itibariyle en güncel bilgilerle doldurulacaktır.",
         "Bu sayfaya Bilgi Bankası Formunun sorumlu kişilerin irtibat bilgilerini giriniz."

@@ -12,7 +12,11 @@
     "handsonColWidths": 190,
     "handsonRowHeaderWidth": 250,
     "readOnlyNote": null,
-    "userConstantNote": "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir.",
+    "user-constant-note": {
+        "value": [
+            "Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
+        ]
+    },
     "userNote": "<ul>\n<li>Bireysel Müşteriler, gerçek kişileri ifade etmektedir.<br/>\n<li>Kurumlar, kurum portföyü, anonim ve limited şirketler, vakıflar, kooperatifler vb. kurumları ifade etmektedir.<br/>\n<li>Kurumsal Yatırımcılar, yatırım fonları, yatırım ortaklıkları, emeklilik yatırım fonları ve portföy yönetim şirketlerini gibi kurumları ifade etmektedir.<br/>\n<li>Hisse Senedi işlemlerine varant ve sertifakalar dâhil değildir.<br/>\n<li>SGMK Kesin Alım-Satım ve Repo-Ters Repo işlemlerine Borsa İstanbul ve tescil işlemlerinin toplamı girilmelidir.<br/>\n<li>Kaldıraçlı Alım-Satım işlemlerine müşterilerle ve likidite sağlayıcısı rolüyle yapılan tüm alım ve satım işlemlerinin toplamı girilmelidir.\n<li>Piyasa İşlem Hacmi satırında Borsa İstanbul verileri bilgi için girilmiştir.<br/>\n<li>Kaldıraçlı alım-satım işlem hacmi Birliğimize aylık olarak gönderdiğiniz veriler bilgi için girilmiştir.\n        </ul>",
     "historyRendered": true,
     "historyPosition": 1,

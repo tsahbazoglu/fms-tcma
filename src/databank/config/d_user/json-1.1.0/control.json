@@ -167,7 +167,11 @@
     },
     "funcNote": "function x(e){if(!e.hasOwnProperty('template'))return null;if(!e.hasOwnProperty('period'))return null;var n=db.dataBankTemplate.findOne({_id:e.template}),i=db.common.findOne({_id:e.period});if(null==n||null==i)return null;var r=n.value,l=i.value;return'UFRS-201306'!=r||201303!=l&&201303!=l?null:'Lütfen Dönem sekmesinden 2013/03 dönemini de seçerek, bu döneme ilişkin kontrol formüllerini inceleyiniz. 2013/03 ve 2014/03 dönemlerindeki Hata ve Uyarı mesajları giderilmeden bu sayfada Gönder butonu belirmeyecektir.'}",
     "readOnlyNote": null,
-    "userConstantNote": "function x(e){var a=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject.member  tanımlı değil';var r=a.common.findOne(e.member);if(null==r)throw'kyllanıcı bulunamadı';return'PYŞ'==r.memberType?['Açıklama girmek için ilgili satır üzerine tıklayınız. Açıklamalar en az beş karakterden oluşmalıdır.']:'Açıklama girmek için ilgili satır üzerine tıklayınız. Açıklamalar en az beş karakterden oluşmalıdır.'}",
+    "user-constant-note": {
+        "func": "function x(e){var a=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject.member  tanımlı değil';var r=a.common.findOne(e.member);if(null==r)throw'kyllanıcı bulunamadı';return'PYŞ'==r.memberType?['Açıklama girmek için ilgili satır üzerine tıklayınız. Açıklamalar en az beş karakterden oluşmalıdır.']:'Açıklama girmek için ilgili satır üzerine tıklayınız. Açıklamalar en az beş karakterden oluşmalıdır.'}",
+        "value": null,
+        "list": null
+    },
     "userNote": "<ul><li>\"Tüm Sayfaları Kontrol Et\" tuşuna basarak çıkan ekranda \"Hata Niteliği\" sütununda yer alan açıklamaları inceleyiniz.</br><li>Sonuç tipi sütununda \"Hata\" mesajı çıkan verilerin düzeltilmesi gerekmektedir.</br><li>Sonuç tipi sütununda \"Uyarı\" çıkan satırda girilen verinin doğru olduğunu düşünüyorsanız, ilgili satırı tıklayarak çıkan ekranda \"Açıklama Giriniz\" kısmına gerekli açıklamaları yazınız.</br><li>Açıklamalar en az beş karakterden oluşmalıdır. </br><li>Bu sayfada \"Hata\" mesajı veren ve \"Uyarı\" mesajı veren satırlarda açıklama girilmeyen formları Birliğimize iletilemeyecektir.</br><li>Gerekli düzeltmeler ve açıklamalar tamamlandıktan sonra, sayfanın üst bölümde beliren \"Gönder\" tuşuna basarak formu Birliğimize gönderiniz.</ul>",
     "defaultSortField": "transferOrder",
     "fields": [

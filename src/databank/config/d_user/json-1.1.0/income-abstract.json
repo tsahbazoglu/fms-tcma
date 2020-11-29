@@ -20,7 +20,7 @@
     "menuOrder": 380,
     "funcNote": "function x(e){return template=db.dataBankTemplate.findOne(e.template),period=db.common.findOne(e.period),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201303!=periodValue&&201403!=periodValue?null:'Lütfen 2014/03 verilerini girdikten sonra Dönem sekmesinden 2013/03’yı seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.2013/03 dönemi verilerini girerken sağda yer alan sütunlarda 2012/12 dönemi verilerini görmek için, soldaki Bilgi Bankası ana mönüsünden “Gelir Tablosu Özet” başlığına tıklayınız.')}",
     "readOnlyNote": null,
-    "userConstantNote": "",
+    "user-constant-note": null,
     "calculate-ref": {
         "func": "function x(l){var a=db.common.findOne({_id:l.period}),e=db.dataBankTemplate.findOne({_id:l.template});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'H2',validPeriods:null===a?null:a.value,template:null===e?null:e.value}}",
         "doc": null

@@ -11,7 +11,11 @@
     "forms": "graphForm",
     "name": "Personel Sayısı - İş Tecrübesi",
     "readOnlyNote": null,
-    "userConstantNote": "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir.",
+    "user-constant-note": {
+        "value": [
+            "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
+        ]
+    },
     "userNote": "Çalışanların tüm çalışma hayatındaki iş tecrübesi göz önüne alınarak tecrübeleri girilmelidir.",
     "historyRendered": true,
     "historyPosition": 2,

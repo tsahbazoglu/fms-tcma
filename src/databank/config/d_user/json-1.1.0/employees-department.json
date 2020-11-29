@@ -11,18 +11,33 @@
     "forms": "graphForm",
     "name": "Personel Sayısı - Departman",
     "readOnlyNote": null,
-    "userConstantNote": {
+    "user-constant-note": {
         "func": null,
         "value": null,
+        "list-check-strategy": "oneof",
         "list": [
             {
+                "roles": ["architect", "uysadmin"],
+                "value": [
+                    "AK : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir.",
+                    "PYŞ : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+                ],
+                "priority-order": 10
+            },
+            {
                 "roles": ["pyuser"],
-                "value": "PYŞ : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+                "value": [
+                    "PYŞ : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+                ],
+                "priority-order": 20
             },
             {
                 "roles": null,
-                "value": "AK : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
-            }
+                "value": [
+                    "AK : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+                ],
+                "priority-order": 30
+            } 
         ]
     },
     "userNote": "function x(e,r){var a='<ul><li>Kurum bordrosuna dâhil çalışanların departmanlara göre dağılımları girilmelidir.<br/><li>Şube, Acente ve İrtibat Bürosu başlıkları kurumunuz bordrosunda yer alan tüm çalışanları ifade etmektedir.<br/><li>Portföy Yönetimi, müşterilerle imzalanan portföy yönetim sözleşmesi kapsamında işlem yapan çalışanları ifade etmektedir.<br/><li>Yurtdışı Satış, yurtdışı müşterilerin işlemleri ile ilgili tüm çalışanları ifade etmektedir.<br/></ul>',i='<ul><li>Kurum bordrosuna dâhil çalışanların departmanlara göre dağılımları girilmelidir.<br/><li>Portföy Yönetimi, müşterilerle imzalanan portföy yönetim sözleşmesi kapsamında işlem yapan çalışanları ifade etmektedir.<br/><li>Yurtdışı Satış, yurtdışı müşterilerin işlemleri ile ilgili tüm çalışanları ifade etmektedir.<br/></ul>';if(0<=r.indexOf('architect')||0<=r.indexOf('uysadmin')||0<=r.indexOf('uysviewer'))return'AK :<br/>'.concat(a).concat('<br/><br/>').concat('PYŞ :<br/>').concat(i);var l=e.member;if(null==l)throw'employeesByDepartments.userNote() : searchobject.member resolved to null.';member_type=db.getSisterDB('uysdb').common.findOne({_id:l}).memberType;return'AK'==member_type?a:'PYŞ'==member_type||'YB'==member_type?i:''}",

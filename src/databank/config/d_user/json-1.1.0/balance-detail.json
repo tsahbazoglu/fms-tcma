@@ -12,7 +12,7 @@
     "loginFkField": "member",
     "funcNote": "function x(e){return template=db.dataBankTemplate.findOne(e.template),period=db.common.findOne(e.period),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12’yi seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
     "readOnlyNote": null,
-    "userConstantNote": "",
+    "user-constant-note": null,
     "userNote": "<ul><li>Bilanço Detay verilerini doldurmadan önce iştirak sayfasını doldurmanız gerekmektedir.<br/><li>Bu sayfaya solo finansal tablolara ilişkin bilanço detaylarının TL/YP cinsinden dağılımı girilecektir.<li>Solo toplam rakamları \"Kontrol Et ve Kaydet\" tuşuna basıldıktan sonra hesaplanacaktır.<li>Bu sayfadaki solo finansal tablo verileri TCMB'ye iletilecektir.</ul>",
     "historyRendered": true,
     "historyPosition": 2,
