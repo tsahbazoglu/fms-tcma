@@ -11,7 +11,20 @@
     "forms": "graphForm",
     "name": "Personel Sayısı - Departman",
     "readOnlyNote": null,
-    "userConstantNote": "function x(e){var a=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject.member  tanımlı değil';var r=a.common.findOne({_id:e.member});if(null==r)throw'kullanıcı bulunamadı';return'PYŞ'==r.memberType?['Hücrelere veri girişi yaptıktan sonra klavyedeki 'Enter' tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar 'Kaydet' tuşuna basılarak etkinleşecektir.']:'Hücrelere veri girişi yaptıktan sonra klavyedeki 'Enter' tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar 'Kaydet' tuşuna basılarak etkinleşecektir.'}",
+    "userConstantNote": {
+        "func": null,
+        "value": null,
+        "list": [
+            {
+                "roles": ["pyuser"],
+                "value": "PYŞ : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+            },
+            {
+                "roles": null,
+                "value": "AK : Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar Kaydet tuşuna basılarak etkinleşecektir."
+            }
+        ]
+    },
     "userNote": "function x(e,r){var a='<ul><li>Kurum bordrosuna dâhil çalışanların departmanlara göre dağılımları girilmelidir.<br/><li>Şube, Acente ve İrtibat Bürosu başlıkları kurumunuz bordrosunda yer alan tüm çalışanları ifade etmektedir.<br/><li>Portföy Yönetimi, müşterilerle imzalanan portföy yönetim sözleşmesi kapsamında işlem yapan çalışanları ifade etmektedir.<br/><li>Yurtdışı Satış, yurtdışı müşterilerin işlemleri ile ilgili tüm çalışanları ifade etmektedir.<br/></ul>',i='<ul><li>Kurum bordrosuna dâhil çalışanların departmanlara göre dağılımları girilmelidir.<br/><li>Portföy Yönetimi, müşterilerle imzalanan portföy yönetim sözleşmesi kapsamında işlem yapan çalışanları ifade etmektedir.<br/><li>Yurtdışı Satış, yurtdışı müşterilerin işlemleri ile ilgili tüm çalışanları ifade etmektedir.<br/></ul>';if(0<=r.indexOf('architect')||0<=r.indexOf('uysadmin')||0<=r.indexOf('uysviewer'))return'AK :<br/>'.concat(a).concat('<br/><br/>').concat('PYŞ :<br/>').concat(i);var l=e.member;if(null==l)throw'employeesByDepartments.userNote() : searchobject.member resolved to null.';member_type=db.getSisterDB('uysdb').common.findOne({_id:l}).memberType;return'AK'==member_type?a:'PYŞ'==member_type||'YB'==member_type?i:''}",
     "historyRendered": true,
     "historyPosition": 2,
@@ -50,38 +63,29 @@
         "period"
     ],
     "myNamedQueries": {
-        "include": {
-            "uysarchitect": {
+        "include": [
+            {
+                "roles": ["architect", "uysadmin", "uysviewer"],
                 "query": {
-
+                    "func": null,
+                    "list": null
                 },
                 "priority": 7
             },
-            "uysadmin": {
+            {
+                "roles": null,
                 "query": {
-
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
                 },
-                "priority": 6
-            },
-            "uysviewer": {
-                "query": {
-
-                },
-                "priority": 5
-            },
-            "uysuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.employeesByDepartments.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
-                "priority": 0
-            },
-            "pyuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
-                "priority": 0
-            },
-            "ybuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
                 "priority": 0
             }
-        }
+        ]  
     },
     "dimension": {
         "value": "grid",
@@ -120,12 +124,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },
@@ -159,12 +163,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },
@@ -198,12 +202,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },

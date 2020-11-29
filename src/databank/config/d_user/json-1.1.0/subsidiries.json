@@ -41,7 +41,7 @@
     "myNamedQueries": {
         "include": [
             {
-                "roles": ["uysarchitect", "uysadmin", "uysviewer"],
+                "roles": ["architect", "uysadmin", "uysviewer"],
                 "query": {
                     "func": null,
                     "list": null
@@ -49,7 +49,7 @@
                 "priority": 7
             },
             {
-                "roles": ["uysuser", "ybuser"],
+                "roles": null,
                 "query": {
                     "func": null,
                     "list": [
@@ -61,7 +61,7 @@
                 },
                 "priority": 0
             }
-        ]
+        ]  
     },
     "upperNodes": ["node_dataBank"],
     "dimension": {
@@ -101,12 +101,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },
@@ -140,12 +140,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },
@@ -179,12 +179,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
                         }
                     ]
                 },

@@ -45,7 +45,7 @@
     "upperNodes": ["node_dataBank"],
     "actions": {
         "new": {
-            "permit": ["uysuser"]
+            "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"]
         },
         "save": {
             "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"]
@@ -60,7 +60,7 @@
     "myNamedQueries": {
         "include": [
             {
-                "roles": ["uysarchitect", "uysadmin"],
+                "roles": ["architect", "uysadmin"],
                 "query": {
                     "func": null,
                     "list": null

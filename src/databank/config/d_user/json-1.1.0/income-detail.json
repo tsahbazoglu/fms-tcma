@@ -48,38 +48,29 @@
         "ybuser"
     ],
     "myNamedQueries": {
-        "include": {
-            "uysarchitect": {
+        "include": [
+            {
+                "roles": ["architect", "uysadmin", "uysviewer"],
                 "query": {
-
+                    "func": null,
+                    "list": null
                 },
                 "priority": 7
             },
-            "uysadmin": {
+            {
+                "roles": null,
                 "query": {
-
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
                 },
-                "priority": 6
-            },
-            "uysviewer": {
-                "query": {
-
-                },
-                "priority": 5
-            },
-            "uysuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
-                "priority": 0
-            },
-            "pyuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
-                "priority": 0
-            },
-            "ybuser": {
-                "query": "function x(e){if(!e.hasOwnProperty('member'))throw'member field could not be detected. call js function : uysdb.incomeDetail.myNamedQueries.include.uysuser.query()}';return{member:e.member}}",
                 "priority": 0
             }
-        }
+        ]  
     },
     "accessControlLevelTwo": {
         "db": "uysdb",
@@ -124,7 +115,7 @@
                         },
                         {
                             "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
                             "key": "period",
@@ -167,7 +158,7 @@
                         },
                         {
                             "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
                             "key": "period",
@@ -210,7 +201,7 @@
                         },
                         {
                             "key": "member",
-                            "fms-value": "fms_code{{filter_member}}"
+                            "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
                             "key": "period",
