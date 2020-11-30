@@ -107,11 +107,6 @@
                                 "value": "member"
                             },
                             {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
-                            },
-                            {
                                 "key": "ldapUID",
                                 "value": "empty",
                                 "type": "ne"
@@ -147,7 +142,7 @@
                     "v": [
                         {
                             "key": "ldapUID",
-                            "permit": ["uysadmin,architect"],
+                            "permit": ["uysadmin", "architect"],
                             "order": 10
                         },
 
