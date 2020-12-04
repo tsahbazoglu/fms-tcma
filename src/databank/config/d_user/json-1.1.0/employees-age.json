@@ -371,7 +371,8 @@
                     "itemTable": "common",
                     "query": {
                         "func": "function x(e){if(member=e.member,null==member)throw'searchObject.member is resolved to null';return periods=[],db.dataBankOrganizationStatus.find({status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','001','002','003','006']},member:member},{period:1}).forEach(function(e){periods.push(e.period)}),{_id:{'#in':periods}}}",
-                        "list": null
+                        "list": null,
+                        "ref": null
                     },
                     "historyQuery": {
                         "func": null,
