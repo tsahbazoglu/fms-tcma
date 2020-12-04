@@ -21,7 +21,9 @@
         "uysadmin",
         "architect"
     ],
-    "upperNodes": ["node_databank_manager"],   
+    "upperNodes": [
+        "node_databank_manager"
+    ],   
     "dimension": {
         "value": "table",
         "list": [
@@ -38,20 +40,20 @@
         "new": {
             "permit": ["architect"],
             "func": null,
-            "shoot": false
+            "shoot": null
         },
         "save": {
-            "permit": ["architect"],
+            "permit": ["uysadmin", "architect"],
             "func": null,
-            "shoot": false
+            "shoot": null
         },
         "delete": {
             "permit": ["architect"],
             "func": null,
-            "shoot": false
+            "shoot": null
         },
         "download": {
-            "permit": [],
+            "permit": null,
             "func": null,
             "shoot": false
         }
@@ -248,12 +250,12 @@
         {
             "field": "template",
             "key": "template",
+            "name": "Şablon",
+            "shortName": "Şablon",
+            "reportOrder": 30,
+            "order": 30,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "reportOrder": 8000,
-            "order": 8000,
-            "name": "Şablon",
-            "shortName": "Şablon", 
             "valueType": "java.lang.String",
             "accesscontrol": "ybuser,uysuser,pyuser,uysadmin,databankarchitect,uysviewer",
             "componentType": "selectOneMenu",
@@ -319,19 +321,19 @@
             }
         },
         {
-            "version": true,
-            "field": "status",
             "key": "status",
-            "reportOrder": 7000,
-            "order": 7000,
-            "componentType": "selectOneMenu",
+            "field": "status",
+            "name": "Kurumun Durumu",
+            "shortName": "Kurumun Durumu",
+            "reportOrder": 40,
+            "order": 40,
+            "version": true,
             "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "name": "Kurumun Durumu",
-            "shortName": "Kurumun Durumu",
+            "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect",
             "converter": "BsonConverter",
@@ -360,12 +362,13 @@
             "quickFilter": false
         },
         {
-            "version": true,
-            "field": "workflowStatus",
             "key": "workflowStatus",
-            "reportOrder": 6000,
-            "order": 6000,
-            "componentType": "selectOneMenu",
+            "field": "workflowStatus",
+            "name": "Kuruma ait veri durumu",
+            "shortName": "Kuruma ait veri durumu",
+            "reportOrder": 50,
+            "order": 50,
+            "version": true,
             "rendered": true,
             "money": false,
             "readonly": false,
@@ -373,8 +376,7 @@
             "roleCheck": true,
             "reportRendered": true,
             "quickFilter": true,
-            "name": "Kuruma ait veri durumu",
-            "shortName": "Kuruma ait veri durumu",
+            "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysuser,uysadmin,architect",
             "converter": "BsonConverter",
@@ -417,18 +419,20 @@
             }
         },
         {
-            "field": "controlResult",
             "key": "controlResult",
-            "reportOrder": 5500,
-            "order": 5500,
+            "field": "controlResult",
+            "name": "Kontrol Durumu",
+            "shortName": "Kontrol Durumu",
+            "reportOrder": 60,
+            "order": 60,
             "componentType": "selectOneMenu",
             "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "name": "Kontrol Durumu",
-            "shortName": "Kontrol Durumu",
+            "reportRendered": true,
+            "quickFilter": false,
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect",
             "converter": "BsonConverter",
@@ -448,82 +452,82 @@
                         "name": "VERI DEGISTIRILDI"
                     }
                 ]
-            },
-            "reportRendered": true,
-            "quickFilter": false
+            }
         },
         {
-            "field": "myFormGroups",
             "key": "myFormGroups",
-            "reportOrder": 5250,
-            "order": 5250,
-            "componentType": "inputText",
+            "field": "myFormGroups",
+            "name": "Form Grupları [\"activity\",\"finance\"]",
+            "shortName": "Form Grupları",
+            "reportOrder": 70,
+            "order": 70,
             "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "name": "Form Grupları [\"activity\",\"finance\"]",
-            "shortName": "Form Grupları",
+            "reportRendered": true,
+            "quickFilter": false,     
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect",
             "defaultValue": [
                 "activity",
                 "finance"
-            ],
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysadmin,architect",
-            "reportRendered": true,
-            "quickFilter": false
+            ]           
         },
         {
-            "field": "note",
             "key": "note",
-            "reportOrder": 5000,
-            "order": 5000,
-            "componentType": "inputTextarea",
-            "rendered": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
+            "field": "note",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,architect",
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "field": "deadline",
-            "key": "deadline",
-            "name": "Son Bildirim Tarihi",
-            "shortName": "Son Bildirim Tarihi",
-            "reportOrder": 4000,
-            "order": 4000,
-            "componentType": "inputDate",
+            "reportOrder": 80,
+            "order": 80,
             "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "uysadmin,architect",
             "reportRendered": true,
-            "quickFilter": false
+            "quickFilter": false,
+            "componentType": "inputTextarea",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect"
+        },
+        {
+            "key": "deadline",
+            "field": "deadline",
+            "name": "Son Bildirim Tarihi",
+            "shortName": "Son Bildirim Tarihi",
+            "reportOrder": 90,
+            "order": 90,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,  
+            "componentType": "inputDate",
+            "valueType": "java.util.Date",
+            "accesscontrol": "uysadmin,architect"
         },
         {
             "key": "consolidate",
             "field": "consolidate",
+            "name": "Konsolide Durumu",
+            "shortName": "Konsolide Durumu",
+            "reportOrder": 100,
+            "order": 100,
             "version": true,
-            "reportOrder": 7250,
-            "order": 7250,
-            "componentType": "selectOneMenu",
             "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
-            "roleCheck": true,
-            "name": "Konsolide Durumu",
-            "shortName": "Konsolide Durumu",
+            "roleCheck": true,    
+            "reportRendered": true,
+            "quickFilter": false,
+            "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect",
             "converter": "BsonConverter",
@@ -539,27 +543,25 @@
                         "name": "YOK"
                     }
                 ]
-            },
-            "reportRendered": true,
-            "quickFilter": false
+            }
         },
         {
-            "field": "member_type",
             "key": "member_type",
-            "reportOrder": 10000,
-            "order": 10000,
-            "componentType": "inputText",
+            "field": "member_type",
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "reportOrder": 110,
+            "order": 110,
             "rendered": true,
             "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
-            "name": "Üye Tipi",
-            "shortName": "Üye Tipi",
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysadmin,architect",
             "reportRendered": true,
-            "quickFilter": false
+            "quickFilter": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect"
         }
     ]
 }
