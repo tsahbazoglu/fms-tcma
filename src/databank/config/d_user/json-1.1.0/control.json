@@ -50,6 +50,16 @@
             }
         ]
     },
+    "registred-functions": [
+        {
+            "key": "checkAndWriteControlResultFunc",
+            "value": "function x(t,e){if(null==e)throw'roles must be defined for member :'.concat(t.member);if(0<=e.indexOf('uysuser')||0<=e.indexOf('pyuser')||0<=e.indexOf('ybuser')||0<=e.indexOf('architect')){if(null==t.member||null==t.period||null==t.template)throw'one of member,period,template is not defined';memberSearch={'status.code':{'#in':['000','001','002']},_id:t.member};var n=db.common.findOne(memberSearch);null!=n&&(periods=[],templates=[],zeroCountDetected=!1,db.dataBankOrganizationStatus.find({member:t.member,workflowStatus:{'#in':['000','002','003']}}).forEach(function(e){periods.push(e.period),templates.push(e.template),count=db.dataBankControl.count({member:t.member,period:e.period,template:e.template}),0==count&&(zeroCountDetected=!0)}),zeroCountDetected||(controlQuery={member:t.member,period:{$in:periods},template:{$in:templates},result:'HATA VAR','#where':function(){return'000'==this.resultType||'001'==this.resultType&&null==this.note||this.note.trim().length<5}},result=db.dataBankControl.findOne(controlQuery),null==result?db.dataBankOrganizationStatus.update({member:t.member,workflowStatus:{'#in':['000','002','003']}},{$set:{controlResult:'000',note:n.name+' '+(new Date).toLocaleDateString()+' '+(new Date).toLocaleTimeString()+' tarihinde tüm formları kontrol etdi'}},{multi:!0}):db.dataBankOrganizationStatus.update({member:t.member,workflowStatus:{'#in':['000','002','003']}},{$set:{controlResult:'001',note:n.name+' '+(new Date).toLocaleDateString()+' '+(new Date).toLocaleTimeString()+' tarihinde tüm formları kontrol etdi'}},{multi:!0})))}}"
+        },
+        {
+            "key": "write-data-changed-status",
+            "value": "function x(t,a){db.dataBankOrganizationStatus.update({member:t.member,period:t.period},{$set:{controlResult:'002'}},{multi:!0})}"
+        }
+    ],
     "actions": {
         "new": {
             "permit": null,
@@ -95,6 +105,11 @@
                     ]
                 },
                 "check": "result>0"
+            },
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "registred-func-name": "write-data-changed-status"
             }
         },
         "delete": {
@@ -108,16 +123,18 @@
             "shoot": false
         },
         "checkAll": {
-            "func": "function x(e,r){if(print('configdb.graph2.key.control.actions.checkAll() : tüm sayfaları kontrol et'),null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!1;if(!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;var t={status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','002','003']},period:e.period,member:e.member,template:e.template};return 0<db.dataBankOrganizationStatus.count(t)}"
-        }
-    },
-    "upperNodes": ["node_dataBank"],
-    "events": {
+            "permit": null,
+            "block": null,
+            "func": "function x(e,r){if(print('configdb.graph2.key.control.actions.checkAll() : tüm sayfaları kontrol et'),null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!1;if(!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;var t={status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','002','003']},period:e.period,member:e.member,template:e.template};return 0<db.dataBankOrganizationStatus.count(t)}",
+            "shoot": null,
+            "ref": null,
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "registred-func-name": "checkAndWriteControlResultFunc"
+            }
+        },
         "sendForms": {
-            "name": "norecord",
-            "db": "uysdb",
-            "appearFunction": "function x(t,e){var r=!1;if(null==e)throw'roles must be defined for member :'.concat(t.member);if(0<=e.indexOf('uysuser')&&(null==t.member||null==t.period||null==t.template))throw'one of member,period,template is not defined';if(0<=e.indexOf('uysuser')||0<=e.indexOf('pyuser')||0<=e.indexOf('ybuser')||0<=e.indexOf('architect')){if(null==t.member||null==t.period||null==t.template)return!1;if(countOfChangedDataAfterControl=db.dataBankOrganizationStatus.count({member:t.member,'workflowStatus.code':{'#in':['000','002','003']},'controlResult.code':'002'}),0<countOfChangedDataAfterControl)return!1;if(memberSearch={'status.code':{'#in':['000','001','002']},_id:t.member},null==db.common.findOne(memberSearch))return!1;multisend=!1,periods=[],templates=[],db.dataBankOrganizationStatus.distinct('workflowStatus'),countOfOpenedToRecord=db.dataBankOrganizationStatus.count({member:t.member,'workflowStatus.code':{'#in':['000','002','003']}}),combinedSearches=[],1<countOfOpenedToRecord?(multisend=!0,db.dataBankOrganizationStatus.find({member:t.member,'workflowStatus.code':{'#in':['000','002','003']}}).forEach(function(e){combinedSearches.push({period:e.period,template:e.template}),periods.push(e.period),templates.push(e.template)})):(combinedSearches.push({period:t.period,template:t.template}),periods.push(t.period),templates.push(t.template));var o={period:t.period,member:t.member,template:t.template,'workflowStatus.code':{'#in':['000','002','003']}};return 0<=e.indexOf('architect')&&(o={period:t.period,member:t.member,template:t.template,'workflowStatus.code':{'#in':['000','002','003','001']}}),0!=db.dataBankOrganizationStatus.count(o)&&(zeroCountDetected=!1,combinedSearches.forEach(function(e){e.member=t.member,count=db.dataBankControl.count(e),0==count&&(zeroCountDetected=zeroCountDetected||!0)}),!zeroCountDetected&&(controlQuery={member:t.member,period:{$in:periods},template:{$in:templates},result:'HATA VAR','#where':function(){return'000'==this.resultType.code||'001'==this.resultType.code&&null==this.note||this.note.trim().length<5}},null==(r=db.dataBankControl.findOne(controlQuery))))}return r}",
-            "action": "function x(t,e){db.dataBankOrganizationStatus.update({member:t.member,'workflowStatus.code':{$in:['000','002']}},{$set:{workflowStatus:{code:'001',name:'İNCELENİYOR'},controlResult:{code:'000',name:'TAMAM'}}},{multi:!0})}",
             "gui": {
                 "x": 100,
                 "y": 100,
@@ -127,10 +144,78 @@
                 "successMessage": "%s tarihinde kurumunuza ait %s dönemi Bilgi Bankası Formu Birliğimize başarıyla iletilmiştir.",
                 "failMessage": "İşlem Başarısız."
             },
-            "checkAndWriteControlResultFunc": "function x(t,e){if(null==e)throw'roles must be defined for member :'.concat(t.member);if(0<=e.indexOf('uysuser')||0<=e.indexOf('pyuser')||0<=e.indexOf('ybuser')||0<=e.indexOf('architect')){if(null==t.member||null==t.period||null==t.template)throw'one of member,period,template is not defined';memberSearch={'status.code':{'#in':['000','001','002']},_id:t.member};var n=db.common.findOne(memberSearch);null!=n&&(periods=[],templates=[],zeroCountDetected=!1,db.dataBankOrganizationStatus.find({member:t.member,workflowStatus:{'#in':['000','002','003']}}).forEach(function(e){periods.push(e.period),templates.push(e.template),count=db.dataBankControl.count({member:t.member,period:e.period,template:e.template}),0==count&&(zeroCountDetected=!0)}),zeroCountDetected||(controlQuery={member:t.member,period:{$in:periods},template:{$in:templates},result:'HATA VAR','#where':function(){return'000'==this.resultType||'001'==this.resultType&&null==this.note||this.note.trim().length<5}},result=db.dataBankControl.findOne(controlQuery),null==result?db.dataBankOrganizationStatus.update({member:t.member,workflowStatus:{'#in':['000','002','003']}},{$set:{controlResult:'000',note:n.name+' '+(new Date).toLocaleDateString()+' '+(new Date).toLocaleTimeString()+' tarihinde tüm formları kontrol etdi'}},{multi:!0}):db.dataBankOrganizationStatus.update({member:t.member,workflowStatus:{'#in':['000','002','003']}},{$set:{controlResult:'001',note:n.name+' '+(new Date).toLocaleDateString()+' '+(new Date).toLocaleTimeString()+' tarihinde tüm formları kontrol etdi'}},{multi:!0})))}}",
-            "lookToControlResultFunc": "function x(e,r){var n=!1;if(null==r)throw'roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('uysuser')||0<=r.indexOf('pyuser')||0<=r.indexOf('ybuser')){if(null==e.member||null==e.period||null==e.template)throw'one of member,period,template is not defined';memberSearch={'status.code':{'#in':['000','001','002']},_id:e.member},null!=db.common.findOne(memberSearch)&&0<db.dataBankOrganizationStatus.count({member:e.member,workflowStatus:{'#in':['000','002','003']}})&&(summary=!0,db.dataBankOrganizationStatus.find({member:e.member,workflowStatus:{'#in':['000','002','003']}}).forEach(function(e){e.hasOwnProperty('controlResult')&&'000'==e.controlResult||(summary=!1)}),n=1==summary)}return n}"
+            "action": {
+                "db": "uysdb",
+                "func": "function x(t,a){db.dataBankOrganizationStatus.update({member:t.member,workflowStatus:{$in:['000','002']}},{$set:{workflowStatus:'001'}},{multi:!0})}",
+                "ref": null
+            },
+            "event-enable": {
+                "value": null,
+                "func": null,
+                "list": [
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "common",
+                            "query": [
+                                {
+                                    "key": "_id",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "status.code",
+                                    "array-value": ["000", "001", "002"]
+                                }
+                            ],
+                            "if": "exist"
+                        }
+                    }, 
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "dataBankOrganizationStatus",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "workflowStatus",
+                                    "array-value": ["000", "002", "003"]
+                                }
+                            ],
+                            "if": "exist"
+                        }
+                    },
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "dataBankOrganizationStatus",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "workflowStatus",
+                                    "array-value": ["000", "002", "003"]
+                                },
+                                {
+                                    "key": "controlResult",
+                                    "string-value": "000"
+                                }
+                            ],
+                            "if": "exist"
+                        }
+                    }
+                ]
+            }
         }
     },
+    "upperNodes": ["node_dataBank"],
     "historyRendered": false,
     "historyPosition": 1,
     "menuOrder": 420,
@@ -191,7 +276,7 @@
             "readonly": false,
             "observable": false, 
             "reportRendered": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
@@ -299,7 +384,7 @@
             "observable": false,
             "required": true,
             "reportRendered": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect", "ybuser", "pyuser", "uysuser"],
