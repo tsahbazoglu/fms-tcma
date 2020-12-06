@@ -28,7 +28,8 @@
     "controlCollection": "dataBankControl",
     "eventPostSave": {
         "db": "uysdb",
-        "op": "function x(e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
+        "op": null,
+        "registred-func-name": "write-data-changed-status"
     },
     "filter": {
         "forms": "portfolioManagement"
@@ -156,6 +157,11 @@
                     ]
                 },
                 "check": "result>0"
+            },
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "registred-func-name": null
             }
         },
         "delete": {

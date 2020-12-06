@@ -151,6 +151,11 @@
                     ]
                 },
                 "check": "result>0"
+            },
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "registred-func-name": "write-data-changed-status"
             }
         },
         "delete": {

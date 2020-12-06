@@ -48,7 +48,12 @@
             "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"]
         },
         "save": {
-            "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"]
+            "permit": ["akuser", "pyuser", "gsuser", "gyuser", "kbuser", "mbuser", "mkuser", "ybuser", "ktbuser"],
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "registred-func-name": null
+            }
         },
         "download": {
             "permit": ["uysadmin"]
