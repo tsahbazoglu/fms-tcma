@@ -1,0 +1,16 @@
+{
+    "key": "node_databank_manager",
+    "db": "uysdb",
+    "projectKey": "uys",
+    "collection": "dataBankData",
+    "forms": "graphForm",
+    "name": "Bilgi Bankası Yönetici",
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "type": "node",
+    "menuOrder": 45,
+    "upperNode": null,
+    "enabled": true
+} 

@@ -1,6 +1,15 @@
 
 docker cp . fms-mongodb:/home/fms
 
+# define project
+mongo test --eval "db.getSisterDB('configdb').project2.remove({key:'uys'})"
+mongoimport --db configdb --collection project2 --type json --file _project.json
+
+# define nodes
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'node_databank_manager'})"
+mongoimport --db configdb --collection graph2 --type json --file _node.json
+
+# define forms
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankAdminDescriptionPage'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankCorporateFinanceValues'})" 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'organizationStatus'})" 
