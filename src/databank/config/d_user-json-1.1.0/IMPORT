@@ -50,3 +50,6 @@ mongoimport --db configdb --collection graph2 --type json --file income-detail.j
 mongoimport --db configdb --collection graph2 --type json --file subsidiries.json
 mongoimport --db configdb --collection graph2 --type json --file control.json
 
+
+#test
+mongo test --eval "db.getSisterDB('configdb').graph2.findOne({key:'balanceDetailMB'})"
