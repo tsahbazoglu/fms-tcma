@@ -430,8 +430,8 @@
             }
         }, 
         {
-            "field": "template",
             "key": "template",
+            "field": "template",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
             "reportOrder": 8000,
