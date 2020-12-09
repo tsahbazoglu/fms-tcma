@@ -1,0 +1,372 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "ion_form_1010_v1",
+    "name": "05 : Faaliyet Yetki/İzin Belgesi Bildirimi",
+    "db": "iondb",
+    "collection": "ion_form_1010_v1",
+    "anotherEimzaColletionKey": "ion_form_1010",
+    "formType": "YetkiBelgeleri.java",
+    "type": "website",
+    "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
+    "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "menuOrder": 600,
+    "upperNodes": ["node_ion"],
+    "accesscontrol": [
+        "bnkuser",
+        "mbuser",
+        "ybuser",
+        "kbuser",
+        "ktbuser",
+        "pyuser",
+        "akuser",
+        "ionadmin"
+    ],
+    "actions": {
+        "new": {
+            "permit": ["ionuser"]
+        },
+        "save": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
+        "delete": {
+            "shoot": true
+        },
+        "download": {
+            "permit": ["ionuser", "architect"]
+        },
+        "eimza1D": {
+            "shoot": false
+        },
+        "eimza2D": {
+            "permit": ["ionuser", "architect"]
+        },
+        "eimza": {
+            "permit": ["ionuser", "ionviewer", "ionadmin", "architect"]
+        }
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 100,
+            "order": 100,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,databankarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "itemTable": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "historyQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "uysadmin,databankarchitect"
+                    },
+                    "memberCode": {
+                        "accesscontrol": "uysadmin,databankarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "name": 1
+                },
+                "labelStringFormat": "%6s | %3s | %s"
+            },
+            "reportRendered": true
+        },
+        {
+            "key": "formName",
+            "field": "formName",
+            "order": 90,
+            "reportOrder": 90,
+            "componentType": "inputText",
+            "name": "Bildirim Adı",
+            "shortName": "Bildirim Adı",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: left;font-weight : bold",
+            "defaultValue": "Faaliyet Yetki/İzin Belgesi Bildirimi",
+            "width": 200,
+            "reportRendered": true
+        },
+        {
+            "key": "description",
+            "field": "description",
+            "order": 80,
+            "reportOrder": 80,
+            "componentType": "inputTextarea",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: left;font-weight : bold;",
+            "defaultValue": "III-39-1 sayılı Yatırım Kuruluşlarının Kuruluş ve Faaliyet Esasları Hakkında Tebliğ'in 37. ve 38. maddeleri uyarınca faaliyet yetki belgesine ilişkin bildirimimizi bilgilerinize sunarız. Saygılarımızla.",
+            "width": 200,
+            "db": "iondb",
+            "forms": "ion_form_1010_v1",
+            "reportRendered": true
+        },
+        {
+            "field": "bankaTuru",
+            "key": "bankaTuru",
+            "reportOrder": 70,
+            "order": 70,
+            "componentType": "selectOneMenu",
+            "db": "iondb",
+            "rendered": {
+                "boolean-value": true,
+                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
+            },
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Bankanın Türü",
+            "shortName": "Bankanın Türü",
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.lang.String",
+            "accesscontrol": "mbuser,ybuser,kbuser,ktbuser,uysadmin,databankarchitect",
+            "converter": "BsonConverter",
+            "defaultValue": {
+                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')?'010':0<=n.indexOf('ktbuser')?'020':0<=n.indexOf('kbuser')?'030':0<=n.indexOf('ybuser')?'040':'000'}"
+            },
+            "items": [
+                {
+                    "code": "000",
+                    "name": "Lütfen Seçiniz"
+                },
+                {
+                    "code": "010",
+                    "name": "Mevduat Bankası"
+                },
+                {
+                    "code": "020",
+                    "name": "Katılım Bankası"
+                },
+                {
+                    "code": "030",
+                    "name": "Kalkınma Bankası"
+                },
+                {
+                    "code": "040",
+                    "name": "Yatırım Bankası"
+                }
+            ],
+            "reportRendered": true
+        },
+        {
+            "field": "yetkiBelgesininKurulOnayTarihi",
+            "key": "yetkiBelgesininKurulOnayTarihi",
+            "name": "Yetki Belgesinin Kurul Onay Tarihi",
+            "shortName": "Yetki Belgesinin Kurul Onay Tarihi",
+            "reportOrder": 60,
+            "order": 60,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "field": "yetkiBelgesininTarihi",
+            "key": "yetkiBelgesininTarihi",
+            "name": "Yetki Belgesinin Tarihi",
+            "shortName": "Yetki Belgesinin Tarihi",
+            "reportOrder": 50,
+            "order": 50,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "reportOrder": 40,
+            "order": 40,
+            "key": "yetkiBelgesininSayisi",
+            "field": "yetkiBelgesininSayisi",
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "name": "Yetki Belgesinin Sayısı",
+            "shortName": "Yetki Belgesinin Sayısı",
+            "valueType": "java.lang.Integer",
+            "style": "text-align: left;font-weight : bold;",
+            "reportRendered": true
+        },
+        {
+            "field": "internetIlanTarihi",
+            "key": "internetIlanTarihi",
+            "name": "Yetki Belgesinin Şirketimiz İnternet Sitemizden İlan Tarihi",
+            "shortName": "Yetki Belgesinin Şirketimiz İnternet Sitemizden İlan Tarihi",
+            "reportOrder": 30,
+            "order": 30,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "style": "text-align:left;font-weight:bold;white-space:nowrap;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "field": "kapIlanTarihi",
+            "key": "kapIlanTarihi",
+            "name": "Yetki Belgesinin KAP'ta İlan Tarihi",
+            "shortName": "Yetki Belgesinin KAP'ta İlan Tarihi",
+            "reportOrder": 20,
+            "order": 20,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "field": "yetkiBelgesininTuru",
+            "key": "yetkiBelgesininTuru",
+            "reportOrder": 10,
+            "order": 10,
+            "componentType": "selectOneMenu",
+            "db": "iondb",
+            "rendered": {
+                "func-value": "function x(n,e){return 0<=e.indexOf('akuser')}"
+            },
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Yetki Belgesinin Türü",
+            "shortName": "Yetki Belgesinin Türü",
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.lang.String",
+            "accesscontrol": "akuser,uysadmin,databankarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "Lütfen Seçiniz"
+                },
+                {
+                    "code": "001",
+                    "name": "Dar Yetkili Aracı Kurum"
+                },
+                {
+                    "code": "002",
+                    "name": "Kısmi Yetkili Aracı Kurum"
+                },
+                {
+                    "code": "003",
+                    "name": "Geniş Yetkili Aracı Kurum"
+                }
+            ],
+            "reportRendered": true
+        }
+    ]
+}

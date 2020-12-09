@@ -1,0 +1,372 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "member_eimza_info",
+    "form": "member_eimza_info",
+    "name": "KURUMUN EİMZA PERSONEL BİLGİSİ",
+    "db": "iondb",
+    "collection": "member_eimza_info",
+    "versionCollection": "ion_data_version",
+    "menuOrder": 0,
+    "forms": "graphForm",
+    "defaultSortField": "orderno",
+    "userConstantNote": "",
+    "userNote": " ",
+    "type": "website",
+    "dimension": {
+        "value": "table",
+        "list": null
+    },
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "upperNodes": ["node_ion"],
+    "accesscontrol": [
+        "ionadmin"
+    ],
+    "actions": {
+        "new": {
+            "permit": ["architect", "ionuser"]
+        },
+        "save": {
+            "permit": ["architect", "ionuser"]
+        },
+        "delete": {
+            "shoot": false
+        },
+        "download": {
+            "shoot": false
+        },
+        "eimza": {
+            "shoot": false
+        }
+    },
+    "fields": [
+
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 10,
+            "order": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "ionadmin,ionviewer,databankarchitect",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "itemTable": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "YB",
+                            "KB",
+                            "MB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "historyQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "ionadmin,databankarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        {
+            "key": "firstname",
+            "field": "firstname",
+            "name": "Ad",
+            "shortName": "Ad",
+            "reportOrder": 20,
+            "order": 20,
+            "componentType": "inputText",
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect"
+        },
+        {
+            "key": "lastname",
+            "field": "lastname",
+            "name": "Soyad",
+            "shortName": "Soyad",
+            "reportOrder": 30,
+            "order": 30,
+            "componentType": "inputText",
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,ionadmin,databankarchitect"
+        },
+        {
+            "key": "esign_provider",
+            "field": "esign_provider",
+            "name": "E-Imza Sağlayıcı",
+            "shortName": "E-Imza Sağlayıcı",
+            "reportOrder": 40,
+            "order": 40,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "tcno",
+            "field": "tcno",
+            "name": "TC No",
+            "shortName": "TC No",
+            "reportOrder": 50,
+            "order": 50,
+            "componentType": "inputText",
+            "reportRendered": true,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect"
+        },
+        {
+            "key": "telefon",
+            "field": "telefon",
+            "name": "Telefon",
+            "shortName": "Telefon",
+            "reportOrder": 60,
+            "order": 60,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "email",
+            "field": "email",
+            "name": "E-Posta",
+            "shortName": "E-Posta",
+            "reportOrder": 70,
+            "order": 70,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "note",
+            "field": "note",
+            "name": "Not",
+            "shortName": "Not",
+            "reportOrder": 80,
+            "order": 80,
+            "componentType": "inputTextarea",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "esigntest",
+            "field": "esigntest",
+            "name": "Eimza Test Özet",
+            "shortName": "Eimza Test Özet",
+            "reportOrder": 90,
+            "order": 90,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "UNVAN",
+            "field": "UNVAN",
+            "name": "UNVAN",
+            "shortName": "UNVAN",
+            "reportOrder": 100,
+            "order": 100,
+            "componentType": "inputText",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "version": true,
+            "field": "status",
+            "key": "status",
+            "reportOrder": 110,
+            "order": 110,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Personel İş Durumu",
+            "shortName": "Personel İş  Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,databankarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "FAAL"
+                },
+                {
+                    "code": "001",
+                    "name": "İŞDEN AYRILDI"
+                },
+                {
+                    "code": "002",
+                    "name": "EIMZA YETKİSİ KALDIRILDI"
+                }
+            ],
+            "reportRendered": true
+        },
+        {
+            "key": "status_note",
+            "field": "status_note",
+            "name": "Personel İş Durumu Açıklaması",
+            "shortName": "Personel İş Durumu Açıklaması",
+            "reportOrder": 120,
+            "order": 120,
+            "componentType": "inputTextarea",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "member_type",
+            "field": "member_type",
+            "accesscontrol": "uysadmin,databankarchitect",
+            "name": "Üye Tipi",
+            "shortName": "Üye Tipi",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 130,
+            "reportOrder": 130,
+            "valueType": "java.lang.String",
+            "style": "text-align:left;",
+            "reportRendered": true
+        }
+    ]
+}

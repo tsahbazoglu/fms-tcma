@@ -1,0 +1,27 @@
+
+{
+    "key": "node_ion",
+    "db": "iondb",
+    "projectKey": "ion",
+    "collection": "ionData",
+    "forms": "graphForm",
+    "name": "Bildirim Sistemi II - TEST ",
+    "type": "node",
+    "menuOrder": 500,
+    "upperNode": null,
+    "enabled": true,
+    "accesscontrol": [
+        "akuser",
+        "bnkuser",
+        "pyuser",
+        "gyuser",
+        "gsuser",
+        "mkuser",
+        "ionadmin",
+        "databankarchitect",
+        "ktbuser",
+        "ionviewer",
+        "ionuser",
+        "denemetest"
+    ]
+}

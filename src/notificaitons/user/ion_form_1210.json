@@ -1,0 +1,357 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "ion_form_1210", 
+    "form": "ion_form_1210",
+    "name": "24 : Genel Müdür Görevden Ayrılma Bildirimi",
+    "db": "iondb",
+    "collection": "ion_form_1210",
+    "versionCollection": "ion_data_version",
+    "forms": "graphForm",
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "defaultSortField": "orderno",
+    "userConstantNote": "",
+    "userNote": "",
+    "type": "website",
+    "showHistory": true,
+    "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
+    "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
+    "menuOrder": 2500,
+    "currentRendered": "function x(n,e){return!(null!=e&&0<=e.indexOf('ionviewer'))}",
+    "upperNodes": ["node_ion"],
+    "accesscontrol": [
+        "akuser",
+        "pyuser",
+        "gyuser",
+        "gsuser",
+        "mkuser",
+        "ktbuser",
+        "ionadmin",
+        "ionviewer"
+    ],
+    "dimension": {
+        "value": "page",
+        "list": [
+            {
+                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "value": "table"
+            },
+            {
+                "roles": ["ionuser"],
+                "value": "page"
+            }
+        ]
+    },
+    "actions": {
+        "new": {
+            "permit": ["ionuser"]
+        },
+        "save": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
+        "delete": true,
+        "download": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
+        "eimza1D": {
+            "permit": ["ionuser", "architect"]
+        },
+        "eimza2D": {
+            "shoot": false
+        },
+        "eimza": {
+            "permit": ["ionuser", "ionviewer", "ionadmin", "architect"]
+        }
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 10,
+            "order": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "ionadmin,databankarchitect,ionviewer",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "itemTable": "common",
+                "query": {
+                    "forms": "member",
+                    "ldapUID": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ"
+                        ]
+                    },
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "historyQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "ionadmin,databankarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        {
+            "key": "formName",
+            "field": "formName",
+            "order": 20,
+            "reportOrder": 20,
+            "componentType": "inputText",
+            "name": "Bildirim Adı",
+            "shortName": "Bildirim Adı",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "style": "text-align: left;",
+            "defaultValue": "24 : Genel Müdür Görevden Ayrılma Bildrimi",
+            "width": 200
+        },
+        {
+            "subGroup": "subGroupOrgDataA",
+            "key": "description",
+            "field": "description",
+            "order": 30,
+            "reportOrder": 30,
+            "componentType": "inputTextarea",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "akuser,ktbuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: right;",
+            "defaultValue": {
+                "string-value": null,                
+                "number-value": null,                
+                "func-value": "function x(e,r){var m='Açıklama ...';if(0<=r.indexOf('ionadmin'))return m;if(0<=r.indexOf('spkuser'))return m;var n=db.getSisterDB('iondb'),o=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject does not have a member';if(!e.hasOwnProperty('forms'))throw'searchObject does not have a forms';var t,a=o.common.findOne({_id:e.member},{memberType:1});if(!a.hasOwnProperty('memberType')||null==a.memberType)throw'member does not have a memberType: '.concat(a.name);return null===a||null!==(t=n.formDescs.findOne({memberType:a.memberType,forms:e.forms}))&&(m=t.text),m}"
+            },
+            "width": 200,
+            "db": "iondb",
+            "forms": "ion_form_1210"
+        },
+        {
+            "key": "ad_soyad",
+            "field": "ad_soyad",
+            "order": 40,
+            "reportOrder": 40,
+            "componentType": "inputText",
+            "name": "Görevden Ayrılan Genel Müdürün Adı ve Soyadı",
+            "shortName": "Görevden Ayrılan Genel Müdürün Adı ve Soyadı",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "tc_no",
+            "field": "tc_no",
+            "order": 50,
+            "reportOrder": 50,
+            "componentType": "inputText",
+            "name": "Görevden Ayrılan Genel Müdür TC Kimlik Numarası",
+            "shortName": "Görevden Ayrılan Genel Müdür TC Kimlik Numarası",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "field": "ayrilma_tarihi",
+            "key": "ayrilma_tarihi",
+            "name": "Görevden Ayrılma Tarihi",
+            "shortName": "Görevden Ayrılma Tarihi",
+            "reportOrder": 60,
+            "order": 60,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "field": "istifa_kabul_tarihi",
+            "key": "istifa_kabul_tarihi",
+            "name": "Görevden Alınma / Ayrılma Yönetim Kurulu Tarihi (İş akdi fesh tarihi veya istifaen ayrılmalarda varsa kabulü ilişkin tarih)",
+            "shortName": "Görevden Alınma / Ayrılma Yönetim Kurulu Tarihi (İş akdi fesh tarihi veya istifaen ayrılmalarda varsa kabulü ilişkin tarih)",
+            "reportOrder": 70,
+            "order": 70,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "field": "spk_bildirim_tarihi",
+            "key": "spk_bildirim_tarihi",
+            "name": "Görevden Ayrılmanın SPK'ya Bildirim Tarihi",
+            "shortName": "Görevden Ayrılmanın SPK'ya Bildirim Tarihi",
+            "reportOrder": 80,
+            "order": 80,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true
+        },
+        {
+            "key": "jobleftreason",
+            "field": "jobleftreason",
+            "order": 90,
+            "reportOrder": 90,
+            "name": "Görevden Ayrılma Nedeni",
+            "shortName": "Görevden Ayrılma Nedeni",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "style": "text-align: right;",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "db": "iondb",
+                "collection": "ion_setting_jobleftreason",
+                "itemTable": "ion_setting_jobleftreason",
+                "query": {
+
+                },
+                "historyQuery": {
+
+                },
+                "adminQuery": {
+
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "name": 1
+                }
+            },
+            "reportRendered": true
+        }
+    ]
+}

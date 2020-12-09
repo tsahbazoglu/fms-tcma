@@ -1,0 +1,11 @@
+
+{
+    "key": "ion",
+    "configCollections": "graphion2",
+    "adminRole": "architect",
+    "userRole": "akuser",
+    "welcomePage": "welcome-ion",
+    "registred-functions": [
+
+    ]
+} 

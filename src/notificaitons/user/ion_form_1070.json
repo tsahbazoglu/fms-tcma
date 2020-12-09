@@ -1,0 +1,469 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "ion_form_1070", 
+    "form": "ion_form_1070",
+    "name": "15 : Ek Hizmet Binasi Bildirimi",
+    "db": "iondb",
+    "collection": "ion_form_1070",
+    "versionCollection": "ion_data_version",
+    "forms": "graphForm",
+    "defaultSortField": "orderno",
+    "userConstantNote": "",
+    "userNote": "",
+    "type": "website",
+    "showHistory": true,
+    "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
+    "menuOrder": 1600,
+    "loginFkField": "member",
+    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
+    "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
+    "currentRendered": "function x(n,e){return!(null!=e&&0<=e.indexOf('ionviewer'))}",
+    "upperNodes": ["node_ion"],
+    "accesscontrol": [
+        "akuser",
+        "ionadmin",
+        "ionviewer"
+    ],
+    "actions": {
+        "new": {
+            "permit": ["ionuser"]
+        },
+        "save": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
+        "delete": {
+            "shoot": true
+        },
+        "download": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
+        "eimza1D": {
+            "permit": ["ionuser", "architect"]
+        },
+        "eimza2D": {
+            "shoot": false
+        },
+        "eimza": {
+            "permit": ["ionuser", "ionviewer", "ionadmin", "architect"]
+        }
+    },
+    "dimension": {
+        "value": "page",
+        "list": [
+            {
+                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "value": "table"
+            },
+            {
+                "roles": ["ionuser"],
+                "value": "page"
+            }
+        ]
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 10,
+            "order": 10,
+            "reportRendered": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "ionadmin,databankarchitect,ionviewer",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+
+                ]
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "itemTable": "common",
+                "query": {
+                    "forms": "member",
+                    "ldapUID": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ"
+                        ]
+                    },
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "historyQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "B",
+                            "KTB",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ",
+                            "KB",
+                            "YB"
+                        ]
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "ionadmin,databankarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        {
+            "key": "formName",
+            "field": "formName",
+            "order": 20,
+            "reportOrder": 20,
+            "componentType": "inputText",
+            "name": "Bildirim Adı",
+            "shortName": "Bildirim Adı",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "style": "text-align: left;",
+            "defaultValue": "15 : Ek Hizmet Binasi Bildirimi",
+            "width": 200
+        },
+        {
+            "subGroup": "subGroupOrgDataA",
+            "key": "description",
+            "field": "description",
+            "order": 30,
+            "reportOrder": 30,
+            "componentType": "inputTextarea",
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "style": "text-align: right;",
+            "defaultValue": {
+                "string-value": null,                
+                "number-value": null,                
+                "func-value": "function x(e,r){var m='Açıklama ...';if(0<=r.indexOf('ionadmin'))return m;if(0<=r.indexOf('spkuser'))return m;var n=db.getSisterDB('iondb'),o=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject does not have a member';if(!e.hasOwnProperty('forms'))throw'searchObject does not have a forms';var t,a=o.common.findOne({_id:e.member},{memberType:1});if(!a.hasOwnProperty('memberType')||null==a.memberType)throw'member does not have a memberType: '.concat(a.name);return null===a||null!==(t=n.formDescs.findOne({memberType:a.memberType,forms:e.forms}))&&(m=t.text),m}"
+            },
+            "width": 200,
+            "db": "iondb",
+            "forms": "ion_form_1070"
+        },
+        {
+            "field": "activateDate",
+            "key": "activateDate",
+            "name": "Ek Hizmet Binasının Faaliyete Geçiş Tarihi",
+            "shortName": "Ek Hizmet Binasının Faaliyete Geçiş Tarihi",
+            "reportOrder": 40,
+            "order": 40,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "departments",
+            "field": "departments",
+            "order": 50,
+            "reportOrder": 50,
+            "componentType": "inputTextarea",
+            "name": "Ek Hizmet Binasında Yer Alan Birimler",
+            "shortName": "Ek Hizmet Binasında Yer Alan Birimler",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "style": "text-align: right;",
+            "reportRendered": true
+        },
+        {
+            "key": "city",
+            "field": "city",
+            "order": 60,
+            "reportOrder": 60,
+            "componentType": "inputText",
+            "name": "İl",
+            "shortName": "İl",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "town",
+            "field": "town",
+            "order": 70,
+            "reportOrder": 70,
+            "componentType": "inputText",
+            "name": "İlçe",
+            "shortName": "İlçe",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "region",
+            "field": "region",
+            "order": 80,
+            "reportOrder": 80,
+            "componentType": "inputText",
+            "name": "Semt",
+            "shortName": "Semt",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "quarter",
+            "field": "quarter",
+            "order": 90,
+            "reportOrder": 90,
+            "componentType": "inputText",
+            "name": "Mahalle",
+            "shortName": "Mahalle",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "avenue",
+            "field": "avenue",
+            "order": 100,
+            "reportOrder": 100,
+            "componentType": "inputText",
+            "name": "Cadde",
+            "shortName": "Cadde",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "street",
+            "field": "street",
+            "order": 110,
+            "reportOrder": 110,
+            "componentType": "inputText",
+            "name": "Sokak",
+            "shortName": "Sokak",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "externaldoorno",
+            "field": "externaldoorno",
+            "order": 120,
+            "reportOrder": 120,
+            "componentType": "inputText",
+            "name": "Dış Kapı No",
+            "shortName": "Dış Kapı No",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "internaldoorno",
+            "field": "internaldoorno",
+            "order": 130,
+            "reportOrder": 130,
+            "componentType": "inputText",
+            "name": "İç Kapı No",
+            "shortName": "İç Kapı No",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "telephon",
+            "field": "telephon",
+            "order": 140,
+            "reportOrder": 140,
+            "componentType": "inputText",
+            "name": "Telefon No",
+            "shortName": "Telefon No",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "fax",
+            "field": "fax",
+            "order": 150,
+            "reportOrder": 150,
+            "componentType": "inputText",
+            "name": "Fax No",
+            "shortName": "Fax No",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "ek1",
+            "field": "ek1",
+            "name": "Dosya Yükleme",
+            "shortName": "Dosya Yükleme",
+            "fileLimit": 1,
+            "componentType": "inputFile",
+            "gridfsdb": "iondbuploadfiles",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": false,
+            "valueType": "java.lang.String",
+            "order": 160,
+            "reportOrder": 160,
+            "accesscontrol": "ionadmin,ionviewer,ionuser",
+            "reportRendered": true
+        }
+    ]
+}
