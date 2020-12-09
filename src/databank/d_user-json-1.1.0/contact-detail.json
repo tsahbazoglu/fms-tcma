@@ -94,7 +94,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -207,7 +209,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "converter": "TelmanStringConverter",
@@ -229,7 +233,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "converter": "TelmanStringConverter",
@@ -251,7 +257,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "converter": "TelmanStringConverter",

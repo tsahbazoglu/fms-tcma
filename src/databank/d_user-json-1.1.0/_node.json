@@ -1,3 +1,4 @@
+
 {
     "key": "node_dataBank",
     "db": "uysdb",
@@ -5,6 +6,10 @@
     "collection": "dataBankData",
     "forms": "graphForm",
     "name": "Bilgi Bankası",
+    "type": "node",
+    "menuOrder": 50,
+    "upperNode": null,
+    "enabled": true,
     "accesscontrol": [
         "uysadmin",
         "architect",
@@ -14,9 +19,5 @@
         "tspb_imim",
         "ybuser",
         "denemetest"
-    ],
-    "type": "node",
-    "menuOrder": 50,
-    "upperNode": null,
-    "enabled": true
+    ]
 }

@@ -260,7 +260,9 @@
             "shortName": "Üye Kurum",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -367,7 +369,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -454,7 +458,9 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "defaultHistoryValue": "function x(t){return print('uys-databank-log : balanceAbstract.fields.template.defaultHistoryValue'),printjson(t),periodID=t.period,memberID=t.member,dborgstatus=db.dataBankOrganizationStatus.findOne({member:memberID,period:periodID},{template:1}),null!=dborgstatus?{_id:dborgstatus.template}:null}",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -521,7 +527,9 @@
             "key": "variables",
             "name": "Değişken Listesi",
             "shortName": "Değişken Listesi",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": true,
@@ -540,7 +548,9 @@
             "key": "mySmallLisp",
             "name": "My Small Lisp",
             "shortName": "My Small Lisp",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": true,
@@ -563,7 +573,9 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneStringConverter",
             "readonly": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,
@@ -593,7 +605,9 @@
             "roleCheck": true,
             "observable": false,
             "money": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": true,
             "reportRendered": true,
             "quickFilter": true,
@@ -626,7 +640,9 @@
             "readonly": true,
             "roleCheck": true,
             "observable": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": false,
             "reportRendered": true,
             "quickFilter": true
@@ -646,7 +662,9 @@
             "readonly": true,
             "roleCheck": true,
             "observable": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": false,
             "reportRendered": true,
             "quickFilter": false
@@ -665,7 +683,9 @@
             "roleCheck": true,
             "money": false,
             "observable": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": false,
             "reportRendered": false,
             "quickFilter": false
@@ -684,7 +704,9 @@
             "roleCheck": true,
             "money": false,
             "observable": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": false,
             "reportRendered": false,
             "quickFilter": false
@@ -700,7 +722,9 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect", "uysuser", "pyuser", "ybuser"],
             "readonly": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,
@@ -721,7 +745,9 @@
             "readonly": true,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "search-access": false,
             "reportRendered": true,
             "quickFilter": false
@@ -737,7 +763,9 @@
             "componentType": "inputTextarea",
             "accesscontrol": ["uysadmin", "architect", "uysuser", "pyuser", "ybuser"],
             "readonly": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,
@@ -756,7 +784,9 @@
             "componentType": "inputTextarea",
             "accesscontrol": ["uysadmin", "architect", "uysuser", "pyuser", "ybuser"],
             "readonly": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,

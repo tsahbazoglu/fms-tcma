@@ -1,75 +1,74 @@
-
+ 
 {
     "schemaVersion": "1.1.0",
-    "key": "portfolioManagement",
+    "key": "employeesByAgeGroups",
     "db": "uysdb",
-    "collection": "dataBankPortfolioManagement",
-    "snapshotCollection": "snapshotPortfolioManagement",
-    "menuOrder": 350,
-    "form": "F1",
+    "collection": "dataBankEmployeesByAgeGroups",
+    "snapshotCollection": "snapshotEmployeesByAgeGroups",
+    "menuOrder": 300,
+    "form": "D2",
     "group": "activity",
     "forms": "graphForm",
+    "name": "Personel Sayısı - Yaş",
     "loginFkField": "member",
-    "name": "Varlık Yönetimi",
+    "readOnlyNote": null,
+    "userNote": "",
+    "historyRendered": true,
+    "historyPosition": 2,
+    "type": "website",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "handsonRowHeaderWidth": 250,
-    "handsonColWidths": 210,
-    "readOnlyNote": null,
     "user-constant-note": {
-        "value": [
-            "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir"
+        "value": [ 
+            "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
         ]
     },
-    "userNote": "<ul><li>Doğrudan aracı kurum tarafından yönetilen portföylerle ilgili bilgiler girilmelidir.<br/></ul>",
-    "historyRendered": true,
-    "historyPosition": 1,
-    "type": "website",
     "controlCollection": "dataBankControl",
-    "eventPostSave": {
-        "db": "uysdb",
-        "op": null,
-        "registred-func-name": "write-data-changed-status"
+    "handsonRowHeaderWidth": 150,
+    "handsonColWidths": 50,
+    "calculate-ref": {
+        "func": null,
+        "doc": {
+            "db": "uysdb",
+            "collection": "dataBankCalculateFormulas",
+            "relations": "D2"
+        }
     },
-    "filter": {
-        "forms": "portfolioManagement"
-    },
-    "zetDimension": [
-        "member",
-        "period"
-    ],
     "accesscontrol": [
         "uysadmin",
         "architect",
         "uysviewer",
         "uysuser",
+        "pyuser",
         "ybuser"
     ],
     "myNamedQueries": {
-        "include": [
-            {
-                "roles": ["architect", "uysadmin", "uysviewer"],
-                "query": {
-                    "func": null,
-                    "list": null
+        "include": {
+            "include": [
+                {
+                    "roles": ["architect", "uysadmin", "uysviewer"],
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "priority": 7
                 },
-                "priority": 7
-            },
-            {
-                "roles": null,
-                "query": {
-                    "func": null,
-                    "list": [
-                        {
-                            "key": "member",
-                            "fms-value": "fms_code{{login_member_id}}"
-                        }
-                    ]
-                },
-                "priority": 0
-            }
-        ]  
-    },
+                {
+                    "roles": null,
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "member",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "priority": 0
+                }
+            ]  
+        }
+    },  
     "upperNodes": ["node_dataBank"],
     "dimension": {
         "value": "grid",
@@ -191,12 +190,12 @@
                             "type": "in"
                         },
                         {
-                            "key": "member",
+                            "key": "period",
                             "fms-value": "fms_code{{login_member_id}}"
                         },
                         {
-                            "key": "period",
-                            "fms-value": "fms_code{{filter_period}}"
+                            "key": "member",
+                            "fms-value": "fms_code{{filter_member}}"
                         }
                     ]
                 },
@@ -206,12 +205,24 @@
         "download": {
             "shoot": true
         }
-    }, 
+    },
     "constraintItems": {
         "db": "uysdb",
         "collection": "dataBankConstraintFormulas",
-        "query": "function x(e){if(!e.hasOwnProperty('period'))throw'period is not defined on searchObject: call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';var n=db.common.findOne({_id:e.period});if(null===n)throw'period could not be found on db : call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';return{forms:'constraint',relations:'F1','#where':'this.relations.length==1',validPeriods:n.month}}"
+        "query": "function x(e){if(!e.hasOwnProperty('period'))throw'period is not defined on searchObject: call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';var n=db.common.findOne({_id:e.period});if(null===n)throw'period could not be found on db : call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';return{forms:'constraint',relations:'D2','#where':'this.relations.length==1',validPeriods:n.month}}"
     },
+    "eventPostSave": {
+        "db": "uysdb",
+        "op": null,
+        "registred-func-name": "write-data-changed-status"
+    },
+    "filter": {
+        "forms": "employeesByAgeGroups"
+    },
+    "zetDimension": [
+        "member",
+        "period"
+    ],
     "fields": [
         {
             "key": "member",
@@ -223,7 +234,9 @@
             "shortName": "Üye Kurum",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -330,7 +343,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -366,7 +381,8 @@
                     "itemTable": "common",
                     "query": {
                         "func": "function x(e){if(member=e.member,null==member)throw'searchObject.member is resolved to null';return periods=[],db.dataBankOrganizationStatus.find({status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','001','002','003','006']},member:member},{period:1}).forEach(function(e){periods.push(e.period)}),{_id:{'#in':periods}}}",
-                        "list": null
+                        "list": null,
+                        "ref": null
                     },
                     "historyQuery": {
                         "func": null,
@@ -402,26 +418,28 @@
                     ]
                 }
             }
-        }, 
+        },
         {
-            "key": "porfolioManagementInvestorType",
-            "field": "porfolioManagementInvestorType",
-            "name": "Varlık Yönetimi Yatırımcı Türü",
-            "shortName": "Varlık Yönetimi Yatırımcı Türü",
+            "field": "gender",
+            "key": "gender",
             "ndType": "DIMENSION",
-            "ndAxis": "X-IKS",
-            "order": 7000,
+            "ndAxis": "Y-IGREK",
             "reportOrder": 7000,
-            "rendered": true,
-            "roleCheck": true,
+            "order": 7000,
+            "componentType": "selectOneMenu",
+            "name": "Cinsiyet",
+            "shortName": "Cinsiyet",
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
+            "roleCheck": true,
+            "observable": false,
             "reportRendered": true,
             "quickFilter": false,
-            "observable": false,
-            "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect,uysviewer",
             "converter": "SelectOneObjectIdConverter",
             "items": {
                 "func": null,
@@ -430,8 +448,13 @@
                     "db": "uysdb",
                     "itemTable": "dataBankSetting",
                     "query": {
-                        "func": "function x(r){var e={forms:'porfolioManagementInvestorType'};if(null==r)return e;if(!r.hasOwnProperty('period'))return e;if(r.hasOwnProperty('period')){var n=db.getSisterDB('uysdb').common.findOne({_id:r.period});if(null==n)return e;201512<Number(n.value)&&(e.code={$in:['PMIT003','PMIT004']})}return e}",
-                        "list": null
+                        "func": null,
+                        "list": [ 
+                            {
+                                "key": "forms",
+                                "value": "gender"
+                            }
+                        ]
                     },
                     "sort": {
                         "list": [
@@ -456,49 +479,88 @@
             }
         },
         {
-            "key": "investorCount",
-            "field": "investorCount",
-            "name": "Sayısı",
-            "shortName": "Sayısı",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "reportOrder": 2000,
-            "order": 2000,
-            "componentType": "inputText",
-            "rendered": true,
+            "ndType": "DIMENSION",
+            "ndAxis": "X-IKS",
+            "reportOrder": 6000,
+            "order": 6000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "componentType": "selectOneMenu",
+            "field": "agePeriod",
             "roleCheck": true,
+            "name": "Yaş Aralığı",
+            "shortName": "Yaş Aralığı",
+            "money": false,
+            "valueType": "java.lang.String",
             "readonly": false,
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect,uysviewer",
             "observable": false,
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "key": "agePeriod",
+            "converter": "SelectOneObjectIdConverter",
+            "reportRendered": true,
+            "quickFilter": false,
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankSetting",
+                    "query": {
+                        "func": null,
+                        "list": [ 
+                            {
+                                "key": "forms",
+                                "value": "agePeriod"
+                            }
+                        ]
+                    },
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "order",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "permit": "uysadmin,architect,uysviewer",
+                            "key": "code",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "key": "personelCount",
+            "field": "personelCount",
+            "name": "Personel Sayısı",
+            "shortName": "Personel Sayısı",
+            "order": 5000,
+            "reportOrder": 5000,
+            "ndType": "MEASURE",
+            "rendered": {
+                "boolean-value": true
+            },
+            "readonly": false,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "reportRendered": true,
+            "quickFilter": false,
+            "componentType": "inputText",
+            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect,uysviewer",
             "style": "text-align:right;",
             "valueType": "java.lang.Integer",
             "converter": "NumberConverter",
-            "maxFractationDigits": 0,
-            "minFractationDigits": 0,
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "key": "porfolioSizeMoney",
-            "field": "porfolioSizeMoney",
-            "name": "Yönetilen Portföy Büyüklüğü (TL)",
-            "shortName": "Yönetilen Portföy Büyüklüğü (TL)",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "reportOrder": 2000,
-            "order": 2000,
-            "componentType": "inputText",
-            "rendered": true,
-            "money": false,
-            "roleCheck": true,
-            "readonly": false,
-            "observable": false,
-            "valueType": "java.lang.String",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
-            "converter": "MoneyConverter",
-            "style": "text-align:right;",
-            "reportRendered": true,
-            "quickFilter": false
+            "maximumFractionDigits": 0,
+            "minFractationDigits": 0
         }
     ]
 }

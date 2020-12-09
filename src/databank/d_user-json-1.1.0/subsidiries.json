@@ -1,42 +1,44 @@
 
 {
     "schemaVersion": "1.1.0",
-    "key": "portfolio_management_pys",
+    "key": "subsidiries",
     "db": "uysdb",
-    "collection": "dataBankPortfolioManagementPys",
-    "snapshotCollection": "snapshotPortfolioManagementPys",
-    "menuOrder": 350,
-    "form": "F11",
-    "group": "activity",
+    "collection": "dataBankSubsidiries",
+    "snapshotCollection": "snapshotSubsidiries",
+    "menuOrder": 230,
+    "form": "A",
     "forms": "graphForm",
-    "name": "Varlık Yönetimi (PYS)",
-    "handsonRowHeaderWidth": 350,
-    "handsonColWidths": 210,
-    "readOnlyNote": "Bu sayfada TSPB’ye daha önce iletilen faaliyet verileri bilgi için gösterilmekte olup, sayfaya veri girişi yapılamamaktadır.Bu sayfadaki verileri değiştirmek için Birliğimize resmi bir yazı ile başvurmanız gereklidir.",
-    "user-constant-note": null,
-    "historyRendered": true,
-    "historyPosition": 1,
-    "type": "website",
-    "controlCollection": "dataBankControl",
+    "name": "İştirakler",
+    "group": "activity",
+    "shortName": "İştirak",
     "loginFkField": "member",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "userNote": "<ul><li>Toplam Portföy Büyüklüğü satırında Sermaye Piyasası Kurulu web sitesinden temin edilen veriler bilgi amaçlı girilmiştir.</li></ul>",
+    "historyRendered": true,
+    "historyPosition": 1,
+    "type": "website",
+    "readOnlyNote": null,
+    "user-constant-note": null,
+    "userNote": "<ul>\n<li>\"İştirakler\" sayfasında, bir önceki döneme ilişkin kurumunuz tarafından Birliğimize <br/>\ngönderilen veriler otomatik olarak yansıtılmış durumdadır.<br/> \n<li>\"Yeni Kayıt\" butonuna basarak ortaya çıkan ekranda yeni iştirak girişi yapınız.<br/>\n<li>İştirakiniz yoksa  \"Bu döneme ait iştirakimiz yoktur\" butonunu tıklayınız.<br/>\n<li>Her bir iştirakinize ilişkin \"Konsolidasyon\" sütununun doldurulduğundan emin olunuz.<br/>\n<li>İştirakiniz, kurumunuz tarafından açıklanan finansal tablolarda konsolidasyona dahil ise,<br/> \nilgili satırı tıklayarak çıkan ekranda \"Dahil\" seçeneğini, değilse \"Dahil Değil\" seçeneğini işaretleyiniz.<br/>\n<li>Bu sayfayı doldurarak kaydetmediğiniz sürece finansal tablolara ilişkin sayfalara giriş yapılamamaktadır.<br/>\n<li>Güncelleme ve Silme işlemleri için ilgili satır üzerine tıklayınız.<br/>\n<li>Kurumunuzun sahip olduğu iştirak ve bağlı ortaklıkların ödenmiş sermayesi (TL), <br/>\nkurumunuzun iştirak tutarı (TL) ve iştirakteki payını (%) ilgili tarih itibariyle güncelleyiniz.\n<li>Borsa İstanbul ve Takasbank hisseleri bu sayfada belirtilmelidir.\n        </ul>",
     "userConstantNoteList": [
-        "Bireysel portföy yönetimi verilerine, gerçek ve tüzel kişilere ait yönetilen 'kolektif yatırım araçları'(yatırım fonları vb.) ile 'diğer yatırım araçları'(pay senedi, tahvil vb.) büyüklükleri ayrıştırılarak girilecektir.",
-        "Hücrelere veri girişi yaptıktan sonra klavyedeki 'Enter' tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar 'Kaydet' tuşuna basılarak etkinleşecektir. ",
-        "Özel fonlara ilişkin bilgiler ayrıca girilmelidir."
-    ], 
-    "calculate-ref": {
-        "func": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'F11',validPeriods:null===a?null:a.value}}",
-        "doc": null
+        "Pay (%) bilgilerinde ondalık kısıma en fazla iki basamak yazılabilir.",
+        "Ondalık ayracı olarak virgül(,) kullanılmalı."
+    ],
+    "filter": {
+        "forms": "subsidiries"
     },
     "accesscontrol": [
         "uysadmin",
         "architect",
         "uysviewer",
-        "pyuser"
+        "uysuser",
+        "ybuser"
     ],
+    "constraintItems": {
+        "db": "uysdb",
+        "collection": "dataBankConstraintFormulas",
+        "query": "function x(e){if(!e.hasOwnProperty('period'))throw'period is not defined on searchObject: call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';var n=db.common.findOne({_id:e.period});if(null===n)throw'period could not be found on db : call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';return{forms:'constraint',relations:'A','#where':'this.relations.length==1',validPeriods:n.month}}"
+    },
     "myNamedQueries": {
         "include": [
             {
@@ -64,11 +66,11 @@
     },
     "upperNodes": ["node_dataBank"],
     "dimension": {
-        "value": "grid",
+        "value": "table",
         "list": [
             {
                 "roles": null,
-                "value": "grid"
+                "value": "table"
             }
         ]
     },
@@ -198,20 +200,33 @@
         "download": {
             "shoot": true
         }
-    }, 
-    "constraintItems": {
-        "db": "uysdb",
-        "collection": "dataBankConstraintFormulas",
-        "query": "function x(e){if(!e.hasOwnProperty('period'))throw'period is not defined on searchObject: call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';var n=db.common.findOne({_id:e.period});if(null===n)throw'period could not be found on db : call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';return{forms:'constraint',relations:'F11','#where':'this.relations.length==1',validPeriods:n.month}}"
     },
-
-    "filter": {
-        "forms": "portfolio_management_pys"
-    },
-    "zetDimension": [
-        "member",
-        "period"
+    "events": [
+        {
+            "name": "norecord",
+            "db": "uysdb",
+            "appearFunction": "function x(e,n){if(count1=0,count2=0,null==n)throw'roles must be defined for member :'.concat(e.member);return!(0<=n.indexOf('architect'))&&(!(0<=n.indexOf('uysadmin'))&&((0<=n.indexOf('uysuser')||0<=n.indexOf('ybuser'))&&(count1=db.dataBankNotifications.count({member:e.member,period:e.period}),count2=db.dataBankSubsidiries.count({member:e.member,period:e.period,consolidated:{$in:['DAHİL DEĞİL','DAHİL']}}),0==count1&&0==count2)))}",
+            "action": "function x(e,i){db.dataBankNotifications.update({member:e.member,period:e.period,form:'A',forms:'notifications',type:'NO RECORD'},{$set:{exist:'HAYIR'}},!0,!1)}",
+            "gui": {
+                "x": 100,
+                "y": 100,
+                "component": "button",
+                "caption": "Bu döneme ait iştirakimiz yok",
+                "trigger": "onClick",
+                "style": "",
+                "successMessage": "Bildiriminiz kayda alındı. Teşekkür ederiz.",
+                "failMessage": "İşlem Başarısız."
+            }
+        }
     ],
+    "eventPostSave": {
+        "db": "uysdb",
+        "op": "function x(e){var i=db.dataBankSubsidiries.findOne({member:e.member,period:e.period,consolidated:'DAHİL'});db.dataBankNotifications.update({member:e.member,period:e.period,form:'A',forms:'notifications',type:'NO RECORD'},{$set:{exist:null==i?'HAYIR':'EVET'}},!0,!1)}"
+    },
+    "eventPostDelete": {
+        "db": "uysdb",
+        "op": "function x(e){var i=db.dataBankSubsidiries.findOne({member:e.member,period:e.period,consolidated:'DAHİL'});db.dataBankNotifications.update({member:e.member,period:e.period,form:'A',forms:'notifications',type:'NO RECORD'},{$set:{exist:null==i?'HAYIR':'EVET'}},!0,!1)}"
+    },
     "fields": [
         {
             "key": "member",
@@ -223,13 +238,15 @@
             "shortName": "Üye Kurum",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false, 
             "reportRendered": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect,uysviewer",
@@ -330,14 +347,16 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
             "reportRendered": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect",
@@ -404,101 +423,124 @@
             }
         },
         {
-            "key": "pmitp",
-            "field": "pmitp",
-            "order": 7000,
-            "reportOrder": 7000,
-            "name": "Varlık Yönetimi Yatırımcı Türü",
-            "shortName": "Varlık Yönetimi Yatırımcı Türü",
-            "ndType": "DIMENSION",
-            "ndAxis": "X-IKS",
-            "componentType": "selectOneMenu",
+            "key": "subsidiriesTradeTitle",
+            "field": "subsidiriesTradeTitle",
+            "order": 30,
+            "reportOrder": 30,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
             "roleCheck": true,
-            "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
+            "componentType": "inputText",
+            "name": "İştirakin Ticari Ünvanı",
+            "shortName": "İştirakin Ticari Ünvanı",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "order": 40,
+            "reportOrder": 40,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "capitalAmount",
+            "name": "İştirak Tutarı (TL)",
+            "shortName": "İştirak Tutarı (TL)",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "key": "capitalAmount",
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "order": 50,
+            "reportOrder": 50,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "paidCapital",
+            "name": "Ödenmiş Sermaye (TL)",
+            "shortName": "Ödenmiş Sermaye (TL)",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "key": "paidCapital",
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "order": 60,
+            "reportOrder": 60,
+            "componentType": "inputText",
+            "field": "share",
+            "key": "share",
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "name": "Pay(%)",
+            "shortName": "Pay(%)",
+            "valueType": "java.lang.Double",
+            "converter": "NumberConverter",
+            "converterFormat": "'%' ##.##",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "consolidated",
+            "key": "consolidated",
+            "order": 70,
+            "reportOrder": 70,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "roleCheck": true,
+            "readonly": false,
             "reportRendered": true,
             "quickFilter": false,
+            "name": "Konsolidasyon",
+            "shortName": "Konsolidasyon",
             "valueType": "java.lang.String",
-            "accesscontrol": "pyuser,uysadmin,architect,uysviewer",
-            "converter": "SelectOneObjectIdConverter",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneStringConverter",
             "items": {
                 "func": null,
-                "list": null,
-                "ref": {
-                    "db": "uysdb",
-                    "itemTable": "dataBankSetting",
-                    "query": {
-                        "func": "function x(i){if(null==i.member)throw'member is not defined';if(null==i.period)throw'period is not defined';return period=db.getSisterDB('uysdb').common.findOne(i.period),ids=[],null!=period&&db.getSisterDB('uysdb').dataBankSetting.find({forms:'porfolio_management_investor_type_pys',validSince:{$lte:period.value}},{_id:1}).forEach(function(i){ids.push(i._id)}),{_id:{'#in':ids}}}",
-                        "list": []
-                    },
-                    "sort": {
-                        "list": [
-                            {
-                                "key": "order",
-                                "value": 1
-                            }
-                        ]
-                    },
-                    "v": [
-                        {
-                            "permit": "uysadmin,architect,uysviewer",
-                            "key": "code",
-                            "order": 10
-                        },
-                        {
-                            "key": "name",
-                            "order": 20
-                        }
-                    ]
-                }
+                "list": [
+                    "BELLİ DEĞİL",
+                    "DAHİL",
+                    "DAHİL DEĞİL"
+                ],
+                "ref": null
             }
-        },
-        {
-            "key": "investorCount",
-            "field": "investorCount",
-            "name": "Sayısı",
-            "shortName": "Sayısı",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "reportOrder": 2000,
-            "order": 2000,
-            "componentType": "inputText",
-            "rendered": true,
-            "roleCheck": true,
-            "readonly": false,
-            "observable": false,
-            "accesscontrol": "pyuser,uysadmin,architect,uysviewer",
-            "style": "text-align:right;",
-            "valueType": "java.lang.Integer",
-            "converter": "NumberConverter",
-            "maxFractationDigits": 0,
-            "minFractationDigits": 0,
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "key": "porfolioSizeMoney",
-            "field": "porfolioSizeMoney",
-            "name": "Yönetilen Portföy Büyüklüğü (TL)",
-            "shortName": "Yönetilen Portföy Büyüklüğü (TL)",
-            "ndType": "MEASURE",
-            "ndAxis": "Y-IGREK",
-            "reportOrder": 2000,
-            "order": 2000,
-            "componentType": "inputText",
-            "rendered": true,
-            "money": false,
-            "roleCheck": true,
-            "readonly": false,
-            "observable": false,
-            "valueType": "java.lang.String",
-            "accesscontrol": "pyuser,uysadmin,architect,uysviewer",
-            "converter": "MoneyConverter",
-            "style": "text-align:right;",
-            "reportRendered": true,
-            "quickFilter": false
         }
     ]
-}
+} 

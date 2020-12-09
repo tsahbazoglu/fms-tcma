@@ -247,7 +247,9 @@
             "shortName": "Üye Kurum",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -354,7 +356,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -441,7 +445,9 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "defaultHistoryValue": "function x(t){return print('uys-databank-log : balanceAbstract.fields.template.defaultHistoryValue'),printjson(t),periodID=t.period,memberID=t.member,dborgstatus=db.dataBankOrganizationStatus.findOne({member:memberID,period:periodID},{template:1}),null!=dborgstatus?{_id:dborgstatus.template}:null}",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -509,7 +515,9 @@
             "ndAxis": "X-IKS",
             "reportOrder": 7000,
             "order": 7000,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "selectOneMenu",
             "roleCheck": true,
             "money": false,
@@ -624,7 +632,10 @@
             "roleCheck": true,
             "readonly": false,
             "db": "uysdb",
-            "rendered": "function x(e,r){if(print('uys-databank-log : call graph2.balanceDetail.fields.consolidated.rendered()'),!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;if(null==r)return!1;if(0<=r.indexOf('architect'))return!0;if(0<=r.indexOf('uysadmin'))return!0;var n=db.getSisterDB('uysdb').dataBankNotifications.findOne({member:e.member,period:e.period,form:'A'});return null!==n&&n.hasOwnProperty('exist')&&'EVET'===n.exist}",
+            "rendered": {
+                "boolean-value": null,
+                "func-value": "function x(e,r){if(print('uys-databank-log : call graph2.balanceDetail.fields.consolidated.rendered()'),!e.hasOwnProperty('member'))return!1;if(!e.hasOwnProperty('period'))return!1;if(null==r)return!1;if(0<=r.indexOf('architect'))return!0;if(0<=r.indexOf('uysadmin'))return!0;var n=db.getSisterDB('uysdb').dataBankNotifications.findOne({member:e.member,period:e.period,form:'A'});return null!==n&&n.hasOwnProperty('exist')&&'EVET'===n.exist}"
+            },                
             "order": 10,
             "reportOrder": 6000,
             "valueType": "java.lang.String",
@@ -642,7 +653,9 @@
             "name": "Solo (TL)",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 20,
             "reportOrder": 5000,
@@ -661,7 +674,9 @@
             "name": "Solo (YP)",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 30,
             "reportOrder": 4000,
@@ -680,7 +695,9 @@
             "name": "Solo (Toplam)",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 40,
             "reportOrder": 3500,
@@ -699,7 +716,10 @@
             "componentType": "inputText",
             "roleCheck": true,
             "db": "uysdb",
-            "rendered": "function x(r){if(print('uys-databank-log : call graph2.balanceDetail.fields.amount.rendered()'),!r.hasOwnProperty('member'))return!1;if(!r.hasOwnProperty('period'))return!1;var e=db.common.findOne({_id:r.period});return null!=e&&e.year<2008}",
+            "rendered": {
+                "boolea-value": null,
+                "func-value": "function x(r){if(print('uys-databank-log : call graph2.balanceDetail.fields.amount.rendered()'),!r.hasOwnProperty('member'))return!1;if(!r.hasOwnProperty('period'))return!1;var e=db.common.findOne({_id:r.period});return null!=e&&e.year<2008}"
+            },
             "readonly": false,
             "order": 3000,
             "reportOrder": 3000,

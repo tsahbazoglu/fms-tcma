@@ -1,64 +1,26 @@
-
 {
     "schemaVersion": "1.1.0",
-    "key": "corporateFinanceActivities",
+    "key": "alternativeChannels",
     "db": "uysdb",
-    "collection": "dataBankCorporateFinanceActivities",
-    "snapshotCollection": "snapshotCorporateFinanceActivities",
-    "menuOrder": 340,
-    "form": "E1",
+    "collection": "dataBankAlternativeChannels",
+    "snapshotCollection": "snapshotAlternativeChannels",
+    "menuOrder": 240,
+    "form": "B1",
+    "name": "Şube Ağı",
+    "group": "activity",
     "forms": "graphForm",
-    "name": "Kurumsal Finansman",
-    "readOnlyNote": null,
-    "userNote": "<ul>\n<li>Birincil ve ikincil halka arzlar ile tahvil ihraçlarında lider olunan projeler yazılmalıdır.<br/>\n<li>Birincil halka arz sayılarına halka arz edilmeksizin borsaya kotasyonu gerçekleştirilen şirketler dâhil edilmelidir.<br/>\n<li>Tahvil İhracı başlığı tahsisli satılanlar dâhil tüm tahvil ve bono ihraçlarını ifade etmektedir.<br/>\n<li>Yatırım danışmanlığı yetki belgesi kapsamındaki faaliyetler burada yer almamalıdır.<br/>\n<li>Tamamlanan Proje Sayısı: Dönem içinde, sözleşmenin şartlarını yerine getirerek tamamlanan proje sayısı girilmelidir.<br/>\n<li>Süresi Dolan Proje Sayısı: Dönem içinde tamamlanmadan süresi dolan ve yenilenmeyen proje sayısı girilmelidir.<br/>\n<li>Fesh Edilen Proje Sayısı: Dönem içinde çeşitli nedenlerle süresi dolmadan fesh edilen proje sayısı girilmelidir.\n        </ul>",
+    "handsonRowHeaderWidth": 300,
     "historyRendered": true,
     "historyPosition": 1,
     "type": "website",
-    "loginFkField": "member", 
-    "handsonRowHeaderWidth": 300,
-    "handsonColWidths": 220,
-    "user-constant-note": null,
-    "controlCollection": "dataBankControl",
+    "readOnlyNote": null,
+    "user-constant-note": {
+        "value": ["Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir"]
+    },
+    "userNote": "",
+    "loginFkField": "member",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "calculate-ref": {
-        "func": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'E1',validPeriods:null===a?null:a.value}}",
-        "doc": null
-    },
-    "accesscontrol": [
-        "uysadmin",
-        "architect",
-        "uysviewer",
-        "uysuser",
-        "ybuser"
-    ],   
-    "myNamedQueries": {
-        "include": {
-            "include": [
-                {
-                    "roles": ["architect", "uysadmin", "uysviewer"],
-                    "query": {
-                        "func": null,
-                        "list": null
-                    },
-                    "priority": 7
-                },
-                {
-                    "roles": null,
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "member",
-                                "fms-value": "fms_code{{login_member_id}}"
-                            }
-                        ]
-                    },
-                    "priority": 0
-                }
-            ]  
-        }
-    },
     "upperNodes": ["node_dataBank"],
     "dimension": {
         "value": "grid",
@@ -69,6 +31,17 @@
             }
         ]
     },
+    "accesscontrol": [
+        "uysadmin",
+        "architect",
+        "uysviewer",
+        "uysuser",
+        "ybuser"
+    ],
+    "zetDimension": [
+        "member",
+        "periodFilter"
+    ],
     "actions": {
         "new": {
             "permit": null,
@@ -150,7 +123,7 @@
             "action": {
                 "db": "uysdb",
                 "func": null,
-                "registred-func-name": null
+                "registred-func-name": "write-data-changed-status"
             }
         },
         "delete": {
@@ -196,50 +169,57 @@
             "shoot": true
         }
     },
-    "constraintItems": {
-        "db": "uysdb",
-        "collection": "dataBankConstraintFormulas",
-        "query": "function x(e){if(!e.hasOwnProperty('period'))throw'period is not defined on searchObject: call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';var n=db.common.findOne({_id:e.period});if(null===n)throw'period could not be found on db : call function() : graph2.departmentBasedVolumeTraded.constraintItems.query()';return{forms:'constraint',relations:'E1','#where':'this.relations.length==1',validPeriods:n.month}}"
+    "myNamedQueries": {
+        "include": [
+            {
+                "roles": ["architect", "uysadmin", "uysviewer"],
+                "query": {
+                    "func": null,
+                    "list": null
+                },
+                "priority": 7
+            },
+            {
+                "roles": null,
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
+                },
+                "priority": 0
+            }
+        ]
     },
     "eventPostSave": {
         "db": "uysdb",
-        "op": null,
-        "registred-func-name": "write-data-changed-status"
+        "op": "function (e,t,a){db.dataBankOrganizationStatus.update({member:e.member,period:e.period},{$set:{controlResult:{code:'002',name:'VERI DEGISTIRILDI'}}})}"
     },
-    "userConstantNoteList": [
-        "Diğer Finansmana Aracılık kalemine proje finansmanı, sendikasyon kredilerine aracılık, yurtdışından finansman sağlamasına aracılık gibi projeler girilmelidir.",
-        "Söz konusu veriye ilişkin geçmiş dönem bilgilerinizi düzenlemek üzere için Birliğimiz ile irtibata geçiniz.",
-        "Bilgi için verilen tahvil ihraç sayılarına tahsisli satış işlemleri de dahil olmayıp, varsa tahsisili satış işlemleri toplam tahvil ihraç sayısına eklenmelidir."
-    ],
     "filter": {
-        "forms": "corporateFinanceActivities"
+        "forms": "alternativeChannels"
     },
-    "zetDimension": [
-        "member",
-        "period"
-    ],
     "fields": [
         {
             "key": "member",
             "field": "member",
             "graphKey": "member",
-            "order": 10,
-            "reportOrder": 10,
-            "name": "Üye Kurum",
-            "shortName": "Üye Kurum",
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "reportOrder": 10,
+            "order": 10,
+            "componentType": "selectOneMenu",
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
-            "observable": false, 
+            "observable": false,
             "reportRendered": true,
-            "quickFilter": false,
-            "componentType": "selectOneMenu",
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysadmin,architect,uysviewer",
-            "converter": "SelectOneObjectIdConverter",
+            "quickFilter": false,    
             "autoset": {
                 "value": true,
                 "list": [
@@ -251,8 +231,16 @@
                         "roles": ["uysadmin", "architect"],
                         "value": true
                     }
+
                 ]
             },
+            "defaultCurrentValue": "fms_code{{login_member_id}}",
+            "defaultHistoryValue": "fms_code{{login_member_id}}",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysadmin,architect,uysviewer",
+            "converter": "SelectOneObjectIdConverter",
             "items": {
                 "func": null,
                 "list": null,
@@ -328,28 +316,30 @@
             }
         },
         {
-            "key": "period",
+            "key": "periodFilter",
             "field": "period",
-            "name": "Dönem",
-            "shortName": "Dönem",
-            "reportOrder": 20,
-            "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "order": 20,
+            "reportOrder": 20,
+            "observable": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
-            "observable": false,
             "required": true,
             "reportRendered": true,
             "quickFilter": false,
-            "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
-            "accesscontrol": "ybuser,pyuser,uysuser,uysadmin,architect",
+            "componentType": "selectOneMenu",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
             "converter": "SelectOneObjectIdConverter",
-            "defaultCurrentValue": "function x(i){return period=null,periods=[],db.dataBankOrganizationStatus.find({myFormGroups:{$in:['activity','C1']},'status.code':{$in:['000','001','002']},'workflowStatus.code':{$in:['000','001','002','003','006']},member:i},{period:1}).forEach(function(i){periods.push(i.period)}),db.common.find({_id:{$in:periods}}).sort({value:-1}).limit(1).forEach(function(i){period=i}),period}",
-            "defaultHistoryValue": "function x(e){return printjson(e),periodID=e.period,period=db.common.findOne(periodID),printjson(period),null==period?null:(prevPeriodValue=period.value,0==(x=prevPeriodValue%100-3)?prevPeriodValue=100*(parseInt(prevPeriodValue/100)-1)+12:prevPeriodValue-=3,period=db.common.findOne({forms:'period',value:prevPeriodValue}),null==period?null:{_id:period._id})}",
+            "defaultCurrentValue": "function (member) {period = null; periods = []; db.dataBankOrganizationStatus.find({'myFormGroups': {$in: ['activity', 'B1']},                        'status.code': {'$in': ['000', '001', '002']},                        'workflowStatus.code': {'$in': ['000', '001', '002', '003', '006']},                        'member': member                    }, {period: 1}).forEach(function (v) {                        periods.push(v.period);                    });                    db.common.find({_id: {$in: periods}}).sort({value: -1}).limit(1).forEach(function (v) {                        period = v;                    });                    return period;                }",
+            "defaultHistoryValue": "function (currentSearchObject) {periodID = currentSearchObject.period; period = db.common.findOne(periodID);                    prevPeriod = db.common.findOne({forms: 'period', value: period.order - 10});                    return prevPeriod == null ? period : {_id: prevPeriod._id};                }",
             "autoset": {
                 "value": true,
                 "list": [
@@ -367,11 +357,11 @@
             "items": {
                 "func": null,
                 "list": null,
-                "ref": {             
+                "ref": {
                     "db": "uysdb",
                     "itemTable": "common",
                     "query": {
-                        "func": "function x(e){if(member=e.member,null==member)throw'searchObject.member is resolved to null';return periods=[],db.dataBankOrganizationStatus.find({status:{'#in':['000','001','002']},workflowStatus:{'#in':['000','001','002','003','006']},member:member},{period:1}).forEach(function(e){periods.push(e.period)}),{_id:{'#in':periods}}}",
+                        "func": "function (searchObject) {    member = searchObject.member;    if (member == null) {        throw 'searchObject.member is resolved to null';    }    periods = [];    db.dataBankOrganizationStatus.find({         'status': {            '#in': ['000', '001', '002']        },        'workflowStatus': {            '#in': ['000', '001', '002', '003', '006']        },        'member': member    }, {        period: 1    }).forEach(function (v) {        periods.push(v.period);    });    return {        _id: {            '#in': periods        }    };}",
                         "list": null
                     },
                     "historyQuery": {
@@ -410,141 +400,171 @@
             }
         },
         {
-            "key": "agreementType",
-            "field": "agreementType",
-            "order": 7000,
-            "reportOrder": 7000,
-            "name": "Sözleşme Türü",
-            "shortName": "Sözleşme Türü",
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
             "ndType": "DIMENSION",
-            "ndAxis": "X-IKS",
-            "rendered": true,
+            "ndAxis": "Y-IGREK",
+            "order": 30,
+            "reportOrder": 30,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
+            "required": true,
             "reportRendered": true,
             "quickFilter": false,
-            "componentType": "selectOneMenu",  
-            "valueType": "java.lang.String",    
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
-            "converter": "SelectOneObjectIdConverter",
-            "items": {
-                "func": null,
-                "list": null,
-                "ref": {
-                    "db": "uysdb",
-                    "itemTable": "dataBankSetting",
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "agreementType"
-                            }
-                        ]
-                    },
-                    "sort": {
-                        "list": [
-                            {
-                                "key": "order",
-                                "value": 1
-                            }
-                        ]
-                    },
-                    "v": [
-                        {
-                            "permit": "uysadmin,architect,uysviewer",
-                            "key": "code",
-                            "order": 10
-                        },
-                        {
-                            "key": "name",
-                            "order": 20
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "key": "agreementStatus",
-            "field": "agreementStatus",
-            "name": "Sözleşme Durumu",
-            "shortName": "Sözleşme Durumu",
-            "order": 6000,
-            "reportOrder": 6000,
-            "ndType": "DIMENSION",
-            "ndAxis": "Y-IGREK",         
             "componentType": "selectOneMenu",
-            "roleCheck": true,
-            "rendered": true,
-            "readonly": false,
-            "observable": false,
-            "money": false,
-            "reportRendered": true,
-            "quickFilter": false,
             "valueType": "java.lang.String",
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
             "converter": "SelectOneObjectIdConverter",
+            "defaultCurrentValue": "function x(i){return period=null,periods=[],db.dataBankOrganizationStatus.find({myFormGroups:{$in:['activity','B1']},'status.code':{$in:['000','001','002']},'workflowStatus.code':{$in:['000','001','002','003','006']},member:i},{period:1}).forEach(function(i){periods.push(i.period)}),db.common.find({_id:{$in:periods}}).sort({value:-1}).limit(1).forEach(function(i){period=i}),period}",
+            "defaultHistoryValue": "function x(e){return periodID=e.period,period=db.common.findOne(periodID),prevPeriod=db.common.findOne({forms:'period',value:period.order-10}),null==prevPeriod?period:{_id:prevPeriod._id}}",		
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
+            "observer": {
+                "observable": "periodFilter",
+                "todo": "GET_LIST"
+            },
             "items": {
                 "func": null,
                 "list": null,
                 "ref": {
                     "db": "uysdb",
-                    "itemTable": "dataBankSetting",
+                    "itemTable": "common",
                     "query": {
                         "func": null,
                         "list": [
                             {
-                                "key": "forms",
-                                "value": "agreementStatus"
+                                "key": "_id",
+                                "fms-value": "fms_code{{filter_period}}"
                             }
                         ]
+                    },
+                    "queryProjection": {
+                        "_id": true,
+                        "code": true,
+                        "order": true,
+                        "name": true
+                    },
+                    "resultProjection": {
+                        "_id": {
+                            "subkey": "_id",
+                            "type": "objectid"
+                        },
+                        "name": {
+                            "subkey": "name",
+                            "type": "string"
+                        },
+                        "order": {
+                            "subkey": "order",
+                            "type": "number"
+                        }
                     },
                     "sort": {
                         "list": [
                             {
                                 "key": "order",
-                                "value": 1
+                                "value": -1
                             }
                         ]
                     },
                     "v": [
                         {
-                            "permit": "uysadmin,architect,uysviewer",
-                            "key": "code",
-                            "order": 10
-                        },
-                        {
                             "key": "name",
-                            "order": 20
+                            "order": 10
                         }
                     ]
                 }
             }
         },
         {
-            "key": "amount",
-            "field": "amount", 
-            "name": "Sayı",
-            "shortName": "Sayı",
-            "reportOrder": 5000,
-            "order": 5000,
+            "key": "numberOfBranches",
+            "field": "numberOfBranches",
             "ndType": "MEASURE",
-            "rendered": true,
-            "componentType": "inputText",
+            "ndAxis": "X-IKS",
+            "order": 40,
+            "reportOrder": 40,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "observable": false,
+            "reportRendered": true,
+            "quickFilter": false,
+            "componentType": "inputText",     
+            "name": "Şube Sayısı",
+            "shortName": "Şube Sayısı",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "style": "text-align: right;",
+            "valueType": "java.lang.Integer",
+            "format": "#.###.###"
+        },
+        {
+            "key": "numberOfBankBranches",
+            "field": "numberOfBankBranches",
+            "ndType": "MEASURE",
+            "ndAxis": "X-IKS",
+            "reportOrder": 50,
+            "order": 50,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "observable": false,
+            "reportRendered": true,
+            "quickFilter": false,
+            "componentType": "inputText",   
+            "name": "Acente/Emir İletimine Aracı Şube Sayısı",
+            "shortName": "Acente/Emir İletimine Aracı Şube Sayısı",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "userNote": "",
+            "style": "text-align: right;",
+            "valueType": "java.lang.Integer",
+            "format": "#.###.###"
+        },
+        {
+            "key": "numberOfRepresentiveOffices",
+            "field": "numberOfRepresentiveOffices",
+            "ndType": "MEASURE",
+            "ndAxis": "X-IKS",
+            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
+            "reportOrder": 60,
+            "order": 60,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
+            "observable": false,
             "reportRendered": true,
             "quickFilter": false,
-            "accesscontrol": "ybuser,uysuser,uysadmin,architect,uysviewer",
-            "observable": false,
-            "style": "text-align:right;",
+            "componentType": "inputText",
+            "name": "İrtibat Bürosu Sayısı",
+            "shortName": "İrtibat Bürosu Sayısı",
             "valueType": "java.lang.Integer",
-            "converter": "NumberConverter",
-            "maxFractationDigits": 0,
-            "minFractationDigits": 0
+            "format": "#.###.###",
+            "style": "text-align: right;"
         }
     ]
 }
