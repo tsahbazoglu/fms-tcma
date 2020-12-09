@@ -1,43 +1,28 @@
 
 {
     "schemaVersion": "1.1.0",
-    "key": "dataBankCorporateFinanceValues",
+    "key": "dataBankMarketCapitalization",
     "db": "uysdb",
-    "collection": "dataBankCorporateFinanceValues",
-    "menuOrder": 550,
-    "form": "N05",
-    "forms": "graphForm",
-    "name": "N05 - Kurumsal Finansman Değeri",  
+    "collection": "dataBankMarketCapitalization",
+    "menuOrder": 20,
     "userConstantNote": "",
+    "form": "N03",
+    "name": "N03 - Piyasa Değeri",
+    "forms": "graphForm",
+    "loginFkField": "member",
+    "historyRendered": false,
     "type": "website",
-    "historyRendered": true,
-    "historyPosition": 1,
-    "calculateCollection": "dataBankCalculateFormulas",
-    "handsonRowHeaderWidth": 200,
-    "handsonColWidths": 300,
-    "loginFkField": "member", 
+    "userNote": "Kullanıcı Bildirimleri ile ilgili açıklamalar : ",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "accesscontrol": [
-        "uysadmin",
-        "architect"
-    ],
     "filter": {
-        "forms": "dataBankCorporateFinanceValues"
+        "forms": "dataBankMarketCapitalization"
     },
-    "zetDimension": [
-        "member",
-        "period"
+    "accesscontrol": [
+        "architect",
+        "uysadmin"
     ],
-    "dimension": {
-        "value": "grid",
-        "list": [
-            {
-                "roles": null,
-                "value": "grid"
-            }
-        ]
-    },
+    "upperNodes": ["node_databank_manager"],   
     "actions": {
         "new": {
             "permit": ["architect"],
@@ -60,7 +45,15 @@
             "shoot": false
         }
     },
-    "upperNodes": ["node_databank_manager"],   
+    "dimension": {
+        "value": "table",
+        "list": [
+            {
+                "roles": null,
+                "value": "table"
+            }
+        ]
+    },
     "fields": [
         {
             "field": "member",
@@ -68,7 +61,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -95,8 +90,8 @@
                 ]
             },
             "items": {
-                "func": null,
                 "list": null,
+                "func": null,
                 "ref": {
                     "db": "uysdb",
                     "itemTable": "common",
@@ -148,9 +143,10 @@
                     "v": [
                         {
                             "key": "ldapUID",
-                            "permit": "uysadmin,architect,uysviewer",
+                            "permit": ["uysadmin,architect"],
                             "order": 10
                         },
+
                         {
                             "key": "name",
                             "order": 20
@@ -177,14 +173,16 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
             "reportRendered": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect",
@@ -251,141 +249,56 @@
             }
         },
         {
-            "key": "agreementType",
-            "field": "agreementType",
-            "ndType": "DIMENSION",
-            "ndAxis": "X-IKS",
-            "order": 7000,
-            "reportOrder": 7000,
-            "rendered": true,
+            "key": "metricType",
+            "field": "metricType",
+            "version": false,
+            "reportOrder": 75,
+            "order": 75,
             "componentType": "selectOneMenu",
-            "name": "İşlem Türü",
-            "shortName": "İşlem Türü",
-            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
             "readonly": false,
             "observable": false,
-            "money": false,
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysuser,uysadmin,architect",
-            "converter": "SelectOneObjectIdConverter",
-            "reportRendered": true,
-            "quickFilter": false,
-            "items": {
-                "func": null,
-                "ref": {
-                    "db": "uysdb",
-                    "itemTable": "dataBankSetting",
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "agreementType"
-                            },
-                            {
-                                "key": "code",
-                                "value": "PT000,PT001,PT010",
-                                "type": "in"
-                            }
-                        ]
-                    },
-                    "sort": {
-                        "list": [
-                            {
-                                "key": "order",
-                                "value": 1
-                            }
-                        ]
-                    },
-                    "v": [
-                        {
-                            "permit": "uysadmin,architect,uysviewer",
-                            "key": "code",
-                            "order": 10
-                        },
-                        {
-                            "key": "name",
-                            "order": 20
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "ndType": "DIMENSION",
-            "ndAxis": "Y-IGREK",
-            "field": "agreementStatus",
-            "key": "agreementStatus",
-            "name": "Piyasa İşlem Hacmi Tipi",
-            "componentType": "selectOneMenu",
             "roleCheck": true,
-            "rendered": true,
-            "readonly": false,
-            "order": 6000,
-            "reportOrder": 6000,
+            "name": "Ölçek Tipi",
+            "shortName": "Ölçek Tipi",
             "valueType": "java.lang.String",
-            "converter": "SelectOneObjectIdConverter",
-            "accesscontrol": "uysadmin,architect",
-            "reportRendered": true,
-            "quickFilter": false,
+            "accesscontrol": "uysarchitect,architect,uysadmin",
+            "converter": "BsonConverter",
             "items": {
                 "func": null,
-                "ref": {
-                    "db": "uysdb",
-                    "itemTable": "dataBankSetting",
-                    "query": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "agreementStatus"
-                            },
-                            {
-                                "key": "code",
-                                "value": "PS002",
-                                "type": "in"
-                            }
-                        ]
-                    },
-                    "sort": {
-                        "list": [
-                            {
-                                "key": "order",
-                                "value": 1
-                            }
-                        ]
-                    },
-                    "v": [
-                        {
-                            "permit": "uysadmin,architect,uysviewer",
-                            "key": "code",
-                            "order": 10
-                        },
-                        {
-                            "key": "name",
-                            "order": 20
-                        }
-                    ]
-                }
-            }
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Piyasa Değeri"
+                    }
+                ]
+            },
+            "reportRendered": true,
+            "quickFilter": false
         },
         {
             "key": "value",
             "field": "value",
-            "ndType": "MEASURE",
-            "reportOrder": 5000,
-            "order": 5000,
-            "componentType": "inputText",
-            "name": "Ölçülen Değer",
-            "shortName": "Ölçülen Değer",
-            "valueType": "java.lang.String",
+            "order": 50,
+            "reportOrder": 50,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
             "roleCheck": true,
-            "rendered": true,
             "money": false,
             "readonly": false,
             "observable": false,
-            "accesscontrol": "uysuser,uysadmin,architect",
-            "style": "text-align:right;",
+            "componentType": "inputText",
+            "name": "Değer (TL)",
+            "shortName": "Değer (TL)",
+            "accesscontrol": "uysarchitect,architect,uysadmin",
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "style": "text-align: right;",
             "reportRendered": true,
             "quickFilter": false
         }

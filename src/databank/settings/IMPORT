@@ -1,4 +1,4 @@
-docker cp . fms-mongodb:/home/fms
+docker cp . fms-mongodb:/home/fms/json-setting
 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agePeriod'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agreementStatus'})"
@@ -8,6 +8,7 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'balance'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'calculateFormulas'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'city'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'constraint'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'constraintRelation'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'department'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'educationLevel'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'gender'})"
@@ -16,13 +17,14 @@ mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'incomeRelatio
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'investorType'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'jobExperiencePeriod'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'licences'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'period'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'periodicalTradingVolumeType'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolioManagementInvestorType'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'porfolio_management_investor_type_pys'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'template'})"
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'title'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'transactionType'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'volumeTradedType'})"
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'title'})"
 
 mongoimport --db configdb --collection graph2 --type json --file age-period.json
 mongoimport --db configdb --collection graph2 --type json --file agreement-status.json
@@ -32,17 +34,22 @@ mongoimport --db configdb --collection graph2 --type json --file balance.json
 mongoimport --db configdb --collection graph2 --type json --file calculate-formulas.json
 mongoimport --db configdb --collection graph2 --type json --file city.json
 mongoimport --db configdb --collection graph2 --type json --file constraint.json
+mongoimport --db configdb --collection graph2 --type json --file constraint-relation.json
 mongoimport --db configdb --collection graph2 --type json --file department.json
+mongoimport --db configdb --collection graph2 --type json --file education-level.json
 mongoimport --db configdb --collection graph2 --type json --file gender.json
 mongoimport --db configdb --collection graph2 --type json --file income.json
 mongoimport --db configdb --collection graph2 --type json --file income-relations.json
 mongoimport --db configdb --collection graph2 --type json --file investor-type.json
 mongoimport --db configdb --collection graph2 --type json --file job-experience-period.json
 mongoimport --db configdb --collection graph2 --type json --file licences.json
+mongoimport --db configdb --collection graph2 --type json --file period.json
 mongoimport --db configdb --collection graph2 --type json --file periodical-trading-volume-type.json
 mongoimport --db configdb --collection graph2 --type json --file porfolio-management-investor-type.json
 mongoimport --db configdb --collection graph2 --type json --file porfolio-management-investor-type-pys.json
 mongoimport --db configdb --collection graph2 --type json --file template.json
+mongoimport --db configdb --collection graph2 --type json --file title.json
 mongoimport --db configdb --collection graph2 --type json --file transaction-type.json
 mongoimport --db configdb --collection graph2 --type json --file volume-traded-type.json
-mongoimport --db configdb --collection graph2 --type json --file title.json
+
+mongo test --eval "db.getSisterDB('configdb').graph2.findOne({key: 'constraint'})"

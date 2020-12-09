@@ -69,7 +69,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -174,7 +176,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -261,7 +265,9 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "defaultHistoryValue": "function x(t){return print('uys-databank-log : balanceAbstract.fields.template.defaultHistoryValue'),printjson(t),periodID=t.period,memberID=t.member,dborgstatus=db.dataBankOrganizationStatus.findOne({member:memberID,period:periodID},{template:1}),null!=dborgstatus?{_id:dborgstatus.template}:null}",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -328,7 +334,9 @@
             "reportOrder": 40,
             "order": 40,
             "version": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -369,7 +377,9 @@
             "reportOrder": 50,
             "order": 50,
             "version": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -426,7 +436,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -461,7 +473,9 @@
             "shortName": "Form Grupları",
             "reportOrder": 70,
             "order": 70,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -483,7 +497,9 @@
             "shortName": "Açıklama",
             "reportOrder": 80,
             "order": 80,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -501,7 +517,9 @@
             "shortName": "Son Bildirim Tarihi",
             "reportOrder": 90,
             "order": 90,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -520,7 +538,9 @@
             "reportOrder": 100,
             "order": 100,
             "version": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -552,7 +572,9 @@
             "shortName": "Üye Tipi",
             "reportOrder": 110,
             "order": 110,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": true,
             "observable": false,

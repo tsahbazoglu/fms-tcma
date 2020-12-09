@@ -47,7 +47,9 @@
             "shortName": "Üye Giriş Kodu",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "order": 99,
             "reportOrder": 99,
@@ -63,7 +65,9 @@
             "shortName": "Giriş Deneme Sayısı",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 99,
             "reportOrder": 99,
@@ -80,7 +84,9 @@
             "shortName": "Açıklama",
             "componentType": "inputTextarea",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 85,
             "reportOrder": 85,

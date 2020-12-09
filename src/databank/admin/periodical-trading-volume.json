@@ -1,27 +1,40 @@
 {
     "schemaVersion": "1.1.0",
-    "key": "dataBankPortfolioSize",
+    "key": "periodicalTradingVolume",
     "db": "uysdb",
-    "collection": "dataBankPortfolioSize",
-    "menuOrder": 20,
-    "userConstantNote": "",
-    "form": "N02",
+    "collection": "dataBankPeriodicalTradingVolume",
+    "menuOrder": 500,
+    "form": "Z00",
     "forms": "graphForm",
-    "name": "N02 - Portföy Büyüklüğü",
-    "historyRendered": false,
+    "name": "Z00 - Piyasa İşlem Hacimleri",
+    "userConstantNote": "",
     "type": "website",
-    "userNote": "Kullanıcı Bildirimleri ile ilgili açıklamalar : ",
+    "historyRendered": true,
+    "historyPosition": 1,
+    "calculateCollection": "dataBankCalculateFormulas",
     "loginFkField": "member",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
     "filter": {
-        "forms": "dataBankPortfolioSize"
+        "forms": "periodicalTradingVolume"
     },
-    "accesscontrol": [
-        "architect",
-        "uysadmin"
+    "zetDimension": [
+        "member",
+        "period"
     ],
-    "upperNodes": ["node_databank_manager"],   
+    "accesscontrol": [
+        "uysadmin",
+        "architect"
+    ],
+    "dimension": {
+        "value": "grid",
+        "list": [
+            {
+                "roles": null,
+                "value": "grid"
+            }
+        ]
+    },
     "actions": {
         "new": {
             "permit": ["architect"],
@@ -44,15 +57,7 @@
             "shoot": false
         }
     },
-    "dimension": {
-        "value": "table",
-        "list": [
-            {
-                "roles": null,
-                "value": "table"
-            }
-        ]
-    },
+    "upperNodes": ["node_databank_manager"],   
     "fields": [
         {
             "field": "member",
@@ -60,7 +65,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -140,10 +147,8 @@
                     "v": [
                         {
                             "key": "ldapUID",
-                            "permit": ["uysadmin,architect"],
                             "order": 10
                         },
-
                         {
                             "key": "name",
                             "order": 20
@@ -170,14 +175,16 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
             "reportRendered": true,
-            "quickFilter": true,
+            "quickFilter": false,
             "componentType": "selectOneMenu",
             "valueType": "java.lang.String",
             "accesscontrol": "uysadmin,architect",
@@ -244,134 +251,148 @@
             }
         },
         {
-            "key": "portfolioType",
-            "field": "portfolioType",
-            "version": false,
-            "reportOrder": 75,
-            "order": 75,
+            "ndType": "DIMENSION",
+            "ndAxis": "Y-IGREK",
+            "order": 7000,
+            "reportOrder": 7000,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "selectOneMenu",
-            "rendered": true,
-            "money": false,
+            "key": "volumeTradedType",
+            "field": "volumeTradedType",
+            "name": "İşlem Türü",
+            "shortName": "İşlem Türü",
+            "roleCheck": true,
             "readonly": false,
             "observable": false,
-            "roleCheck": true,
-            "name": "Portföy Tipi",
-            "shortName": "Portföy Tipi",
-            "valueType": "java.lang.String",
-            "accesscontrol": "uysarchitect,architect,uysadmin",
-            "converter": "BsonConverter",
+            "money": false,
             "reportRendered": true,
             "quickFilter": false,
-            "items": {
-                "func": null,
-                "list": [
-                    {
-                        "code": "000",
-                        "name": "BİREYSEL"
-                    },
-                    {
-                        "code": "001",
-                        "name": "KURUMSAL"
-                    },
-                    {
-                        "code": "002",
-                        "name": "TÜZEL KİŞİ"
-                    },
-                    {
-                        "code": "003",
-                        "name": "TOPLAM"
-                    }
-                ]
-            }
-        },
-        {
-            "key": "value",
-            "field": "value",
-            "order": 50,
-            "reportOrder": 50,
-            "rendered": true,
-            "required": true,
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "componentType": "inputText",
-            "name": "Değer (TL)",
-            "shortName": "Değer (TL)",
-            "accesscontrol": "uysarchitect,architect,uysadmin",
-            "valueType": "java.lang.Double",
-            "converter": "MoneyConverter",
-            "style": "text-align: right;",
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "field": "apbperiod",
-            "key": "apbperiod",
-            "order": 90,
-            "reportOrder": 90,
-            "componentType": "selectOneMenu",
-            "name": "APB Dönem",
-            "shortName": "APB Dönem",
-            "rendered": true,
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "required": true,
-            "accesscontrol": "uysarchitect,architect,uysadmin",
             "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,uysadmin,architect",
             "converter": "SelectOneObjectIdConverter",
-            "reportRendered": true,
-            "quickFilter": false,
             "items": {
                 "func": null,
                 "ref": {
-                    "db": "apbdb",
-                    "itemTable": "apbPeriod",
+                    "db": "uysdb",
+                    "itemTable": "dataBankSetting",
                     "query": {
                         "func": null,
                         "list": [
                             {
                                 "key": "forms",
-                                "value": "period"
-                            }
-                        ]
-                    },
-                    "historyQuery": {
-                        "func": null,
-                        "list": [
+                                "value": "volumeTradedType"
+                            },
                             {
-                                "key": "forms",
-                                "value": "period"
-                            }
-                        ]
-                    },
-                    "adminQuery": {
-                        "func": null,
-                        "list": [
-                            {
-                                "key": "forms",
-                                "value": "period"
+                                "key": "relations",
+                                "value": "Z80",
+                                "type": "regex"
                             }
                         ]
                     },
                     "v": [
                         {
-                            "key": "name",
+                            "key": "code",
                             "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
                         }
                     ],
                     "sort": {
                         "list": [
                             {
-                                "key": "value",
-                                "value": -1
+                                "key": "order",
+                                "value": 1
                             }
                         ]
-                    }
+                    } 
                 }
             }
+        },
+        {
+            "ndType": "DIMENSION",
+            "ndAxis": "X-IKS",
+            "field": "periodicalTradingVolumeType",
+            "key": "periodicalTradingVolumeType",
+            "name": "Piyasa İşlem Hacmi Tipi",
+            "componentType": "selectOneMenu",
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "readonly": false,
+            "order": 6000,
+            "reportOrder": 6000,
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "accesscontrol": "uysadmin,architect",
+            "reportRendered": true,
+            "quickFilter": false,
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "dataBankSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "periodicalTradingVolumeType"
+                            },
+                            {
+                                "key": "relations",
+                                "value": "Z00",
+                                "type": "regex"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "code",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "order",
+                                "value": 1
+                            }
+                        ]
+                    } 
+                }
+            }
+        },
+        {
+            "ndType": "MEASURE",
+            "reportOrder": 5000,
+            "order": 5000,
+            "componentType": "inputText",
+            "name": "Ölçülen Değer",
+            "shortName": "Ölçülen Değer",
+            "valueType": "java.lang.String",
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "uysuser,uysadmin,architect",
+            "field": "value",
+            "key": "value",
+            "style": "text-align:right;",
+            "reportRendered": true,
+            "quickFilter": false
         }
     ]
 }

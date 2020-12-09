@@ -66,7 +66,9 @@
             "shortName": "Üye Giriş Kodu",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "order": 99,
             "reportOrder": 99,
@@ -82,7 +84,9 @@
             "shortName": "Eimza Yetkili TC NO",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 98,
             "reportOrder": 98,
@@ -99,7 +103,9 @@
             "shortName": "Üye Kodu",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 97,
             "reportOrder": 97,
@@ -116,7 +122,9 @@
             "shortName": "Üye Tipi",
             "componentType": "selectOneMenu",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "db": "uysdb",
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 96,
@@ -151,7 +159,9 @@
             "shortName": "Kaynak",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 95,
             "reportOrder": 95,
@@ -168,7 +178,9 @@
             "shortName": "Ad",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 94,
             "reportOrder": 94,
@@ -186,7 +198,9 @@
             "reportOrder": 93,
             "order": 93,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "observable": false,
@@ -228,7 +242,9 @@
             "shortName": "Tescil Tarihi (Ad Verilen/Değiştirilen Tarih)",
             "componentType": "inputDate",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 92,
             "reportOrder": 92,
@@ -247,7 +263,9 @@
             "shortName": "Eposta",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 91,
             "reportOrder": 91,
@@ -265,7 +283,9 @@
             "shortName": "Kuruluş Tarihi",
             "componentType": "inputDate",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 90,
             "reportOrder": 90,
@@ -283,7 +303,9 @@
             "shortName": "Üyelik Giriş Tarihi",
             "componentType": "inputDate",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 89,
             "reportOrder": 89,
@@ -301,7 +323,9 @@
             "shortName": "Üyelik Çıkış Tarihi",
             "componentType": "inputDate",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 88,
             "reportOrder": 88,
@@ -320,7 +344,9 @@
             "componentType": "inputDate",
             "version": true,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "order": 87,
             "reportOrder": 87,
@@ -337,7 +363,9 @@
             "reportOrder": 86,
             "order": 86,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "observable": false,
@@ -375,7 +403,9 @@
             "shortName": "Olay - Açıklama",
             "componentType": "inputTextarea",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
             "order": 85,
             "reportOrder": 85,
@@ -394,7 +424,9 @@
             "shortName": "Sisteme Son Giriş Tarihi",
             "componentType": "inputDate",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "order": 84,
             "reportOrder": 84,
@@ -411,7 +443,9 @@
             "shortName": "Sisteme Son Giriş IP",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "order": 83,
             "reportOrder": 83,

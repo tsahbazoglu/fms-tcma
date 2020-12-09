@@ -1,20 +1,22 @@
-
 {
     "schemaVersion": "1.1.0",
-    "key": "dataBankAdminDescriptionPage",
-    "form": "N04",
-    "name": "N04 - Admin Açıklama Sayfası",
-    "menuOrder": 10,
+    "key": "dataBankPortfolioSize",
     "db": "uysdb",
-    "collection": "dataBankAdminDescriptionPage",
+    "collection": "dataBankPortfolioSize",
+    "menuOrder": 20,
     "userConstantNote": "",
+    "form": "N02",
     "forms": "graphForm",
+    "name": "N02 - Portföy Büyüklüğü",
     "historyRendered": false,
     "type": "website",
-    "userNote": "Admin Bildirimleri ile ilgili açıklamalar",
+    "userNote": "Kullanıcı Bildirimleri ile ilgili açıklamalar : ",
+    "loginFkField": "member",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
-    "loginFkField": "member",
+    "filter": {
+        "forms": "dataBankPortfolioSize"
+    },
     "accesscontrol": [
         "architect",
         "uysadmin"
@@ -51,9 +53,6 @@
             }
         ]
     },
-    "filter": {
-        "forms": "dataBankAdminDescriptionPage"
-    },
     "fields": [
         {
             "field": "member",
@@ -61,7 +60,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -171,7 +172,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -245,35 +248,103 @@
             }
         },
         {
-            "field": "page",
-            "key": "page",
-            "order": 60,
-            "reportOrder": 60,
+            "key": "portfolioType",
+            "field": "portfolioType",
+            "version": false,
+            "reportOrder": 75,
+            "order": 75,
             "componentType": "selectOneMenu",
-            "name": "Sayfa",
-            "shortName": "Sayfa",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Portföy Tipi",
+            "shortName": "Portföy Tipi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysarchitect,architect,uysadmin",
+            "converter": "BsonConverter",
+            "reportRendered": true,
+            "quickFilter": false,
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "BİREYSEL"
+                    },
+                    {
+                        "code": "001",
+                        "name": "KURUMSAL"
+                    },
+                    {
+                        "code": "002",
+                        "name": "TÜZEL KİŞİ"
+                    },
+                    {
+                        "code": "003",
+                        "name": "TOPLAM"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "value",
+            "field": "value",
+            "order": 50,
+            "reportOrder": 50,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "name": "Değer (TL)",
+            "shortName": "Değer (TL)",
+            "accesscontrol": "uysarchitect,architect,uysadmin",
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "style": "text-align: right;",
+            "reportRendered": true,
+            "quickFilter": false
+        },
+        {
+            "field": "apbperiod",
+            "key": "apbperiod",
+            "order": 90,
+            "reportOrder": 90,
+            "componentType": "selectOneMenu",
+            "name": "APB Dönem",
+            "shortName": "APB Dönem",
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
-            "reportRendered": true,
-            "quickFilter": false,
             "accesscontrol": "uysarchitect,architect,uysadmin",
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
+            "reportRendered": true,
+            "quickFilter": false,
             "items": {
                 "func": null,
                 "ref": {
-                    "db": "configdb",
-                    "itemTable": "graph2",
+                    "db": "apbdb",
+                    "itemTable": "apbPeriod",
                     "query": {
                         "func": null,
                         "list": [
                             {
-                                "key": "accesscontrol",
-                                "value": "uysuser"
+                                "key": "forms",
+                                "value": "period"
                             }
                         ]
                     },
@@ -281,8 +352,8 @@
                         "func": null,
                         "list": [
                             {
-                                "key": "accesscontrol",
-                                "value": "uysuser"
+                                "key": "forms",
+                                "value": "period"
                             }
                         ]
                     },
@@ -290,16 +361,8 @@
                         "func": null,
                         "list": [
                             {
-                                "key": "accesscontrol",
-                                "value": "uysuser"
-                            }
-                        ]
-                    },
-                    "sort": {
-                        "list": [
-                            {
-                                "key": "menuOrder",
-                                "value": 1
+                                "key": "forms",
+                                "value": "period"
                             }
                         ]
                     },
@@ -308,51 +371,17 @@
                             "key": "name",
                             "order": 10
                         }
-                    ]
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "value",
+                                "value": -1
+                            }
+                        ]
+                    }
                 }
             }
-        },
-        {
-            "key": "rownumber",
-            "field": "rownumber",
-            "order": 55,
-            "reportOrder": 55,
-            "rendered": true,
-            "required": true,
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "componentType": "inputText",
-            "name": "Satır Numarası",
-            "shortName": "Satır Numarası",
-            "accesscontrol": "uysarchitect,architect,uysadmin",
-            "converter": "TelmanStringConverter",
-            "valueType": "java.lang.String",
-            "style": "text-align: right;",
-            "reportRendered": true,
-            "quickFilter": false
-        },
-        {
-            "key": "note",
-            "field": "note",
-            "order": 50,
-            "reportOrder": 50,
-            "rendered": true,
-            "required": true,
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "componentType": "inputTextarea",
-            "name": "Açıklama",
-            "shortName": "Açıklama",
-            "accesscontrol": "uysarchitect,architect,uysadmin",
-            "converter": "TelmanStringConverter",
-            "valueType": "java.lang.String",
-            "style": "text-align: right;",
-            "reportRendered": true,
-            "quickFilter": false
         }
     ]
 }

@@ -61,7 +61,9 @@
             "graphKey": "member",
             "reportOrder": 10,
             "order": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -171,7 +173,9 @@
             "order": 20,
             "ndType": "DIMENSION",
             "ndAxis": "Z-ZET",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -250,7 +254,9 @@
             "reportOrder": 5000,
             "order": 5000,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -277,7 +283,9 @@
             "reportOrder": 700,
             "order": 700,
             "readonly": false,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,
@@ -295,7 +303,9 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -321,7 +331,9 @@
             "reportOrder": 50,
             "order": 50,
             "readonly": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,

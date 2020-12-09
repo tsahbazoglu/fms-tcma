@@ -72,7 +72,9 @@
             "roleCheck": true,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "quickFilter": false,
             "accesscontrol": ["uysadmin", "architect"]
         },
@@ -90,7 +92,9 @@
             "roleCheck": true,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "quickFilter": false,
             "accesscontrol": ["uysadmin", "architect"]
         },
@@ -110,7 +114,9 @@
             "roleCheck": true,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "quickFilter": false,
             "accesscontrol": ["uysadmin", "architect"]
         },
@@ -124,7 +130,9 @@
             "componentType": "inputText",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "observable": false,
@@ -143,7 +151,9 @@
             "shortName": "Kısıtlama Formülü Adı",
             "quickFilter": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -160,7 +170,9 @@
             "componentType": "inputTextarea",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "observable": false,
             "quickFilter": false,
@@ -178,7 +190,9 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneStringConverter",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -204,7 +218,9 @@
             "componentType": "inputTextarea",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": false,
@@ -222,7 +238,9 @@
             "shortName": "Geçerli Olduğu Dönemler(Net)",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": false,
@@ -240,7 +258,9 @@
             "componentType": "inputTextarea",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": false,
@@ -259,7 +279,9 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneStringConverter",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -287,7 +309,9 @@
             "shortName": "Değişken Listesi",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": false,
@@ -305,7 +329,9 @@
             "componentType": "inputTextarea",
             "valueType": "java.lang.String",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "roleCheck": true,
             "readonly": false,
