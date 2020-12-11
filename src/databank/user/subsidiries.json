@@ -199,14 +199,8 @@
         },
         "download": {
             "shoot": true
-        }
-    },
-    "events": [
-        {
-            "name": "norecord",
-            "db": "uysdb",
-            "appearFunction": "function x(e,n){if(count1=0,count2=0,null==n)throw'roles must be defined for member :'.concat(e.member);return!(0<=n.indexOf('architect'))&&(!(0<=n.indexOf('uysadmin'))&&((0<=n.indexOf('uysuser')||0<=n.indexOf('ybuser'))&&(count1=db.dataBankNotifications.count({member:e.member,period:e.period}),count2=db.dataBankSubsidiries.count({member:e.member,period:e.period,consolidated:{$in:['DAHİL DEĞİL','DAHİL']}}),0==count1&&0==count2)))}",
-            "action": "function x(e,i){db.dataBankNotifications.update({member:e.member,period:e.period,form:'A',forms:'notifications',type:'NO RECORD'},{$set:{exist:'HAYIR'}},!0,!1)}",
+        },
+        "norecord": {
             "gui": {
                 "x": 100,
                 "y": 100,
@@ -216,9 +210,96 @@
                 "style": "",
                 "successMessage": "Bildiriminiz kayda alındı. Teşekkür ederiz.",
                 "failMessage": "İşlem Başarısız."
+            },
+            "action": {
+                "db": "uysdb",
+                "func": null,
+                "list": [
+                    {
+                        "db": "uysdb",
+                        "table": "dataBankNotifications",
+                        "filter": [
+                            {
+                                "key": "member",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            },
+                            {
+                                "key": "period",
+                                "fms-value": "fms_code{{filter_period}}"
+                            },
+                            {
+                                "key": "form",
+                                "string-value": "A"
+                            },
+                            {
+                                "key": "forms",
+                                "string-value": "notifications"
+                            },
+                            {
+                                "key": "type",
+                                "string-value": "NO RECORD"
+                            } 
+                        ],
+                        "set": [
+                            {
+                                "key": "exist",
+                                "string-value": "HAYIR"
+                            }
+                        ],
+                        "op": "upsert"
+                    } 
+                ]
+            },
+            "event-enable": {
+                "db": "uysdb",
+                "value": null,
+                "func": null,
+                "func_depricated": "function x(e,n){if(count1=0,count2=0,null==n)throw'roles must be defined for member :'.concat(e.member);return!(0<=n.indexOf('architect'))&&(!(0<=n.indexOf('uysadmin'))&&((0<=n.indexOf('uysuser')||0<=n.indexOf('ybuser'))&&(count1=db.dataBankNotifications.count({member:e.member,period:e.period}),count2=db.dataBankSubsidiries.count({member:e.member,period:e.period,consolidated:{$in:['DAHİL DEĞİL','DAHİL']}}),0==count1&&0==count2)))}",
+                "list": [
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "dataBankNotifications",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "period",
+                                    "fms-value": "fms_code{{filter_period}}"
+                                }
+                            ],
+                            "check": "non-existence"
+                        }
+                    },
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "dataBankSubsidiries",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "period",
+                                    "fms-value": "fms_code{{filter_period}}"
+                                },
+                                {
+                                    "key": "consolidated",
+                                    "array-value": ["DAHİL DEĞİL", "DAHİL"]
+                                }
+                            ],
+                            "check": "non-existence"
+                        }
+                    }
+                ]
             }
         }
-    ],
+    },
     "eventPostSave": {
         "db": "uysdb",
         "op": "function x(e){var i=db.dataBankSubsidiries.findOne({member:e.member,period:e.period,consolidated:'DAHİL'});db.dataBankNotifications.update({member:e.member,period:e.period,form:'A',forms:'notifications',type:'NO RECORD'},{$set:{exist:null==i?'HAYIR':'EVET'}},!0,!1)}"
