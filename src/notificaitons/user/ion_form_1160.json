@@ -55,7 +55,9 @@
         "save": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
-        "delete": true,
+        "delete": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
         "download": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
@@ -625,23 +627,33 @@
             "ajax_action": "ion_form_1160_notify_type_toggle",
             "ajax": true,
             "items": {
-                "db": "iondb",
-                "collection": "ion_form_1160_notify_types",
-                "itemTable": "ion_form_1160_notify_types",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_form_1160_notify_types",
+                    "itemTable": "ion_form_1160_notify_types",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -669,23 +681,33 @@
             "ajax_action": "ion_form_1160_activity_status_toggle",
             "ajax": true,
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_activity_status",
-                "itemTable": "ion_setting_activity_status",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_activity_status",
+                    "itemTable": "ion_setting_activity_status",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true

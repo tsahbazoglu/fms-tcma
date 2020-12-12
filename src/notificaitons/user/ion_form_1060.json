@@ -266,52 +266,72 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "uysdb",
-                "collection": "common",
-                "itemTable": "common",
-                "query": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "B",
-                            "AK",
-                            "VİAŞ"
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "collection": "common",
+                    "itemTable": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "array-value": "AK,B,VİAŞ"
+                            } 
                         ]
-                    }
-                },
-                "adminQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "B",
-                            "AK",
-                            "VİAŞ"
-                        ]
-                    }
-                },
-                "historyQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "B",
-                            "AK",
-                            "VİAŞ"
-                        ]
-                    }
-                },
-                "v": {
-                    "memberCode": {
-                        "accesscontrol": "ionadmin,databankarchitect"
                     },
-                    "ldapUID": {
-                        "accesscontrol": "ionadmin,databankarchitect"
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "array-value": "AK,B,VİAŞ"
+                            } 
+                        ]
                     },
-                    "name": 1
-                },
-                "sort": {
-                    "ldapUID": 1
-                },
-                "labelStringFormat": "%3s | %6s | %s"
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "array-value": "AK,B,VİAŞ"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "permit": ["ionadmin", "databankarchitect"],
+                            "key": "memberCode",
+                            "order": 10
+                        },
+                        {
+                            "permit": ["ionadmin", "databankarchitect"],
+                            "key": "ldapUID",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "ldapUID": 1
+                    },
+                    "labelStringFormat": "%3s | %6s | %s"
+                }
             },
             "reportRendered": true
         },

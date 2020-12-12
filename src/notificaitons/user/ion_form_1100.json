@@ -271,23 +271,33 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_method",
-                "itemTable": "ion_setting_method",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_method",
+                    "itemTable": "ion_setting_method",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,

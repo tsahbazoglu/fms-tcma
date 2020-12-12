@@ -204,23 +204,33 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_org_public_private",
-                "itemTable": "ion_setting_org_public_private",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_org_public_private",
+                    "itemTable": "ion_setting_org_public_private",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -247,23 +257,33 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_org_root",
-                "itemTable": "ion_setting_org_root",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_org_root",
+                    "itemTable": "ion_setting_org_root",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -290,23 +310,33 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_partnership_status",
-                "itemTable": "ion_setting_partnership_status",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_partnership_status",
+                    "itemTable": "ion_setting_partnership_status",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true

@@ -51,7 +51,9 @@
         "save": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
-        "delete": true,
+        "delete": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
         "download": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
@@ -252,23 +254,48 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting",
-                "itemTable": "ion_setting",
-                "query": {
-                    "type": "Görev"
-                },
-                "historyQuery": {
-                    "type": "Görev"
-                },
-                "adminQuery": {
-                    "type": "Görev"
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ion_setting",
+                    "query": {
+
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "value": "Görev"
+                            } 
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "value": "Görev"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "value": "Görev"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,

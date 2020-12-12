@@ -351,23 +351,47 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ionSetting",
-                "itemTable": "ionSetting",
-                "query": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "historyQuery": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "adminQuery": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ionSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,
@@ -418,23 +442,47 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ionSetting",
-                "itemTable": "ionSetting",
-                "query": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "historyQuery": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "adminQuery": {
-                    "type": "Kurumun Takipteki Durumu"
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ionSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Takipteki Durumu"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,

@@ -39,7 +39,9 @@
         "save": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
-        "delete": true,
+        "delete": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
         "download": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
@@ -369,23 +371,33 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_job_assignment_type",
-                "itemTable": "ion_setting_job_assignment_type",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_job_assignment_type",
+                    "itemTable": "ion_setting_job_assignment_type",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true

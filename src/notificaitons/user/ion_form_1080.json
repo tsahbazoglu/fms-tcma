@@ -351,23 +351,48 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ionSetting",
-                "itemTable": "ionSetting",
-                "query": {
-                    "type": "Kurumun Davadaki Durumu"
-                },
-                "historyQuery": {
-                    "type": "Kurumun Davadaki Durumu"
-                },
-                "adminQuery": {
-                    "type": "Kurumun Davadaki Durumu"
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ionSetting",
+                    "itemTable": "ionSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Davadaki Durumu"
+                            } 
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Davadaki Durumu"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Kurumun Davadaki Durumu"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,
@@ -418,23 +443,48 @@
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ionSetting",
-                "itemTable": "ionSetting",
-                "query": {
-                    "type": "Tarafın İlişkisi"
-                },
-                "historyQuery": {
-                    "type": "Tarafın İlişkisi"
-                },
-                "adminQuery": {
-                    "type": "Tarafın İlişkisi"
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ionSetting",
+                    "itemTable": "ionSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Tarafın İlişkisi"
+                            } 
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Tarafın İlişkisi"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "type",
+                                "string-value": "Tarafın İlişkisi"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": false,

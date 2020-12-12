@@ -242,23 +242,33 @@
             "componentType": "selectManyListbox",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_dayanak_varliklari_swap",
-                "itemTable": "ion_setting_dayanak_varliklari_swap",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_dayanak_varliklari_swap",
+                    "itemTable": "ion_setting_dayanak_varliklari_swap",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -284,23 +294,33 @@
             "componentType": "selectManyListbox",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_dayanak_varliklari_forward",
-                "itemTable": "ion_setting_dayanak_varliklari_forward",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_dayanak_varliklari_forward",
+                    "itemTable": "ion_setting_dayanak_varliklari_forward",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -326,23 +346,33 @@
             "componentType": "selectManyListbox",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_dayanak_varliklari_opsiyon",
-                "itemTable": "ion_setting_dayanak_varliklari_opsiyon",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_dayanak_varliklari_opsiyon",
+                    "itemTable": "ion_setting_dayanak_varliklari_opsiyon",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true
@@ -368,23 +398,33 @@
             "componentType": "selectManyListbox",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_setting_dayanak_varliklari_diger",
-                "itemTable": "ion_setting_dayanak_varliklari_diger",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_dayanak_varliklari_diger",
+                    "itemTable": "ion_setting_dayanak_varliklari_diger",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "reportRendered": true

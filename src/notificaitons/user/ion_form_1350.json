@@ -241,23 +241,33 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_form_year",
-                "itemTable": "ion_form_year",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "name": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_form_year",
+                    "itemTable": "ion_form_year",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
                 }
             },
             "search-access": true,
@@ -283,23 +293,33 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "collection": "ion_form_period",
-                "itemTable": "ion_form_period",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "orderno": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_form_period",
+                    "itemTable": "ion_form_period",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "orderno": 1
+                    }
                 }
             },
             "search-access": true,
@@ -434,22 +454,32 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "itemTable": "ion_setting_1350_price_provider",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "orderno": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ion_setting_1350_price_provider",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "orderno": 1
+                    }
                 }
             },
             "search-access": false,
@@ -525,22 +555,32 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneObjectIdConverter",
             "items": {
-                "db": "iondb",
-                "itemTable": "ion_setting_1350_country",
-                "query": {
-
-                },
-                "historyQuery": {
-
-                },
-                "adminQuery": {
-
-                },
-                "v": {
-                    "name": 1
-                },
-                "sort": {
-                    "orderno": 1
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ion_setting_1350_country",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "orderno": 1
+                    }
                 }
             },
             "search-access": false,

@@ -50,7 +50,9 @@
         "save": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },
-        "delete": true,
+        "delete": {
+            "permit": ["ionuser", "ionadmin", "architect"]
+        },
         "download": {
             "permit": ["ionuser", "ionadmin", "architect"]
         },

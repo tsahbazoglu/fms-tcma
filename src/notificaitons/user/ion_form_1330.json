@@ -273,16 +273,18 @@
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "componentType": "selectOneMenu",
             "converter": "BsonConverter",
-            "items": [
-                {
-                    "code": "000",
-                    "name": "POZİTİF"
-                },
-                {
-                    "code": "001",
-                    "name": "NEGATİF"
-                }
-            ],
+            "items": {
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "POZİTİF"
+                    },
+                    {
+                        "code": "001",
+                        "name": "NEGATİF"
+                    }
+                ]
+            },
             "reportRendered": true
         },
         {
@@ -352,10 +354,12 @@
                 "zarar_tutari_tl",
                 "zarar"
             ],
-            "items": [
-                "EVET",
-                "HAYIR"
-            ],
+            "items": {
+                "list": [
+                    "EVET",
+                    "HAYIR"
+                ]
+            },
             "reportRendered": true
         },
         {
