@@ -348,10 +348,12 @@
             "ajax_effected_keys": [
                 "pay_sahipligi_orani"
             ],
-            "items": [
-                "EVET",
-                "HAYIR"
-            ],
+            "items": {
+                "list": [
+                    "EVET",
+                    "HAYIR"
+                ]
+            },
             "search-access": true,
             "reportRendered": true
         },
@@ -406,10 +408,12 @@
                 "price_provider",
                 "price_provider_v2"
             ],
-            "items": [
-                "MEVCUT",
-                "DİĞER"
-            ],
+            "items": {
+                "list": [
+                    "MEVCUT",
+                    "DİĞER"
+                ]
+            },
             "search-access": false,
             "reportRendered": true
         },
@@ -509,10 +513,12 @@
                 "country_v2",
                 "country"
             ],
-            "items": [
-                "MEVCUT",
-                "DİĞER"
-            ],
+            "items": {
+                "list": [
+                    "MEVCUT",
+                    "DİĞER"
+                ]
+            },
             "search-access": false,
             "reportRendered": true
         },
@@ -525,7 +531,9 @@
             "order": 80,
             "componentType": "inputText",
             "db": "iondb",
-            "rendered": false,
+            "rendered": {
+                "boolean-value": false
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -545,7 +553,9 @@
             "name": "Yerleşik Olduğu Ülke",
             "shortName": "Yerleşik Olduğu Ülke",
             "db": "iondb",
-            "rendered": false,
+            "rendered": {
+                "boolean-value": false
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,

@@ -340,20 +340,22 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionadmin,databankarchitect",
             "converter": "BsonConverter",
-            "items": [
-                {
-                    "code": "000",
-                    "name": "FAAL"
-                },
-                {
-                    "code": "001",
-                    "name": "İŞDEN AYRILDI"
-                },
-                {
-                    "code": "002",
-                    "name": "EIMZA YETKİSİ KALDIRILDI"
-                }
-            ],
+            "items": {
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "FAAL"
+                    },
+                    {
+                        "code": "001",
+                        "name": "İŞDEN AYRILDI"
+                    },
+                    {
+                        "code": "002",
+                        "name": "EIMZA YETKİSİ KALDIRILDI"
+                    }
+                ]
+            },
             "reportRendered": true
         },
         {

@@ -15,6 +15,19 @@
     "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
     "menuOrder": 600,
     "upperNodes": ["node_ion"],
+    "dimension": {
+        "value": "out_of_project_pattern",
+        "list": [
+            {
+                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "value": "out_of_project_pattern"
+            },
+            {
+                "roles": ["ionuser"],
+                "value": "out_of_project_pattern"
+            }
+        ]
+    },
     "accesscontrol": [
         "bnkuser",
         "mbuser",
@@ -231,28 +244,31 @@
             "defaultValue": {
                 "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')?'010':0<=n.indexOf('ktbuser')?'020':0<=n.indexOf('kbuser')?'030':0<=n.indexOf('ybuser')?'040':'000'}"
             },
-            "items": [
-                {
-                    "code": "000",
-                    "name": "Lütfen Seçiniz"
-                },
-                {
-                    "code": "010",
-                    "name": "Mevduat Bankası"
-                },
-                {
-                    "code": "020",
-                    "name": "Katılım Bankası"
-                },
-                {
-                    "code": "030",
-                    "name": "Kalkınma Bankası"
-                },
-                {
-                    "code": "040",
-                    "name": "Yatırım Bankası"
-                }
-            ],
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Lütfen Seçiniz"
+                    },
+                    {
+                        "code": "010",
+                        "name": "Mevduat Bankası"
+                    },
+                    {
+                        "code": "020",
+                        "name": "Katılım Bankası"
+                    },
+                    {
+                        "code": "030",
+                        "name": "Kalkınma Bankası"
+                    },
+                    {
+                        "code": "040",
+                        "name": "Yatırım Bankası"
+                    }
+                ]
+            },
             "reportRendered": true
         },
         {
@@ -375,24 +391,27 @@
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,uysadmin,databankarchitect",
             "converter": "BsonConverter",
-            "items": [
-                {
-                    "code": "000",
-                    "name": "Lütfen Seçiniz"
-                },
-                {
-                    "code": "001",
-                    "name": "Dar Yetkili Aracı Kurum"
-                },
-                {
-                    "code": "002",
-                    "name": "Kısmi Yetkili Aracı Kurum"
-                },
-                {
-                    "code": "003",
-                    "name": "Geniş Yetkili Aracı Kurum"
-                }
-            ],
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Lütfen Seçiniz"
+                    },
+                    {
+                        "code": "001",
+                        "name": "Dar Yetkili Aracı Kurum"
+                    },
+                    {
+                        "code": "002",
+                        "name": "Kısmi Yetkili Aracı Kurum"
+                    },
+                    {
+                        "code": "003",
+                        "name": "Geniş Yetkili Aracı Kurum"
+                    }
+                ]
+            },
             "reportRendered": true
         }
     ]

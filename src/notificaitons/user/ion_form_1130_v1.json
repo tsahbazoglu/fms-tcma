@@ -15,6 +15,19 @@
     "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
     "upperNodes": ["node_ion"],
+    "dimension": {
+        "value": "out_of_project_pattern",
+        "list": [
+            {
+                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "value": "out_of_project_pattern"
+            },
+            {
+                "roles": ["ionuser"],
+                "value": "out_of_project_pattern"
+            }
+        ]
+    },
     "accesscontrol": [
         "bnkuser",
         "mbuser",
@@ -232,32 +245,32 @@
             "defaultValue": {
 
                 "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')?'010':0<=n.indexOf('ktbuser')?'020':0<=n.indexOf('kbuser')?'030':0<=n.indexOf('ybuser')?'040':'000'}"
-            }
-
-
-            ,
-            "items": [
-                {
-                    "code": "000",
-                    "name": "Lütfen Seçiniz"
-                },
-                {
-                    "code": "010",
-                    "name": "Mevduat Bankası"
-                },
-                {
-                    "code": "020",
-                    "name": "Katılım Bankası"
-                },
-                {
-                    "code": "030",
-                    "name": "Kalkınma Bankası"
-                },
-                {
-                    "code": "040",
-                    "name": "Yatırım Bankası"
-                }
-            ],
+            },
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Lütfen Seçiniz"
+                    },
+                    {
+                        "code": "010",
+                        "name": "Mevduat Bankası"
+                    },
+                    {
+                        "code": "020",
+                        "name": "Katılım Bankası"
+                    },
+                    {
+                        "code": "030",
+                        "name": "Kalkınma Bankası"
+                    },
+                    {
+                        "code": "040",
+                        "name": "Yatırım Bankası"
+                    }
+                ]
+            },
             "reportRendered": true
         },
         {
@@ -381,24 +394,27 @@
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,uysadmin,databankarchitect",
             "converter": "BsonConverter",
-            "items": [
-                {
-                    "code": "000",
-                    "name": "Lütfen Seçiniz"
-                },
-                {
-                    "code": "001",
-                    "name": "Dar Yetkili Aracı Kurum"
-                },
-                {
-                    "code": "002",
-                    "name": "Kısmi Yetkili Aracı Kurum"
-                },
-                {
-                    "code": "003",
-                    "name": "Geniş Yetkili Aracı Kurum"
-                }
-            ],
+            "items": {
+                "func": null,
+                "list": [
+                    {
+                        "code": "000",
+                        "name": "Lütfen Seçiniz"
+                    },
+                    {
+                        "code": "001",
+                        "name": "Dar Yetkili Aracı Kurum"
+                    },
+                    {
+                        "code": "002",
+                        "name": "Kısmi Yetkili Aracı Kurum"
+                    },
+                    {
+                        "code": "003",
+                        "name": "Geniş Yetkili Aracı Kurum"
+                    }
+                ]
+            },
             "reportRendered": true
         }
     ]
