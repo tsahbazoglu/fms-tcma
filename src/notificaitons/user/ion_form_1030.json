@@ -66,12 +66,13 @@
     },
     "fields": [
         {
-            "field": "member",
             "key": "member",
+            "field": "member",
             "graphKey": "member",
-            "reportOrder": 10,
             "order": 10,
-            "reportRendered": true,
+            "reportOrder": 10,
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
             "rendered": {
                 "boolean-value": true
             },
@@ -79,11 +80,11 @@
             "money": false,
             "readonly": false,
             "observable": false,
-            "accesscontrol": "ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true,
+            "quickFilter": false,
             "componentType": "selectOneMenu",
-            "name": "Üye Kurum",
-            "shortName": "Üye Kurum",
             "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,ionviewer,databankarchitect",
             "converter": "SelectOneObjectIdConverter",
             "autoset": {
                 "value": true,
@@ -100,78 +101,76 @@
                 ]
             },
             "items": {
-                "db": "uysdb",
-                "collection": "common",
-                "itemTable": "common",
-                "query": {
-                    "forms": "member",
-                    "ldapUID": {
-                        "#in": [
-                            "AK",
-                            "B",
-                            "",
-                            "GSYO",
-                            "GYO",
-                            "MKYO",
-                            "PYŞ"
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                            },
+                            {
+                                "key": "ldapUID",
+                                "value": "empty",
+                                "type": "ne"
+                            }
                         ]
                     },
-                    "memberType": {
-                        "#in": [
-                            "AK",
-                            "B",
-                            "KTB",
-                            "GSYO",
-                            "GYO",
-                            "MKYO",
-                            "PYŞ",
-                            "KB",
-                            "YB"
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
                         ]
-                    }
-                },
-                "adminQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "AK",
-                            "B",
-                            "KTB",
-                            "GSYO",
-                            "GYO",
-                            "MKYO",
-                            "PYŞ",
-                            "KB",
-                            "YB"
-                        ]
-                    }
-                },
-                "historyQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "AK",
-                            "B",
-                            "KTB",
-                            "GSYO",
-                            "GYO",
-                            "MKYO",
-                            "PYŞ",
-                            "KB",
-                            "YB"
-                        ]
-                    }
-                },
-                "v": {
-                    "ldapUID": {
-                        "accesscontrol": "ionadmin,databankarchitect"
                     },
-                    "name": 1
-                },
-                "sort": {
-                    "ldapUID": 1
-                },
-                "labelStringFormat": "%6s | %s"
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": "ionadmin,ionviwer,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "ldapUID",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%6s | %s"
+                }
             }
         },
         {
