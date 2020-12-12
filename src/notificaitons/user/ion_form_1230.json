@@ -73,7 +73,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -187,7 +189,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -211,7 +215,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -238,7 +244,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
@@ -280,7 +288,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",

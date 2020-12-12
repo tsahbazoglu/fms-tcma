@@ -75,7 +75,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -188,7 +190,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -211,7 +215,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -235,7 +241,9 @@
             "order": 40,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -252,7 +260,9 @@
             "order": 50,
             "componentType": "inputDate",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -269,7 +279,9 @@
             "order": 60,
             "componentType": "inputDate",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -286,7 +298,9 @@
             "order": 70,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -303,7 +317,9 @@
             "order": 80,
             "componentType": "inputDate",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -320,7 +336,9 @@
             "order": 90,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -338,7 +356,9 @@
             "fileLimit": 1,
             "componentType": "inputFile",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,

@@ -70,7 +70,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -184,7 +186,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -208,7 +212,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -236,7 +242,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -252,7 +260,9 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -270,7 +280,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -288,7 +300,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -306,7 +320,9 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -324,7 +340,9 @@
             "reportOrder": 90,
             "order": 90,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -342,7 +360,9 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -360,7 +380,9 @@
             "reportOrder": 110,
             "order": 110,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -378,7 +400,9 @@
             "reportOrder": 120,
             "order": 120,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -396,7 +420,9 @@
             "reportOrder": 130,
             "order": 130,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -414,7 +440,9 @@
             "reportOrder": 140,
             "order": 140,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -435,7 +463,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",

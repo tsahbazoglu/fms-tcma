@@ -57,7 +57,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -154,7 +156,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -175,7 +179,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,mbuser,kbuser,ybuser,ktbuser,ionadmin,ionviewer,databankarchitect",
@@ -216,7 +222,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,gyuser,gsuser,mkuser,ionadmin,ionviewer,databankarchitect",
@@ -257,7 +265,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,ktbuser,gyuser,gsuser,mkuser,ionadmin,ionviewer,databankarchitect",

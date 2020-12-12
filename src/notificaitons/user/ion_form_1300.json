@@ -60,7 +60,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -138,7 +140,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -160,7 +164,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -186,7 +192,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
@@ -222,7 +230,9 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputTextarea",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -240,7 +250,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -258,7 +270,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -276,7 +290,9 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputTextarea",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -297,7 +313,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",

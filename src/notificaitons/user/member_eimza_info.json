@@ -50,7 +50,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -158,7 +160,9 @@
             "order": 20,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -175,7 +179,9 @@
             "order": 30,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -191,7 +197,9 @@
             "reportOrder": 40,
             "order": 40,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -209,7 +217,9 @@
             "order": 50,
             "componentType": "inputText",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -225,7 +235,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -242,7 +254,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -259,7 +273,9 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputTextarea",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -276,7 +292,9 @@
             "reportOrder": 90,
             "order": 90,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -293,7 +311,9 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -309,7 +329,9 @@
             "reportOrder": 110,
             "order": 110,
             "componentType": "selectOneMenu",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -343,7 +365,9 @@
             "reportOrder": 120,
             "order": 120,
             "componentType": "inputTextarea",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -360,7 +384,9 @@
             "shortName": "Üye Tipi",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 130,
             "reportOrder": 130,

@@ -70,7 +70,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -183,7 +185,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -206,7 +210,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -230,7 +236,9 @@
             "reportOrder": 40,
             "order": 40,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -245,7 +253,9 @@
             "graphKey": "member",
             "reportOrder": 50,
             "order": 50,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -314,7 +324,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -334,7 +346,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputTextarea",
@@ -353,7 +367,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
@@ -372,7 +388,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
@@ -391,7 +409,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
@@ -410,7 +430,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",

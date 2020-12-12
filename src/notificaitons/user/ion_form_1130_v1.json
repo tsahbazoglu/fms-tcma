@@ -55,7 +55,9 @@
             "ndAxis": "Z-ZET",
             "reportOrder": 100,
             "order": 100,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -159,7 +161,9 @@
             "readonly": true,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -181,7 +185,9 @@
             "readonly": true,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "style": "text-align: left;font-weight : bold;",
@@ -254,7 +260,9 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -272,7 +280,9 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -288,7 +298,9 @@
             "order": 40,
             "key": "yetkiBelgesininSayisi",
             "field": "yetkiBelgesininSayisi",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -308,7 +320,9 @@
             "reportOrder": 30,
             "order": 30,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,
@@ -326,7 +340,9 @@
             "reportOrder": 20,
             "order": 20,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "observable": false,

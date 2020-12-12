@@ -83,7 +83,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -196,7 +198,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -219,7 +223,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -242,7 +248,9 @@
             "reportOrder": 40,
             "name": "Ortağın Adı / Ünvanı",
             "shortName": "Ortağın Adı / Ünvanı",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -263,7 +271,9 @@
             "shortName": "Pay Tutarı (TL)",
             "order": 50,
             "reportOrder": 50,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -288,7 +298,9 @@
             "valueType": "java.lang.Double",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "trequired": "false",
             "converter": "JsFunctionConverter",

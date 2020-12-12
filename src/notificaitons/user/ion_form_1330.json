@@ -58,7 +58,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -136,7 +138,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -158,7 +162,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -181,7 +187,9 @@
             "reportOrder": 40,
             "order": 40,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -200,7 +208,9 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputDate",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -218,7 +228,9 @@
             "order": 60,
             "reportOrder": 60,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Fiyat Boşluğu Yönü",
@@ -247,7 +259,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -267,7 +281,9 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -283,7 +299,9 @@
             "order": 90,
             "reportOrder": 90,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Zarar Ederek Pozisyonu Kapanan Yatırımcı var mı?",
@@ -314,7 +332,9 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -334,7 +354,9 @@
             "reportOrder": 110,
             "order": 110,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -354,7 +376,9 @@
             "reportOrder": 120,
             "order": 120,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -374,7 +398,9 @@
             "reportOrder": 130,
             "order": 130,
             "componentType": "inputTextarea",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,

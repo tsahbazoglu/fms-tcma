@@ -66,7 +66,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -144,7 +146,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -166,7 +170,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -189,7 +195,9 @@
             "componentType": "selectOneMenu",
             "name": "Yıl",
             "shortName": "Yıl",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -228,7 +236,9 @@
             "componentType": "selectOneMenu",
             "name": "Dönem",
             "shortName": "Dönem",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -268,7 +278,9 @@
             "valueType": "java.lang.Double",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "name": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Karda Olan Hesapların Oransal Dağılımı (%)",
@@ -301,7 +313,9 @@
             "valueType": "java.lang.Double",
             "componentType": "inputText",
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": true,
             "name": "Zararda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Zararda Olan Hesapların Oransal Dağılımı (%)",
@@ -331,7 +345,9 @@
             "order": 80,
             "reportOrder": 80,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Bildirime konu veri bulunuyor mu?",
@@ -362,7 +378,9 @@
             "reportOrder": 90,
             "order": 90,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -384,7 +402,9 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,

@@ -65,7 +65,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -144,7 +146,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -167,7 +171,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -191,7 +197,9 @@
             "componentType": "selectOneMenu",
             "name": "Yıl",
             "shortName": "Yıl",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -231,7 +239,9 @@
             "componentType": "selectOneMenu",
             "name": "Dönem",
             "shortName": "Dönem",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -269,7 +279,9 @@
             "order": 60,
             "reportOrder": 60,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Pay Sahipliği İlişkisi var mı?",
@@ -299,7 +311,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -322,7 +336,9 @@
             "order": 130,
             "reportOrder": 130,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Fiyat Sağlayıcı Finansal Kuruluş Liste Seçimi",
@@ -353,7 +369,9 @@
             "reportOrder": 110,
             "order": 110,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,
@@ -372,7 +390,9 @@
             "componentType": "selectOneMenu",
             "name": "Fiyat Sağlayıcı Finansal Kuruluş",
             "shortName": "Fiyat Sağlayıcı Finansal Kuruluş",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -409,7 +429,9 @@
             "order": 100,
             "reportOrder": 100,
             "required": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "name": "Yerleşik Olduğu Ülke Liste Seçimi",

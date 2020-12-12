@@ -86,7 +86,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -200,7 +202,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -224,7 +228,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -245,7 +251,9 @@
             "key": "partner",
             "reportOrder": 40,
             "order": 40,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -300,7 +308,9 @@
             "shortName": "Pay Tutarı (TL)",
             "order": 50,
             "reportOrder": 50,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -324,7 +334,9 @@
             "reportOrder": 60,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": true,
             "trequired": "false",
@@ -354,7 +366,9 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": false,
             "required": true,

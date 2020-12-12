@@ -51,22 +51,25 @@
     },
     "fields": [
         {
-            "field": "member",
             "key": "member",
+            "field": "member",
             "graphKey": "member",
-            "reportOrder": 10,
             "order": 10,
-            "reportRendered": true,
-            "rendered": true,
+            "reportOrder": 10,
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
-            "accesscontrol": "ionadmin,ionviewer,databankarchitect",
+            "reportRendered": true,
+            "quickFilter": false,
             "componentType": "selectOneMenu",
-            "name": "Üye Kurum",
-            "shortName": "Üye Kurum",
             "valueType": "java.lang.String",
+            "accesscontrol": "ionadmin,ionviewer,databankarchitect",
             "converter": "SelectOneObjectIdConverter",
             "autoset": {
                 "value": true,
@@ -83,42 +86,77 @@
                 ]
             },
             "items": {
-                "db": "uysdb",
-                "itemTable": "common",
-                "query": {
-                    "forms": "member",
-                    "ldapUID": {
-                        "#in": [
-                            "AK"
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "AK",
+                                "type": "in"
+                            },
+                            {
+                                "key": "ldapUID",
+                                "value": "empty",
+                                "type": "ne"
+                            }
                         ]
-                    }
-                },
-                "adminQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "AK"
-                        ]
-                    }
-                },
-                "historyQuery": {
-                    "forms": "member",
-                    "memberType": {
-                        "#in": [
-                            "AK"
-                        ]
-                    }
-                },
-                "v": {
-                    "ldapUID": {
-                        "accesscontrol": "ionadmin,ionviewer,databankarchitect"
                     },
-                    "name": 1
-                },
-                "sort": {
-                    "ldapUID": 1
-                },
-                "labelStringFormat": "%6s | %s"
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": "ionadmin,ionviwer,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "ldapUID",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%6s | %s"
+                }
             }
         },
         {
@@ -134,7 +172,9 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -155,7 +195,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -175,7 +217,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -195,7 +239,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -215,7 +261,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -235,7 +283,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -255,7 +305,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -275,7 +327,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -295,7 +349,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -315,7 +371,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -335,7 +393,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -355,7 +415,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -375,7 +437,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -395,7 +459,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -415,7 +481,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -435,7 +503,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -455,7 +525,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -475,7 +547,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -495,7 +569,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -515,7 +591,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -535,7 +613,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -555,7 +635,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -575,7 +657,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -595,7 +679,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -615,7 +701,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -635,7 +723,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -655,7 +745,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -675,7 +767,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -695,7 +789,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -715,7 +811,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -735,7 +833,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -755,7 +855,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -775,7 +877,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -795,7 +899,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -815,7 +921,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -835,7 +943,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -855,7 +965,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -875,7 +987,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -896,7 +1010,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -917,7 +1033,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -938,7 +1056,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -959,7 +1079,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -980,7 +1102,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
@@ -1001,7 +1125,9 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
