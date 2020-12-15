@@ -1,0 +1,8 @@
+docker cp . fms-mongodb:/home/fms/json-install
+
+# insert
+mongo test --eval "db.getSisterDB('configdb').properties.remove({key:'product'})"
+mongoimport --db configdb --collection properties --type json --file properties.json
+
+# test
+mongo test --eval "db.getSisterDB('configdb').properties.findOne({key:'product'})"

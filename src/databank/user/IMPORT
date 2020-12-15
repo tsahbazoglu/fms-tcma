@@ -1,5 +1,5 @@
 
-docker cp . fms-mongodb:/home/fms/json-user
+docker cp . fms-mongodb:/home/fms/json-databank-user
 
 # define project
 mongo test --eval "db.getSisterDB('configdb').project2.remove({key:'uys'})"

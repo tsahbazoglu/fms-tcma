@@ -88,6 +88,5 @@ mongoimport --db configdb --collection graphion2 --type json --file ion_form_137
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_4142.json
 mongoimport --db configdb --collection graphion2 --type json --file member_eimza_info.json
 
-
 #test
 mongo test --eval "db.getSisterDB('configdb').graphion2.findOne({key:'ion_form_0970'})"
