@@ -436,7 +436,7 @@
                     "db": "uysdb",
                     "itemTable": "dataBankSetting",
                     "query": {
-                        "func": "function x(i){if(null==i.member)throw'member is not defined';if(null==i.period)throw'period is not defined';return period=db.getSisterDB('uysdb').common.findOne(i.period),ids=[],null!=period&&db.getSisterDB('uysdb').dataBankSetting.find({forms:'porfolio_management_investor_type_pys',validSince:{$lte:period.value}},{_id:1}).forEach(function(i){ids.push(i._id)}),{_id:{'#in':ids}}}",
+                        "func": "function x(i){if(null==i.member)throw'member is not defined';if(null==i.period)throw'period is not defined';return period=db.getSisterDB('uysdb').common.findOne({_id:i.period}),ids=[],null!=period&&db.getSisterDB('uysdb').dataBankSetting.find({forms:'porfolio_management_investor_type_pys',validSince:{$lte:period.value}},{_id:1}).forEach(function(i){ids.push(i._id)}),{_id:{'#in':ids}}}",
                         "list": []
                     },
                     "sort": {
