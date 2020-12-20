@@ -1,5 +1,5 @@
 
-docker cp . fms-mongodb:/home/fms/json-notify-user
+docker cp ~/github/fms-tcma/src/notificaitons/user/. fms-mongodb:/home/fms/json-notify-user
 
 # define project
 mongo test --eval "db.getSisterDB('configdb').project2.findOne({key:'ion'})"
@@ -88,5 +88,3 @@ mongoimport --db configdb --collection graphion2 --type json --file ion_form_137
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_4142.json
 mongoimport --db configdb --collection graphion2 --type json --file member_eimza_info.json
 
-#test
-mongo test --eval "db.getSisterDB('configdb').graphion2.findOne({key:'ion_form_0970'})"
