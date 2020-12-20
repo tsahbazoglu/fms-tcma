@@ -346,14 +346,16 @@
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "componentType": "selectOneMenu",
             "converter": "SelectOneStringConverter",
-            "ajax": true,
-            "ajax_action": "render",
-            "ajaxShowHide": "function x(r){return'HAYIR'==r?{zarar_tutari:!1,zarar_tutari_tl:!1,zarar:!1}:{zarar_tutari:!0,zarar_tutari_tl:!0,zarar:!0}}",
-            "ajax_effected_keys": [
-                "zarar_tutari",
-                "zarar_tutari_tl",
-                "zarar"
-            ],
+            "ajax": {
+                "enable": true,
+                "action": "render",
+                "show-hide": "function x(r){return'HAYIR'==r?{zarar_tutari:!1,zarar_tutari_tl:!1,zarar:!1}:{zarar_tutari:!0,zarar_tutari_tl:!0,zarar:!0}}",
+                "effected_keys": [
+                    "zarar_tutari",
+                    "zarar_tutari_tl",
+                    "zarar"
+                ]
+            },
             "items": {
                 "list": [
                     "EVET",
