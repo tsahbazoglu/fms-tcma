@@ -236,6 +236,90 @@
             "forms": "ion_form_1160"
         },
         {
+            "key": "notify_type",
+            "field": "notify_type",
+            "order": 35,
+            "reportOrder": 35,
+            "name": "Bildirim Tipi",
+            "shortName": "Bildirim Tipi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "akuser,pyuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: right;",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneObjectIdConverter",
+            "reportRendered": true,
+            "ajax": {
+                "enable": true,
+                "action": "render-ref",
+                "ref": {
+                    "db": "iondb",
+                    "table": "ion_form_1160_render",
+                    "filter": {
+                        "notify_type": "{{notify_type}}",
+                        "activity_status": "{{activity_status}}"
+                    }
+                },
+                "effected_keys": [
+                    "activity_status",
+                    "ekler",
+                    "posta_kodu",
+                    "telefon",
+                    "call_center_no",
+                    "faks",
+                    "email",
+                    "web_site",
+                    "tax_office_name",
+                    "tax_id_no",
+                    "main_aggrement_date",
+                    "tic_sicil_kayit_il",
+                    "tic_sicil_kayit_tarihi",
+                    "tic_sicil_no",
+                    "tic_sicil_meslek_grubu",
+                    "nace_kodu",
+                    "city",
+                    "country",
+                    "address"               
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "itemTable": "ion_form_1160_notify_types",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
+                }
+            }
+        },
+        {
             "key": "address",
             "field": "address",
             "subGroup": "ion_form_1160_group_01",
@@ -283,8 +367,8 @@
             "key": "country",
             "field": "country",
             "subGroup": "ion_form_1160_group_01",
-            "order": 70,
-            "reportOrder": 70,
+            "order": 60,
+            "reportOrder": 60,
             "componentType": "inputText",
             "name": "Bulunduğu İlçe",
             "shortName": "Bulunduğu İlçe",
@@ -305,8 +389,8 @@
             "key": "posta_kodu",
             "field": "posta_kodu",
             "subGroup": "ion_form_1160_group_01",
-            "order": 60,
-            "reportOrder": 60,
+            "order": 70,
+            "reportOrder": 70,
             "componentType": "inputText",
             "name": "Posta Kodu",
             "shortName": "Posta Kodu",
@@ -605,60 +689,6 @@
             "reportRendered": true
         },
         {
-            "key": "notify_type",
-            "field": "notify_type",
-            "order": 210,
-            "reportOrder": 210,
-            "name": "Bildirim Tipi",
-            "shortName": "Bildirim Tipi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
-            "valueType": "java.lang.String",
-            "accesscontrol": "akuser,pyuser,ionadmin,ionviewer,databankarchitect",
-            "style": "text-align: right;",
-            "componentType": "selectOneMenu",
-            "converter": "SelectOneObjectIdConverter",
-            "ajax_action": "ion_form_1160_notify_type_toggle",
-            "ajax": true,
-            "items": {
-                "func": null,
-                "list": null,
-                "ref": {
-                    "db": "iondb",
-                    "collection": "ion_form_1160_notify_types",
-                    "itemTable": "ion_form_1160_notify_types",
-                    "query": {
-                        "func": null,
-                        "list": null
-                    },
-                    "historyQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "adminQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "v": [
-                        {
-                            "key": "name",
-                            "order": 10
-                        }
-                    ],
-                    "sort": {
-                        "name": 1
-                    }
-                }
-            },
-            "reportRendered": true
-        },
-        {
             "key": "activity_status",
             "field": "activity_status",
             "order": 220,
@@ -678,14 +708,44 @@
             "style": "text-align: right;",
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
-            "ajax_action": "ion_form_1160_activity_status_toggle",
-            "ajax": true,
+            "ajax": {
+                "enable": true,
+                "action": "render-ref",
+                "ref": {
+                    "db": "iondb",
+                    "table": "ion_form_1160_render",
+                    "filter": {
+                        "notify_type": "{{notify_type}}",
+                        "activity_status": "{{activity_status}}"
+                    }
+                },
+                "effected_keys": [
+                    "activity_status",
+                    "ekler",
+                    "posta_kodu",
+                    "telefon",
+                    "call_center_no",
+                    "faks",
+                    "email",
+                    "web_site",
+                    "tax_office_name",
+                    "tax_id_no",
+                    "main_aggrement_date",
+                    "tic_sicil_kayit_il",
+                    "tic_sicil_kayit_tarihi",
+                    "tic_sicil_no",
+                    "tic_sicil_meslek_grubu",
+                    "nace_kodu",
+                    "city",
+                    "country",
+                    "address"               
+                ]
+            },
             "items": {
                 "func": null,
                 "list": null,
                 "ref": {
                     "db": "iondb",
-                    "collection": "ion_setting_activity_status",
                     "itemTable": "ion_setting_activity_status",
                     "query": {
                         "func": null,
