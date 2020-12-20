@@ -17,7 +17,7 @@
     "historyPosition": 2,
     "type": "website",
     "menuOrder": 370,
-    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne(e.template),period=db.common.findOne(e.period),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12’yi seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
+    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne({_id:e.template}),period=db.common.findOne({_id:e.period}),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12 yi seçerek SPK nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
     "readOnlyNote": null,
     "user-constant-note": null,
     "controlCollection": "dataBankControl",
