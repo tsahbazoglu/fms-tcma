@@ -18,7 +18,7 @@
     "handsonColWidths": 120,
     "type": "website",
     "menuOrder": 380,
-    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne(e.template),period=db.common.findOne(e.period),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201303!=periodValue&&201403!=periodValue?null:'Lütfen 2014/03 verilerini girdikten sonra Dönem sekmesinden 2013/03’yı seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.2013/03 dönemi verilerini girerken sağda yer alan sütunlarda 2012/12 dönemi verilerini görmek için, soldaki Bilgi Bankası ana mönüsünden “Gelir Tablosu Özet” başlığına tıklayınız.')}",
+    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne({_id:e.template}),period=db.common.findOne({_id:e.period}),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201303!=periodValue&&201403!=periodValue?null:'Lütfen 2014/03 verilerini girdikten sonra Dönem sekmesinden 2013/03’yı seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.2013/03 dönemi verilerini girerken sağda yer alan sütunlarda 2012/12 dönemi verilerini görmek için, soldaki Bilgi Bankası ana mönüsünden “Gelir Tablosu Özet” başlığına tıklayınız.')}",
     "readOnlyNote": null,
     "user-constant-note": null,
     "calculate-ref": {
@@ -620,7 +620,43 @@
             "db": "uysdb",
             "rendered": {
                 "boolean-value": null,
-                "func-value": "function x(e,r){if(print('uys-databank-log : call graph.incomeAbstract.fields.consolidated.rendered()'),!e.hasOwnProperty('member'))throw'call graph.incomeAbstract.fields.consolidated.rendered() : could not find member property on searchObject';if(!e.hasOwnProperty('period'))throw'call graph.incomeAbstract.fields.consolidated.rendered() : could not find period property on searchObject';if(null==r)throw'call graph.incomeAbstract.fields.consolidated.rendered() : roles must be defined for member :'.concat(e.member);if(0<=r.indexOf('databankarchitect'))return!0;if(0<=r.indexOf('uysadmin'))return!0;var t=db.getSisterDB('uysdb').dataBankNotifications.findOne({member:e.member,period:e.period,form:'A'});return null!==t&&t.hasOwnProperty('exist')&&'EVET'===t.exist}"
+                "func-value": null,
+                "check-list": [
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true,
+                        "func": null,
+                        "ref": null
+                    },
+                    {
+                        "roles": null,
+                        "value": null,
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "dataBankNotifications",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "period",
+                                    "fms-value": "fms_code{{filter_period}}"
+                                },
+                                {
+                                    "key": "form",
+                                    "string-value": "A"
+                                },
+                                {
+                                    "key": "exist",
+                                    "string-value": "EVET"
+                                }
+                            ],
+                            "check": "existence"
+                        }
+                    }
+                ]
             },
             "readonly": false,
             "order": 6000,
