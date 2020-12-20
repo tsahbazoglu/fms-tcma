@@ -230,10 +230,88 @@
             "search-access": false
         },
         {
-            "key": "org_type",
-            "field": "org_type",
+            "key": "notify_type",
+            "field": "notify_type",
             "order": 40,
             "reportOrder": 40,
+            "name": "Bildirim Tipi",
+            "shortName": "Bildirim Tipi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: right;",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneObjectIdConverter",
+            "ajax": {
+                "action": "render-ref",
+                "enable": true,
+                "ref": {
+                    "db": "iondb",
+                    "table": "ion_form_1170_render",
+                    "filter": {
+                        "notify_type": "{{notify_type}}",
+                        "activity_status": "{{activity_status}}"
+                    }
+                },
+                "effected_keys": [
+                    "activity_status",
+                    "ekler",
+                    "manager_ad_soyad",
+                    "posta_kodu",
+                    "telefon",
+                    "faks",
+                    "org_name",
+                    "org_type",
+                    "address",
+                    "bulundugu_il",             
+                    "bulundugu_ilce"               
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_notify_type",
+                    "itemTable": "ion_setting_notify_type",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
+                }
+            },
+            "search-access": false,
+            "reportRendered": true
+        },
+        {
+            "key": "org_type",
+            "field": "org_type",
+            "order": 50,
+            "reportOrder": 50,
             "name": "Örgüt Türü",
             "shortName": "Örgüt Türü",
             "money": false,
@@ -286,8 +364,8 @@
             "key": "org_name",
             "field": "org_name",
             "subGroup": "ion_form_1160_group_01",
-            "order": 50,
-            "reportOrder": 50,
+            "order": 60,
+            "reportOrder": 60,
             "componentType": "inputText",
             "name": "Merkez Dışı Örgütün Adı",
             "shortName": "Merkez Dışı Örgütün Adı",
@@ -308,8 +386,8 @@
             "key": "manager_ad_soyad",
             "field": "manager_ad_soyad",
             "subGroup": "ion_form_1170_group_01",
-            "order": 60,
-            "reportOrder": 60,
+            "order": 70,
+            "reportOrder": 70,
             "componentType": "inputText",
             "name": "Sorumlu Yöneticisinin Adı Soyadı",
             "shortName": "Sorumlu Yöneticisinin Adı Soyadı",
@@ -330,8 +408,8 @@
             "key": "address",
             "field": "address",
             "subGroup": "ion_form_1170_group_01",
-            "order": 70,
-            "reportOrder": 70,
+            "order": 80,
+            "reportOrder": 80,
             "componentType": "inputTextarea",
             "name": "Açık Adresi",
             "shortName": "Açık Adresi",
@@ -354,8 +432,8 @@
             "key": "bulundugu_il",
             "name": "Bulunduğu İl",
             "shortName": "Bulunduğu İl",
-            "reportOrder": 80,
-            "order": 80,
+            "reportOrder": 90,
+            "order": 90,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -375,8 +453,8 @@
             "key": "bulundugu_ilce",
             "name": "Bulunduğu İlçe",
             "shortName": "Bulunduğu İlçe",
-            "reportOrder": 90,
-            "order": 90,
+            "reportOrder": 100,
+            "order": 100,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -395,8 +473,8 @@
             "key": "posta_kodu",
             "name": "Posta Kodu",
             "shortName": "Posta Kodu",
-            "reportOrder": 100,
-            "order": 100,
+            "reportOrder": 110,
+            "order": 110,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -415,8 +493,8 @@
             "key": "telefon",
             "name": "Telefon",
             "shortName": "Telefon",
-            "reportOrder": 110,
-            "order": 110,
+            "reportOrder": 120,
+            "order": 120,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -435,8 +513,8 @@
             "key": "faks",
             "name": "Faks",
             "shortName": "Faks",
-            "reportOrder": 120,
-            "order": 120,
+            "reportOrder": 130,
+            "order": 130,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -447,61 +525,6 @@
             "roleCheck": true,
             "valueType": "java.util.Date",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "search-access": false,
-            "reportRendered": true
-        },
-        {
-            "key": "notify_type",
-            "field": "notify_type",
-            "order": 130,
-            "reportOrder": 130,
-            "name": "Bildirim Tipi",
-            "shortName": "Bildirim Tipi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
-            "valueType": "java.lang.String",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "text-align: right;",
-            "componentType": "selectOneMenu",
-            "converter": "SelectOneObjectIdConverter",
-            "ajax_action": "ion_form_1170_notify_type_toggle",
-            "ajax": true,
-            "items": {
-                "func": null,
-                "list": null,
-                "ref": {
-                    "db": "iondb",
-                    "collection": "ion_setting_notify_type",
-                    "itemTable": "ion_setting_notify_type",
-                    "query": {
-                        "func": null,
-                        "list": null
-                    },
-                    "historyQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "adminQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "v": [
-                        {
-                            "key": "name",
-                            "order": 10
-                        }
-                    ],
-                    "sort": {
-                        "name": 1
-                    }
-                }
-            },
             "search-access": false,
             "reportRendered": true
         },
@@ -525,8 +548,31 @@
             "style": "text-align: right;",
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
-            "ajax_action": "ion_form_1170_activity_status_toggle",
-            "ajax": true,
+            "ajax": {
+                "action": "render-ref",
+                "enable": true,
+                "ref": {
+                    "db": "iondb",
+                    "table": "ion_form_1170_render",
+                    "filter": {
+                        "notify_type": "{{notify_type}}",
+                        "activity_status": "{{activity_status}}"
+                    }
+                },
+                "effected_keys": [
+                    "activity_status",
+                    "ekler",
+                    "manager_ad_soyad",
+                    "posta_kodu",
+                    "telefon",
+                    "faks",
+                    "org_name",
+                    "org_type",
+                    "address",
+                    "bulundugu_il",             
+                    "bulundugu_ilce"               
+                ]
+            },
             "items": {
                 "func": null,
                 "list": null,
