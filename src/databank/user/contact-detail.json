@@ -179,7 +179,6 @@
                             "permit": ["uysadmin,architect"],
                             "order": 10
                         },
-
                         {
                             "key": "name",
                             "order": 20
