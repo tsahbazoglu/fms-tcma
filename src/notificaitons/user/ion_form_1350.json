@@ -326,69 +326,10 @@
             "reportRendered": true
         },
         {
-            "field": "pay_sahipligi_varmi",
-            "key": "pay_sahipligi_varmi",
-            "order": 60,
-            "reportOrder": 60,
-            "required": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "roleCheck": true,
-            "readonly": false,
-            "name": "Pay Sahipliği İlişkisi var mı?",
-            "shortName": "Pay Sahipliği İlişkisi var mı?",
-            "valueType": "java.lang.String",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,denemetest",
-            "componentType": "selectOneMenu",
-            "converter": "SelectOneStringConverter",
-            "ajax": true,
-            "ajax_action": "render",
-            "ajaxShowHide": "function(value){return (value == 'EVET')}",
-            "ajax_effected_keys": [
-                "pay_sahipligi_orani"
-            ],
-            "items": {
-                "list": [
-                    "EVET",
-                    "HAYIR"
-                ]
-            },
-            "search-access": true,
-            "reportRendered": true
-        },
-        {
-            "field": "pay_sahipligi_orani",
-            "key": "pay_sahipligi_orani",
-            "name": "Var İse; Doğrudan veya Dolaylı Pay Sahipliği Oranı (%)",
-            "shortName": "Var İse; Doğrudan veya Dolaylı Pay Sahipliği Oranı (%)",
-            "reportOrder": 70,
-            "order": 70,
-            "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
-            "money": false,
-            "readonly": false,
-            "required": true,
-            "roleCheck": true,
-            "converter": "NumberConverter",
-            "converterFormat": "##.##",
-            "valueType": "java.lang.Double",
-            "maxValue": 100,
-            "shouldCheckNegative": true,
-            "minFractationDigits": 3,
-            "maxFractationDigits": 3,
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,denemetest",
-            "style": "font-family:monospace;text-align:right;",
-            "search-access": true,
-            "reportRendered": true
-        },
-        {
             "field": "price_provider_choose",
             "key": "price_provider_choose",
-            "order": 130,
-            "reportOrder": 130,
+            "order": 60,
+            "reportOrder": 60,
             "required": true,
             "rendered": {
                 "boolean-value": true
@@ -401,13 +342,15 @@
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "componentType": "selectOneMenu",
             "converter": "SelectOneStringConverter",
-            "ajax": true,
-            "ajax_action": "render",
-            "ajaxShowHide": "function x(r){var e='MEVCUT'==r;return{price_provider:!e,price_provider_v2:e}}",
-            "ajax_effected_keys": [
-                "price_provider",
-                "price_provider_v2"
-            ],
+            "ajax": {
+                "enable": true,
+                "action": "render",
+                "show-hide": "function x(r){var e='MEVCUT'==r;return{price_provider:!e,price_provider_v2:e}}",
+                "effected_keys": [
+                    "price_provider",
+                    "price_provider_v2"
+                ]
+            },
             "items": {
                 "list": [
                     "MEVCUT",
@@ -422,8 +365,8 @@
             "key": "price_provider",
             "name": "Fiyat Sağlayıcı Finansal Kuruluş",
             "shortName": "Fiyat Sağlayıcı Finansal Kuruluş",
-            "reportOrder": 110,
-            "order": 110,
+            "reportOrder": 70,
+            "order": 70,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -441,8 +384,8 @@
         {
             "key": "price_provider_v2",
             "field": "price_provider",
-            "order": 120,
-            "reportOrder": 120,
+            "order": 70,
+            "reportOrder": 70,
             "componentType": "selectOneMenu",
             "name": "Fiyat Sağlayıcı Finansal Kuruluş",
             "shortName": "Fiyat Sağlayıcı Finansal Kuruluş",
@@ -492,8 +435,8 @@
         {
             "field": "country_choose",
             "key": "country_choose",
-            "order": 100,
-            "reportOrder": 100,
+            "order": 80,
+            "reportOrder": 80,
             "required": true,
             "rendered": {
                 "boolean-value": true
@@ -506,13 +449,15 @@
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "componentType": "selectOneMenu",
             "converter": "SelectOneStringConverter",
-            "ajax": true,
-            "ajax_action": "render",
-            "ajaxShowHide": "function x(n){var r='MEVCUT'==n;return{country:!r,country_v2:r}}",
-            "ajax_effected_keys": [
-                "country_v2",
-                "country"
-            ],
+            "ajax": {
+                "enable": true,
+                "action": "render",
+                "show-hide": "function x(n){var r='MEVCUT'==n;return{country:!r,country_v2:r}}",
+                "effected_keys": [
+                    "country_v2",
+                    "country"
+                ]
+            },
             "items": {
                 "list": [
                     "MEVCUT",
@@ -527,8 +472,8 @@
             "key": "country",
             "name": "Yerleşik Olduğu Ülke",
             "shortName": "Yerleşik Olduğu Ülke",
-            "reportOrder": 80,
-            "order": 80,
+            "reportOrder": 90,
+            "order": 90,
             "componentType": "inputText",
             "db": "iondb",
             "rendered": {
@@ -594,6 +539,67 @@
                 }
             },
             "search-access": false,
+            "reportRendered": true
+        },
+        {
+            "field": "pay_sahipligi_varmi",
+            "key": "pay_sahipligi_varmi",
+            "order": 100,
+            "reportOrder": 100,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "roleCheck": true,
+            "readonly": false,
+            "name": "Pay Sahipliği İlişkisi var mı?",
+            "shortName": "Pay Sahipliği İlişkisi var mı?",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,denemetest",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneStringConverter",
+            "ajax": {
+                "enable": true,
+                "action": "render",
+                "show-hide": "function(value){return (value == 'EVET')}",
+                "effected_keys": [
+                    "pay_sahipligi_orani"
+                ]
+            },
+            "items": {
+                "list": [
+                    "EVET",
+                    "HAYIR"
+                ]
+            },
+            "search-access": true,
+            "reportRendered": true
+        },
+        {
+            "field": "pay_sahipligi_orani",
+            "key": "pay_sahipligi_orani",
+            "name": "Var İse; Doğrudan veya Dolaylı Pay Sahipliği Oranı (%)",
+            "shortName": "Var İse; Doğrudan veya Dolaylı Pay Sahipliği Oranı (%)",
+            "reportOrder": 110,
+            "order": 110,
+            "componentType": "inputText",
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "required": true,
+            "roleCheck": true,
+            "converter": "NumberConverter",
+            "converterFormat": "##.##",
+            "valueType": "java.lang.Double",
+            "maxValue": 100,
+            "shouldCheckNegative": true,
+            "minFractationDigits": 3,
+            "maxFractationDigits": 3,
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,denemetest",
+            "style": "font-family:monospace;text-align:right;",
+            "search-access": true,
             "reportRendered": true
         }
     ]
