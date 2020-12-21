@@ -222,10 +222,46 @@
             "width": 200
         },
         {
-            "field": "year",
-            "key": "year",
+            "field": "kas_status",
+            "key": "kas_status",
             "order": 40,
             "reportOrder": 40,
+            "required": true,
+            "roleCheck": true,
+            "readonly": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "name": "Bildirime konu veri bulunuyor mu?",
+            "shortName": "Bildirime konu veri bulunuyor mu?",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneStringConverter",
+            "ajax": {
+                "enable": true,
+                "action": "render",
+                "show-hide": "function x(r){return'HAYIR'==r?{karli_kas_musteri_sayisi:!1,kas_musteri_sayisi:!1,kar_oran:!1,zarar_oran:!1}:{karli_kas_musteri_sayisi:!0,kas_musteri_sayisi:!0,kar_oran:!0,zarar_oran:!0}}",
+                "effected_keys": [
+                    "karli_kas_musteri_sayisi",
+                    "kas_musteri_sayisi",
+                    "kar_oran",
+                    "zarar_oran"
+                ]
+            },
+            "items": {
+                "list": [
+                    "EVET",
+                    "HAYIR"
+                ]
+            }
+        },
+        {
+            "field": "year",
+            "key": "year",
+            "order": 50,
+            "reportOrder": 50,
             "componentType": "selectOneMenu",
             "name": "Yıl",
             "shortName": "Yıl",
@@ -274,8 +310,8 @@
         {
             "field": "data_period",
             "key": "data_period",
-            "order": 50,
-            "reportOrder": 50,
+            "order": 60,
+            "reportOrder": 60,
             "componentType": "selectOneMenu",
             "name": "Dönem",
             "shortName": "Dönem",
@@ -323,10 +359,58 @@
             "reportRendered": true
         },
         {
+            "field": "karli_kas_musteri_sayisi",
+            "key": "karli_kas_musteri_sayisi",
+            "name": "KAS (CFD dahil) Karda Olan Müşteri Hesap Sayısı",
+            "shortName": "KAS (CFD dahil) Karda Olan Müşteri Hesap Sayısı",
+            "reportOrder": 70,
+            "order": 70,
+            "componentType": "inputText",
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "required": true,
+            "roleCheck": true,
+            "converter": "NumberConverter",
+            "valueType": "java.lang.Double",
+            "shouldCheckNegative": true,
+            "minFractationDigits": 3,
+            "maxFractationDigits": 3,
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "font-family:monospace;text-align:right;",
+            "reportRendered": true
+        },
+        {
+            "field": "kas_musteri_sayisi",
+            "key": "kas_musteri_sayisi",
+            "name": "KAS (CFD dahil) Müşteri Hesap Sayısı<br/>(ilgili 3 aylık dönemde karda ve zararda olan hesaplar)",
+            "shortName": "KAS (CFD dahil) Müşteri Hesap Sayısı",
+            "reportOrder": 80,
+            "order": 80,
+            "componentType": "inputText",
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "required": true,
+            "roleCheck": true,
+            "converter": "NumberConverter",
+            "valueType": "java.lang.Double",
+            "shouldCheckNegative": true,
+            "minFractationDigits": 3,
+            "maxFractationDigits": 3,
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "font-family:monospace;text-align:right;",
+            "reportRendered": true
+        },
+        {
             "key": "kar_oran",
             "field": "kar_oran",
-            "order": 60,
-            "reportOrder": 60,
+            "order": 90,
+            "reportOrder": 90,
             "accesscontrol": "akuser,ypiadmin,ypiviewer,databankarchitect",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
@@ -360,8 +444,8 @@
         {
             "key": "zarar_oran",
             "field": "zarar_oran",
-            "order": 70,
-            "reportOrder": 70,
+            "order": 100,
+            "reportOrder": 100,
             "accesscontrol": "akuser,ypiadmin,ypiviewer,databankarchitect",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
@@ -390,87 +474,6 @@
             ],
             "calculateOnClient": "function x(crudObject){crudObject=eval('('+crudObject+')');var x=null===crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,y=null===crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0===y?'':100-100*x/y}",
             "calculateEngine": "clientSideJS",
-            "reportRendered": true
-        },
-        {
-            "field": "kas_status",
-            "key": "kas_status",
-            "order": 80,
-            "reportOrder": 80,
-            "required": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "roleCheck": true,
-            "readonly": false,
-            "name": "Bildirime konu veri bulunuyor mu?",
-            "shortName": "Bildirime konu veri bulunuyor mu?",
-            "valueType": "java.lang.String",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "componentType": "selectOneMenu",
-            "converter": "SelectOneStringConverter",
-            "ajax": true,
-            "ajax_action": "ion_ion_form_1340_kas_status_selection",
-            "ajax_effected_keys": [
-                "karli_kas_musteri_sayisi",
-                "kas_musteri_sayisi",
-                "kar_oran",
-                "zarar_oran"
-            ],
-            "items": {
-                "list": [
-                    "EVET",
-                    "HAYIR"
-                ]
-            },
-            "reportRendered": true
-        },
-        {
-            "field": "karli_kas_musteri_sayisi",
-            "key": "karli_kas_musteri_sayisi",
-            "name": "KAS (CFD dahil) Karda Olan Müşteri Hesap Sayısı",
-            "shortName": "KAS (CFD dahil) Karda Olan Müşteri Hesap Sayısı",
-            "reportOrder": 90,
-            "order": 90,
-            "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
-            "money": false,
-            "readonly": false,
-            "required": true,
-            "roleCheck": true,
-            "converter": "NumberConverter",
-            "valueType": "java.lang.Double",
-            "shouldCheckNegative": true,
-            "minFractationDigits": 3,
-            "maxFractationDigits": 3,
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
-            "reportRendered": true
-        },
-        {
-            "field": "kas_musteri_sayisi",
-            "key": "kas_musteri_sayisi",
-            "name": "KAS (CFD dahil) Müşteri Hesap Sayısı<br/>(ilgili 3 aylık dönemde karda ve zararda olan hesaplar)",
-            "shortName": "KAS (CFD dahil) Müşteri Hesap Sayısı",
-            "reportOrder": 100,
-            "order": 100,
-            "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
-            "money": false,
-            "readonly": false,
-            "required": true,
-            "roleCheck": true,
-            "converter": "NumberConverter",
-            "valueType": "java.lang.Double",
-            "shouldCheckNegative": true,
-            "minFractationDigits": 3,
-            "maxFractationDigits": 3,
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
             "reportRendered": true
         }
     ]
