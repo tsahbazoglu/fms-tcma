@@ -130,8 +130,10 @@
             "order": 96,
             "reportOrder": 96,
             "valueType": "java.lang.String",
-            "ajax_action": "uys_member_generate_ldapUID",
-            "ajax": true,
+            "ajax": {
+                "action": "uys_member_generate_ldapUID",
+                "enable": true
+            },
             "items": {
                 "func": null,
                 "list": [
