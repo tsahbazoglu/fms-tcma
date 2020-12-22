@@ -1,0 +1,181 @@
+
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "masak-faz-2-05-haa",
+    "db": "anketdb",
+    "collection": "masak-faz-2-05-haa",
+    "menuOrder": 260,
+    "form": "Z0100",
+    "forms": "graphForm",
+    "formType": "simplePivot",
+    "name": "HAA",
+    "shortName": "HAA",
+    "pageName": "Halka Arza Aracılık Faaliyetleri",
+    "userConstantNoteList": [
+        "soru ve önerileriniz için : Serhat Tahsin İşler : (212) 280 85 67 /156"
+    ],
+    "accesscontrol": [
+        "akuser"
+    ],
+    "type": "website",
+    "historyRendered": false,
+    "userConstantNote": "",
+    "loginFkField": "member",
+    "dimension": {
+        "value": "page",
+        "list": [
+            {
+                "roles": ["uysuser"],
+                "value": "page"
+            },
+            {
+                "roles": ["uysadmin", "architect"],
+                "value": "table"
+            }
+        ]
+    },
+    "upperNodes": ["node_anket_2"],
+    "actions": {
+        "new": {
+            "permit": null,
+            "block": ["architect", "uysadmin"]
+        },
+        "save": {
+            "permit": null,
+            "block": ["architect", "uysadmin"]
+        },
+        "delete": {
+            "shoot": false
+        },
+        "download": {
+            "shoot": false
+        } 
+    },
+    "myNamedQueries": {
+        "include": [
+            {
+                "roles": ["architect", "uysadmin"],
+                "query": {
+                    "func": null,
+                    "list": null
+                }
+            },
+            {
+                "roles": ["uysuser", "pyuser", "gsuser", "gyuser", "mkuser"],
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 100,
+            "order": 100,
+            "rendered": {
+                "boolean-value": true
+            },
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "uysadmin,databankarchitect",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": false,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": false
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": false
+                    }
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO,PYŞ",
+                                "type": "in"
+                            } 
+                        ]
+                    },
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": "uysadmin,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%6s | %s"
+                }
+            }
+        }
+    ]
+}

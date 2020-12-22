@@ -1,0 +1,365 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "anket_form_maliye_bakanaligi",
+    "name": "Pay Senedi Alım Satım Kazancı",
+    "db": "anketdb",
+    "collection": "anket_form_maliye_bakanaligi",
+    "loginFkField": "member",
+    "zetDimension": ["member", "period"],
+    "defaultCurrentQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';var r=db.getSisterDB('anketdb').periotlar.findOne({value:2019})._id;return{member:e.member,period:r}}",
+    "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';var r=db.getSisterDB('anketdb').periotlar.findOne({value:2018})._id;return{member:e.member,period:r}}",
+    "menuOrder": 280,
+    "form": "C2",
+    "group": "activity",
+    "forms": "graphForm",
+    "dimension": {
+        "value": "grid",
+        "list": [
+            {
+                "roles": ["uysuser"],
+                "value": "grid"
+            },
+            {
+                "roles": ["uysadmin", "architect"],
+                "value": "grid"
+            }
+        ]
+    },    
+    "accesscontrol": [
+        "akuser",
+        "bnkuser",
+        "uysadmin",
+        "mbuser"
+    ],
+    "handsonRowHeaderWidth": 200,
+    "handsonColWidths": 200,
+    "historyRendered": true,
+    "historyPosition": 1,
+    "type": "website",
+    "readOnlyNote": "",
+    "userConstantNoteList": [
+        "Hücrelere veri girişi yaptıktan sonra yukarıdaki 'Kaydet' tuşuna basılması gerekmektedir."
+    ],
+    "userNote": "",
+    "calculateCollection": "dataBankCalculateFormulas",
+    "controlCollection": "dataBankControl",
+    "myNamedQueries": {
+        "include": [
+            {
+                "roles": ["architect", "uysadmin"],
+                "query": {
+                    "func": null,
+                    "list": null
+                }
+            },
+            {
+                "roles": ["bnkuser", "akuser"],
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "actions": {
+        "new": {
+            "permit": ["akuser", "bnkuser", "mbuser"]
+        },
+        "save": {
+            "permit": ["akuser", "bnkuser", "mbuser"]
+        },
+        "delete": {
+            "permit": ["akuser", "bnkuser", "mbuser"]
+        },
+        "download": {
+            "shoot": false
+        } 
+    },
+    "upperNodes": ["node_anket"],
+    "fields": [
+        {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 100,
+            "order": 100,
+            "rendered": {
+                "boolean-value": true
+            },
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "uysadmin,databankarchitect",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": null,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": false
+                    }
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "memberType",
+                                "value": "B,AK,VİAŞ,GSYO,GYO,MKYO,PYŞ",
+                                "type": "in"
+                            } 
+                        ]
+                    },
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": "uysadmin,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "labelStringFormat": "%6s | %s"
+                }
+            }
+        },
+        {
+            "key": "period",
+            "field": "period",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "order": 8000,
+            "reportOrder": 8000,
+            "componentType": "selectOneMenu",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "rendered": {
+                "boolean-value": true
+            },
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "accesscontrol": "uysuser,uysadmin,databankarchitect",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["uysadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
+            "defaultCurrentValue": null,
+            "defaultHistoryValue": null,
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "anketdb",
+                    "itemTable": "periotlar",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "value",
+                                "number-value": 2019
+                            }                            
+                        ]
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "value",
+                                "number-value": 2019
+                            }                            
+                        ]
+                    },
+                    "v": [
+
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "orderno",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "key": "yatirimci",
+            "field": "yatirimci",
+            "ndType": "DIMENSION",
+            "ndAxis": "X-IKS",
+            "reportOrder": 6000,
+            "order": 6000,
+            "componentType": "selectOneMenu",
+            "name": "Departman",
+            "shortName": "Departman",
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "valueType": "java.lang.String",
+            "accesscontrol": "akuser,bnkuser,uysadmin",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "anketdb",
+                    "itemTable": "yatirimci",
+                    "query": {
+
+                    },
+                    "v": [
+
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "orderno",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "key": "pay",
+            "field": "pay",
+            "ndType": "MEASURE",
+            "ndAxis": "Y-IGREK",
+            "reportOrder": 5000,
+            "order": 5000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "componentType": "inputText",
+            "roleCheck": true,
+            "name": "Pay",
+            "shortName": "Pay",
+            "money": false,
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "readonly": false,
+            "accesscontrol": "akuser,bnkuser,uysadmin",
+            "observable": false,
+            "fieldNote": "",
+            "style": "text-align:right;"
+        },
+        {
+            "key": "ortaklik",
+            "field": "ortaklik",
+            "ndType": "MEASURE",
+            "ndAxis": "Y-IGREK",
+            "reportOrder": 5000,
+            "order": 5000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "componentType": "inputText",
+            "roleCheck": true,
+            "name": "Menkul Kıymet Yatırım Ortaklığı",
+            "shortName": "Menkul Kıymet Yatırım Ortaklığı",
+            "money": false,
+            "valueType": "java.lang.Double",
+            "converter": "MoneyConverter",
+            "readonly": false,
+            "accesscontrol": "akuser,bnkuser,uysadmin",
+            "observable": false,
+            "fieldNote": "",
+            "style": "text-align:right;"
+        }
+    ]
+}
+
+
+
+

@@ -1,0 +1,48 @@
+
+docker cp ~/github/fms-tcma/src/survey/user/. fms-mongodb:/home/fms/json-survey-user
+
+
+# define forms
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-01-pay'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-01-pay.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-02-turev'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-02-turev.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'anket_masak_03_kas'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-03-kas.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-04-ba'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-04-ba.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-05-haa'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-05-haa.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-06-py'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-06-py.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-07-ya'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-07-ya.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-08-sh'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-08-sh.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-09-repo'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-09-repo.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'masak-faz-2-10-yo'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-faz-2-10-yo.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'anket_form_maliye_bakanaligi'})"
+mongoimport --db configdb --collection graphanket --type json --file pay-senedi-alim-satim-kazanci.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'anket_masak_2017'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-2017.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'anket_masak_2018'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-2018.json
+
+mongo test --eval "db.getSisterDB('configdb').graphanket.remove({key:'anket_masak_2019'})"
+mongoimport --db configdb --collection graphanket --type json --file masak-2019.json
+
