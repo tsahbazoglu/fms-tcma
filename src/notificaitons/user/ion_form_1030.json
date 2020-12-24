@@ -20,7 +20,6 @@
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
     "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
-
     "upperNodes": ["node_ion"],
     "dimension": {
         "value": "page",
@@ -181,21 +180,22 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
             "defaultValue": "16 : İşletme Adı veya Marka Kullanım İzni",
-            "width": 200
+            "width": 200,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "subGroup": "subGroupOrgDataA",
@@ -206,15 +206,6 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
@@ -226,7 +217,17 @@
             },
             "width": 200,
             "db": "iondb",
-            "forms": "ion_form_1030"
+            "forms": "ion_form_1030",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "allowed_company_name",
@@ -235,19 +236,20 @@
             "reportOrder": 40,
             "name": "İzin Verilen İşletme Adı",
             "shortName": "İzin Verilen İşletme Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "allowed_brand_name",
@@ -256,19 +258,20 @@
             "reportOrder": 50,
             "name": "İzin Verilen Marka Adı",
             "shortName": "İzin Verilen Marka Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "kurul_izin_tarihi",
@@ -278,16 +281,17 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "tic_sicil_tarihi",
@@ -297,16 +301,17 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
+            "quickFilter": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "gazete_sicil_tarihi",
@@ -316,16 +321,17 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "tic_sicil_gazete_sayi",
@@ -334,19 +340,20 @@
             "reportOrder": 90,
             "name": "Türkiye Ticaret Sicili Gazetesinin Sayısı",
             "shortName": "Türkiye Ticaret Sicili Gazetesinin Sayısı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "interet_ilan_tarihi",
@@ -356,16 +363,17 @@
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "kap_ilan_tarihi",
@@ -375,16 +383,17 @@
             "reportOrder": 110,
             "order": 110,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "ekler",
@@ -393,21 +402,22 @@
             "reportOrder": 120,
             "name": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
             "shortName": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: right;",
             "valueType": "java.lang.String",
             "fileLimit": 1,
             "componentType": "inputFile",
             "gridfsdb": "iondbuploadfiles",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         }
     ]
 }

@@ -167,6 +167,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -192,6 +193,7 @@
             "fileType": "image",
             "componentType": "inputFile",
             "gridfsdb": "iondbuploadfiles",
+            "quickFilter": false,
             "roleCheck": true,
             "rendered": {
                 "boolean-value": true

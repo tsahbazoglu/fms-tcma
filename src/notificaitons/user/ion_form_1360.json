@@ -167,6 +167,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -191,6 +192,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -225,6 +227,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -276,6 +279,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -326,6 +330,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,

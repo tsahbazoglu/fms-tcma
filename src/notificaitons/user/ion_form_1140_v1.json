@@ -180,6 +180,7 @@
             "shortName": "Bildirim Adı",
             "money": false,
             "readonly": true,
+            "quickFilter": true,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -202,6 +203,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -230,6 +232,7 @@
             "rendered": {
                 "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
             },
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -282,6 +285,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": true,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -303,6 +307,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": true,
             "observable": false,
             "roleCheck": true,
             "style": "text-align: left;font-weight : bold;",
@@ -322,6 +327,7 @@
             "roleCheck": true,
             "money": false,
             "readonly": false,
+            "quickFilter": true,
             "observable": false,
             "componentType": "inputText",
             "name": "Yetki Belgesinin Sayısı",
@@ -342,6 +348,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": true,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -362,6 +369,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": true,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -380,6 +388,7 @@
             "rendered": {
                 "func-value": "function x(n,e){return 0<=e.indexOf('akuser')}"
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,

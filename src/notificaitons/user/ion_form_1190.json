@@ -189,6 +189,7 @@
             "readonly": true,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "reportRendered": true,
             "rendered": {
                 "boolean-value": true
@@ -211,6 +212,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -243,6 +245,7 @@
             "name": "Genel Müdür Yardımcılığı Görevine Başlayan Kişinin Adı ve Soyadı",
             "shortName": "Genel Müdür Yardımcılığı Görevine Başlayan Kişinin Adı ve Soyadı",
             "money": false,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -264,6 +267,7 @@
             "componentType": "inputText",
             "name": "Genel Müdür Yardımcısının TC Kimlik Numarası",
             "shortName": "Genel Müdür Yardımcısının TC Kimlik Numarası",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -286,6 +290,7 @@
             "componentType": "inputTextarea",
             "name": "Atanan Kişinin Sorumlu Olduğu Birimler / Departmanlar",
             "shortName": "Atanan Kişinin Sorumlu Olduğu Birimler / Departmanlar",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -308,6 +313,7 @@
             "componentType": "inputTextarea",
             "name": "Atanan Kişinin Sorumlu Olduğu Yatırım Hizmet ve Faaliyetleri",
             "shortName": "Atanan Kişinin Sorumlu Olduğu Yatırım Hizmet ve Faaliyetleri",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -333,6 +339,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -353,6 +360,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -373,6 +381,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -393,6 +402,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,

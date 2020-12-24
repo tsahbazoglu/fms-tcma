@@ -171,6 +171,7 @@
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
@@ -194,6 +195,7 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
@@ -216,6 +218,7 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
@@ -238,6 +241,7 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
@@ -260,15 +264,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "tescil_no",
@@ -282,15 +287,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "sgk_sicil_no",
@@ -304,15 +310,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "yasal_unvan",
@@ -326,15 +333,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "tabela_unvani",
@@ -348,15 +356,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "hukuki_durum",
@@ -370,6 +379,8 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
             "rendered": {
                 "boolean-value": true
             },
@@ -377,8 +388,7 @@
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "ana_faaliyet",
@@ -392,15 +402,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "ikincil_faaliyet",
@@ -414,15 +425,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "faaliyet_konu",
@@ -436,15 +448,16 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
             "rendered": {
                 "boolean-value": true
             },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
-            "componentType": "inputText",
-            "reportRendered": true
+            "componentType": "inputText"
         },
         {
             "key": "toplam_calisan_sayisi",
@@ -454,19 +467,20 @@
             "name": "TOPLAM_CALISAN_SAYISI",
             "shortName": "TOPLAM_CALISAN_SAYISI",
             "description": "13.Girişimin Çalışan Sayısı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "ciro",
@@ -476,19 +490,20 @@
             "name": "CIRO",
             "shortName": "CIRO",
             "description": "14.Girişimin Yıllık Cirosu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "sermaye",
@@ -498,19 +513,20 @@
             "name": "SERMAYE",
             "shortName": "SERMAYE",
             "description": "15.Sermaye Büyüklüğü",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "kurulus_tarihi",
@@ -520,19 +536,20 @@
             "name": "KURULUS_TARIHI",
             "shortName": "KURULUS_TARIHI",
             "description": "16.Girişimin Kuruluş Tarihi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "kapanis_tarihi",
@@ -542,19 +559,20 @@
             "name": "KAPANIS_TARIHI",
             "shortName": "KAPANIS_TARIHI",
             "description": "17.Girişimin Kapanış Tarihi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "durum_kodu",
@@ -564,19 +582,20 @@
             "name": "DURUM_KODU",
             "shortName": "DURUM_KODU",
             "description": "18.Girişimin Açık/Kapalı Olma Durumu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "merkezsube",
@@ -586,19 +605,20 @@
             "name": "MERKEZSUBE",
             "shortName": "MERKEZSUBE",
             "description": "19.Birimin Merkez veya Şube Olma Durumu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "sube_saysi",
@@ -608,19 +628,20 @@
             "name": "SUBE_SAYISI",
             "shortName": "SUBE_SAYISI",
             "description": "20.Şube Sayısı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "required": false,
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "il_adi",
@@ -630,19 +651,20 @@
             "name": "IL_ADI",
             "shortName": "IL_ADI",
             "description": "21.İl Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "required": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "ilce_adi",
@@ -652,19 +674,20 @@
             "name": "ILCE_ADI",
             "shortName": "ILCE_ADI",
             "description": "22.İlçe Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "mahalle_adi",
@@ -674,19 +697,20 @@
             "name": "MAHALLE_ADI",
             "shortName": "MAHALLE_ADI",
             "description": "23.Mahalle Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "cadsok_adi",
@@ -696,19 +720,20 @@
             "name": "CADSOK_ADI",
             "shortName": "CADSOK_ADI",
             "description": "24.Cadde/Sokak Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "diskapi_no",
@@ -718,19 +743,20 @@
             "name": "DISKAPI_NO",
             "shortName": "DISKAPI_NO",
             "description": "25.Dışkapı No",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "quickFilter": false,
+            "money": false,
+            "observable": false,
+            "readonly": false,
+            "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "ickapi_no",
@@ -740,19 +766,20 @@
             "name": "ICKAPI_NO",
             "shortName": "ICKAPI_NO",
             "description": "26.İçkapı No",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "required": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "telefon_no",
@@ -762,19 +789,20 @@
             "name": "TELEFON_NO",
             "shortName": "TELEFON_NO",
             "description": "27.Telefon No",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_bagimsizbolum_id",
@@ -784,19 +812,20 @@
             "name": "UAVT_BAGIMSIZBOLUM_ID",
             "shortName": "UAVT_BAGIMSIZBOLUM_ID",
             "description": "28.Ulusal Adres Veri Tabanı Bağımsız Bölüm ID",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_bina_id",
@@ -806,19 +835,20 @@
             "name": "UAVT_BINA_ID",
             "shortName": "UAVT_BINA_ID",
             "description": "29.Ulusal Adres Veri Tabanı Bina No",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_bucak_id",
@@ -828,19 +858,20 @@
             "name": "UAVT_BUCAK_ID",
             "shortName": "UAVT_BUCAK_ID",
             "description": "30.Ulusal Adres Veri Tabanı Bucak Kodu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_csbm_id",
@@ -850,19 +881,20 @@
             "name": "UAVT_CSBM_ID",
             "shortName": "UAVT_CSBM_ID",
             "description": "31.Ulusal Adres Veri Tabanı Cadde/Sokak/Bulvar No",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_il_id",
@@ -872,19 +904,20 @@
             "name": "UAVT_IL_ID",
             "shortName": "UAVT_IL_ID",
             "description": "32.Ulusal Adres Veri Tabanı İl Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_ilce_id",
@@ -894,19 +927,21 @@
             "name": "UAVT_ILCE_ID",
             "shortName": "UAVT_ILCE_ID",
             "description": "32.Ulusal Adres Veri Tabanı İlçe Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_koy_id",
@@ -916,19 +951,20 @@
             "name": "UAVT_KOY_ID",
             "shortName": "UAVT_KOY_ID",
             "description": "34.Ulusal Adres Veri Tabanı Köy Adı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "uavt_mahalle_id",
@@ -938,19 +974,20 @@
             "name": "UAVT_MAHALLE_ID",
             "shortName": "UAVT_MAHALLE_ID",
             "description": "35.Ulusal Adres Veri Tabanı Mahalle Kodu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "kamu_ozel",
@@ -960,19 +997,20 @@
             "name": "KAMU_OZEL",
             "shortName": "KAMU_OZEL",
             "description": "36.Kamu veya Özel",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "quickFilter": false,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "holding_sirketler_grubu",
@@ -982,20 +1020,21 @@
             "name": "HOLDING_SIRKETLER GRUBU",
             "shortName": "HOLDING_SIRKETLER GRUBU",
             "description": "37.Girişimin holding veya şirketler grubu olup olmama durumu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "quickFilter": false,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "milliyet_hisse_orani",
@@ -1005,20 +1044,21 @@
             "name": "MILLIYET_HISSE ORANI",
             "shortName": "MILLIYET_HISSE ORANI",
             "description": "38.Girişimin milliyetine dair bilgi ve yabancı hisse oranı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "quickFilter": false,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "yutdisi_yatirim_durumu",
@@ -1028,20 +1068,21 @@
             "name": "YURTDISINDAKI_YATIRIM_DURUMU",
             "shortName": "YURTDISINDAKI_YATIRIM_DURUMU",
             "description": "39.Yerli firmanın yurtdısında bir birimi olup olmadığı, eğer varsa hangi ülkelerde olduğu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "istirakler_bagli_ortaklar_bilgisi",
@@ -1051,20 +1092,21 @@
             "name": "ISTIRAKLER_BAGLI_ORTAKLIKLAR_BILGISI",
             "shortName": "ISTIRAKLER_BAGLI_ORTAKLIKLAR_BILGISI",
             "description": "40.İştirakler ve bağlı ortaklıkların kimlik bilgisi ve hisse oranı",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "demografik_olaylar",
@@ -1074,20 +1116,21 @@
             "name": "DEMOGRAFIK_OLAYLAR",
             "shortName": "DEMOGRAFIK_OLAYLAR",
             "description": "41.Açılan-kapanan, nev'i değişkliği, birleşme-devralma, sahiplik değişikliği, bölünme, parçalanma olaylarına ait bilgiler",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "veri_giris_tarihi",
@@ -1097,20 +1140,21 @@
             "name": "VERI_GIRIS_TARIHI",
             "shortName": "VERI_GIRIS_TARIHI",
             "description": "42.İlk kayıt tarihi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "required": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "veri_guncelleme_tarihi",
@@ -1120,20 +1164,21 @@
             "name": "VERI_GUNCELLEME_TARIHI",
             "shortName": "VERI_GUNCELLEME_TARIHI",
             "description": "43.Güncelleme tarihi",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": false,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "converter": "TelmanStringConverter",
             "componentType": "inputText",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": false,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         }
     ]
 }

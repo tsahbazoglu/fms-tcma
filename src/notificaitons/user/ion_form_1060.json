@@ -179,21 +179,22 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
             "defaultValue": "14 : Acentelik Faaliyetine Başlanan Banka Şubesi Bildirimi",
-            "width": 200
+            "width": 200,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "subGroup": "subGroupOrgDataA",
@@ -204,15 +205,6 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
@@ -222,10 +214,19 @@
                 "number-value": null,                
                 "func-value": "function x(e,r){var m='Açıklama ...';if(0<=r.indexOf('ionadmin'))return m;if(0<=r.indexOf('spkuser'))return m;var n=db.getSisterDB('iondb'),o=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'searchObject does not have a member';if(!e.hasOwnProperty('forms'))throw'searchObject does not have a forms';var t,a=o.common.findOne({_id:e.member},{memberType:1});if(!a.hasOwnProperty('memberType')||null==a.memberType)throw'member does not have a memberType: '.concat(a.name);return null===a||null!==(t=n.formDescs.findOne({memberType:a.memberType,forms:e.forms}))&&(m=t.text),m}"
             },
-
             "width": 200,
             "db": "iondb",
-            "forms": "ion_form_1060"
+            "forms": "ion_form_1060",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "kurul_izin_tarihi",
@@ -235,16 +236,17 @@
             "reportOrder": 40,
             "order": 40,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "agency_member",
@@ -252,13 +254,7 @@
             "graphKey": "member",
             "reportOrder": 50,
             "order": 50,
-            "rendered": {
-                "boolean-value": true
-            },
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
+
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "selectOneMenu",
             "name": "Acentelik Faaliyetinde Bulunulan Bankanın Unvanı",
@@ -333,7 +329,15 @@
                     "labelStringFormat": "%3s | %6s | %s"
                 }
             },
-            "reportRendered": true
+            "roleCheck": true,
+            "money": false,
+            "quickFilter": false,
+            "readonly": false,
+            "observable": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "yerlesim_adi",
@@ -343,16 +347,17 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.String",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "adres",
@@ -361,19 +366,20 @@
             "reportOrder": 70,
             "name": "Adres",
             "shortName": "Adres",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputTextarea",
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "city",
@@ -382,19 +388,20 @@
             "reportOrder": 80,
             "name": "İl",
             "shortName": "İl",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "required": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "posta_kodu",
@@ -405,6 +412,7 @@
             "shortName": "Posta Kodu",
             "money": false,
             "readonly": false,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -428,6 +436,7 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },
@@ -449,6 +458,7 @@
             "readonly": false,
             "observable": false,
             "roleCheck": true,
+            "quickFilter": false,
             "rendered": {
                 "boolean-value": true
             },

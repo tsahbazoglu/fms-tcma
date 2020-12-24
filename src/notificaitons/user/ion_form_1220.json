@@ -185,6 +185,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -211,6 +212,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -242,6 +244,7 @@
             "componentType": "inputText",
             "name": "Görevden Ayrılan Genel Müdür Yardımcısının Adı ve Soyadı",
             "shortName": "Görevden Ayrılan Genel Müdür Yardımcısının Adı ve Soyadı",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -264,6 +267,7 @@
             "componentType": "inputText",
             "name": "Görevden Ayrılan Genel Müdür Yardımcısı TC Kimlik Numarası ",
             "shortName": "Görevden Ayrılan Genel Müdür Yardımcısı TC Kimlik Numarası ",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -289,6 +293,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -309,6 +314,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -325,6 +331,7 @@
             "reportOrder": 80,
             "name": "Görevden Ayrılma Nedeni",
             "shortName": "Görevden Ayrılma Nedeni",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,

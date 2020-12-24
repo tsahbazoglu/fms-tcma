@@ -167,7 +167,8 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
+                      "quickFilter": false,
+  "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -191,7 +192,8 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
+                        "quickFilter": false,
+"money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -224,7 +226,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -245,7 +248,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -265,7 +269,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "roleCheck": true,
+                  "quickFilter": false,
+      "roleCheck": true,
             "readonly": false,
             "name": "Fiyat Boşluğu Yönü",
             "shortName": "Fiyat Boşluğu Yönü",
@@ -298,7 +303,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                      "quickFilter": false,
+  "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -320,7 +326,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                      "quickFilter": false,
+  "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -338,7 +345,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "roleCheck": true,
+                       "quickFilter": false,
+ "roleCheck": true,
             "readonly": false,
             "name": "Zarar Ederek Pozisyonu Kapanan Yatırımcı var mı?",
             "shortName": "Zarar Ederek Pozisyonu Kapanan Yatırımcı var mı?",
@@ -375,7 +383,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                    "quickFilter": false,
+    "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -397,7 +406,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -419,7 +429,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                    "quickFilter": false,
+    "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -441,7 +452,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                    "quickFilter": false,
+    "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,

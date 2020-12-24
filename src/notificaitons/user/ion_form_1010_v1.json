@@ -178,21 +178,22 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
             "defaultValue": "Faaliyet Yetki/İzin Belgesi Bildirimi",
             "width": 200,
-            "reportRendered": true
+            "required": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "description",
@@ -202,14 +203,6 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
@@ -218,7 +211,16 @@
             "width": 200,
             "db": "iondb",
             "forms": "ion_form_1010_v1",
-            "reportRendered": true
+            "required": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "bankaTuru",
@@ -227,14 +229,6 @@
             "order": 70,
             "componentType": "selectOneMenu",
             "db": "iondb",
-            "rendered": {
-                "boolean-value": true,
-                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
-            },
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
             "name": "Bankanın Türü",
             "shortName": "Bankanın Türü",
             "style": "text-align: left;font-weight : bold;",
@@ -269,7 +263,16 @@
                     }
                 ]
             },
-            "reportRendered": true
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true,
+                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
+            }
         },
         {
             "field": "yetkiBelgesininKurulOnayTarihi",
@@ -279,17 +282,18 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "style": "text-align: left;font-weight : bold;",
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "yetkiBelgesininTarihi",
@@ -299,17 +303,18 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "style": "text-align: left;font-weight : bold;",
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
@@ -317,19 +322,20 @@
             "order": 40,
             "key": "yetkiBelgesininSayisi",
             "field": "yetkiBelgesininSayisi",
-            "rendered": {
-                "boolean-value": true
-            },
-            "roleCheck": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
             "componentType": "inputText",
             "name": "Yetki Belgesinin Sayısı",
             "shortName": "Yetki Belgesinin Sayısı",
             "valueType": "java.lang.Integer",
             "style": "text-align: left;font-weight : bold;",
-            "reportRendered": true
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "quickFilter": false,
+            "observable": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "internetIlanTarihi",
@@ -339,17 +345,18 @@
             "reportOrder": 30,
             "order": 30,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
             "style": "text-align:left;font-weight:bold;white-space:nowrap;",
             "valueType": "java.util.Date",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "reportRendered": true
+            "money": false,
+            "quickFilter": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "kapIlanTarihi",
@@ -359,17 +366,18 @@
             "reportOrder": 20,
             "order": 20,
             "componentType": "inputDate",
-            "rendered": {
-                "boolean-value": true
-            },
+            "style": "text-align: left;font-weight : bold;",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "style": "text-align: left;font-weight : bold;",
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "reportRendered": true
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "yetkiBelgesininTuru",
@@ -378,13 +386,6 @@
             "order": 10,
             "componentType": "selectOneMenu",
             "db": "iondb",
-            "rendered": {
-                "func-value": "function x(n,e){return 0<=e.indexOf('akuser')}"
-            },
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
             "name": "Yetki Belgesinin Türü",
             "shortName": "Yetki Belgesinin Türü",
             "style": "text-align: left;font-weight : bold;",
@@ -412,7 +413,15 @@
                     }
                 ]
             },
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "func-value": "function x(n,e){return 0<=e.indexOf('akuser')}"
+            }
         }
     ]
 }

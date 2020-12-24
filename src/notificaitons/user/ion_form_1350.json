@@ -173,6 +173,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -198,6 +199,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -233,6 +235,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -285,6 +288,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -330,6 +334,7 @@
             "key": "price_provider_choose",
             "order": 60,
             "reportOrder": 60,
+            "quickFilter": false,
             "required": true,
             "rendered": {
                 "boolean-value": true
@@ -371,6 +376,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,
@@ -393,6 +399,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -437,6 +444,7 @@
             "key": "country_choose",
             "order": 80,
             "reportOrder": 80,
+            "quickFilter": false,
             "required": true,
             "rendered": {
                 "boolean-value": true
@@ -479,6 +487,7 @@
             "rendered": {
                 "boolean-value": false
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,
@@ -501,6 +510,7 @@
             "rendered": {
                 "boolean-value": false
             },
+            "quickFilter": false,
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -546,6 +556,7 @@
             "key": "pay_sahipligi_varmi",
             "order": 100,
             "reportOrder": 100,
+            "quickFilter": false,
             "required": true,
             "rendered": {
                 "boolean-value": true
@@ -586,6 +597,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,

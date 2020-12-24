@@ -185,6 +185,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -210,6 +211,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -240,6 +242,7 @@
             "componentType": "inputText",
             "name": "Genel Müdürlük Görevine Atanan Kişinin Adı ve Soyadı",
             "shortName": "Genel Müdürlük Görevine Atanan Kişinin Adı ve Soyadı",
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -261,6 +264,7 @@
             "componentType": "inputText",
             "name": "Genel Müdür TC Kimlik Numarası ",
             "shortName": "Genel Müdür TC Kimlik Numarası ",
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -285,6 +289,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -304,6 +309,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -323,6 +329,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -342,6 +349,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -357,6 +365,7 @@
             "reportOrder": 100,
             "name": "Atanma Şekli",
             "shortName": "Atanma Şekli",
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,

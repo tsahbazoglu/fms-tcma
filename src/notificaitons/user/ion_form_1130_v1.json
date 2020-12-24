@@ -185,6 +185,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
@@ -202,6 +203,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -233,6 +235,7 @@
             },
 
             "money": false,
+            "quickFilter": true,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -285,6 +288,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": true,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -304,6 +308,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -325,6 +330,7 @@
             "roleCheck": true,
             "money": false,
             "readonly": false,
+            "quickFilter": true,
             "observable": false,
             "componentType": "inputText",
             "name": "Yetki Belgesinin Sayısı",
@@ -346,6 +352,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": true,
             "observable": false,
             "roleCheck": true,
             "style": "text-align:left;font-weight:bold;white-space:nowrap;",
@@ -365,6 +372,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": true,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -386,6 +394,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": true,
             "observable": false,
             "roleCheck": true,
             "name": "Yetki Belgesinin Türü",

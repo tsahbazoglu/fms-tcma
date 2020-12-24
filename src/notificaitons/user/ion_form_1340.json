@@ -175,6 +175,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -199,6 +200,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": false,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -226,6 +228,7 @@
             "key": "kas_status",
             "order": 40,
             "reportOrder": 40,
+            "quickFilter": false,
             "required": true,
             "roleCheck": true,
             "readonly": false,
@@ -268,6 +271,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -318,6 +322,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -369,6 +374,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,
@@ -393,6 +399,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,
@@ -418,6 +425,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "readonly": true,
             "name": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Karda Olan Hesapların Oransal Dağılımı (%)",
@@ -449,6 +457,7 @@
             "accesscontrol": "akuser,ypiadmin,ypiviewer,databankarchitect",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
+            "quickFilter": false,
             "roleCheck": true,
             "rendered": {
                 "boolean-value": true

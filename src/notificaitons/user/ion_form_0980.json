@@ -166,21 +166,22 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;",
             "defaultValue": "00 : Kurum Genel Bilgileri",
-            "width": 200
+            "width": 200,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "org_public_private",
@@ -190,19 +191,12 @@
             "reportOrder": 30,
             "name": "Halka Açıklık Durumu",
             "shortName": "Halka Açıklık Durumu",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,mbuser,kbuser,ybuser,ktbuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
             "componentType": "selectOneMenu",
             "converter": "SelectOneObjectIdConverter",
+
             "items": {
                 "func": null,
                 "list": null,
@@ -233,7 +227,16 @@
                     }
                 }
             },
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "root",
@@ -243,14 +246,7 @@
             "reportOrder": 40,
             "name": "Kökeni",
             "shortName": "Kökeni",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
+
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,gyuser,gsuser,mkuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
@@ -286,7 +282,16 @@
                     }
                 }
             },
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "quickFilter": false,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "partnershipStatus",
@@ -296,14 +301,7 @@
             "reportOrder": 50,
             "name": "Ortaklık",
             "shortName": "Ortaklık",
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
+
             "valueType": "java.lang.String",
             "accesscontrol": "akuser,pyuser,ktbuser,gyuser,gsuser,mkuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
@@ -339,7 +337,16 @@
                     }
                 }
             },
-            "reportRendered": true
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "required": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         }
     ]
 }

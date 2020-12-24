@@ -80,6 +80,7 @@
                 "boolean-value": true
             },
             "roleCheck": true,
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -184,6 +185,7 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -209,6 +211,7 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
+            "quickFilter": true,
             "money": false,
             "readonly": true,
             "observable": false,
@@ -239,6 +242,7 @@
             "componentType": "inputText",
             "name": "Görevden Ayrılan Genel Müdürün Adı ve Soyadı",
             "shortName": "Görevden Ayrılan Genel Müdürün Adı ve Soyadı",
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -260,6 +264,7 @@
             "componentType": "inputText",
             "name": "Görevden Ayrılan Genel Müdür TC Kimlik Numarası",
             "shortName": "Görevden Ayrılan Genel Müdür TC Kimlik Numarası",
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -284,6 +289,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -303,6 +309,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -322,6 +329,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -344,6 +352,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": true,
             "required": true,
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",

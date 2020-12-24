@@ -183,21 +183,22 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
             "defaultValue": "17 : Bağımsız Denetim Sözleşmesi Bildirimi",
-            "width": 200
+            "width": 200,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "subGroup": "subGroupOrgDataA",
@@ -208,15 +209,6 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
@@ -228,7 +220,17 @@
             },
             "width": 200,
             "db": "iondb",
-            "forms": "ion_form_1050"
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "quickFilter": false,
+            "required": true,
+            "forms": "ion_form_1050",
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "denetim_kurulusu",
@@ -238,16 +240,17 @@
             "reportOrder": 40,
             "order": 40,
             "componentType": "inputText",
+            "valueType": "java.util.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.String",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "aggrement_start_date",
@@ -257,16 +260,17 @@
             "reportOrder": 50,
             "order": 50,
             "componentType": "inputDate",
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "aggrement_end_date",
@@ -276,16 +280,17 @@
             "reportOrder": 60,
             "order": 60,
             "componentType": "inputDate",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "aggrement_period",
@@ -295,16 +300,17 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
+            "valueType": "java.util.Integer",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Integer",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "aggrement_update_date",
@@ -314,16 +320,17 @@
             "reportOrder": 80,
             "order": 80,
             "componentType": "inputDate",
+            "valueType": "java.util.Date",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.Date",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "aggrement_update_subject",
@@ -333,16 +340,17 @@
             "reportOrder": 90,
             "order": 90,
             "componentType": "inputText",
+            "valueType": "java.util.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.String",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "field": "ekler",
@@ -353,16 +361,17 @@
             "order": 100,
             "fileLimit": 1,
             "componentType": "inputFile",
+            "valueType": "java.util.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "reportRendered": true,
-            "rendered": {
-                "boolean-value": true
-            },
             "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
-            "valueType": "java.util.String",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer"
+            "quickFilter": false,
+            "rendered": {
+                "boolean-value": true
+            }
         }
     ]
 }

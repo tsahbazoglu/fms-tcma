@@ -171,7 +171,8 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-            "money": false,
+                      "quickFilter": false,
+  "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -195,7 +196,8 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-            "money": false,
+                       "quickFilter": false,
+ "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -229,7 +231,8 @@
                 "boolean-value": true
             },
             "roleCheck": true,
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
@@ -280,7 +283,8 @@
                 "boolean-value": true
             },
             "roleCheck": true,
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
@@ -330,7 +334,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                    "quickFilter": false,
+    "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -355,7 +360,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                     "quickFilter": false,
+   "money": false,
             "readonly": true,
             "required": true,
             "trequired": "false",
@@ -392,7 +398,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                       "quickFilter": false,
+ "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -417,7 +424,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                       "quickFilter": false,
+ "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -442,7 +450,8 @@
             "rendered": {
                 "boolean-value": true
             },
-            "money": false,
+                       "quickFilter": false,
+ "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,

@@ -183,6 +183,7 @@
             "shortName": "Bildirim Adı",
             "money": false,
             "readonly": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
@@ -209,6 +210,7 @@
             "shortName": "Açıklama",
             "money": false,
             "readonly": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
@@ -239,6 +241,7 @@
             "name": "Bildirim Konusu Şube veya İrtibat Bürosu Acente Adı",
             "shortName": "Bildirim Konusu Şube veya İrtibat Bürosu Acente Adı",
             "money": false,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -263,6 +266,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -285,6 +289,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "valueType": "java.util.Date",
@@ -303,6 +308,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -324,6 +330,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -343,6 +350,7 @@
             "rendered": {
                 "boolean-value": true
             },
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -365,6 +373,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "valueType": "java.util.Date",
@@ -384,6 +393,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -405,6 +415,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "valueType": "java.util.Date",
@@ -424,6 +435,7 @@
                 "boolean-value": true
             },
             "money": false,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -445,6 +457,7 @@
             },
             "money": false,
             "readonly": false,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "valueType": "java.util.Date",
@@ -459,6 +472,7 @@
             "reportOrder": 150,
             "name": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
             "shortName": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
