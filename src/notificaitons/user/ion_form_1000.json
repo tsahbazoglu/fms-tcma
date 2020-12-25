@@ -55,7 +55,6 @@
         "eimza2D": {
             "permit": ["ionuser", "architect"]
         },
-
         "eimza": {
             "permit": ["ionuser", "ionviewer", "ionadmin", "architect"]
         }
@@ -315,13 +314,35 @@
             }
         },
         {
+            "field": "tuzel_ad_soyad_unvan",
+            "key": "tuzel_ad_soyad_unvan",
+            "name": "Tüzel Kişi Ortağının Ünvanı / Adı Soyadı",
+            "shortName": "Tüzel Kişi Ortağının Ünvanı / Adı Soyadı",
+            "reportOrder": 50,
+            "order": 50,
+            "componentType": "inputText",     
+            "converter": "TelmanStringConverter",
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "quickFilter": false,
+            "search-access": false,
+            "reportRendered": true,
+            "money": false,
+            "readonly": false,
+            "required": true,
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            }
+        },
+        {
             "key": "shareAmount",
             "field": "shareAmount",
             "subGroup": "partnershipDatas",
             "name": "Pay Tutarı (TL)",
             "shortName": "Pay Tutarı (TL)",
-            "order": 50,
-            "reportOrder": 50,
+            "order": 60,
+            "reportOrder": 60,
             "componentType": "inputText",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "valueType": "java.lang.Double",
@@ -345,56 +366,35 @@
             "field": "sharePercent",
             "name": "Payı (%)",
             "shortName": "Payı (%)",
-            "order": 60,
-            "reportOrder": 60,
+            "order": 70,
+            "reportOrder": 70,
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "componentType": "inputText",
-
             "trequired": "false",
             "valueType": "java.lang.Double",
             "converter": "JsFunctionConverter",
             "converterFormat": "'%' ##.##",
             "labelStyle": "background-color:yellow",
             "style": "text-align:right;",
-            "calculate": "function x(){var t=db.getSisterDB('iondb'),r=this.member;return t.ion_form_1000.aggregate([{$match:{member:r}},{$group:{_id:{member:'$member',partner:'$partner'},total:{$sum:'$shareAmount'}}}]).forEach(function(r){var n=r.total;t.ion_form_1000.find({member:r._id.member,partner:r._id.partner}).forEach(function(r){var e=100*(null===r.shareAmount?0:r.shareAmount)/n;t.ion_form_1000.update({_id:r._id},{$set:{sharePercent:e}})})}),t.ion_form_1000.findOne(this._id).sharePercent}",
-            "calculateOnClient": "function x(n){return 12345678}",
             "width": 200,
             "roleCheck": true,
             "readonly": true,
-            "calculated": true,
-            "calculateOnListView": false,
-            "calculateOnCrudView": false,
-            "calculateOnPost": false,
-            "calculateOnSave": false,
-            "calculateAfterSave": true,
-            "calculateAfterDelete": true,
             "quickFilter": false,
             "search-access": false,
             "reportRendered": true,
             "rendered": {
                 "boolean-value": true
-            }
-        },
-        {
-            "field": "tuzel_ad_soyad_unvan",
-            "key": "tuzel_ad_soyad_unvan",
-            "name": "Tüzel Kişi Ortağının Ünvanı / Adı Soyadı",
-            "shortName": "Tüzel Kişi Ortağının Ünvanı / Adı Soyadı",
-            "reportOrder": 70,
-            "order": 70,
-            "componentType": "inputText",     
-            "converter": "TelmanStringConverter",
-            "valueType": "java.lang.String",
-            "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "quickFilter": false,
-            "search-access": false,
-            "reportRendered": true,
-            "money": false,
-            "readonly": false,
-            "required": true,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
+            },
+            "calculate": {
+                "enabled": true,
+                "action": "function x(){var t=db.getSisterDB('iondb'),r=this.member;return t.ion_form_1000.aggregate([{$match:{member:r}},{$group:{_id:{member:'$member',partner:'$partner'},total:{$sum:'$shareAmount'}}}]).forEach(function(r){var n=r.total;t.ion_form_1000.find({member:r._id.member,partner:r._id.partner}).forEach(function(r){var e=100*(null===r.shareAmount?0:r.shareAmount)/n;t.ion_form_1000.update({_id:r._id},{$set:{sharePercent:e}})})}),t.ion_form_1000.findOne(this._id).sharePercent}",
+                "on-client": "function x(n){return 12345678}",
+                "on-list-view": false,
+                "on-crud-view": false,
+                "on-post": false,
+                "on-save": false,
+                "after-save": true,
+                "after-delete": true
             }
         }
     ]

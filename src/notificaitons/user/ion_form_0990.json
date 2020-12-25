@@ -301,27 +301,29 @@
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
-            "roleCheck": true,
-            "quickFilter": false,
-            "rendered": {
-                "boolean-value": true
-            },
-            "readonly": true,
             "trequired": "false",
             "converter": "JsFunctionConverter",
             "converterFormat": "'%' ##.##",
-            "calculated": true,
-            "calculateOnListView": false,
-            "calculateOnCrudView": false,
-            "calculateOnPost": false,
-            "calculateOnSave": false,
-            "calculateAfterSave": true,
             "labelStyle": "background-color:yellow",
             "style": "text-align:right",
-            "calculate": "function x(){var n=db.getSisterDB('iondb'),o=0,r=this.member;n.ion_form_0990.aggregate([{$match:{member:r}},{$group:{_id:{member:'$member'},total:{$sum:'$shareAmount'}}}]).forEach(function(r){o=r.total});var e=[];return n.ion_form_0990.find({member:r}).forEach(function(r){e.push(r)}),e.forEach(function(r){var e=null===r.shareAmount?0:r.shareAmount;r.sharePercent=100*e/o,n.ion_form_0990.save(r)}),100*(null===this.shareAmount?0:this.shareAmount)/o}",
-            "calculateOnClient": "function x(n){return 12345678}",
             "width": 300,
-            "reportRendered": true
+            "roleCheck": true,
+            "quickFilter": false,
+            "reportRendered": true,
+            "readonly": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "calculate": {
+                "enabled": true,
+                "action": "function x(){var n=db.getSisterDB('iondb'),o=0,r=this.member;n.ion_form_0990.aggregate([{$match:{member:r}},{$group:{_id:{member:'$member'},total:{$sum:'$shareAmount'}}}]).forEach(function(r){o=r.total});var e=[];return n.ion_form_0990.find({member:r}).forEach(function(r){e.push(r)}),e.forEach(function(r){var e=null===r.shareAmount?0:r.shareAmount;r.sharePercent=100*e/o,n.ion_form_0990.save(r)}),100*(null===this.shareAmount?0:this.shareAmount)/o}",
+                "on-client": "function x(n){return 12345678}",
+                "on-list-view": false,
+                "on-crud-view": false,
+                "on-post": false,
+                "on-save": false,
+                "after-save": true
+            }
         }
     ]
 }

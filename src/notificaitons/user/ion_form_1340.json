@@ -427,6 +427,7 @@
             },
             "quickFilter": false,
             "readonly": true,
+            "reportRendered": true,
             "name": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "trequired": "false",
@@ -435,19 +436,20 @@
             "converterInstance": "number",
             "labelStyle": "background-color:yellow",
             "style": "text-align:right",
-            "calculated": true,
-            "calculateOnListView": false,
-            "calculateOnCrudView": false,
-            "calculateOnPost": false,
-            "calculateOnSave": true,
-            "calculate": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100*s/i}",
-            "calcCrudKeyList": [
-                "karli_kas_musteri_sayisi",
-                "kas_musteri_sayisi"
-            ],
-            "calculateOnClient": "function x(crudObject){crudObject=eval('('+crudObject+')');var x=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,y=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==y?'':100*x/y}",
-            "calculateEngine": "clientSideJS",
-            "reportRendered": true
+            "calculate": {
+                "enabled": true,
+                "action": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100*s/i}",
+                "on-client": "function x(crudObject){crudObject=eval('('+crudObject+')');var x=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,y=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==y?'':100*x/y}",
+                "on-list-view": false,
+                "on-crud-view": false,
+                "on-post": false,
+                "on-save": true,
+                "engine": "clientSideJS",
+                "calcCrudKeyList": [
+                    "karli_kas_musteri_sayisi",
+                    "kas_musteri_sayisi"
+                ]
+            }
         },
         {
             "key": "zarar_oran",
@@ -476,7 +478,7 @@
             "calculateOnCrudView": false,
             "calculateOnPost": false,
             "calculateOnSave": true,
-            "calculate": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100-100*s/i}",
+            "action": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100-100*s/i}",
             "calcCrudKeyList": [
                 "karli_kas_musteri_sayisi",
                 "kas_musteri_sayisi"
