@@ -1,30 +1,38 @@
 
-docker cp . fms-mongodb:/home/fms/json-databank-admin
+docker cp ~/github/fms-tcma/src/databank/admin/. fms-mongodb:/home/fms/json-databank-admin
 
 # define project
 mongo test --eval "db.getSisterDB('configdb').project2.remove({key:'uys'})"
 mongoimport --db configdb --collection project2 --type json --file _project.json
 
 # define nodes
+
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'node_databank_manager'})"
 mongoimport --db configdb --collection graph2 --type json --file _node.json
 
+
 # define forms
+
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankAdminDescriptionPage'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankCorporateFinanceValues'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'organizationStatus'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankMarketCapitalization'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankPortfolioSize'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'periodicalTradingVolume'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'member'})" 
-mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'notifications'})" 
-
 mongoimport --db configdb --collection graph2 --type json --file admin-notes.json 
-mongoimport --db configdb --collection graph2 --type json --file corporate-finance-values.json 
-mongoimport --db configdb --collection graph2 --type json --file data-status.json 
-mongoimport --db configdb --collection graph2 --type json --file market-capitalization.json 
-mongoimport --db configdb --collection graph2 --type json --file portfolio-size.json 
-mongoimport --db configdb --collection graph2 --type json --file periodical-trading-volume.json 
-mongoimport --db configdb --collection graph2 --type json --file member.json 
-mongoimport --db configdb --collection graph2 --type json --file notifications.json 
 
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankCorporateFinanceValues'})" 
+mongoimport --db configdb --collection graph2 --type json --file corporate-finance-values.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'organizationStatus'})" 
+mongoimport --db configdb --collection graph2 --type json --file data-status.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankMarketCapitalization'})" 
+mongoimport --db configdb --collection graph2 --type json --file market-capitalization.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'dataBankPortfolioSize'})" 
+mongoimport --db configdb --collection graph2 --type json --file portfolio-size.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'periodicalTradingVolume'})" 
+mongoimport --db configdb --collection graph2 --type json --file periodical-trading-volume.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'member'})" 
+mongoimport --db configdb --collection graph2 --type json --file member.json 
+
+mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'notifications'})" 
+mongoimport --db configdb --collection graph2 --type json --file notifications.json 
