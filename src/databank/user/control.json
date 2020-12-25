@@ -110,7 +110,11 @@
             "ref": null
         },
         "download": {
-            "shoot": false
+            "permit": ["uysadmin"],
+            "block": null,
+            "func": null,
+            "shoot": null,
+            "ref": null
         },
         "checkAll": {
             "permit": null,
@@ -175,17 +179,13 @@
                                 {
                                     "key": "workflowStatus",
                                     "array-value": ["000", "002", "003"]
+                                },
+                                {
+                                    "key": "controlResult",
+                                    "value": "000"
                                 }
                             ],
-                            "check": "existence"
-                        }
-                    },
-                    {
-                        "func": null,
-                        "ref": {
-                            "db": "uysdb",
-                            "table": "dataBankOrganizationStatus",
-                            "query": [
+                            "count-filter": [
                                 {
                                     "key": "member",
                                     "fms-value": "fms_code{{login_member_id}}"
@@ -193,13 +193,9 @@
                                 {
                                     "key": "workflowStatus",
                                     "array-value": ["000", "002", "003"]
-                                },
-                                {
-                                    "key": "controlResult",
-                                    "string-value": "000"
-                                }
+                                } 
                             ],
-                            "check": "existence"
+                            "check": "count>0"
                         }
                     }
                 ]
@@ -299,11 +295,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
@@ -585,7 +576,7 @@
             "quickFilter": true,
             "items": {
                 "func": null,
-                "items": [
+                "list": [
                     "HATA VAR",
                     "TAMAM"
                 ]
