@@ -89,15 +89,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
-                            },
-                            {
-                                "key": "ldapUID",
-                                "value": "empty",
-                                "type": "ne"
                             }
                         ]
                     },
@@ -331,24 +322,23 @@
             "reportRendered": true
         },
         {
-            "version": true,
-            "field": "status",
             "key": "status",
-            "reportOrder": 110,
+            "field": "status",
+            "version": true,
             "order": 110,
-            "componentType": "selectOneMenu",
-            "rendered": {
-                "boolean-value": true
-            },
-            "quickFilter": false,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
+            "reportOrder": 110,
             "name": "Personel İş Durumu",
             "shortName": "Personel İş  Durumu",
             "valueType": "java.lang.String",
             "accesscontrol": "ionadmin,databankarchitect",
+            "componentType": "selectOneMenu",
+            "quickFilter": false,
+            "reportRendered": true,
+            "roleCheck": true,
+            "readonly": false,
+            "rendered": {
+                "boolean-value": true
+            },
             "converter": "BsonConverter",
             "items": {
                 "list": [
@@ -366,7 +356,8 @@
                     }
                 ]
             },
-            "reportRendered": true
+            "money": false,
+            "observable": false
         },
         {
             "key": "status_note",
