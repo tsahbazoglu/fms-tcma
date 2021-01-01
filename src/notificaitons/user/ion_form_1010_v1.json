@@ -112,7 +112,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,VİAŞ,KB,YB"
+                                "array-value": ["AK", "VİAŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -182,7 +182,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "Faaliyet Yetki/İzin Belgesi Bildirimi",
+            "defaultValue": {
+                "string-value": "Faaliyet Yetki/İzin Belgesi Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "required": true,
             "money": false,
@@ -207,7 +211,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold;",
-            "defaultValue": "III-39-1 sayılı Yatırım Kuruluşlarının Kuruluş ve Faaliyet Esasları Hakkında Tebliğ'in 37. ve 38. maddeleri uyarınca faaliyet yetki belgesine ilişkin bildirimimizi bilgilerinize sunarız. Saygılarımızla.",
+            "defaultValue": {
+                "string-value": "III-39-1 sayılı Yatırım Kuruluşlarının Kuruluş ve Faaliyet Esasları Hakkında Tebliğ'in 37. ve 38. maddeleri uyarınca faaliyet yetki belgesine ilişkin bildirimimizi bilgilerinize sunarız. Saygılarımızla.",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "db": "iondb",
             "forms": "ion_form_1010_v1",
@@ -227,15 +235,27 @@
             "key": "bankaTuru",
             "reportOrder": 70,
             "order": 70,
-            "componentType": "selectOneMenu",
-            "db": "iondb",
             "name": "Bankanın Türü",
             "shortName": "Bankanın Türü",
+            "componentType": "selectOneMenu",
+            "db": "iondb",
             "style": "text-align: left;font-weight : bold;",
             "valueType": "java.lang.String",
-            "accesscontrol": "mbuser,ybuser,kbuser,ktbuser,uysadmin,databankarchitect",
+            "accesscontrol": "mbuser,ybuser,kbuser,ktbuser,uysadmin,databankarchitect",  
             "converter": "BsonConverter",
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "quickFilter": false,
+            "roleCheck": true,
+            "reportRendered": true,
+            "rendered": {
+                "boolean-value": true,
+                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
+            },
             "defaultValue": {
+                "string-value": null,
+                "number-value": null,                
                 "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')?'010':0<=n.indexOf('ktbuser')?'020':0<=n.indexOf('kbuser')?'030':0<=n.indexOf('ybuser')?'040':'000'}"
             },
             "items": {
@@ -262,16 +282,6 @@
                         "name": "Yatırım Bankası"
                     }
                 ]
-            },
-            "money": false,
-            "readonly": true,
-            "observable": false,
-            "quickFilter": false,
-            "roleCheck": true,
-            "reportRendered": true,
-            "rendered": {
-                "boolean-value": true,
-                "func-value": "function x(e,n){return 0<=n.indexOf('mbuser')||(0<=n.indexOf('ybuser')||(0<=n.indexOf('kbuser')||0<=n.indexOf('ktbuser')))}"
             }
         },
         {

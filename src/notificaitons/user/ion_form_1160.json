@@ -36,10 +36,10 @@
         "ionviewer"
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
-                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "roles": ["ionadmin", "ionviewer", "architect"],
                 "value": "table"
             },
             {
@@ -122,7 +122,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -192,7 +192,7 @@
             "readonly": true,
             "observable": false,
             "roleCheck": true,
-            "quickFilter": true,
+            "quickFilter": false,
             "reportRendered": true,
             "rendered": {
                 "boolean-value": true
@@ -202,7 +202,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "01 : Merkez İletişim Bilgileri ",
+            "defaultValue": {
+                "string-value": "01 : Merkez İletişim Bilgileri",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {
@@ -216,7 +220,7 @@
             "shortName": "Açıklama",
             "money": false,
             "readonly": true,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "reportRendered": true,
@@ -244,7 +248,7 @@
             "reportOrder": 35,
             "name": "Bildirim Tipi",
             "shortName": "Bildirim Tipi",
-            "quickFilter": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -333,7 +337,7 @@
             "shortName": "Açık Adresi",
             "money": false,
             "readonly": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -355,7 +359,7 @@
             "name": "Bulunduğu İl",
             "shortName": "Bulunduğu İl",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -377,7 +381,7 @@
             "componentType": "inputText",
             "name": "Bulunduğu İlçe",
             "shortName": "Bulunduğu İlçe",
-            "quickFilter": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -401,7 +405,7 @@
             "name": "Posta Kodu",
             "shortName": "Posta Kodu",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -423,7 +427,7 @@
             "componentType": "inputText",
             "name": "Telefon",
             "shortName": "Telefon",
-            "quickFilter": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -446,7 +450,7 @@
             "componentType": "inputText",
             "name": "Çağrı Merkezi Tel No",
             "shortName": "Çağrı Merkezi Tel No",
-            "quickFilter": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -469,7 +473,7 @@
             "componentType": "inputText",
             "name": "Faks",
             "shortName": "Faks",
-            "quickFilter": true,
+            "quickFilter": false,
             "money": false,
             "readonly": false,
             "observable": false,
@@ -493,7 +497,7 @@
             "name": "E-posta",
             "shortName": "E-posta",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -516,7 +520,7 @@
             "name": "İnternet Sitesi",
             "shortName": "İnternet Sitesi",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -540,7 +544,7 @@
             "shortName": "Vergi Dairesi Adı",
             "money": false,
             "readonly": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -562,7 +566,7 @@
             "name": "Vergi Kimlik No",
             "shortName": "Vergi Kimlik No",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -585,7 +589,7 @@
             "name": "Kuruluş Ana Sözleşmesinin Tescil Tarihi",
             "shortName": "Kuruluş Ana Sözleşmesinin Tescil Tarihi",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -608,7 +612,7 @@
             "shortName": "Ticaret Siciline Kayıtlı Olduğu İl",
             "money": false,
             "readonly": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -631,7 +635,7 @@
             "shortName": "Ticaret Siciline Kayıt Tarihi",
             "money": false,
             "readonly": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -654,7 +658,7 @@
             "money": false,
             "readonly": false,
             "observable": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "roleCheck": true,
             "rendered": {
                 "boolean-value": true
@@ -674,7 +678,7 @@
             "name": "Ticaret Sicili Meslek Grubu",
             "shortName": "Ticaret Sicili Meslek Grubu",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -696,7 +700,7 @@
             "name": "NACE Kodu",
             "shortName": "NACE Kodu",
             "money": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -717,7 +721,7 @@
             "shortName": "Açılışta tevsik ettiğim faaliyet şartlarında bir değişiklik yoktur. Yeni adresimiz, SPK'nın istediği şartları taşımaktadır.",
             "money": false,
             "readonly": false,
-            "quickFilter": true,
+            "quickFilter": false,
             "observable": false,
             "roleCheck": true,
             "rendered": {
@@ -805,7 +809,7 @@
             "rendered": {
                 "boolean-value": true
             },
-            "quickFilter": true,
+            "quickFilter": false,
             "readonly": false,
             "valueType": "java.lang.String",
             "order": 230,

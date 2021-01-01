@@ -127,7 +127,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -207,7 +207,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "02 : Ortaklık Yapısı",
+            "defaultValue": {
+                "string-value": "02 : Ortaklık Yapısı",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

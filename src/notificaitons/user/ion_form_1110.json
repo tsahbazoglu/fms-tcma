@@ -114,7 +114,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -194,7 +194,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "12 : Merkez Dışı Örgütün (Şube veya İrtibat Bürosunun) Kapatılması Bildirimi",
+            "defaultValue": {
+                "string-value": "12 : Merkez Dışı Örgütün (Şube veya İrtibat Bürosunun) Kapatılması Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "search-access": false
         },

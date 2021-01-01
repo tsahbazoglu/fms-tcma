@@ -56,7 +56,7 @@
         }
     },
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -119,7 +119,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -199,7 +199,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "23 : Genel Müdür Göreve Başlama Bildirimi",
+            "defaultValue": {
+                "string-value": "23 : Genel Müdür Göreve Başlama Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {
@@ -276,6 +280,59 @@
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
+            "reportRendered": true
+        },
+        {
+            "key": "job_assignment_type",
+            "field": "job_assignment_type",
+            "order": 55,
+            "reportOrder": 55,
+            "name": "Atanma Şekli",
+            "shortName": "Atanma Şekli",
+            "quickFilter": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "required": true,
+            "valueType": "java.lang.String",
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "text-align: right;",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "iondb",
+                    "collection": "ion_setting_job_assignment_type",
+                    "itemTable": "ion_setting_job_assignment_type",
+                    "query": {
+                        "func": null,
+                        "list": null
+                    },
+                    "historyQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": null
+                    },
+                    "v": [
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "name": 1
+                    }
+                }
+            },
             "reportRendered": true
         },
         {
@@ -356,59 +413,6 @@
             "roleCheck": true,
             "valueType": "java.util.Date",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
-            "reportRendered": true
-        },
-        {
-            "key": "job_assignment_type",
-            "field": "job_assignment_type",
-            "order": 100,
-            "reportOrder": 100,
-            "name": "Atanma Şekli",
-            "shortName": "Atanma Şekli",
-            "quickFilter": true,
-            "money": false,
-            "readonly": false,
-            "observable": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "required": true,
-            "valueType": "java.lang.String",
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "text-align: right;",
-            "componentType": "selectOneMenu",
-            "converter": "SelectOneObjectIdConverter",
-            "items": {
-                "func": null,
-                "list": null,
-                "ref": {
-                    "db": "iondb",
-                    "collection": "ion_setting_job_assignment_type",
-                    "itemTable": "ion_setting_job_assignment_type",
-                    "query": {
-                        "func": null,
-                        "list": null
-                    },
-                    "historyQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "adminQuery": {
-                        "func": null,
-                        "list": null
-                    },
-                    "v": [
-                        {
-                            "key": "name",
-                            "order": 10
-                        }
-                    ],
-                    "sort": {
-                        "name": 1
-                    }
-                }
-            },
             "reportRendered": true
         }
     ]

@@ -30,7 +30,7 @@
     ],
     "userConstantNoteList": [],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -181,7 +181,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,akuser,pyuser,bnkuser,gsuser,gyuser,mkuser,ktbuser,mbuser,ybuser,kbuser",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "38 : Kurumsal Logo",
+            "defaultValue": {
+                "string-value": "38 : Kurumsal Logo",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

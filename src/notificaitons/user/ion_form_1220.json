@@ -119,7 +119,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -199,7 +199,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "22 : Genel Müdür Yardımcısı Görevden Ayrılma Bildirimi",
+            "defaultValue": {
+                "string-value": "22 : Genel Müdür Yardımcısı Görevden Ayrılma Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "search-access": false
         },

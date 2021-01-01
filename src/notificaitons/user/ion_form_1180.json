@@ -118,7 +118,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,GSYO,GYO,MKYO,PYŞ"
+                                "array-value": ["AK", "B", "GSYO", "GYO", "MKYO", "PYŞ"]
                             },
                             {
                                 "key": "ldapUID",
@@ -198,7 +198,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "04 : Murahhas Üye Bildirimi",
+            "defaultValue": {
+                "string-value": "04 : Murahhas Üye Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "search-access": false
         },

@@ -21,7 +21,7 @@
     ],
     "userConstantNoteList": [],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -101,7 +101,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK"
+                                "array-value": ["AK"]
                             },
                             {
                                 "key": "ldapUID",
@@ -167,8 +167,8 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-                    "quickFilter": false,
-    "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -181,7 +181,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "32 : İşlem Platformu Teknik Sorunları",
+            "defaultValue": {
+                "string-value": "32 : İşlem Platformu Teknik Sorunları",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {
@@ -192,8 +196,8 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-                    "quickFilter": false,
-    "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -226,8 +230,8 @@
             "rendered": {
                 "boolean-value": true
             },
-                      "quickFilter": false,
-  "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -248,8 +252,8 @@
             "rendered": {
                 "boolean-value": true
             },
-                    "quickFilter": false,
-    "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
@@ -271,8 +275,8 @@
             "rendered": {
                 "boolean-value": true
             },
-                    "quickFilter": false,
-    "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,

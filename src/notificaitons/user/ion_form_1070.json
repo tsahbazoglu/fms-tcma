@@ -50,7 +50,7 @@
         }
     },
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -113,7 +113,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,GSYO,GYO,MKYO,PYŞ,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "GSYO", "GYO", "MKYO", "PYŞ", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -193,7 +193,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: left;",
-            "defaultValue": "15 : Ek Hizmet Binasi Bildirimi",
+            "defaultValue": {
+                "string-value": "15 : Ek Hizmet Binasi Bildirimi",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

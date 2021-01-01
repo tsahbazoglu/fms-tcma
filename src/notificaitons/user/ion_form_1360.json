@@ -21,7 +21,7 @@
     ],
     "userConstantNoteList": [],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -101,7 +101,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK"
+                                "array-value": ["AK"]
                             },
                             {
                                 "key": "ldapUID",
@@ -181,7 +181,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "36 : Reddedilen Emirler",
+            "defaultValue": {
+                "string-value": "36 : Reddedilen Emirler",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

@@ -20,10 +20,10 @@
         "ionadmin"
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
-                "roles": ["ionadmin", "ionviewer", "databankarchitect"],
+                "roles": ["ionadmin", "ionviewer", "architect"],
                 "value": "table"
             },
             {
@@ -100,7 +100,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,GSYO,GYO,MKYO,PYŞ"
+                                "array-value": ["AK", "B", "GSYO", "GYO", "MKYO", "PYŞ"]
                             },
                             {
                                 "key": "ldapUID",
@@ -170,7 +170,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;",
-            "defaultValue": "00 : Kurum Genel Bilgileri",
+            "defaultValue": {
+                "string-value": "00 : Kurum Genel Bilgileri",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "money": false,
             "readonly": true,

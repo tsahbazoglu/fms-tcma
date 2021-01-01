@@ -29,7 +29,7 @@
         "İlgili dönem itibariyle kar/zarar oranı hesaplaması, hesap bazında gerçekleşmiş kar/zarar dikkate alınarak yapılacaktır. Bir müşterinin birden fazla hesabının olması halinde her bir hesap, oran hesaplamasında ayrı ayrı dikkate alınacaktır."
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -109,7 +109,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK"
+                                "array-value": ["AK"]
                             },
                             {
                                 "key": "ldapUID",
@@ -189,7 +189,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "34 : Karda ve Zararda Olan Müşteri Hesaplarının Oransal Dağılımı",
+            "defaultValue": {
+                "string-value": "34 : Karda ve Zararda Olan Müşteri Hesaplarının Oransal Dağılımı",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

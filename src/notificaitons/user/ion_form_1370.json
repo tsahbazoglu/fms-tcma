@@ -25,7 +25,7 @@
         "Müşteri şikayet sayısı belirlenirken, ilgili dönemde müşterilerin şikayetçi oldukları hesap sayıları dikkate alınacaktır."
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -105,7 +105,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK"
+                                "array-value": ["AK"]
                             },
                             {
                                 "key": "ldapUID",
@@ -185,7 +185,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "37 : Müşteri Şikayet Sayısı",
+            "defaultValue": {
+                "string-value": "37 : Müşteri Şikayet Sayısı",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {
@@ -350,12 +354,38 @@
             "reportRendered": true
         },
         {
+            "field": "customer_complain_include_cfd_count",
+            "key": "customer_complain_include_cfd_count",
+            "name": "KAS (CFD dahil) Müşteri Sayısı (ilgili 3 aylık dönemde işlem gerçekleştirenler)",
+            "shortName": "KAS (CFD dahil) Müşteri Sayısı (ilgili 3 aylık dönemde işlem gerçekleştirenler)",
+            "reportOrder": 70,
+            "order": 70,
+            "componentType": "inputText",
+            "rendered": {
+                "boolean-value": true
+            },
+            "quickFilter": false,
+            "money": false,
+            "readonly": false,
+            "required": true,
+            "roleCheck": true,
+            "converter": "NumberConverter",
+            "valueType": "java.lang.Double",
+            "converterInstance": "integer",
+            "shouldCheckNegative": true,
+            "minFractationDigits": 3,
+            "maxFractationDigits": 3,
+            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
+            "style": "font-family:monospace;text-align:right;",
+            "reportRendered": true
+        },
+        {
             "field": "customer_complain_ratio",
             "key": "customer_complain_ratio",
             "name": "KAS (CFD dahil) Müşteri Şikayetlerinin (şikayete konu hesap sayısı) KAS (CFD dahil) Müşteri Sayısına Göre Oranı (%)",
             "shortName": "KAS (CFD dahil) Müşteri Şikayetlerinin (şikayete konu hesap sayısı) KAS (CFD dahil) Müşteri Sayısına Göre Oranı (%)",
-            "reportOrder": 70,
-            "order": 70,
+            "reportOrder": 80,
+            "order": 80,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -394,8 +424,8 @@
             "key": "customer_resolved_complain_count",
             "name": "Bu Dönemde İntikal Eden Şikayetlerden Çözüme Kavuşanlar",
             "shortName": "Bu Dönemde İntikal Eden Şikayetlerden Çözüme Kavuşanlar",
-            "reportOrder": 80,
-            "order": 80,
+            "reportOrder": 90,
+            "order": 90,
             "componentType": "inputText",
             "rendered": {
                 "boolean-value": true
@@ -420,32 +450,6 @@
             "key": "customer_proceeded_complain",
             "name": "Bu Dönemde İntikal Eden Şikayetlerden Devam Edenler",
             "shortName": "Bu Dönemde İntikal Eden Şikayetlerden Devam Edenler",
-            "reportOrder": 90,
-            "order": 90,
-            "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
-            "quickFilter": false,
-            "money": false,
-            "readonly": false,
-            "required": true,
-            "roleCheck": true,
-            "converter": "NumberConverter",
-            "valueType": "java.lang.Double",
-            "maxValue": 100,
-            "shouldCheckNegative": true,
-            "minFractationDigits": 3,
-            "maxFractationDigits": 3,
-            "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
-            "reportRendered": true
-        },
-        {
-            "field": "customer_complain_include_cfd_count",
-            "key": "customer_complain_include_cfd_count",
-            "name": "KAS (CFD dahil) Müşteri Sayısı (ilgili 3 aylık dönemde işlem gerçekleştirenler)",
-            "shortName": "KAS (CFD dahil) Müşteri Sayısı (ilgili 3 aylık dönemde işlem gerçekleştirenler)",
             "reportOrder": 100,
             "order": 100,
             "componentType": "inputText",
@@ -459,7 +463,7 @@
             "roleCheck": true,
             "converter": "NumberConverter",
             "valueType": "java.lang.Double",
-            "converterInstance": "integer",
+            "maxValue": 100,
             "shouldCheckNegative": true,
             "minFractationDigits": 3,
             "maxFractationDigits": 3,

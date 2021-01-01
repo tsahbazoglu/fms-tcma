@@ -12,6 +12,11 @@ mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'node_ion'})
 mongoimport --db configdb --collection graphion2 --type json --file _node_ion.json
 
 # define forms
+
+mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1330_test'})"
+mongoimport --db configdb --collection graphion2 --type json --file ion_form_1330_test.json
+
+
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_0970'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_0980'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_0990'})"

@@ -107,7 +107,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK"
+                                "array-value": ["AK"]
                             },
                             {
                                 "key": "ldapUID",
@@ -187,7 +187,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect,denemetest",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "35 : Fiyat Sağlayıcılar",
+            "defaultValue": {
+                "string-value": "35 : Fiyat Sağlayıcılar",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200,
             "search-access": false
         },

@@ -20,7 +20,7 @@
         "ionadmin"
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -99,7 +99,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "value": "AK",
+                                "array-value": ["AK"],
                                 "type": "in"
                             },
                             {
@@ -180,7 +180,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: right;",
-            "defaultValue": "99 : TÜİK İş Kayıtları Sistemi Verileri",
+            "defaultValue": {
+                "string-value": "99 : TÜİK İş Kayıtları Sistemi Verileri",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {

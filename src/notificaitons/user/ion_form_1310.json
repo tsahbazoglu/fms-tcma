@@ -29,7 +29,7 @@
         "Ayrıca, yazılı bir listeyi ilave olarak eklemek isterseniz, ek alanından yükleyiniz."
     ],
     "dimension": {
-        "value": "page",
+        "value": null,
         "list": [
             {
                 "roles": ["ionadmin", "ionviewer", "databankarchitect"],
@@ -109,7 +109,7 @@
                             },
                             {
                                 "key": "memberType",
-                                "array-value": "AK,B,KTB,KB,YB"
+                                "array-value": ["AK", "B", "KTB", "KB", "YB"]
                             },
                             {
                                 "key": "ldapUID",
@@ -175,8 +175,8 @@
             "componentType": "inputText",
             "name": "Bildirim Adı",
             "shortName": "Bildirim Adı",
-                    "quickFilter": false,
-    "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -189,7 +189,11 @@
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
             "style": "text-align: left;font-weight : bold",
-            "defaultValue": "31 : Tezgahüstü Türev İşlem ve Dayanak Varlıklar",
+            "defaultValue": {
+                "string-value": "31 : Tezgahüstü Türev İşlem ve Dayanak Varlıklar",                
+                "number-value": null,                
+                "func-value": null
+            },
             "width": 200
         },
         {
@@ -200,8 +204,8 @@
             "componentType": "inputTextarea",
             "name": "Açıklama",
             "shortName": "Açıklama",
-                   "quickFilter": false,
-     "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": true,
             "observable": false,
             "roleCheck": true,
@@ -230,8 +234,8 @@
             "reportOrder": 40,
             "name": "Swap",
             "shortName": "Swap",
-                     "quickFilter": false,
-   "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -283,8 +287,8 @@
             "reportOrder": 50,
             "name": "Forward",
             "shortName": "Forward",
-                   "quickFilter": false,
-     "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -336,8 +340,8 @@
             "reportOrder": 60,
             "name": "Opsiyon",
             "shortName": "Opsiyon",
-                     "quickFilter": false,
-   "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -389,8 +393,8 @@
             "reportOrder": 70,
             "name": "Diğer Türev",
             "shortName": "Diğer Türev",
-                     "quickFilter": false,
-   "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
@@ -442,8 +446,8 @@
             "reportOrder": 80,
             "name": "<b>Ekler :</b>",
             "shortName": "<b>Ekler :</b>",
-                     "quickFilter": false,
-   "money": false,
+            "quickFilter": false,
+            "money": false,
             "readonly": false,
             "observable": false,
             "roleCheck": true,
