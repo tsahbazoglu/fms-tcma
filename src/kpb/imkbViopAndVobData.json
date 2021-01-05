@@ -1,0 +1,112 @@
+
+{
+    "key": "imkbViopAndVobData",
+    "db": "kpbdb",
+    "collection": "kpbImkbViopAndVobData",
+    "menuOrder": 60,
+    "form": "A04",
+    "name": "A04 => IMKB VIOP + VOB Verileri",
+    "forms": "graphComission",
+    "accesscontrol": [
+        "kpbarchitect",
+        "kpbadmin"
+    ],
+    "actions": {
+        "new": false,
+        "save": false,
+        "delete": false,
+        "upload": true
+    },
+    "dimension": 1,
+    "type": "website",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "fields": {
+        "member": {
+            "key": "member",
+            "field": "member",
+            "name": "Kurum",
+            "shortName": "Kurum",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect,kpbadmin",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "YB"
+                        ]
+                    }
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "name": 1
+                }
+            }
+        },
+        "period": {
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect,kpbadmin",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "db": "kpbdb",
+                "collection": "kpbPeriod",
+                "query": {
+                    "forms": "period"
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "value": -1
+                }
+            }
+        },
+        "value": {
+            "key": "value",
+            "field": "value",
+            "name": "Hacim",
+            "shortName": "Hacim",
+            "reportOrder": 1000,
+            "order": 1000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "converter": "NumberConverter",
+            "divider": 100,
+            "maxFractationDigits": 2,
+            "minFractationDigits": 2,
+            "accesscontrol": "kpbarchitect,kpbadmin"
+        }
+    }
+}

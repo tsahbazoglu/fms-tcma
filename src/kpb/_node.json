@@ -1,0 +1,19 @@
+
+{
+    "key": "node-commision",
+    "db": "kpbdb",
+    "enabled": true,
+    "projectKey": "kpb",
+    "collection": "kpbData",
+    "forms": "graphForm",
+    "name": "Komisyon ve Promosyon Bildirimi",
+    "type": "node",
+    "upperNode": null,
+    "menuOrder": 100,
+    "accesscontrol": [
+        "uysuser",
+        "kpbadmin",
+        "kpbarchitect",
+        "bnkakuser"
+    ]
+}

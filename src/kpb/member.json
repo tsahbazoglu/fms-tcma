@@ -1,0 +1,166 @@
+
+{
+    "key": "member",
+    "db": "uysdb",
+    "collection": "common",
+    "menuOrder": 0,
+    "form": "B00",
+    "name": "B00 => Kurum",
+    "forms": "graphComission",
+    "accesscontrol": [
+        "kpbadmin",
+        "kpbarchitect"
+    ],
+    "defaultSortField": "name",
+    "actions": {
+        "new": false,
+        "save": false,
+        "delete": false
+    },
+    "dimension": 1,
+    "type": "website",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "myNamedQueries": {
+        "include": {
+            "kpbarchitect": {
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ"
+                        ]
+                    }
+                },
+                "priority": 7
+            },
+            "kpbadmin": {
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ"
+                        ]
+                    }
+                },
+                "priority": 6
+            },
+            "uysuser": {
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ"
+                        ]
+                    }
+                },
+                "priority": 0
+            }
+        }
+    },
+    "fields": {
+        "ldapUID": {
+            "key": "ldapUID",
+            "field": "ldapUID",
+            "name": "Kullanıcı Adı",
+            "shortName": "Kullanıcı Adı",
+            "reportOrder": 3000,
+            "order": 3000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "memberType": {
+            "field": "memberType",
+            "key": "memberType",
+            "name": "Üye Kurum Tipi",
+            "shortName": "Üye Kurum Tipi",
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "memberCode": {
+            "field": "memberCode",
+            "key": "memberCode",
+            "name": "Kod",
+            "shortName": "Kod",
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "name": {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "status": {
+            "field": "status",
+            "key": "status",
+            "reportOrder": 1500,
+            "order": 1500,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Faaliyet Durumu",
+            "shortName": "Faaliyet Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "YENİ KURUM"
+                },
+                {
+                    "code": "001",
+                    "name": "FAALİYETTE"
+                },
+                {
+                    "code": "002",
+                    "name": "GEÇİCİ KAPALI"
+                },
+                {
+                    "code": "003",
+                    "name": "ÜYELİKTEN ÇIKTI"
+                }
+            ]
+        }
+    }
+}

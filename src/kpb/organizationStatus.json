@@ -1,0 +1,429 @@
+
+{
+    "key": "organizationStatus",
+    "db": "kpbdb",
+    "collection": "kpbOrganizationStatus",
+    "versionCollection": "versionKpbOrganizationStatus",
+    "menuOrder": 64,
+    "form": "N01",
+    "forms": "graphComission",
+    "name": "N01 => Kurumun Durumu",
+    "shortName": "Kurum Durumu",
+    "dimension": 1,
+    "accesscontrol": [
+        "kpbadmin",
+        "kpbarchitect"
+    ],
+    "actions": {
+        "new": true,
+        "save": true,
+        "delete": true,
+        "email": {
+            "enable": true,
+            "subject": "Aracı Kurum Elektronik Bilgi Bankası Formu Düzeltmesi Hakkında",
+            "msgFormatContent": "function x(n){return n.workflowStatus.name}",
+            "to": "function x(e){return e.member.email}",
+            "msgFormatAttrs": [
+                "period.year",
+                "period.month",
+                "new Date()"
+            ]
+        },
+        "download": true
+    },
+    "historyRendered": false,
+    "type": "website",
+    "userConstantNote": "",
+    "userNote": "<ul>\n<li>\nDÜZELTMEYE AÇILDI</br></br> \nBu state, yalnız ve yalnız, geçmiş dönemlere ait düzeltme durumlarında kullanılmalı.</br>\nBu state bağlı email bilgilendirmesinde, kurumdan belge istenilmektedir.</br>\nGüncel döeneme ait veri düzenleme durumlarında RED EDİLDİ state kullanılmalı.</br></br> \n<li><style>\n.mytable{border:0px solid grey;border-collapse: separate;border-spacing: 2px;background:grey}\n.mytable td {border: 0px solid #000;white-space:nowrap;background: #fff;color: #000;}\n.mytable td.mygreen  {color:green;font-weight:bolder;}\n.mytable td.myreddd   {color:red;font-weight:bolder;}\n\n</style>\nKullanıcı Bildirimleri ile ilgili Döneme ait </br>\n\"Görülebilir/Yazılabilir Karar Matrisi\" </br></br>\n<table class=\"mytable\">\n<tr><td>Kurumun Durumu</td><td>Kurumun Veri Durumu</td><td>Veri Görünümü</td><td>Veri Girişi</td><td>Kurumun durumunun belirlenmesi</td></tr>\n<tr><td>FAALİYETTDE</td><td>GÖNDERIİLMEDİ        </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>RED EDİLDİ           </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>DÜZELTMEYE AÇILDI    </td><td class=\"mygreen\">görülebilir</td><td class=\"mygreen\">yazılabilir</td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>BEKLEMEDE            </td><td class=\"mygreen\">görülebilir</td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>İNCELENİYOR          </td><td class=\"mygreen\">görülebilir</td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>ONAYLANDI            </td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Manuel</td></tr>\n<tr><td>FAALİYETTDE</td><td>BİLDİRİM YAPILMAYACAK</td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n<tr><td>FAALİYETTDE</td><td>BİLDİRİM YAPILMADI   </td><td class=\"myreddd\">görülemez  </td><td class=\"myreddd\">yazılamaz  </td><td>Otomatik</td></tr>\n</table>\n</ul>",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "eventPostSave": {
+        "db": "kpbdb",
+        "op": "function x(e){var i=db.kpbPeriod.findOne({_id:e.period});printjson({operatedObjectPeriod:i});var d=[];db.kpbPeriod.find({value:{$gt:i.value}}).forEach(function(e){d.push(e)}),db.kpbOrganizationStatus.update({member:e.member,period:{$in:d}},{$set:{workflowStatus:{code:'006',name:'BEKLEMEDE'}}},{multi:!0})}"
+    },
+    "fields": {
+        "size": {
+            "field": "size",
+            "key": "size",
+            "reportOrder": 12000,
+            "order": 12000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Boyut",
+            "shortName": "Boyut",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "KÜÇÜK"
+                },
+                {
+                    "code": "001",
+                    "name": "ORTA"
+                },
+                {
+                    "code": "002",
+                    "name": "BUYUK"
+                }
+            ]
+        },
+        "root": {
+            "field": "root",
+            "key": "root",
+            "reportOrder": 11000,
+            "order": 11000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Köken",
+            "shortName": "Köken",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "BANKA"
+                },
+                {
+                    "code": "001",
+                    "name": "BAĞIMSIZ"
+                }
+            ]
+        },
+        "type": {
+            "field": "type",
+            "key": "type",
+            "reportOrder": 10000,
+            "order": 10000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Tür",
+            "shortName": "Tür",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "ÖZEL"
+                },
+                {
+                    "code": "001",
+                    "name": "KAMU"
+                },
+                {
+                    "code": "002",
+                    "name": "YABANCI"
+                }
+            ]
+        },
+        "member": {
+            "field": "member",
+            "key": "member",
+            "reportOrder": 9000,
+            "order": 9000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "kpbarchitect": {
+                    "value": "cancel",
+                    "priority": 7
+                },
+                "kpbadmin": {
+                    "value": "cancel",
+                    "priority": 6
+                },
+                "uysuser": {
+                    "value": "accept",
+                    "priority": 0
+                }
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "YB"
+                        ]
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "YB"
+                        ]
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "kpbadmin,kpbarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        "period": {
+            "field": "period",
+            "key": "period",
+            "order": 8000,
+            "reportOrder": 8000,
+            "componentType": "selectOneMenu",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "required": true,
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "kpbarchitect": {
+                    "value": "cancel",
+                    "priority": 7
+                },
+                "kpbadmin": {
+                    "value": "cancel",
+                    "priority": 6
+                },
+                "uysuser": {
+                    "value": "accept",
+                    "priority": 0
+                }
+            },
+            "items": {
+                "collection": "kpbPeriod",
+                "query": {
+                    "forms": "period"
+                },
+                "historyQuery": {
+                    "forms": "period"
+                },
+                "adminQuery": {
+                    "forms": "period"
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "value": -1
+                }
+            }
+        },
+        "status": {
+            "version": true,
+            "field": "status",
+            "key": "status",
+            "reportOrder": 7000,
+            "order": 7000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kurumun Durumu",
+            "shortName": "Kurumun Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "YENİ KURUM"
+                },
+                {
+                    "code": "001",
+                    "name": "FAALİYETTE"
+                },
+                {
+                    "code": "002",
+                    "name": "GEÇİCİ KAPALI"
+                },
+                {
+                    "code": "002",
+                    "name": "ÜYELİKTEN ÇIKTI"
+                }
+            ]
+        },
+        "workflowStatus": {
+            "version": true,
+            "field": "workflowStatus",
+            "key": "workflowStatus",
+            "reportOrder": 6000,
+            "order": 6000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kuruma ait veri durumu",
+            "shortName": "Kuruma ait veri durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "GÖNDERİLMEDİ"
+                },
+                {
+                    "code": "001",
+                    "name": "İNCELENİYOR"
+                },
+                {
+                    "code": "002",
+                    "name": "RED EDİLDİ"
+                },
+                {
+                    "code": "003",
+                    "name": "DÜZELTMEYE AÇILDI"
+                },
+                {
+                    "code": "004",
+                    "name": "ONAYLANDI"
+                },
+                {
+                    "code": "005",
+                    "name": "BİLDİRİM YAPILMAYACAK"
+                },
+                {
+                    "code": "006",
+                    "name": "BEKLEMEDE"
+                },
+                {
+                    "code": "007",
+                    "name": "BİLDİRİM YAPMADI"
+                }
+            ]
+        },
+        "controlResult": {
+            "field": "controlResult",
+            "key": "controlResult",
+            "reportOrder": 5500,
+            "order": 5500,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Kontrol Durumu",
+            "shortName": "Kontrol Durumu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "TAMAM"
+                },
+                {
+                    "code": "001",
+                    "name": "HATA VAR"
+                }
+            ]
+        },
+        "note": {
+            "field": "note",
+            "key": "note",
+            "reportOrder": 5000,
+            "order": 5000,
+            "componentType": "inputTextarea",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Açıklama",
+            "shortName": "Açıklama",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect"
+        },
+        "deadline": {
+            "field": "deadline",
+            "key": "deadline",
+            "name": "Son Bildirim Tarihi",
+            "shortName": "Son Bildirim Tarihi",
+            "reportOrder": 4000,
+            "order": 4000,
+            "componentType": "inputDate",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "valueType": "java.util.Date",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "yetki": {
+            "field": "yetki",
+            "key": "yetki",
+            "reportOrder": 13000,
+            "order": 13000,
+            "componentType": "selectOneMenu",
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "name": "Yetki",
+            "shortName": "Yetki",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "DAR"
+                },
+                {
+                    "code": "001",
+                    "name": "KISMİ"
+                },
+                {
+                    "code": "002",
+                    "name": "GENİŞ"
+                }
+            ]
+        }
+    }
+}

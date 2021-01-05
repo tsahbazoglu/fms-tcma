@@ -1,0 +1,205 @@
+
+{
+    "key": "contactDetail",
+    "db": "uysdb",
+    "collection": "dataBankContactDetail",
+    "menuOrder": 220,
+    "form": "Z40",
+    "forms": "graphForm",
+    "name": "İrtibat Bilgileri",
+    "shortName": "İrtibat Bilgileri",
+    "accesscontrol": [
+        "kpbadmin",
+        "databankarchitect"
+    ],
+    "type": "website",
+    "historyRendered": false,
+    "userConstantNote": "",
+    "userConstantNoteList": [],
+    "dimension": {
+        "onUserRole": {
+            "kpbadmin,databankarchitect": {
+                "value": 1,
+                "priority": 7
+            }
+        },
+        "defaultValue": 0
+    },
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "actions": {
+        "new": false,
+        "save": false,
+        "delete": false,
+        "download": false
+    },
+    "myNamedQueries": {
+        "include": {
+            "uysarchitect": {
+                "query": {
+
+                },
+                "priority": 7
+            },
+            "databankarchitect": {
+                "query": {
+
+                },
+                "priority": 7
+            },
+            "kpbadmin": {
+                "query": {
+
+                },
+                "priority": 6
+            }
+        }
+    },
+    "fields": {
+        "member": {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 100,
+            "order": 100,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "accesscontrol": "kpbadmin,databankarchitect",
+            "componentType": "selectOneMenu",
+            "name": "Üye Kurum",
+            "shortName": "Üye Kurum",
+            "valueType": "java.lang.String",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "databankarchitect": {
+                    "value": "cancel",
+                    "priority": 7
+                },
+                "kpbadmin": {
+                    "value": "cancel",
+                    "priority": 6
+                }
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "B",
+                            "AK",
+                            "VİAŞ",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ"
+                        ]
+                    }
+                },
+                "adminQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "B",
+                            "AK",
+                            "VİAŞ",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ"
+                        ]
+                    }
+                },
+                "historyQuery": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "B",
+                            "AK",
+                            "VİAŞ",
+                            "GSYO",
+                            "GYO",
+                            "MKYO",
+                            "PYŞ"
+                        ]
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "kpbadmin,databankarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "name": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        "contactPerson": {
+            "key": "contactPerson",
+            "field": "contactPerson",
+            "order": 90,
+            "reportOrder": 90,
+            "componentType": "inputText",
+            "name": "İrtibat Kişisi",
+            "shortName": "İrtibat Kişisi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "kpbadmin,databankarchitect",
+            "style": "text-align: left;"
+        },
+        "contactPhone": {
+            "key": "contactPhone",
+            "field": "contactPhone",
+            "order": 80,
+            "reportOrder": 80,
+            "componentType": "inputText",
+            "name": "İrtibat Kişi Telefon Numarası",
+            "shortName": "İrtibat Kişi Telefon Numarası",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "kpbadmin,databankarchitect",
+            "style": "text-align: left;"
+        },
+        "contactEmail": {
+            "key": "contactEmail",
+            "field": "contactEmail",
+            "order": 70,
+            "reportOrder": 70,
+            "componentType": "inputText",
+            "name": "İrtibat Kişi Eposta Adresi",
+            "shortName": "İrtibat Kişi Eposta Adresi",
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "required": true,
+            "valueType": "java.lang.String",
+            "converter": "TelmanStringConverter",
+            "converterParam": "LITERAL",
+            "accesscontrol": "kpbadmin,databankarchitect",
+            "style": "text-align: left;"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+
+{
+    "key": "comissionIncomeType",
+    "db": "kpbdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 20,
+    "form": "A00",
+    "name": "A00 => Komisyon Gelir Tipi",
+    "forms": "graphComission",
+    "accesscontrol": [
+        "kpbarchitect"
+    ],
+    "actions": {
+        "new": true,
+        "save": true,
+        "delete": true
+    },
+    "dimension": 1,
+    "type": "website",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "fields": {
+        "code": {
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "code",
+            "key": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect"
+        },
+        "name": {
+            "reportOrder": 1000,
+            "order": 1000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "key": "name",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect"
+        },
+        "relations": {
+            "key": "relations",
+            "field": "relations",
+            "name": "Bağlantılar",
+            "shortName": "Bağlantılar",
+            "reportOrder": 500,
+            "order": 500,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect"
+        }
+    }
+}

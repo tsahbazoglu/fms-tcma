@@ -1,0 +1,14 @@
+
+{
+    "key": "kpb",
+    "configCollections": "graphanket2",
+    "adminRole": "uysadmin,uysadmin2,architect",
+    "userRole": "uysadmin,uysadmin2,architect",
+    "welcomePage": "welcome-demo.html",
+    "registred-functions": [
+        {
+            "key": "somefunc",
+            "value": "function x(t,e){return true}"
+        } 
+    ]
+}

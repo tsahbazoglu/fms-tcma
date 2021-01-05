@@ -1,0 +1,379 @@
+
+{
+    "schemaVersion": "1.1.0",
+    "key": "comissionIncome",
+    "db": "kpbdb",
+    "collection": "kpbComissionIncome",
+    "menuOrder": 70,
+    "form": "F00",
+    "name": "Komisyon Gelirleri (I)",
+    "forms": "graphComission",
+    "loginFkField": "member",
+    "historyRendered": false,
+    "historyPosition": 1,
+    "handsonRowHeaderWidth": 350,
+    "handsonColWidths": 200,
+    "type": "website",
+    "controlCollection": "dataBankControl",
+    "accesscontrol": [
+        "kpbadmin",
+        "uysuser",
+        "kpbarchitect",
+        "bnkakuser"
+    ],
+    "actions": {
+        "new": {
+            "shoot": true
+        },
+        "save": {
+            "permit": null,
+            "block": ["uysadmin"],
+            "func": null,
+            "shoot": null,
+            "ref": {
+                "db": "uysdb",
+                "table": "dataBankOrganizationStatus",
+                "query": {
+                    "func": null,
+                    "list": [
+
+                        {
+                            "key": "status",
+                            "value": "000,001",
+                            "type": "in"
+                        },
+                        {
+                            "key": "workflowStatus",
+                            "value": "000,002,004",
+                            "type": "in"
+                        },
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        },
+                        {
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
+                        }
+                    ]
+                },
+                "check": "result>0"
+            }
+        },
+        "delete": {
+            "shoot": true
+        }
+    },
+    "dimension": {
+        "value": "grid",
+        "list": [
+            {
+                "roles": null,
+                "value": "grid"
+            }
+        ]
+    },
+    "upperNodes": ["node-commision"],
+    "zetDimension": ["member", "period"],
+    "constraintItems": {
+        "db": "kpbdb",
+        "collection": "kpbConstraintFormulas",
+        "query": {
+            "forms": "constraint",
+            "relations": {
+                "#regex": "F00"
+            },
+            "#where": "this.relations.length==1"
+        }
+    },
+    "fields": [
+        {
+            "key": "member",
+            "field": "member",
+            "name": "Kurum",
+            "shortName": "Kurum",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["kpbadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "uysdb",
+                    "itemTable": "common",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "member"
+                            },
+                            {
+                                "key": "_id",
+                                "fms-value": "fms_code{{login_member_id}}"
+                            }
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "ldapUID",
+                            "permit": "kpbadmin,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "locale": "tr",
+                    "labelStringFormat": "%6s | %s"
+                }
+            }
+        },
+        {
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "value": true,
+                "list": [
+                    {
+                        "roles": null,
+                        "value": true
+                    },
+                    {
+                        "roles": ["kpbadmin", "architect"],
+                        "value": true
+                    }
+                ]
+            },
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "kpbdb",
+                    "itemTable": "kpbPeriod",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            } 
+                        ]
+                    },
+                    "adminQuery": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "period"
+                            } 
+                        ]
+                    },
+                    "v": [
+
+                        {
+                            "key": "name",
+                            "order": 10
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "name",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "ndType": "DIMENSION",
+            "ndAxis": "X-IKS",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "key": "comissionIncomeType",
+            "field": "comissionIncomeType",
+            "name": "Gelir Tipi",
+            "shortName": "Gelir Tipi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "kpbdb",
+                    "itemTable": "dataBankSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "comissionIncomeType"
+                            },
+                            {
+                                "key": "relations",
+                                "value": "F00",
+                                "type": "regex"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "code",
+                            "permit": "kpbadmin,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "code",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "ndType": "DIMENSION",
+            "ndAxis": "Y-IGREK",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": {
+                "boolean-value": true
+            },
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "key": "comissionIncomeInfo",
+            "field": "comissionIncomeInfo",
+            "name": "Gelir Bilgsi",
+            "shortName": "Gelir Bilgsi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "func": null,
+                "list": null,
+                "ref": {
+                    "db": "kpbdb",
+                    "itemTable": "dataBankSetting",
+                    "query": {
+                        "func": null,
+                        "list": [
+                            {
+                                "key": "forms",
+                                "value": "comissionIncomeInfo"
+                            },
+                            {
+                                "key": "relations",
+                                "value": "F00",
+                                "type": "regex"
+                            } 
+                        ]
+                    },
+                    "v": [
+                        {
+                            "key": "code",
+                            "permit": "kpbadmin,architect",
+                            "order": 10
+                        },
+                        {
+                            "key": "name",
+                            "order": 20
+                        }
+                    ],
+                    "sort": {
+                        "list": [
+                            {
+                                "key": "code",
+                                "value": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "ndType": "MEASURE",
+            "field": "value",
+            "name": "Değer",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "readonly": false,
+            "order": 5000,
+            "reportOrder": 5000,
+            "valueType": "java.lang.String",
+            "converter": "MoneyConverter",
+            "style": "text-align:right;"
+        }
+    ]
+}

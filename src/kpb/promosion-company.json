@@ -1,0 +1,209 @@
+
+{
+    "key": "promosionData",
+    "db": "kpbdb",
+    "collection": "kpbPromosionData",
+    "menuOrder": 90,
+    "form": "F02",
+    "name": "Promosyon Kampanyaları",
+    "forms": "graphComission",
+    "accesscontrol": [
+        "uysuser",
+        "kpbadmin",
+        "kpbarchitect",
+        "bnkakuser"
+    ],
+    "historyRendered": false,
+    "historyPosition": 1,
+    "handsonRowHeaderWidth": 650,
+    "handsonColWidths": 200,
+    "actions": {
+        "new": {
+            "shoot": true
+        },
+        "save": {
+            "permit": null,
+            "block": ["kpbadmin", "kpbarchitect"],
+            "func": null,
+            "shoot": null,
+            "ref": {
+                "db": "kpbdb",
+                "table": "kpbOrganizationStatus",
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "status",
+                            "value": "000,001",
+                            "type": "in"
+                        },
+                        {
+                            "key": "workflowStatus",
+                            "value": "000,002,004",
+                            "type": "in"
+                        },
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        },
+                        {
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
+                        }                        
+                    ]
+                },
+                "check": "result>0"
+            }
+        },
+        "delete": true
+    },
+    "dimension": 2,
+    "type": "website",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "controlCollection": "dataBankControl",
+    "constraintItems": {
+        "db": "kpbdb",
+        "collection": "kpbConstraintFormulas",
+        "query": {
+            "forms": "constraint",
+            "relations": {
+                "#regex": "F02"
+            },
+            "#where": "this.relations.length==1"
+        }
+    },
+    "fields": {
+        "member": {
+            "key": "member",
+            "field": "member",
+            "name": "Kurum",
+            "shortName": "Kurum",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": true,
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "query": {
+                    "forms": "member",
+                    "memberType": {
+                        "#in": [
+                            "AK",
+                            "VİAŞ",
+                            "YB"
+                        ]
+                    },
+                    "ldapUID": {
+                        "#ne": "empty"
+                    }
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "kpbadmin,kpbarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        "period": {
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
+            "ndType": "DIMENSION",
+            "ndAxis": "Z-ZET",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": true,
+            "items": {
+                "collection": "kpbPeriod",
+                "query": {
+                    "forms": "period"
+                },
+                "adminQuery": {
+                    "forms": "period"
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "value": -1
+                }
+            }
+        },
+        "promosionType": {
+            "key": "promosionType",
+            "field": "promosionType",
+            "ndType": "DIMENSION",
+            "ndAxis": "X-IKS",
+            "reportOrder": 7000,
+            "order": 7000,
+            "rendered": true,
+            "money": false,
+            "readonly": false,
+            "roleCheck": true,
+            "componentType": "selectOneMenu",
+            "name": "Gelir Tipi",
+            "shortName": "Gelir Tipi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "items": {
+                "collection": "dataBankSetting",
+                "query": {
+                    "forms": "promosionType"
+                },
+                "v": {
+                    "code": {
+                        "accesscontrol": "kpbadmin,kpbarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "code": 1
+                }
+            }
+        },
+        "value": {
+            "key": "value",
+            "field": "value",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "ndType": "MEASURE",
+            "ndAxis": "Y-IGREK",
+            "name": "Değer",
+            "componentType": "inputText",
+            "roleCheck": true,
+            "rendered": true,
+            "readonly": false,
+            "order": 5000,
+            "reportOrder": 5000,
+            "valueType": "java.lang.String",
+            "converter": "MoneyConverter",
+            "style": "text-align:right;"
+        }
+    }
+}

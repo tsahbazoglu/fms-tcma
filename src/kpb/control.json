@@ -1,0 +1,513 @@
+
+{
+    "key": "control",
+    "db": "kpbdb",
+    "collection": "dataBankControl",
+    "form": "I01",
+    "forms": "graphComission",
+    "name": "Kontrol Et ve Gönder",
+    "shortName": "Kontrol Et ve Gönder",
+    "historyRendered": false,
+    "historyPosition": 1,
+    "menuOrder": 420,
+    "type": "website",
+    "userNote": "<ul>\n<li>\"Tüm Sayfaları Kontrol Et\" tuşuna basarak çıkan ekranda \"Hata Niteliği\" sütununda yer alan açıklamaları inceleyiniz.</br>\n<li>Sonuç tipi sütununda \"Hata\" mesajı çıkan verilerin düzeltilmesi gerekmektedir.</br>\n<li>Sonuç tipi sütununda \"Uyarı\" çıkan satırda girilen verinin doğru olduğunu düşünüyorsanız, ilgili satırı tıklayarak çıkan ekranda \"Açıklama Giriniz\" kısmına gerekli açıklamaları yazınız.</br>\n<li>Açıklamalar en az beş karakterden oluşmalıdır. </br>\n<li>Bu sayfada \"Hata\" mesajı veren ve \"Uyarı\" mesajı veren satırlarda açıklama girilmeyen formları Birliğimize iletilemeyecektir.</br>\n<li>Gerekli düzeltmeler ve açıklamalar tamamlandıktan sonra, sayfanın üst bölümde beliren \"Gönder\" tuşuna basarak formu Birliğimize gönderiniz.\n</ul>",
+    "defaultSortField": "transferOrder",
+    "userConstantNote": "",
+    "dimension": 1,
+    "upperNodes": ["node_komisyon"],
+    "accesscontrol": [
+        "uysuser",
+        "kpbadmin",
+        "kpbarchitect",
+        "bnkakuser"
+    ],
+    "actions": {
+        "save": {
+            "permit": null,
+            "block": ["kpbadmin", "kpbarchitect"],
+            "func": null,
+            "shoot": null,
+            "ref": {
+                "db": "kpbdb",
+                "table": "kpbOrganizationStatus",
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "status",
+                            "value": "000,001",
+                            "type": "in"
+                        },
+                        {
+                            "key": "workflowStatus",
+                            "value": "000,002,004",
+                            "type": "in"
+                        },
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        },
+                        {
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
+                        }                        
+                    ]
+                },
+                "check": "result>0"
+            }
+        },
+
+        "checkAll": {
+            "permit": null,
+            "block": ["kpbadmin", "kpbarchitect"],
+            "func": null,
+            "shoot": null,
+            "ref": {
+                "db": "kpbdb",
+                "table": "kpbOrganizationStatus",
+                "query": {
+                    "func": null,
+                    "list": [
+                        {
+                            "key": "status",
+                            "value": "000,001",
+                            "type": "in"
+                        },
+                        {
+                            "key": "workflowStatus",
+                            "value": "000,002,004",
+                            "type": "in"
+                        },
+                        {
+                            "key": "member",
+                            "fms-value": "fms_code{{login_member_id}}"
+                        },
+                        {
+                            "key": "period",
+                            "fms-value": "fms_code{{filter_period}}"
+                        }                        
+                    ]
+                },
+                "check": "result>0"
+            }
+        },
+        "sendForms": {
+            "gui": {
+                "x": 100,
+                "y": 100,
+                "component": "button",
+                "caption": "GÖNDER",
+                "trigger": "onClick",
+                "successMessage": "\"Komisyon ve Promosyon Bildirimi Formu\" TSPB’ye başarıyla iletilmiştir.</br> Teşekkür ederiz.",
+                "failMessage": "İşlem Başarısız."
+            },
+            "action": {
+                "db": "kpbdb",
+                "func": "function x(t,a){db.kpbOrganizationStatus.update({member:t.member,workflowStatus:{$in:['000','002']}},{$set:{workflowStatus:'001'}},{multi:!0})}",
+                "ref": null
+            },
+            "event-enable": {
+                "db": "kpbdb",
+                "value": null,
+                "func": null,
+                "list": [
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "uysdb",
+                            "table": "common",
+                            "query": [
+                                {
+                                    "key": "_id",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "status.code",
+                                    "array-value": ["000", "001", "002"]
+                                }
+                            ],
+                            "check": "existence"
+                        }
+                    }, 
+                    {
+                        "func": null,
+                        "ref": {
+                            "db": "kpbdb",
+                            "table": "kpbOrganizationStatus",
+                            "query": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "workflowStatus",
+                                    "array-value": ["000", "002", "003"]
+                                },
+                                {
+                                    "key": "controlResult",
+                                    "value": "000"
+                                }
+                            ],
+                            "count-filter": [
+                                {
+                                    "key": "member",
+                                    "fms-value": "fms_code{{login_member_id}}"
+                                },
+                                {
+                                    "key": "workflowStatus",
+                                    "array-value": ["000", "002", "003"]
+                                } 
+                            ],
+                            "check": "count>0"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "myNamedQueries": {
+        "include": {
+            "kpbarchitect": {
+                "query": {
+
+                },
+                "priority": 7
+            },
+            "kpbadmin": {
+                "query": {
+
+                },
+                "priority": 6
+            },
+            "uysuser": {
+                "query": {
+                    "result": "HATA VAR",
+                    "member": "projectSpaceLoggedUserObjectId"
+                },
+                "priority": 0
+            },
+            "bnkakuser": {
+                "query": {
+                    "result": "HATA VAR",
+                    "member": "projectSpaceLoggedUserObjectId"
+                },
+                "priority": 0
+            }
+        }
+    },
+    "userConstantNoteList": [
+        "Bu Sayfada verileri güncellemek için ilgili satır üzerine tıklayınız."
+    ],
+    "fields": {
+        "member": {
+            "field": "member",
+            "key": "member",
+            "graphKey": "member",
+            "reportOrder": 1000,
+            "order": 1000,
+            "required": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "selectOneMenu",
+            "name": "İşlem Yapan",
+            "shortName": "İşlem Yapan",
+            "valueType": "java.lang.String",
+            "accesscontrol": "uysdesigner,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "kpbarchitect": {
+                    "value": "cancel",
+                    "priority": 7
+                },
+                "kpbadmin": {
+                    "value": "cancel",
+                    "priority": 6
+                },
+                "uysuser": {
+                    "value": "accept",
+                    "priority": 0
+                }
+            },
+            "items": {
+                "db": "uysdb",
+                "collection": "common",
+                "query": {
+                    "forms": "member"
+                },
+                "adminQuery": {
+                    "forms": "member"
+                },
+                "v": {
+                    "ldapUID": {
+                        "accesscontrol": "kpbadmin,kpbarchitect"
+                    },
+                    "name": 1
+                },
+                "sort": {
+                    "ldapUID": 1
+                },
+                "labelStringFormat": "%6s | %s"
+            }
+        },
+        "period": {
+            "key": "period",
+            "field": "period",
+            "reportOrder": 900,
+            "order": 900,
+            "readonly": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "required": true,
+            "componentType": "selectOneMenu",
+            "name": "Dönem",
+            "valueType": "java.lang.String",
+            "shortName": "Dönem",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "SelectOneObjectIdConverter",
+            "autoset": {
+                "kpbarchitect": {
+                    "value": "cancel",
+                    "priority": 7
+                },
+                "kpbadmin": {
+                    "value": "cancel",
+                    "priority": 6
+                },
+                "uysuser": {
+                    "value": "accept",
+                    "priority": 0
+                }
+            },
+            "items": {
+                "collection": "kpbPeriod",
+                "query": {
+
+                },
+                "adminQuery": {
+                    "forms": "period"
+                },
+                "v": {
+                    "name": 1
+                },
+                "sort": {
+                    "value": -1
+                }
+            }
+        },
+        "variables": {
+            "reportOrder": 880,
+            "order": 880,
+            "componentType": "inputTextarea",
+            "field": "variables",
+            "key": "variables",
+            "name": "Değişken Listesi",
+            "shortName": "Değişken Listesi",
+            "rendered": true,
+            "money": false,
+            "roleCheck": true,
+            "readonly": true,
+            "observable": false,
+            "accesscontrol": "uystester",
+            "valueType": "java.lang.String"
+        },
+        "mySmallLisp": {
+            "reportOrder": 875,
+            "order": 875,
+            "componentType": "inputTextarea",
+            "field": "mySmallLisp",
+            "key": "mySmallLisp",
+            "name": "My Small Lisp",
+            "shortName": "My Small Lisp",
+            "rendered": true,
+            "money": false,
+            "roleCheck": true,
+            "readonly": true,
+            "observable": false,
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "valueType": "java.lang.String"
+        },
+        "expression": {
+            "field": "expression",
+            "key": "expression",
+            "reportOrder": 874,
+            "order": 874,
+            "readonly": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "valueType": "java.lang.String",
+            "name": "Matematik Kontrol İfadesi",
+            "shortName": "Matematik Kontrol İfadesi",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "componentType": "inputText"
+        },
+        "result": {
+            "field": "result",
+            "key": "result",
+            "reportOrder": 870,
+            "order": 870,
+            "readonly": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "valueType": "java.lang.String",
+            "name": "Sonuç",
+            "shortName": "Sonuç",
+            "accesscontrol": "kpbadmin,kpbarchitect",
+            "componentType": "selectOneMenu",
+            "converter": "SelectOneStringConverter",
+            "items": [
+                "HATA VAR",
+                "TAMAM"
+            ]
+        },
+        "resultType": {
+            "key": "resultType",
+            "field": "resultType",
+            "readonly": true,
+            "roleCheck": true,
+            "observable": false,
+            "money": false,
+            "rendered": true,
+            "componentType": "selectOneMenu",
+            "order": 860,
+            "reportOrder": 860,
+            "name": "Sonuç Tipi",
+            "shortName": "Sonuç Tipi",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "converter": "BsonConverter",
+            "items": [
+                {
+                    "code": "000",
+                    "name": "Hata"
+                },
+                {
+                    "code": "001",
+                    "name": "Uyarı"
+                }
+            ]
+        },
+        "transferOrder": {
+            "field": "transferOrder",
+            "key": "transferOrder",
+            "reportOrder": 800,
+            "order": 800,
+            "money": false,
+            "readonly": true,
+            "roleCheck": true,
+            "observable": false,
+            "rendered": true,
+            "name": "Kontrol Kodu",
+            "shortName": "Kontrol Kodu",
+            "componentType": "inputText",
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect"
+        },
+        "checkIndex": {
+            "reportOrder": 775,
+            "order": 775,
+            "money": false,
+            "readonly": true,
+            "roleCheck": true,
+            "observable": false,
+            "rendered": true,
+            "field": "checkIndex",
+            "key": "checkIndex",
+            "name": "Kontrol  Kodu Index",
+            "shortName": "Kontrol Kodu Index",
+            "componentType": "inputText",
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "uystester"
+        },
+        "relations": {
+            "reportOrder": 750,
+            "order": 750,
+            "readonly": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "rendered": true,
+            "componentType": "inputText",
+            "field": "relations",
+            "key": "relations",
+            "name": "İlişkili Sayfalar",
+            "shortName": "İlişkili Sayfalar",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        "relationsPresentation": {
+            "field": "relationsPresentation",
+            "key": "relationsPresentation",
+            "reportOrder": 750,
+            "order": 750,
+            "readonly": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "rendered": true,
+            "componentType": "inputText",
+            "name": "İlişkili Sayfalar",
+            "shortName": "İlişkili Sayfalar",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect"
+        },
+        "name": {
+            "reportOrder": 700,
+            "order": 700,
+            "readonly": true,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "name",
+            "key": "name",
+            "name": "Kontrol Adı",
+            "shortName": "Kontrol Adı",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect"
+        },
+        "description": {
+            "reportOrder": 500,
+            "order": 500,
+            "readonly": true,
+            "observable": false,
+            "roleCheck": true,
+            "rendered": true,
+            "componentType": "inputTextarea",
+            "field": "description",
+            "key": "description",
+            "name": "Hata Niteliği",
+            "shortName": "Hata Niteliği",
+            "valueType": "java.lang.String",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect"
+        },
+        "note": {
+            "field": "note",
+            "key": "note",
+            "reportOrder": 200,
+            "order": 200,
+            "readonly": false,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "observable": false,
+            "valueType": "java.lang.String",
+            "name": "Açıklama Giriniz",
+            "shortName": "Açıklama Giriniz",
+            "accesscontrol": "bnkakuser,uysuser,kpbadmin,kpbarchitect",
+            "componentType": "inputTextarea"
+        }
+    }
+}

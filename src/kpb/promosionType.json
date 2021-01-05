@@ -1,0 +1,78 @@
+
+{
+    "key": "promosionType",
+    "db": "kpbdb",
+    "collection": "dataBankSetting",
+    "menuOrder": 40,
+    "form": "A02",
+    "name": "A02 => Promosyon Tipi",
+    "forms": "graphComission",
+    "accesscontrol": [
+        "kpbarchitect"
+    ],
+    "actions": {
+        "new": true,
+        "save": true,
+        "delete": true
+    },
+    "dimension": 1,
+    "type": "website",
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "fields": {
+        "code": {
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "field": "code",
+            "key": "code",
+            "name": "Kod",
+            "shortName": "Kod",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect"
+        },
+        "name": {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "reportOrder": 1000,
+            "order": 1000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputTextarea",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbarchitect"
+        },
+        "converter": {
+            "reportOrder": 900,
+            "order": 900,
+            "rendered": true,
+            "componentType": "selectOneMenu",
+            "field": "converter",
+            "key": "converter",
+            "roleCheck": true,
+            "name": "Dönüştürücü",
+            "shortName": "Dönüştürücü",
+            "money": false,
+            "valueType": "java.lang.String",
+            "readonly": false,
+            "accesscontrol": "uysuser,kpbadmin,kpbarchitect",
+            "observable": false,
+            "items": [
+                "MoneyConverter",
+                "NumberConverter",
+                "StringConverter"
+            ]
+        }
+    }
+}
