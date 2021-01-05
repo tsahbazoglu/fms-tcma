@@ -745,25 +745,7 @@
                     }
                 },
                 "effected_keys": [
-                    "activity_status",
-                    "ekler",
-                    "posta_kodu",
-                    "telefon",
-                    "call_center_no",
-                    "faks",
-                    "email",
-                    "web_site",
-                    "tax_office_name",
-                    "tax_id_no",
-                    "main_aggrement_date",
-                    "tic_sicil_kayit_il",
-                    "tic_sicil_kayit_tarihi",
-                    "tic_sicil_no",
-                    "tic_sicil_meslek_grubu",
-                    "nace_kodu",
-                    "city",
-                    "country",
-                    "address"               
+                    "ekler"
                 ]
             },
             "items": {
@@ -806,6 +788,7 @@
             "componentType": "inputFile",
             "gridfsdb": "iondbuploadfiles",
             "roleCheck": true,
+            "required": true,
             "rendered": {
                 "boolean-value": true
             },
