@@ -11,7 +11,10 @@
     "forms": "graphForm",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": " ",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "dimension": {
         "value": "table",
