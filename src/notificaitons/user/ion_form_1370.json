@@ -350,7 +350,7 @@
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
+            "style": "font-family:monospace;text-align:left;",
             "reportRendered": true
         },
         {
@@ -376,7 +376,7 @@
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
+            "style": "font-family:monospace;text-align:left;",
             "reportRendered": true
         },
         {
@@ -442,7 +442,7 @@
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
+            "style": "font-family:monospace;text-align:left;",
             "reportRendered": true
         },
         {
@@ -468,7 +468,7 @@
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
+            "style": "font-family:monospace;text-align:left;",
             "reportRendered": true
         }
     ]
