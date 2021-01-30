@@ -12,9 +12,11 @@ mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'node_ion'})
 mongoimport --db configdb --collection graphion2 --type json --file _node_ion.json
 
 # define forms
-
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1330_test'})"
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1330_test.json
+
+mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1340'})"
+mongoimport --db configdb --collection graphion2 --type json --file ion_form_1340.json
 
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1160'})"
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1160.json
@@ -22,7 +24,14 @@ mongoimport --db configdb --collection graphion2 --type json --file ion_form_116
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1180'})"
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1180.json
 
+mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1370'})"
+mongoimport --db configdb --collection graphion2 --type json --file ion_form_1370.json
 
+mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1360'})"
+mongoimport --db configdb --collection graphion2 --type json --file ion_form_1360.json
+
+mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1300'})"
+mongoimport --db configdb --collection graphion2 --type json --file ion_form_1300.json
 
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_0970'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_0980'})"
@@ -49,14 +58,10 @@ mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_12
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1210'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1220'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1230'})"
-mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1300'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1310'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1320'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1330'})"
-mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1340'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1350'})"
-mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1360'})"
-mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_1370'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'ion_form_4142'})"
 mongo test --eval "db.getSisterDB('configdb').graphion2.remove({key:'member_eimza_info'})"
      
@@ -85,14 +90,10 @@ mongoimport --db configdb --collection graphion2 --type json --file ion_form_120
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1210.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1220.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1230.json
-mongoimport --db configdb --collection graphion2 --type json --file ion_form_1300.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1310.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1320.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1330.json
-mongoimport --db configdb --collection graphion2 --type json --file ion_form_1340.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_1350.json
-mongoimport --db configdb --collection graphion2 --type json --file ion_form_1360.json
-mongoimport --db configdb --collection graphion2 --type json --file ion_form_1370.json
 mongoimport --db configdb --collection graphion2 --type json --file ion_form_4142.json
 mongoimport --db configdb --collection graphion2 --type json --file member_eimza_info.json
 
