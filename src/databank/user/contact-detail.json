@@ -136,11 +136,6 @@
                                 "value": "member"
                             },
                             {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
-                            },
-                            {
                                 "key": "ldapUID",
                                 "value": "empty",
                                 "type": "ne"
