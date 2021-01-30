@@ -13,12 +13,14 @@
     "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
     "esignEmailToRecipients": "function x(e){if(!e.hasOwnProperty('member'))throw'no member property on searchObject';if(!e.hasOwnProperty('tcno'))throw'e-imzalayan personelin 'email adres' tespiti için 'tcno' parametresi boş.';var n=db.getSisterDB('uysdb').common.findOne({_id:e.member});if(null==n)throw'no record regarding to search : '.concat(e.member);var r=n.email,i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:e.tcno,'status.code':'000'});return null==i&&(i=db.getSisterDB('iondb').member_eimza_info.findOne({member:n._id,tcno:NumberLong(e.tcno),'status.code':'000'})),null!=i&&(r+=',',r+=i.email),r}",
-
     "menuOrder": 2200,
     "currentRendered": "function x(n,e){return!(null!=e&&0<=e.indexOf('ionviewer'))}",
     "upperNodes": ["node_ion"],
