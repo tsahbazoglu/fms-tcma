@@ -16,7 +16,10 @@
     "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "Portföy Yönetim Şirketleri, ilgili düzenleme uyarınca, yalnızca İşletme Adı İznine İlişkin bilgileri doldurmalıdır.",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "Portföy Yönetim Şirketleri, ilgili düzenleme uyarınca, yalnızca İşletme Adı İznine İlişkin bilgileri doldurmalıdır."
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
@@ -474,8 +477,8 @@
             "field": "ekler",
             "order": 150,
             "reportOrder": 150,
-            "name": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
-            "shortName": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
+            "name": "Ekler : 01-TİCARET SİCİL GAZETESİ",
+            "shortName": "Ekler : 01-TİCARET SİCİL GAZETESİ",
             "quickFilter": false,
             "money": false,
             "readonly": false,
