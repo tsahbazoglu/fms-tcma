@@ -10,7 +10,6 @@
     "forms": "graphForm",
     "name": "Kurumsal Finansman",
     "readOnlyNote": null,
-    "userNote": "<ul>\n<li>Birincil ve ikincil halka arzlar ile tahvil ihraçlarında lider olunan projeler yazılmalıdır.<br/>\n<li>Birincil halka arz sayılarına halka arz edilmeksizin borsaya kotasyonu gerçekleştirilen şirketler dâhil edilmelidir.<br/>\n<li>Tahvil İhracı başlığı tahsisli satılanlar dâhil tüm tahvil ve bono ihraçlarını ifade etmektedir.<br/>\n<li>Yatırım danışmanlığı yetki belgesi kapsamındaki faaliyetler burada yer almamalıdır.<br/>\n<li>Tamamlanan Proje Sayısı: Dönem içinde, sözleşmenin şartlarını yerine getirerek tamamlanan proje sayısı girilmelidir.<br/>\n<li>Süresi Dolan Proje Sayısı: Dönem içinde tamamlanmadan süresi dolan ve yenilenmeyen proje sayısı girilmelidir.<br/>\n<li>Fesh Edilen Proje Sayısı: Dönem içinde çeşitli nedenlerle süresi dolmadan fesh edilen proje sayısı girilmelidir.\n        </ul>",
     "historyRendered": true,
     "historyPosition": 1,
     "type": "website",
@@ -21,6 +20,10 @@
     "controlCollection": "dataBankControl",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "<ul>\n<li>Birincil ve ikincil halka arzlar ile tahvil ihraçlarında lider olunan projeler yazılmalıdır.<br/>\n<li>Birincil halka arz sayılarına halka arz edilmeksizin borsaya kotasyonu gerçekleştirilen şirketler dâhil edilmelidir.<br/>\n<li>Tahvil İhracı başlığı tahsisli satılanlar dâhil tüm tahvil ve bono ihraçlarını ifade etmektedir.<br/>\n<li>Yatırım danışmanlığı yetki belgesi kapsamındaki faaliyetler burada yer almamalıdır.<br/>\n<li>Tamamlanan Proje Sayısı: Dönem içinde, sözleşmenin şartlarını yerine getirerek tamamlanan proje sayısı girilmelidir.<br/>\n<li>Süresi Dolan Proje Sayısı: Dönem içinde tamamlanmadan süresi dolan ve yenilenmeyen proje sayısı girilmelidir.<br/>\n<li>Fesh Edilen Proje Sayısı: Dönem içinde çeşitli nedenlerle süresi dolmadan fesh edilen proje sayısı girilmelidir.\n        </ul>"
+    },
     "calculate-ref": {
         "func": "function x(l){var a=db.common.findOne({_id:l.period});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'E1',validPeriods:null===a?null:a.value}}",
         "doc": null
@@ -267,11 +270,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
