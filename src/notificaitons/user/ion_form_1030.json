@@ -15,7 +15,10 @@
     "currentRendered": "function x(n,e){return!(null!=e&&0<=e.indexOf('ionviewer'))}",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
@@ -404,8 +407,8 @@
             "field": "ekler",
             "order": 120,
             "reportOrder": 120,
-            "name": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
-            "shortName": "<b>Ekler :</b><br/>01-TİCARET SİCİL GAZETESİ",
+            "name": "Ekler : 01-TİCARET SİCİL GAZETESİ",
+            "shortName": "Ekler : 01-TİCARET SİCİL GAZETESİ",
             "accesscontrol": "ionuser,ionadmin,databankarchitect,ionviewer",
             "style": "text-align: right;",
             "valueType": "java.lang.String",
