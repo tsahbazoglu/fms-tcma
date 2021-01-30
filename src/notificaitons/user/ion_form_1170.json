@@ -13,7 +13,10 @@
     "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",

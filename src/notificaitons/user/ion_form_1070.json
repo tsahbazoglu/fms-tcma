@@ -10,7 +10,10 @@
     "forms": "graphForm",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
