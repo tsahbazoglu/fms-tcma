@@ -180,7 +180,7 @@
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "text-align: left;font-weight : bold",
+            "style": "font-weight:bold;text-align:left",
             "defaultValue": {
                 "string-value": "36 : Reddedilen Emirler",                
                 "number-value": null,                
@@ -209,7 +209,7 @@
             "converter": "TelmanStringConverter",
             "valueType": "java.lang.String",
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "text-align: right;",
+            "style": "text-align:right;",
             "db": "iondb",
             "forms": "ion_form_1360",
             "defaultValue": {
@@ -346,7 +346,7 @@
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
+            "style": "font-family:monospace;text-align:left;",
             "reportRendered": true
         }
     ]
