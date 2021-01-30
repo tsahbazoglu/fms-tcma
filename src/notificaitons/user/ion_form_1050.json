@@ -10,7 +10,10 @@
     "forms": "graphForm",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
@@ -359,8 +362,8 @@
         {
             "field": "ekler",
             "key": "ekler",
-            "name": "<b>Ekler :</b><br/>01 -BAĞIMSIZ DENETİM KURULUŞU İLE YAPILAN SÖZLEŞME",
-            "shortName": "<b>Ekler :</b><br/>01 -BAĞIMSIZ DENETİM KURULUŞU İLE YAPILAN SÖZLEŞME",
+            "name": "Ekler : 01-BAĞIMSIZ DENETİM KURULUŞU İLE YAPILAN SÖZLEŞME",
+            "shortName": "Ekler : 01-BAĞIMSIZ DENETİM KURULUŞU İLE YAPILAN SÖZLEŞME",
             "reportOrder": 100,
             "order": 100,
             "fileLimit": 1,

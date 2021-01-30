@@ -10,7 +10,10 @@
     "forms": "graphForm",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "Devam eden davalarla ilgili olan (Karar Tarihi, Mahkeme Karar No, Karar Tebliğ Tarihi, Dava Sonucu) alanları doldurulmamamlıdır. <br/><br/>Belirtilen alanlar dava sonuclandığında yapılacak bildirimlerde doldurulacaktır.",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "Devam eden davalarla ilgili olan (Karar Tarihi, Mahkeme Karar No, Karar Tebliğ Tarihi, Dava Sonucu) alanları doldurulmamamlıdır. <br/><br/>Belirtilen alanlar dava sonuclandığında yapılacak bildirimlerde doldurulacaktır."
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
