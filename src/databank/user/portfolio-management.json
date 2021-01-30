@@ -16,16 +16,19 @@
     "handsonRowHeaderWidth": 250,
     "handsonColWidths": 210,
     "readOnlyNote": null,
+    "historyRendered": true,
+    "historyPosition": 1,
+    "type": "website",
+    "controlCollection": "dataBankControl",
     "user-constant-note": {
         "value": [
             "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir"
         ]
     },
-    "userNote": "<ul><li>Doğrudan aracı kurum tarafından yönetilen portföylerle ilgili bilgiler girilmelidir.<br/></ul>",
-    "historyRendered": true,
-    "historyPosition": 1,
-    "type": "website",
-    "controlCollection": "dataBankControl",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "<ul><li>Doğrudan aracı kurum tarafından yönetilen portföylerle ilgili bilgiler girilmelidir.<br/></ul>"
+    },    
     "eventPostSave": {
         "db": "uysdb",
         "op": null,
@@ -261,11 +264,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
