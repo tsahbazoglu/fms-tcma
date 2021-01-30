@@ -10,10 +10,9 @@
     "forms": "graphForm",
     "name": "Bilanço Detay",
     "loginFkField": "member",
-    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne({_id:e.template}),period=db.common.findOne({_id:e.period}),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12’yi seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
     "readOnlyNote": null,
     "user-constant-note": null,
-    "userNote": "<ul><li>Bilanço Detay verilerini doldurmadan önce iştirak sayfasını doldurmanız gerekmektedir.<br/><li>Bu sayfaya solo finansal tablolara ilişkin bilanço detaylarının TL/YP cinsinden dağılımı girilecektir.<li>Solo toplam rakamları \"Kontrol Et ve Kaydet\" tuşuna basıldıktan sonra hesaplanacaktır.<li>Bu sayfadaki solo finansal tablo verileri TCMB'ye iletilecektir.</ul>",
+    "funcNote": "function x(e){return template=db.dataBankTemplate.findOne({_id:e.template}),period=db.common.findOne({_id:e.period}),null==template||null==period?null:(templateValue=template.value,periodValue=period.value,'UFRS-201306'!=templateValue||201212!=periodValue&&201306!=periodValue?null:'Lütfen 2013/06 verilerini girdikten sonra Dönem sekmesinden 2012/12’yi seçerek SPK’nın II-14.1 sayılı Tebliğine göre ilgili verileri giriniz.')}",
     "historyRendered": true,
     "historyPosition": 2,
     "type": "website",
@@ -23,6 +22,17 @@
     "defaultHistoryQuery": "function x(e){var r=db.getSisterDB('uysdb');if(!e.hasOwnProperty('member'))throw'member is resolved to null';var t=[];r.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:e.member},{period:1}).forEach(function(e){t.push(e.period)});var n='no result';r.common.find({_id:{$in:t}}).sort({value:-1}).limit(1).forEach(function(e){var r=db.getSisterDB('uysdb').common.findOne({forms:'period',order:e.order-10});n=null==r?e._id:r._id});var i=r.dataBankOrganizationStatus.findOne({member:e.member,period:n},{template:1}),o=null==i?null:i.template;return{member:e.member,period:n,template:o}}",
     "handsonRowHeaderWidth": 650,
     "disabled": false,
+    "excelFormat": {
+        "keys": [
+
+        ],
+        "limit": null,
+        "_template": "/home/telman/ufrs_201306_balance_detail_sablon.xls"
+    },
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "<ul><li>Bilanço Detay verilerini doldurmadan önce iştirak sayfasını doldurmanız gerekmektedir.<br/><li>Bu sayfaya solo finansal tablolara ilişkin bilanço detaylarının TL/YP cinsinden dağılımı girilecektir.<li>Solo toplam rakamları \"Kontrol Et ve Kaydet\" tuşuna basıldıktan sonra hesaplanacaktır.<li>Bu sayfadaki solo finansal tablo verileri TCMB'ye iletilecektir.</ul>"
+    },
     "calculate-ref": {
         "func": "function x(l){var a=db.common.findOne({_id:l.period}),e=db.dataBankTemplate.findOne({_id:l.template});return{cache:!0,db:'uysdb',collection:'dataBankCalculateFormulas',relations:'H3',validPeriods:null===a?null:a.value,template:null===e?null:e.value}}",
         "doc": null
@@ -285,11 +295,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
