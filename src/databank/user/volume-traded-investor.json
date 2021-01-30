@@ -1,3 +1,4 @@
+
 {
     "schemaVersion": "1.1.0",
     "key": "volumeTradedInvestor", 
@@ -12,12 +13,6 @@
     "handsonColWidths": 190,
     "handsonRowHeaderWidth": 250,
     "readOnlyNote": null,
-    "user-constant-note": {
-        "value": [
-            "Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
-        ]
-    },
-    "userNote": "<ul>\n<li>Bireysel Müşteriler, gerçek kişileri ifade etmektedir.<br/>\n<li>Kurumlar, kurum portföyü, anonim ve limited şirketler, vakıflar, kooperatifler vb. kurumları ifade etmektedir.<br/>\n<li>Kurumsal Yatırımcılar, yatırım fonları, yatırım ortaklıkları, emeklilik yatırım fonları ve portföy yönetim şirketlerini gibi kurumları ifade etmektedir.<br/>\n<li>Hisse Senedi işlemlerine varant ve sertifakalar dâhil değildir.<br/>\n<li>SGMK Kesin Alım-Satım ve Repo-Ters Repo işlemlerine Borsa İstanbul ve tescil işlemlerinin toplamı girilmelidir.<br/>\n<li>Kaldıraçlı Alım-Satım işlemlerine müşterilerle ve likidite sağlayıcısı rolüyle yapılan tüm alım ve satım işlemlerinin toplamı girilmelidir.\n<li>Piyasa İşlem Hacmi satırında Borsa İstanbul verileri bilgi için girilmiştir.<br/>\n<li>Kaldıraçlı alım-satım işlem hacmi Birliğimize aylık olarak gönderdiğiniz veriler bilgi için girilmiştir.\n        </ul>",
     "historyRendered": true,
     "historyPosition": 1,
     "type": "website",
@@ -25,6 +20,15 @@
     "loginFkField": "member",
     "defaultCurrentQuery": "function (r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "user-constant-note": {
+        "value": [
+            "Hücrelere veri girişi yaptıktan sonra klavyedeki Enter tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
+        ]
+    },
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "<ul>\n<li>Bireysel Müşteriler, gerçek kişileri ifade etmektedir.<br/>\n<li>Kurumlar, kurum portföyü, anonim ve limited şirketler, vakıflar, kooperatifler vb. kurumları ifade etmektedir.<br/>\n<li>Kurumsal Yatırımcılar, yatırım fonları, yatırım ortaklıkları, emeklilik yatırım fonları ve portföy yönetim şirketlerini gibi kurumları ifade etmektedir.<br/>\n<li>Hisse Senedi işlemlerine varant ve sertifakalar dâhil değildir.<br/>\n<li>SGMK Kesin Alım-Satım ve Repo-Ters Repo işlemlerine Borsa İstanbul ve tescil işlemlerinin toplamı girilmelidir.<br/>\n<li>Kaldıraçlı Alım-Satım işlemlerine müşterilerle ve likidite sağlayıcısı rolüyle yapılan tüm alım ve satım işlemlerinin toplamı girilmelidir.\n<li>Piyasa İşlem Hacmi satırında Borsa İstanbul verileri bilgi için girilmiştir.<br/>\n<li>Kaldıraçlı alım-satım işlem hacmi Birliğimize aylık olarak gönderdiğiniz veriler bilgi için girilmiştir.\n        </ul>"
+    },
     "calculate-ref": {
         "func": null,
         "doc": {
@@ -268,11 +272,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
