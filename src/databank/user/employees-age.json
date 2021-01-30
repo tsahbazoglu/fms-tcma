@@ -12,20 +12,23 @@
     "name": "Personel Sayısı - Yaş",
     "loginFkField": "member",
     "readOnlyNote": null,
-    "userNote": "",
     "historyRendered": true,
     "historyPosition": 2,
     "type": "website",
     "defaultCurrentQuery": "function x(r){if(!r.hasOwnProperty('member'))throw'member is resolved to null';var e=db.getSisterDB('uysdb'),i=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){i.push(r.period)});var t='no result';return e.common.find({_id:{$in:i}}).sort({value:-1}).limit(1).forEach(function(r){t=r._id}),{member:r.member,period:t}}",
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
+    "controlCollection": "dataBankControl",
+    "handsonRowHeaderWidth": 150,
+    "handsonColWidths": 50,
     "user-constant-note": {
         "value": [ 
             "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
         ]
     },
-    "controlCollection": "dataBankControl",
-    "handsonRowHeaderWidth": 150,
-    "handsonColWidths": 50,
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "calculate-ref": {
         "func": null,
         "doc": {
@@ -272,11 +275,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
