@@ -11,12 +11,6 @@
     "forms": "graphForm",
     "name": "Personel Sayısı - İş Tecrübesi",
     "readOnlyNote": null,
-    "user-constant-note": {
-        "value": [
-            "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
-        ]
-    },
-    "userNote": "Çalışanların tüm çalışma hayatındaki iş tecrübesi göz önüne alınarak tecrübeleri girilmelidir.",
     "historyRendered": true,
     "historyPosition": 2,
     "type": "website",
@@ -25,6 +19,16 @@
     "defaultHistoryQuery": "function x(r){var e=db.getSisterDB('uysdb');if(!r.hasOwnProperty('member'))throw'member is resolved to null';var o=[];e.dataBankOrganizationStatus.find({status:{$in:['000','001','002']},workflowStatus:{$in:['000','001','002','003','006']},member:r.member},{period:1}).forEach(function(r){o.push(r.period)});var i='no result';return e.common.find({_id:{$in:o}}).sort({value:-1}).limit(1).forEach(function(r){var e=db.getSisterDB('uysdb').common.findOne({forms:'period',order:r.order-10});i=null==e?r._id:e._id}),{member:r.member,period:i}}",
     "handsonRowHeaderWidth": 150,
     "handsonColWidths": 50,
+    "loginFkField": "member",
+    "user-constant-note": {
+        "value": [
+            "Hücrelere veri girişi yaptıktan sonra klavyedeki \"Enter\" tuşuna basılması gerekmektedir. Yeşil fonlu alanda yer alan hesaplamalar \"Kaydet\" tuşuna basılarak etkinleşecektir."
+        ]
+    },
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "Çalışanların tüm çalışma hayatındaki iş tecrübesi göz önüne alınarak tecrübeleri girilmelidir."
+    },
     "calculate-ref": {
         "func": null,
         "doc": {
@@ -71,7 +75,6 @@
         "op": null,
         "registred-func-name": "write-data-changed-status"
     },
-    "loginFkField": "member",
     "filter": {
         "forms": "jobExpirenceBasesPersonelCounts"
     },
@@ -270,11 +273,6 @@
                             {
                                 "key": "forms",
                                 "value": "member"
-                            },
-                            {
-                                "key": "memberType",
-                                "value": "AK,VİAŞ,YB",
-                                "type": "in"
                             },
                             {
                                 "key": "ldapUID",
