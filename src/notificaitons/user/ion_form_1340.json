@@ -255,7 +255,8 @@
                     "kas_musteri_sayisi",
                     "kar_oran",
                     "zarar_oran"
-                ]
+                ],
+                "remove-non-rendered-field-on-record": true
             },
             "items": {
                 "list": [
@@ -375,22 +376,22 @@
             "reportOrder": 70,
             "order": 70,
             "componentType": "inputText",
-            "rendered": {
-                "boolean-value": true
-            },
+            "converter": "NumberConverter",
+            "valueType": "java.lang.Double",
             "quickFilter": false,
             "money": false,
             "readonly": false,
             "required": true,
             "roleCheck": true,
-            "converter": "NumberConverter",
-            "valueType": "java.lang.Double",
+            "reportRendered": true,
             "shouldCheckNegative": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
-            "reportRendered": true
+            "style": "font-family:monospace;text-align:left;"
         },
         {
             "field": "kas_musteri_sayisi",
@@ -408,14 +409,14 @@
             "readonly": false,
             "required": true,
             "roleCheck": true,
+            "shouldCheckNegative": true,
+            "reportRendered": true,
             "converter": "NumberConverter",
             "valueType": "java.lang.Double",
-            "shouldCheckNegative": true,
             "minFractationDigits": 3,
             "maxFractationDigits": 3,
             "accesscontrol": "ionuser,ionadmin,ionviewer,databankarchitect",
-            "style": "font-family:monospace;text-align:right;",
-            "reportRendered": true
+            "style": "font-family:monospace;text-align:left;"
         },
         {
             "key": "kar_oran",
@@ -425,13 +426,6 @@
             "accesscontrol": "akuser,ypiadmin,ypiviewer,databankarchitect",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "quickFilter": false,
-            "readonly": true,
-            "reportRendered": true,
             "name": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Karda Olan Hesapların Oransal Dağılımı (%)",
             "trequired": "false",
@@ -439,7 +433,14 @@
             "converterFormat": "##.##",
             "converterInstance": "number",
             "labelStyle": "background-color:yellow",
-            "style": "text-align:right",
+            "style": "text-align:left",  
+            "roleCheck": true,
+            "quickFilter": false,
+            "readonly": true,
+            "reportRendered": true,  
+            "rendered": {
+                "boolean-value": true
+            },
             "calculate": {
                 "enabled": true,
                 "action": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100*s/i}",
@@ -463,12 +464,6 @@
             "accesscontrol": "akuser,ypiadmin,ypiviewer,databankarchitect",
             "valueType": "java.lang.Double",
             "componentType": "inputText",
-            "quickFilter": false,
-            "roleCheck": true,
-            "rendered": {
-                "boolean-value": true
-            },
-            "readonly": true,
             "name": "Zararda Olan Hesapların Oransal Dağılımı (%)",
             "shortName": "Zararda Olan Hesapların Oransal Dağılımı (%)",
             "trequired": "false",
@@ -476,20 +471,28 @@
             "converterFormat": "##.##",
             "converterInstance": "number",
             "labelStyle": "background-color:yellow",
-            "style": "text-align:right",
-            "calculated": true,
-            "calculateOnListView": false,
-            "calculateOnCrudView": false,
-            "calculateOnPost": false,
-            "calculateOnSave": true,
-            "action": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100-100*s/i}",
-            "calcCrudKeyList": [
-                "karli_kas_musteri_sayisi",
-                "kas_musteri_sayisi"
-            ],
-            "calculateOnClient": "function x(crudObject){crudObject=eval('('+crudObject+')');var x=null===crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,y=null===crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0===y?'':100-100*x/y}",
-            "calculateEngine": "clientSideJS",
-            "reportRendered": true
+            "style": "text-align:left",
+            "reportRendered": true,
+            "quickFilter": false,
+            "roleCheck": true,
+            "readonly": true,
+            "rendered": {
+                "boolean-value": true
+            },
+            "calculate": {
+                "enabled": true,
+                "action": "function x(){var s=null==crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,i=null==crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0==i?'':100-100*s/i}",
+                "on-client": "function x(crudObject){crudObject=eval('('+crudObject+')');var x=null===crudObject.karli_kas_musteri_sayisi||isNaN(crudObject.karli_kas_musteri_sayisi)?0:crudObject.karli_kas_musteri_sayisi,y=null===crudObject.kas_musteri_sayisi||isNaN(crudObject.kas_musteri_sayisi)?0:crudObject.kas_musteri_sayisi;return 0===y?'':100-100*x/y}",
+                "on-list-view": false,
+                "on-crud-view": false,
+                "on-post": false,
+                "on-save": true,
+                "engine": "clientSideJS",
+                "calcCrudKeyList": [
+                    "karli_kas_musteri_sayisi",
+                    "kas_musteri_sayisi"
+                ]
+            }
         }
     ]
 }
