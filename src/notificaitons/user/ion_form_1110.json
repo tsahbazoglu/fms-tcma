@@ -15,7 +15,10 @@
     "defaultHistoryQuery": "function x(e){if(!e.hasOwnProperty('member'))throw'member is resolved to null';return{member:e.member}}",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "showHistory": true,
     "esignEmailBccRecipients": "tsahbazoglu@tspb.org.tr,aimamoglu@tspb.org.tr",
@@ -461,8 +464,8 @@
         {
             "key": "ekler",
             "field": "ekler",
-            "name": "<b>Ekler :</b><br/>01 - TİCARET SİCİL GAZETESİ",
-            "shortName": "Ekler : TİCARET SİCİL GAZETESİ",
+            "name": "Ekler : 01-TİCARET SİCİL GAZETESİ",
+            "shortName": "Ekler : 01-TİCARET SİCİL GAZETESİ",
             "docFormat": "pdf",
             "fileLimit": 3,
             "componentType": "inputFile",
