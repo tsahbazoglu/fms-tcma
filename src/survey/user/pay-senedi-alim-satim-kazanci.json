@@ -41,7 +41,10 @@
     "userConstantNoteList": [
         "Hücrelere veri girişi yaptıktan sonra yukarıdaki 'Kaydet' tuşuna basılması gerekmektedir."
     ],
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "calculateCollection": "dataBankCalculateFormulas",
     "controlCollection": "dataBankControl",
     "myNamedQueries": {
