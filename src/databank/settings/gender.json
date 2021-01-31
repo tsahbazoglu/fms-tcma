@@ -58,7 +58,9 @@
             "order": 10,
             "reportOrder": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "code",
             "key": "code",
@@ -76,7 +78,9 @@
             "field": "name",
             "reportOrder": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "order": 20,
             "roleCheck": true,
@@ -94,7 +98,9 @@
             "reportOrder": 30,
             "order": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "name": "2011 Veri Aktarımı",
@@ -113,7 +119,9 @@
             "reportOrder": 40,
             "order": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -128,7 +136,9 @@
             "order": 50,
             "reportOrder": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "money": false,

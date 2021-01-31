@@ -57,7 +57,9 @@
         {
             "reportOrder": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "detailOrder",
             "key": "detailOrder",
@@ -75,7 +77,9 @@
             "reportOrder": 20,
             "order": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "abstractOrder",
             "key": "abstractOrder",
@@ -91,7 +95,9 @@
         {
             "reportOrder": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "code",
             "order": 30,
@@ -109,7 +115,9 @@
             "reportOrder": 40,
             "order": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "name",
             "roleCheck": true,
@@ -126,7 +134,9 @@
             "reportOrder": 50,
             "order": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "field": "relations",
             "roleCheck": true,
@@ -147,7 +157,9 @@
             "reportOrder": 60,
             "order": 60,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,

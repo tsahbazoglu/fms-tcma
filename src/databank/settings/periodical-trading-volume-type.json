@@ -63,7 +63,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"]
@@ -93,7 +95,9 @@
                 ]
             },
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -112,7 +116,9 @@
             "roleCheck": true,
             "readonly": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "observable": false
         },
@@ -127,7 +133,9 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -144,7 +152,9 @@
             "order": 50,
             "reportOrder": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -161,7 +171,9 @@
             "order": 60,
             "reportOrder": 60,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,

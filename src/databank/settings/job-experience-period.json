@@ -64,7 +64,9 @@
             "order": 10,
             "reportOrder": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -81,7 +83,9 @@
             "order": 20,
             "reportOrder": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -98,7 +102,9 @@
             "reportOrder": 30,
             "order": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "readonly": false,
             "observable": false,
@@ -115,7 +121,9 @@
             "order": 40,
             "reportOrder": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -132,7 +140,9 @@
             "order": 50,
             "reportOrder": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -149,7 +159,9 @@
             "order": 60,
             "reportOrder": 60,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,

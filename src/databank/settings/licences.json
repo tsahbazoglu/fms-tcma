@@ -19,7 +19,10 @@
         ]
     },
     "type": "website",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "loginFkField": "_id",
     "upperNodes": ["node_dataBankSetting"],
     "filter": {
@@ -69,7 +72,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "componentType": "inputText",
@@ -86,7 +91,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "componentType": "inputText",
@@ -103,7 +110,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true
+            "rendered": {
+                "boolean-value": true
+            }
         },
         {
             "key": "code",
@@ -117,7 +126,9 @@
             "accesscontrol": "uysuser,uysadmin,architect",
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -136,7 +147,9 @@
             "accesscontrol": "uysuser,uysadmin,architect",
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -155,7 +168,9 @@
             "accesscontrol": "uysuser,uysadmin,architect",
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,

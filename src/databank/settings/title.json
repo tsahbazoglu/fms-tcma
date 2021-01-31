@@ -20,7 +20,10 @@
         ]
     },
     "type": "website",
-    "userNote": "",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "defaultSortField": "order",
     "filter": {
         "forms": "title"
@@ -67,7 +70,9 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -86,7 +91,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -105,7 +112,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -124,7 +133,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -143,7 +154,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
@@ -162,7 +175,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "style": "white-space:nowrap",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "required": true,
             "roleCheck": true,
             "money": false,
