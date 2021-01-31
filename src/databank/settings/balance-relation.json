@@ -19,7 +19,10 @@
     "loginFkField": "_id",
     "defaultSortField": "orderno",
     "userConstantNote": "",
-    "userNote": " ",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": ""
+    },
     "type": "website",
     "menuOrder": 10000,
     "filter": {
@@ -63,7 +66,9 @@
             "name": "Referans - Değer",
             "shortName": "Referans - Değer",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -116,7 +121,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "quickFilter": false,
             "order": 20,
@@ -133,7 +140,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "quickFilter": false,
             "order": 30,
@@ -150,7 +159,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "quickFilter": false,
             "order": 40,
@@ -167,7 +178,9 @@
             "componentType": "selectOneMenu",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "quickFilter": false,
             "order": 50,
@@ -218,9 +231,11 @@
             "componentType": "selectOneMenu",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
-            "quickFilter": false,
+            "quickFilter": true,
             "order": 60,
             "reportOrder": 60,
             "valueType": "java.lang.String",
@@ -269,7 +284,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "quickFilter": false,
             "order": 70,

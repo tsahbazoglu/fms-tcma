@@ -9,8 +9,8 @@
     "form": "Z60",
     "forms": "graphForm",
     "name": "Z60 - Hesaplama Formülleri",
-   "dimension": {
-        "value":"table",
+    "dimension": {
+        "value": "table",
         "list": [
             {
                 "roles": null,
@@ -72,7 +72,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "selectBooleanCheckbox",
             "roleCheck": true,
             "name": "Geçerli/Geçersiz",
@@ -86,7 +88,9 @@
             "reportOrder": 20,
             "order": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputTextarea",
             "roleCheck": true,
             "name": "Geçerli Dönemler",
@@ -100,7 +104,9 @@
             "reportOrder": 30,
             "order": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputTextarea",
             "roleCheck": true,
             "name": "Geçerli Şablonlar",
@@ -114,7 +120,9 @@
             "reportOrder": 40,
             "order": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "name": "Ad",
@@ -128,7 +136,9 @@
             "reportOrder": 50,
             "order": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "name": "Yer Alacağı Formlar",
@@ -149,7 +159,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputTextarea",
             "name": "Formül",
             "shortName": "Formül",
@@ -167,7 +179,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "name": "Hesaplanacak Hücre",
             "shortName": "Hesaplanacak Hücre",
@@ -184,7 +198,9 @@
             "readonly": false,
             "observable": false,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "name": "Hesaplanacak Değer",
             "shortName": "Hesaplanacak Değer",
@@ -197,7 +213,9 @@
             "reportOrder": 90,
             "order": 90,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputTextarea",
             "roleCheck": true,
             "name": "Görsellik(CSS)",
@@ -217,7 +235,9 @@
             "order": 100,
             "componentType": "selectOneMenu",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
