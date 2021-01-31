@@ -10,7 +10,7 @@
     "name": "Z21 - Şehirler",
     "forms": "graphForm",
     "dimension": {
-        "value":"table",
+        "value": "table",
         "list": [
             {
                 "roles": null,
@@ -62,7 +62,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 10,
             "reportOrder": 10,
@@ -78,7 +80,9 @@
             "componentType": "inputText",
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "readonly": false,
             "order": 20,
             "reportOrder": 20,

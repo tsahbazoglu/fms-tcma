@@ -10,7 +10,7 @@
     "name": "Z62 - Kontrol Formülleri Bağlantıları",
     "forms": "graphForm",
     "dimension": {
-        "value":"table",
+        "value": "table",
         "list": [
             {
                 "roles": null,
@@ -59,23 +59,25 @@
     },
     "fields": [
         {
+            "key": "period",
+            "field": "period",
+            "name": "Dönem",
+            "shortName": "Dönem",
             "order": 10,
             "reportOrder": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
             "observable": false,
             "required": true,
-            "quickFilter": false,
+            "quickFilter": true,
             "componentType": "selectOneMenu",
-            "field": "period",
-            "name": "Dönem",
-            "shortName": "Dönem",
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
-            "key": "period",
             "converter": "SelectOneObjectIdConverter",
             "items": {
                 "func": null,
@@ -134,7 +136,9 @@
             "order": 20,
             "reportOrder": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -202,7 +206,9 @@
             "order": 30,
             "reportOrder": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -274,7 +280,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "readonly": true,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "quickFilter": false
         },
@@ -289,7 +297,9 @@
             "valueType": "java.lang.String",
             "converter": "SelectOneStringConverter",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "money": false,
             "readonly": true,
             "observable": false,

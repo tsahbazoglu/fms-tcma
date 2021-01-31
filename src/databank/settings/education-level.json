@@ -59,7 +59,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "name": "Ad",
@@ -79,7 +81,9 @@
             "reportOrder": 20,
             "order": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -95,7 +99,9 @@
             "order": 30,
             "reportOrder": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "money": false,
@@ -113,7 +119,9 @@
             "order": 40,
             "reportOrder": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "money": false,
@@ -129,7 +137,9 @@
             "key": "web_faaliyet_report_name",
             "field": "web_faaliyet_report_name",
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "order": 50,
             "reportOrder": 50,
