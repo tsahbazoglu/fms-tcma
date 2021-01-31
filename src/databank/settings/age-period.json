@@ -61,7 +61,9 @@
             "shortName": "Ad",
             "order": 10,
             "reportOrder": 10,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "reportRendered": true,
             "readonly": false,
             "quickFilter": false,
@@ -78,7 +80,9 @@
             "order": 20,
             "reportOrder": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "money": false,
@@ -96,7 +100,9 @@
             "order": 30,
             "reportOrder": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "roleCheck": true,
             "money": false,
