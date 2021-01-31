@@ -17,7 +17,6 @@
     "defaultHistoryQuery": "function (searchObject) { return {}; }",
     "loginFkField": "_id",
     "eventPostSave": {
-        "type": "obfuscateLdapPassword"
     },
     "filter": {
         "forms": "member"
@@ -70,8 +69,8 @@
                 "boolean-value": true
             },
             "readonly": true,
-            "order": 99,
-            "reportOrder": 99,
+            "order": 10,
+            "reportOrder": 10,
             "valueType": "java.lang.String",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
             "reportRendered": true,
@@ -88,8 +87,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 98,
-            "reportOrder": 98,
+            "order": 20,
+            "reportOrder": 20,
             "valueType": "java.lang.String",
             "db": "uysdb",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
@@ -107,8 +106,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 97,
-            "reportOrder": 97,
+            "order": 30,
+            "reportOrder": 30,
             "valueType": "java.lang.String",
             "db": "uysdb",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
@@ -127,12 +126,13 @@
             },
             "db": "uysdb",
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 96,
-            "reportOrder": 96,
+            "order": 40,
+            "reportOrder": 40,
             "valueType": "java.lang.String",
             "ajax": {
                 "action": "uys_member_generate_ldapUID",
-                "enable": true
+                "enable": true,
+                "effected_keys": []
             },
             "items": {
                 "func": null,
@@ -165,8 +165,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 95,
-            "reportOrder": 95,
+            "order": 50,
+            "reportOrder": 50,
             "valueType": "java.lang.String",
             "db": "uysdb",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
@@ -184,8 +184,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 94,
-            "reportOrder": 94,
+            "order": 60,
+            "reportOrder": 60,
             "valueType": "java.lang.String",
             "version": true,
             "db": "uysdb",
@@ -197,8 +197,8 @@
             "key": "status",
             "field": "status",
             "version": true,
-            "reportOrder": 93,
-            "order": 93,
+            "reportOrder": 70,
+            "order": 70,
             "componentType": "selectOneMenu",
             "rendered": {
                 "boolean-value": true
@@ -248,8 +248,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 92,
-            "reportOrder": 92,
+            "order": 80,
+            "reportOrder": 80,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "version": true,
@@ -269,8 +269,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 91,
-            "reportOrder": 91,
+            "order": 90,
+            "reportOrder": 90,
             "valueType": "java.lang.String",
             "version": true,
             "db": "uysdb",
@@ -289,8 +289,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 90,
-            "reportOrder": 90,
+            "order": 100,
+            "reportOrder": 100,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "db": "uysdb",
@@ -309,8 +309,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 89,
-            "reportOrder": 89,
+            "order": 110,
+            "reportOrder": 110,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "db": "uysdb",
@@ -329,8 +329,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 88,
-            "reportOrder": 88,
+            "order": 120,
+            "reportOrder": 120,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "db": "uysdb",
@@ -350,8 +350,8 @@
                 "boolean-value": true
             },
             "readonly": true,
-            "order": 87,
-            "reportOrder": 87,
+            "order": 130,
+            "reportOrder": 130,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
@@ -362,8 +362,8 @@
             "key": "eventType",
             "field": "eventType",
             "version": true,
-            "reportOrder": 86,
-            "order": 86,
+            "reportOrder": 140,
+            "order": 140,
             "componentType": "selectOneMenu",
             "rendered": {
                 "boolean-value": true
@@ -409,8 +409,8 @@
                 "boolean-value": true
             },
             "readonly": "function x(n,i){return!(0<=i.indexOf('uysadmin2'))}",
-            "order": 85,
-            "reportOrder": 85,
+            "order": 150,
+            "reportOrder": 150,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
             "version": true,
@@ -430,8 +430,8 @@
                 "boolean-value": true
             },
             "readonly": true,
-            "order": 84,
-            "reportOrder": 84,
+            "order": 160,
+            "reportOrder": 160,
             "valueType": "java.util.Date",
             "style": "white-space:nowrap",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
@@ -449,8 +449,8 @@
                 "boolean-value": true
             },
             "readonly": true,
-            "order": 83,
-            "reportOrder": 83,
+            "order": 170,
+            "reportOrder": 170,
             "valueType": "java.lang.String",
             "style": "white-space:nowrap",
             "accesscontrol": "uysuser,uysadmin,uysadmin2,architect",
