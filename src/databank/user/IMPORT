@@ -2,18 +2,20 @@
 
 docker cp ~/github/fms-tcma/src/databank/user/. fms-mongodb:/home/fms/json-databank-user
 
-# define project
+# about 
+mongofiles -d=welcomedb list
+mongofiles -d=welcomedb delete welcome-databank-user.html
+mongofiles -d=welcomedb put welcome-databank-user.html
 
+# define project
 mongo test --eval "db.getSisterDB('configdb').project2.remove({key:'uys'})"
 mongoimport --db configdb --collection project2 --type json --file _project.json
 
 # define nodes
-
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'node_dataBank'})"
 mongoimport --db configdb --collection graph2 --type json --file _node.json
 
 # define forms
-
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key:'contactDetail'})"
 mongoimport --db configdb --collection graph2 --type json --file contact-detail.json
 

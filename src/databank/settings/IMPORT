@@ -1,4 +1,5 @@
-docker cp . fms-mongodb:/home/fms/json-setting
+
+docker cp ~/github/fms-tcma/src/databank/settings/. fms-mongodb:/home/fms/json-databank-settings
 
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agePeriod'})"
 mongo test --eval "db.getSisterDB('configdb').graph2.remove({key: 'agreementStatus'})"
@@ -51,5 +52,3 @@ mongoimport --db configdb --collection graph2 --type json --file template.json
 mongoimport --db configdb --collection graph2 --type json --file title.json
 mongoimport --db configdb --collection graph2 --type json --file transaction-type.json
 mongoimport --db configdb --collection graph2 --type json --file volume-traded-type.json
-
-mongo test --eval "db.getSisterDB('configdb').graph2.findOne({key: 'constraint'})"
