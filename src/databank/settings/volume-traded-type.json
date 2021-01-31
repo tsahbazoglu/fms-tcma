@@ -65,7 +65,9 @@
             "reportOrder": 10,
             "order": 10,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -83,7 +85,9 @@
             "reportOrder": 20,
             "order": 20,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -101,7 +105,9 @@
             "reportOrder": 30,
             "order": 30,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -119,7 +125,9 @@
             "order": 40,
             "reportOrder": 40,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -138,7 +146,9 @@
             "reportOrder": 50,
             "order": 50,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -169,7 +179,9 @@
             "order": 60,
             "reportOrder": 60,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -187,7 +199,9 @@
             "reportOrder": 70,
             "order": 70,
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -197,7 +211,9 @@
         {
             "key": "order",
             "field": "order",
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "componentType": "inputText",
             "valueType": "java.lang.String",
             "name": "Sıralama",
@@ -223,7 +239,9 @@
             "valueType": "java.lang.String",
             "accesscontrol": ["uysadmin", "architect"],
             "reportRendered": true,
-            "rendered": true,
+            "rendered": {
+                "boolean-value": true
+            },
             "roleCheck": true,
             "money": false,
             "readonly": false,
@@ -242,7 +260,9 @@
             "accesscontrol": ["uysadmin", "architect"],
             "roleCheck": true,
             "reportRendered": true,
-            "rendered": true,    
+            "rendered": {
+                "boolean-value": true
+            },    
             "money": false,
             "readonly": false,
             "observable": false,
