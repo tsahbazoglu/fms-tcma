@@ -1,92 +1,92 @@
 
 {
- 	"key" : "period",
-	"db" : "kpbdb",
-	"collection" : "kpbPeriod",
-	"menuOrder" : 10,
-	"form" : "B01",
-	"name" : "B01 => Dönem",
-	"forms" : "graphComission",
-	"accesscontrol" : [
-		"kpbarchitect"
-	],
-	"actions" : {
-		"new" : true,
-		"save" : true,
-		"delete" : true
-	},
-	"dimension" : 1,
-	"type" : "website",
-	"upperNodes" : {
-		"node_komisyon" : "Komisyon ve Promosyon Bildirimi"
-	},
-	"fields" : {
-		"name" : {
-			"key" : "name",
-			"field" : "name",
-			"name" : "Ad",
-			"shortName" : "Ad",
-			"reportOrder" : 2000,
-			"order" : 2000,
-			"rendered" : true,
-			"roleCheck" : true,
-			"money" : false,
-			"readonly" : false,
-			"observable" : false,
-			"componentType" : "inputText",
-			"valueType" : "java.lang.String",
-			"accesscontrol" : "kpbadmin,kpbarchitect"
-		},
-		"year" : {
-			"key" : "year",
-			"field" : "year",
-			"name" : "Yıl",
-			"shortName" : "Yıl",
-			"reportOrder" : 1900,
-			"order" : 1900,
-			"rendered" : true,
-			"roleCheck" : true,
-			"money" : false,
-			"readonly" : false,
-			"observable" : false,
-			"componentType" : "inputText",
-			"valueType" : "java.lang.Integer",
-			"converter" : "NumberConverter",
-			"accesscontrol" : "kpbadmin,kpbarchitect"
-		},
-		"month" : {
-			"key" : "month",
-			"field" : "month",
-			"name" : "Ay",
-			"shortName" : "Ay",
-			"reportOrder" : 1800,
-			"order" : 1800,
-			"rendered" : true,
-			"roleCheck" : true,
-			"money" : false,
-			"readonly" : false,
-			"observable" : false,
-			"componentType" : "inputText",
-			"valueType" : "java.lang.Integer",
-			"converter" : "NumberConverter",
-			"accesscontrol" : "kpbadmin,kpbarchitect"
-		},
-		"value" : {
-			"key" : "value",
-			"field" : "value",
-			"name" : "Sayısal Değer",
-			"shortName" : "Sayısal Değer",
-			"reportOrder" : 1700,
-			"order" : 1700,
-			"rendered" : true,
-			"roleCheck" : true,
-			"money" : false,
-			"readonly" : false,
-			"observable" : false,
-			"componentType" : "inputText",
-			"valueType" : "java.lang.Integer",
-			"converter" : "NumberConverter",
-			"accesscontrol" : "kpbadmin,kpbarchitect"
-		}
-	}
+    "key": "period",
+    "db": "kpbdb",
+    "collection": "kpbPeriod",
+    "menuOrder": 10,
+    "form": "B01",
+    "name": "B01 => Dönem",
+    "forms": "graphComission",
+    "dimension": 1,
+    "type": "website",
+    "accesscontrol": [
+        "kpbarchitect"
+    ],
+    "actions": {
+        "new": true,
+        "save": true,
+        "delete": true
+    },
+    "upperNodes": {
+        "node_komisyon": "Komisyon ve Promosyon Bildirimi"
+    },
+    "fields": [
+        {
+            "key": "name",
+            "field": "name",
+            "name": "Ad",
+            "shortName": "Ad",
+            "reportOrder": 2000,
+            "order": 2000,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.String",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        {
+            "key": "year",
+            "field": "year",
+            "name": "Yıl",
+            "shortName": "Yıl",
+            "reportOrder": 1900,
+            "order": 1900,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        {
+            "key": "month",
+            "field": "month",
+            "name": "Ay",
+            "shortName": "Ay",
+            "reportOrder": 1800,
+            "order": 1800,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        },
+        {
+            "key": "value",
+            "field": "value",
+            "name": "Sayısal Değer",
+            "shortName": "Sayısal Değer",
+            "reportOrder": 1700,
+            "order": 1700,
+            "rendered": true,
+            "roleCheck": true,
+            "money": false,
+            "readonly": false,
+            "observable": false,
+            "componentType": "inputText",
+            "valueType": "java.lang.Integer",
+            "converter": "NumberConverter",
+            "accesscontrol": "kpbadmin,kpbarchitect"
+        }
+    ]
 }

@@ -11,7 +11,10 @@
     "historyPosition": 1,
     "menuOrder": 420,
     "type": "website",
-    "userNote": "<ul>\n<li>\"Tüm Sayfaları Kontrol Et\" tuşuna basarak çıkan ekranda \"Hata Niteliği\" sütununda yer alan açıklamaları inceleyiniz.</br>\n<li>Sonuç tipi sütununda \"Hata\" mesajı çıkan verilerin düzeltilmesi gerekmektedir.</br>\n<li>Sonuç tipi sütununda \"Uyarı\" çıkan satırda girilen verinin doğru olduğunu düşünüyorsanız, ilgili satırı tıklayarak çıkan ekranda \"Açıklama Giriniz\" kısmına gerekli açıklamaları yazınız.</br>\n<li>Açıklamalar en az beş karakterden oluşmalıdır. </br>\n<li>Bu sayfada \"Hata\" mesajı veren ve \"Uyarı\" mesajı veren satırlarda açıklama girilmeyen formları Birliğimize iletilemeyecektir.</br>\n<li>Gerekli düzeltmeler ve açıklamalar tamamlandıktan sonra, sayfanın üst bölümde beliren \"Gönder\" tuşuna basarak formu Birliğimize gönderiniz.\n</ul>",
+    "userNote": {
+        "fnctn-val": null,
+        "strng-val": "<ul>\n<li>\"Tüm Sayfaları Kontrol Et\" tuşuna basarak çıkan ekranda \"Hata Niteliği\" sütununda yer alan açıklamaları inceleyiniz.</br>\n<li>Sonuç tipi sütununda \"Hata\" mesajı çıkan verilerin düzeltilmesi gerekmektedir.</br>\n<li>Sonuç tipi sütununda \"Uyarı\" çıkan satırda girilen verinin doğru olduğunu düşünüyorsanız, ilgili satırı tıklayarak çıkan ekranda \"Açıklama Giriniz\" kısmına gerekli açıklamaları yazınız.</br>\n<li>Açıklamalar en az beş karakterden oluşmalıdır. </br>\n<li>Bu sayfada \"Hata\" mesajı veren ve \"Uyarı\" mesajı veren satırlarda açıklama girilmeyen formları Birliğimize iletilemeyecektir.</br>\n<li>Gerekli düzeltmeler ve açıklamalar tamamlandıktan sonra, sayfanın üst bölümde beliren \"Gönder\" tuşuna basarak formu Birliğimize gönderiniz.\n</ul>"
+    },
     "defaultSortField": "transferOrder",
     "userConstantNote": "",
     "dimension": 1,
