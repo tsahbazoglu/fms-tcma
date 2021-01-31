@@ -1,4 +1,5 @@
-docker cp . fms-mongodb:/home/fms/json-install
+
+docker cp ~/github/fms-tcma/src/install/. fms-mongodb:/home/fms/json-install
 
 # insert
 mongo test --eval "db.getSisterDB('configdb').properties.remove({key:'product'})"
